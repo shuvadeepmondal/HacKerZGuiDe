@@ -1,41 +1,131 @@
 /* General styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #0d1117;
     color: #c9d1d9;
     margin: 0;
     padding: 0;
     text-align: center;
+    animation: fadeIn 2s ease-in; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-top: 50px;
     color: #58a6ff;
+    animation: slideIn 1.5s ease-out; 
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 p {
     font-size: 1.2rem;
     margin: 20px auto;
     max-width: 600px;
-    line-height: 1.6;
+    line-height: 1.8;
+    animation: fadeInText 2.5s ease-in; 
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 a {
     color: #58a6ff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
+    color: #1f6feb;
+    text-shadow: 0 0 10px #58a6ff;
     text-decoration: underline;
 }
 
 /* Footer styling */
 footer {
     margin-top: 50px;
-    padding: 10px 0;
+    padding: 15px 0;
     background-color: #161b22;
     color: #8b949e;
     font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeInFooter 3s ease-in;
+}
+
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #0d1117;
+    background-color: #58a6ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #1f6feb;
+    transform: translateY(-5px);
+}
+
+
+div.content-container {
+    padding: 20px;
+    background: linear-gradient(145deg, #161b22, #0d1117);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    animation: scaleIn 1.5s ease-in-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

@@ -1,0 +1,40 @@
+name: Issue Opening Comment and Add Labels
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  comment_and_label:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Comment on Issue Opened
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.MY_TOKEN }}
+          script: |
+            const { owner, repo, number } = context.issue;
+            const commentAuthor = context.payload.issue.user.login;
+            const commentBody = `
+            Hey @${commentAuthor} 👋! 
+
+            Thanks for raising this issue and demonstrating your interest in contributing to our project! 🚀 We value your engagement and eagerly anticipate your contributions. 
+
+            If you'd like to work on this issue, please use the **/assignme** command to self-assign it. This is a great opportunity to enhance our project, and we're thrilled to have you onboard! 🎉
+
+            Before starting, please take a moment to review our [CONTRIBUTING GUIDELINES](../blob/master/CONTRIBUTING.md).
+
+            If you have any questions or need assistance, feel free to reach out to us on [LinkedIn](https://www.linkedin.com/in/shuvadeep-mondal-b6212b260/). ❤️
+
+            Happy coding! ✨
+            `;
+            await github.issues.createComment({ owner, repo, issue_number: number, body: commentBody });
+            console.log(`Commented on issue #${number}`);
+
+      - name: Add Labels to the Issue
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.MY_TOKEN }}
+          labels: 'cwoc'

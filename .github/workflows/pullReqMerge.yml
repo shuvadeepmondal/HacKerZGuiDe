@@ -1,0 +1,43 @@
+name: Comment on PR Closure and Close Related Issue
+
+on:
+  pull_request_target:
+    types:
+      - closed
+
+jobs:
+  close_issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check PR Merge Status
+        id: pr_status
+        run: echo "merged=${{ github.event.pull_request.merged }}" >> $GITHUB_ENV
+
+      - name: Close related issues if PR is merged
+        if: env.merged == 'true'
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.MY_TOKEN }}  # Ensure correct secret name here
+          script: |
+            const { owner, repo } = context.repo;
+            const prNumber = context.payload.pull_request.number;
+            const prBody = context.payload.pull_request.body || '';
+            const linkedIssues = prBody.match(/#\d+/g); // Find issue numbers in the PR body (e.g., "closes #123")
+            console.log(`Processing PR #${prNumber}`);
+            console.log(`PR Body: ${prBody}`);
+            console.log(`Linked Issues Found: ${linkedIssues}`);
+            if (linkedIssues) {
+              for (const issueTag of linkedIssues) {
+                const issueNumber = parseInt(issueTag.replace('#', ''), 10);
+                console.log(`Closing linked issue: #${issueNumber}`);
+                await github.issues.update({
+                  owner,
+                  repo,
+                  issue_number: issueNumber,
+                  state: 'closed'
+                });
+              }
+            } else {
+              console.log('No linked issues found in the PR body.');
+            }

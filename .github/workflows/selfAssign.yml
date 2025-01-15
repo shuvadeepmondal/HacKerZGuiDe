@@ -1,0 +1,58 @@
+name: Self Assign Issue
+on: 
+  issue_comment:
+    types:
+      - created
+
+jobs: 
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for command
+        id: find_command
+        uses: actions/github-script@v4
+        with: 
+          github-token: ${{ secrets.MY_TOKEN }}
+          script: |
+            const commentBody = context.payload.comment.body;
+            const assignUsing = '/assignme';
+            const commenter = context.payload.comment.user.login;
+            const issueAssignees = context.payload.issue.assignees.map(assignee => assignee.login);
+            const hasAssignees = issueAssignees.length > 0;
+
+            console.log(`Comment Body: ${commentBody}`);
+            console.log(`Command Present: ${commentBody.includes(assignUsing)}`);
+            console.log(`Commenter: ${commenter}`);
+            console.log(`Current Assignees: ${issueAssignees}`);
+
+            if (!commentBody.includes(assignUsing)) {
+              console.log('Command not present, nothing to do');
+              return core.setOutput('toAssign', 'false');
+            }
+
+            if (hasAssignees && issueAssignees.includes(commenter)) {
+              console.log('Issue is already assigned to the commenter.');
+              return core.setOutput('toAssign', 'false');
+            }
+
+            if (hasAssignees) {
+              console.log('Issue is already assigned to someone else.');
+              const { owner, repo, number } = context.issue;
+              const body = `Hey @${commenter}, the issue is already assigned to someone else. Feel free to work on another issue or create a new one! 😥`;
+              await github.issues.createComment({ owner, repo, issue_number: number, body });
+              return core.setOutput('toAssign', 'false');
+            }
+
+            console.log('Assigning the issue to the commenter.');
+            core.setOutput('toAssign', 'true');
+
+      - name: Assign the issue
+        if: steps.find_command.outputs.toAssign == 'true'
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.MY_TOKEN }}
+          script: |
+            const { owner, repo, number } = context.issue;
+            const assignee = context.payload.comment.user.login;
+            await github.issues.addAssignees({ owner, repo, issue_number: number, assignees: [assignee] });
+            console.log(`Assigned the issue to ${assignee}.`);

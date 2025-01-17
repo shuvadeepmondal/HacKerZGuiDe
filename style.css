@@ -246,6 +246,7 @@ header {
     box-shadow: 0 10px 20px rgba(35, 134, 54, 0.8);
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     background: #0d1117;
@@ -255,19 +256,81 @@ footer {
     margin-top: 3rem;
 }
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
+.footer-section {
+    width: 23%;
+    margin: 20px 0;
+}
 
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
 
+.footer-section p, .footer-section ul {
+    font-size: 0.9rem;
+}
 
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
 
+.footer-section ul li {
+    margin: 5px 0;
+}
 
+.footer-section ul li a {
+    text-decoration: none;
+    color: #c9d1d9;
+    transition: color 0.3s ease;
+}
 
+.footer-section ul li a:hover {
+    color: #58a6ff;
+}
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    transition: transform 0.3s ease;
+}
 
+.social-icon:hover {
+    transform: scale(1.1);
+}
 
+.social-icon.github {
+    background-image: url('github-icon.png');
+    background-size: cover;
+}
 
+.social-icon.discord {
+    background-image: url('discord-icon.png');
+    background-size: cover;
+}
 
+.footer-credits {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
 
-
-
+.footer-credits p {
+    color: #8b949e;
+}

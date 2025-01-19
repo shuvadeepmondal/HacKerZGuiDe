@@ -427,10 +427,13 @@ header {
 footer {
     text-align: center;
     background: #0d1117;
-    color: #8b949e;
     padding: 2rem 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-top: 3rem;
+    color: white;
+        font-family: 'Arial', sans-serif;
+        position: relative;
+        animation: fadeInFooter 2s ease-in-out;
 }
 
 

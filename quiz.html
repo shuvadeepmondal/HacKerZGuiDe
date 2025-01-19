@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HackeRZGuide - Weekly Quiz Guide">
+    <title>HackeRZGuide - Weekly Quiz Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
+    <link rel="stylesheet" href="quizstyle.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            
+            <div class="logo">
+                <a href="index.html">HackeRZGuide</a>
+            </div>
+
+            
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#categories" class="dropdown-toggle">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#hacking">Hacking</a></li>
+                            <li><a href="#coding">Coding</a></li>
+                            <li><a href="#tech">Tech Trends</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contribute">Contribute</a></li>
+                </ul>
+
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="hero">
+        <h1>⚡ Welcome to the HackerZGuide Quiz! ⚡</h1>
+        <p>Challenge your mind, earn rewards, and show off your skills!</p>
+        <button id="startQuiz">Start Quiz</button>
+        <div class="quiz-info">
+            <h2>Quiz Details</h2>
+            <p>⏳ Duration: 3 minutes</p>
+            <p>📋 Questions: 3</p>
+            <p>💡 Difficulty: Easy</p>
+        </div>
+    </div>
+
+    <div id="quizContainer" class="hidden">
+        <div class="timer-container">
+            <h2>Time Remaining: <span id="timeRemaining">3:00</span></h2>
+        </div>
+        <div id="questionSection">
+            <h2 id="questionTitle" aria-live="polite">Question Title</h2>
+            <p id="questionText"></p>
+            <div id="answerOptions"></div>
+        </div>
+        <div id="progressTracker">
+            <div id="progressBar"></div>
+        </div>
+        <button id="submitQuiz" class="btn hidden">Submit Quiz</button>
+    </div>
+
+    <section id="resultSection" class="hidden">
+        <h2>🎉 Your Results 🎉</h2>
+        <p id="scoreDisplay"></p>
+        <div id="reviewAnswers">
+            <h3>Review Your Answers:</h3>
+            <ul id="answerReview"></ul>
+        </div> 
+        <div id="leaderboard">
+            <h3>📊 Leaderboard</h3>
+            <ul id="leaderboardList"></ul>
+            <form id="submitScoreForm">
+                <label for="username">Enter Your Name: </label>
+                <input type="text" id="username" required>
+                <button type="submit">Submit Score</button>
+                </form>
+           <div id="socialShare" class="hidden">
+            <h3>📢 Share Your Score!</h3>
+            <div class="social-icons">
+                <a id="shareFacebook" class="social-icon" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+                <a id="shareTwitter" class="social-icon" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                <a id="shareWhatsApp" class="social-icon" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a id="shareLinkedIn" class="social-icon" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a id="shareInstagram" class="social-icon" title="Share on Instagram"><i class="fab fa-instagram"></i></a>
+                <a id="shareGitHub" class="social-icon" title="Share on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <div id="feedbackSection" class="hidden">
+                <h3>Thank you for submitting your score!</h3>
+                <button id="restartQuiz" class="btn">Restart Quiz</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-media">
+            <h3>Follow Us:</h3>
+            <a href="https://www.facebook.com/thecodebird" class="social-icon1" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/TheCodeBird" class="social-icon1" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/+91XXXXXXXXXX" class="social-icon1" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/company/thecodebird" class="social-icon1" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/thecodebird.exe" class="social-icon1" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/shuvadeepmondal" class="social-icon1" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2025 HackeRZGuide. All rights reserved.</p>
+    </footer>
+
+    <script src="quizscript.js"></script>
+
+</body>
+</html>

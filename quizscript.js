@@ -140,7 +140,3 @@ function submitScore(event) {
     document.getElementById("submitScoreForm").classList.add("hidden");
     document.getElementById("feedbackSection").classList.remove("hidden");
 }
-
-
-
-

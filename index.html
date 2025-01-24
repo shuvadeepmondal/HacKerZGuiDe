@@ -6,21 +6,22 @@
     <meta name="description" content="HackeRZGuide - Your go-to resource for hacking, coding, and tech guides.">
     <title>HackeRZGuide - Futuristic Tech Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
 </head>
 <body>
     <header>
         <nav class="navbar">
             
             <div class="logo">
-                <a href="#home">HackeRZGuide</a>
+                <a href="index.html">HackeRZGuide</a>
             </div>
 
             
             <div class="nav-container">
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
-                        <a href="#categories" class="dropdown-toggle">Categories</a>
+                        <a href="categories.html" class="dropdown-toggle">Categories</a>
                         <ul class="dropdown-menu">
                             <li><a href="#hacking">Hacking</a></li>
                             <li><a href="#coding">Coding</a></li>
@@ -77,6 +78,49 @@
             </div>
         </section>
 
+        <section id="categories" class="categories-section">
+            <!-- Title Section -->
+            <div class="title-section">
+                <h1>Explore Our Categories</h1>
+                <p>Discover resources tailored to your goals and unlock your potential.</p>
+            </div>
+        
+            <!-- Search Bar -->
+            <div class="search-bar1">
+                <input type="text" id="searchCategories" placeholder="Search categories...">
+                <button class="search-btn1">Search</button>
+            </div>
+        
+            <!-- Categories Grid -->
+            <div class="categories-grid">
+                <div class="category-card card-color-1">
+                    <div class="card-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Hacking</h3>
+                    <p>Uncover the secrets of cybersecurity and learn how to protect systems from threats.</p>
+                    <button class="explore-btn" onclick="location.href='#hacking'">Explore More</button>
+                </div>
+        
+                <div class="category-card card-color-2">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Coding</h3>
+                    <p>Dive into the world of programming and build your skills in various coding languages.</p>
+                    <button class="explore-btn" onclick="location.href='#coding'">Explore More</button>
+                </div>
+        
+                <div class="category-card card-color-3">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Tech Trends</h3>
+                    <p>Stay ahead of the curve with the latest innovations and trends in technology.</p>
+                    <button class="explore-btn" onclick="location.href='#tech'">Explore More</button>
+                </div>
+            </div>
+        </section>
         
         <section id="contact" class="content-section fade-in">
             <h2 class="section-title">Contact Us</h2>
@@ -91,13 +135,17 @@
 
     
     <footer>
-        <p>&copy; 2025 HackeRZGuide. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="#" class="icon facebook" aria-label="Facebook"></a>
-            <a href="#" class="icon twitter" aria-label="Twitter"></a>
-            <a href="#" class="icon linkedin" aria-label="LinkedIn"></a>
-            <a href="#" class="icon github" aria-label="GitHub"></a>
+        <div class="social-media">
+            <h3>Follow Us:</h3>
+            <a href="https://www.facebook.com/thecodebird" class="social-icon1" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/TheCodeBird" class="social-icon1" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/+91XXXXXXXXXX" class="social-icon1" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/company/thecodebird" class="social-icon1" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/thecodebird.exe" class="social-icon1" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/shuvadeepmondal" class="social-icon1" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
+        <p>&copy; 2025 HackeRZGuide. All rights reserved.</p>
     </footer>
+
 </body>
 </html>

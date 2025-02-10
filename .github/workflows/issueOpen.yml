@@ -36,5 +36,5 @@ jobs:
       - name: Add Labels to the Issue
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          github_token: ${{ secrets.MY_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: 'cwoc'

@@ -183,8 +183,10 @@ function loadLeaderboard(filter = "all") {
             case "today":
                 return entryDate.toDateString() === today.toDateString();
             case "week":
-                const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay()));
-                return entryDate >= startOfWeek;
+                {
+                    const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay()));
+                    return entryDate >= startOfWeek;
+                }
             case "month":
                 return entryDate.getMonth() === today.getMonth() && entryDate.getFullYear() === today.getFullYear();
             default:
@@ -201,7 +203,11 @@ function loadLeaderboard(filter = "all") {
 function copyLink() {
     const shareableLink = document.getElementById("shareableLink");
     shareableLink.select();
-    document.execCommand("copy");
+    navigator.clipboard.writeText(shareableLink.value).then(() => {
+        alert("Link copied to clipboard!");
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
     alert("Link copied to clipboard!");
 }
 

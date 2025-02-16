@@ -423,7 +423,49 @@ header {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(35, 134, 54, 0.8);
 }
+#about {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.about-container {
+  max-width: 900px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#about h1 {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+#about h2 {
+  font-size: 28px;
+  color: #ff5722;
+  margin-top: 20px;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.about-content p strong {
+  color: #007bff;}
+
+.about-container:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
 
 /* General Footer Styles */
 .footer {

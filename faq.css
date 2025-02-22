@@ -1,16 +1,29 @@
-* {
+
+
+/* General Styles */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  
     font-family: 'Orbitron', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+/* Prevent scrolling when menu is open */
+.no-scroll {
+    overflow: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+/* Navbar */
 .navbar {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     padding: 12px 30px;
-    font-family: 'Orbitron', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,15 +33,15 @@
     border-radius: 5px;
 }
 
+/* Logo */
 .logo {
-    flex: 1;
+    flex-grow: 1;
 }
 
 .logo a {
+    font-size: 1.5rem;
     color: #40ff00;
-    font-size: 1.5rem; 
     font-weight: bold;
-    text-decoration: none;
     text-transform: uppercase;
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
@@ -38,18 +51,17 @@
     text-shadow: 0px 0px 10px #00a6ff;
 }
 
+/* Navigation Links (Desktop) */
 .nav-container {
-    flex: 2;
     display: flex;
     justify-content: center;
+    flex-grow: 2;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-links li {
@@ -58,8 +70,7 @@
 
 .nav-links a {
     color: #40ff00;
-    text-decoration: none;
-    font-size: 1rem; 
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     padding: 8px 12px;
@@ -71,57 +82,15 @@
     text-shadow: 0px 0px 5px #00a6ff;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #24243e;
-    border: 2px solid #40ff00;
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
-    list-style: none;
-    padding: 10px;
-    min-width: 250px;
-    z-index: 1000;
-}
 
-.dropdown-menu li {
-    padding: 10px;
-    text-align: center;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu a {
-    color: #40ff00;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    transition: color 0.3s ease-in-out;
-}
-
-.dropdown-menu a:hover {
-    color: #00a6ff;
-}
-
-.right-section {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
-}
-
+/* Contribute Button */
 .contribute-btn {
     background: #40ff00;
-    color: black;
+    border: 2px solid #40ff00;
     padding: 8px 15px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
+    color: black;
     font-weight: bold;
     text-transform: uppercase;
-    border: 2px solid #40ff00;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -139,16 +108,25 @@
     transform: scale(0.95);
 }
 
-.search-bar input {
-    padding: 6px 10px;
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
     border: 2px solid #40ff00;
+    padding: 5px;
     border-radius: 5px;
     background: #111;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
     color: white;
+    padding: 6px 10px;
     font-size: 1rem;
     outline: none;
+    width: 150px;
     transition: border 0.3s ease-in-out;
-    width: 150px; 
 }
 
 .search-bar input::placeholder {
@@ -160,39 +138,134 @@
     border-color: #00a6ff;
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    transition: left 0.4s ease-in-out;
+    padding-top: 20px;
+    z-index: 1000;
+    border-radius: 5px;
+}
 
+.mobile-nav.active {
+    left: 0;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.mobile-nav ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.mobile-nav ul li a {
+    color: #40ff00;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav ul li a:hover {
+    color: #00a6ff;
+    text-shadow: 0px 0px 5px #00a6ff;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 25px;
+    color: #00a6ff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+    text-shadow: 0 0 10px #00a6ff;
+}
+
+
+/* Default right section (Visible in Desktop) */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Mobile Right Section (Hidden by default) */
+.mobile-right-section {
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    font-size: 30px;
+    color: #40ff00;
+    cursor: pointer;
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
     .nav-container {
-        justify-content: center;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .dropdown-menu {
-        position: static;
         display: none;
-        width: 100%;
-        border: none;
-        box-shadow: none;
-        background: transparent;
     }
 
-    .dropdown:hover .dropdown-menu {
+    .hamburger-menu {
         display: block;
     }
 
+    .logo {
+        text-align: center;
+    }
+
     .right-section {
-        flex-direction: column;
-        margin-top: 10px;
+        display: flex;
     }
 }
+
+@media (max-width: 760px) {
+    .nav-container {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    /* Hide right section in desktop navbar */
+    .right-section {
+        display: none;
+    }
+
+    /* Show right section inside mobile menu */
+    .mobile-right-section {
+        display: flex;
+    }
+}
+
+
 
 body {
     font-family: 'Orbitron', sans-serif;
@@ -201,27 +274,34 @@ body {
     background: linear-gradient(135deg, #0f0c29, #231f47, #1b1b2f);
     color: #40ff00;
     overflow-x: hidden;
-}
-
-header {
+  }
+  
+  header {
     background: rgba(15, 12, 41, 0.95);
     color: #ffffff;
     text-align: center;
     padding: 40px 20px;
     border-bottom: 2px solid #40ff00;
     box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
-}
-
-header h1 {
+  }
+  
+  header h1 {
     font-size: 2.5rem;
     text-transform: uppercase;
     text-shadow: 0px 0px 10px rgba(64, 255, 0, 0.8);
-}
-
-header p {
+  }
+  
+  header p {
     font-size: 1.2rem;
     color: #00a6ff;
+  }
+
+  a:-webkit-any-link {
+    
+    cursor: pointer;
+    text-decoration: none;
 }
+
 
 .faq-container {
     max-width: 900px;

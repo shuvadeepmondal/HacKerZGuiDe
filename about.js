@@ -317,3 +317,48 @@ function startVoiceRecognition() {
         alert("Voice recognition error. Please try again.");
     };
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileNav = document.getElementById("mobileNav");
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const closeButton = document.querySelector(".close-btn");
+    const searchInput = document.querySelector(".search-bar input");
+    const contributeBtn = document.querySelector(".contribute-btn");
+    const body = document.body;
+
+    // Toggle Mobile Menu
+    function toggleMenu() {
+        mobileNav.classList.toggle("active");
+        body.classList.toggle("no-scroll"); // Prevent scrolling when menu is open
+    }
+
+    // Open Mobile Menu
+    hamburgerMenu.addEventListener("click", () => {
+        mobileNav.classList.add("active");
+        body.classList.add("no-scroll");
+    });
+
+    // Close Mobile Menu
+    closeButton.addEventListener("click", () => {
+        mobileNav.classList.remove("active");
+        body.classList.remove("no-scroll");
+    });
+
+    // Hide contribute button when search bar is active
+    searchInput.addEventListener("focus", () => {
+        contributeBtn.style.display = "none";
+    });
+
+    searchInput.addEventListener("blur", () => {
+        contributeBtn.style.display = "inline-block";
+    });
+
+    // Close menu when clicking outside (on overlay)
+    document.addEventListener("click", (event) => {
+        if (!mobileNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            mobileNav.classList.remove("active");
+            body.classList.remove("no-scroll");
+        }
+    });
+});

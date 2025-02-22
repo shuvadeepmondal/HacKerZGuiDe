@@ -16,40 +16,55 @@
 
     <header>
         <nav class="navbar">
-            <!-- Logo (Left) -->
+            <!-- Hamburger Menu (Mobile) -->
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                ☰
+            </div>
+    
+            <!-- Logo (Center in Mobile, Left in Desktop) -->
             <div class="logo">
                 <a href="index.html">HackeRZGuide</a>
             </div>
     
-            <!-- Navigation Links (Centered) -->
+            <!-- Navigation Links (Desktop View) -->
             <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="resources.html">Resources</a></li>
-                    <li class="dropdown">
-                        <a href="index.html#categoriess" class="dropdown-toggle">Categories</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#Web Development">Web Development</a></li>
-                            <li><a href="#coding">Android Development</a></li>
-                            <li><a href="#tech">Game Development</a></li>
-                            <li><a href="#hacking">Cloud Computing</a></li>
-                            <li><a href="#coding">Cybersecurity</a></li>
-                            <li><a href="#tech">Artificial Intelligence</a></li>
-                        </ul>
-                    </li>
                     <li><a href="faq.html">FAQs</a></li>
                     <li><a href="quiz.html">Quiz</a></li>
                 </ul>
             </div>
     
-            <!-- Contribute Button & Search Bar (Right) -->
+            <!-- Right Section (Contribute Button & Search) -->
             <div class="right-section">
                 <button class="contribute-btn" onclick="window.location.href='#contribute'">Contribute</button>
                 <div class="search-bar">
                     <input type="text" placeholder="Search..." aria-label="Search">
                 </div>
             </div>
+    
+            <!-- Mobile Navigation (Slide-in Menu) -->
+<div class="mobile-nav" id="mobileNav">
+    <!-- Close Button -->
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resource.html">Resources</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+
+    <!-- Right Section for Mobile -->
+    <div class="mobile-right-section">
+        <button class="contribute-btn" onclick="window.location.href='resource.html'">Contribute</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+    </div>
+</div>
         </nav>
     </header>
     

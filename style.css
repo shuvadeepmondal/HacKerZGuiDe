@@ -719,131 +719,133 @@ header p {
   margin-top: 20px;
 }
 
+
+
 .cta-button {
-  display: inline-block;
-  background: transparent;
-  border: 2px solid #00a6ff;
-  color: #00a6ff;
-  padding: 15px 30px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.3s ease-in-out;
-  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #00a6ff;
+    color: #00a6ff;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .cta-button:hover {
-  background: #00a6ff;
-  color: black;
-  box-shadow: 0px 0px 25px #40ff00;
-  transform: scale(1.1);
+    background: #00a6ff;
+    color: black;
+    box-shadow: 0px 0px 25px #40ff00;
+    transform: scale(1.1);
 }
 
 #contact::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: -5px;
-  right: -5px;
-  height: 2px;
-  background: #00a6ff;
-  box-shadow: 0 0 10px #00a6ff;
-  animation: glitch 1s infinite alternate-reverse;
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    right: -5px;
+    height: 2px;
+    background: #00a6ff;
+    box-shadow: 0 0 10px #00a6ff;
+    animation: glitch 1s infinite alternate-reverse;
 }
 
 #contact::after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  left: -5px;
-  right: -5px;
-  height: 2px;
-  background: #40ff00;
-  box-shadow: 0 0 10px #40ff00;
-  animation: glitch 1s infinite alternate;
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: -5px;
+    right: -5px;
+    height: 2px;
+    background: #40ff00;
+    box-shadow: 0 0 10px #40ff00;
+    animation: glitch 1s infinite alternate;
 }
 
 @keyframes glitch {
-  0% { transform: translateX(-3px); }
-  100% { transform: translateX(3px); }
+    0% { transform: translateX(-3px); }
+    100% { transform: translateX(3px); }
 }
 
 @keyframes fadeInAnimation {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
-  .hero h1 {
-      font-size: 2.2rem;
-  }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
 
-  .hero p {
-      font-size: 1.3rem;
-  }
+    .hero p {
+        font-size: 1.3rem;
+    }
 
-  .hero .button a {
-      font-size: 1.2rem;
-  }
+    .hero .button a {
+        font-size: 1.2rem;
+    }
 
-  .section-title {
-      font-size: 2rem;
-  }
+    .section-title {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .hero h1 {
-      font-size: 2rem;
-  }
+    .hero h1 {
+        font-size: 2rem;
+    }
 
-  .hero p {
-      font-size: 1.1rem;
-  }
+    .hero p {
+        font-size: 1.1rem;
+    }
 
-  .hero .button a {
-      font-size: 1rem;
-  }
+    .hero .button a {
+        font-size: 1rem;
+    }
 
-  .section-title {
-      font-size: 1.8rem;
-  }
+    .section-title {
+        font-size: 1.8rem;
+    }
 }
 
 footer {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  color: white;
-  padding: 50px 20px;
-  font-family: 'Orbitron', sans-serif;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    padding: 50px 20px;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
 }
 
 footer::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 200px;
-  height: 200px;
-  background: rgba(0, 255, 255, 0.3);
-  filter: blur(100px);
-  z-index: 0;
-  animation: glow 5s infinite alternate ease-in-out;
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 255, 255, 0.3);
+    filter: blur(100px);
+    z-index: 0;
+    animation: glow 5s infinite alternate ease-in-out;
 }
 
 @keyframes glow {
-  from {
-      transform: translateY(0px);
-  }
-  to {
-      transform: translateY(20px);
-  }
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(20px);
+    }
 }
 
 .footer-container {

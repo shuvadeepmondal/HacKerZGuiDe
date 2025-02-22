@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HackeRZGuide - Your go-to resource for hacking, coding, and tech guides.">
-    <title>HackeRZGuide - Futuristic Tech Hub</title>
+    <title>Quiz Results</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
-
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="result.css">
+    <script defer src="result.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <!-- Logo (Left) -->
@@ -26,7 +25,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li class="dropdown">
-                        <a href="#categoriess" class="dropdown-toggle">Categories</a>
+                        <a href="index.html#categoriess" class="dropdown-toggle">Categories</a>
                         <ul class="dropdown-menu">
                             <li><a href="#Web Development">Web Development</a></li>
                             <li><a href="#coding">Android Development</a></li>
@@ -51,134 +50,101 @@
         </nav>
     </header>
 
+    <header class="site-header">
+        <h1>Quiz Results</h1>
+    </header>
 
-    <main>
-        
-        <section class="hero">
-            <h1>Welcome to HackeRZGuide </h1>
-             <p>"Hack it, Crack it, Master it"</p>
-             <div class="button">
-                 <a href="#resourece" class="Explore">Explore Resource</a>
-                 <a href="#contribute" class="Contribute">Contribute now</a>
-             </div>
-         </section> 
-    
-         <section id="about">
-          <div class="about-container">
-              <h1>About Us</h1>
-              <div class="about-content">
-                  <p>
-                      <strong>HackerZGuide</strong> is a platform designed to guide individuals toward achieving their future goals. 
-                      Our mission is to empower users by providing valuable insights, resources, and strategies that help them 
-                      navigate challenges, develop skills, and unlock their full potential for personal and professional success.
-                  </p>
-                  <h2>Our Mission</h2>
-                  <p>
-                      To inspire and enable individuals to achieve their goals by equipping them with the tools, knowledge, 
-                      and guidance they need to excel in their journeys.
-                  </p>
-                  <h2>Our Vision</h2>
-                  <p>
-                      To be the go-to platform for goal-oriented individuals, fostering a community of learners, innovators, 
-                      and achievers who are committed to personal and professional growth.
-                  </p>
-                  <h2>Our Purpose</h2>
-                  <p>
-                      At HackerZGuide, we believe in creating a supportive environment where users can discover their 
-                      strengths, overcome challenges, and achieve success on their terms.
-                  </p>
-              </div>
-          </div>
-      </section>
-  
+    <section class="result-container">
+        <!-- User's Score and Name -->
+        <h2>Congratulations, <span id="user-name"></span>!</h2>
+        <p class="score-display">Your Score: <span id="score"></span></p>
 
+        <!-- Motivational Message -->
+        <p id="motivation-message"></p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
-    <!-- ✅ Testimonial Section -->
-    <section class="testimonial-section">
-        <h2>🚀 What Hackers Say About Us 🚀</h2>
-        <div class="carousel">
-            <button class="prev-btn">⫷</button>
-            <div class="testimonial-container">
-                <div class="testimonial-card active">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/kunal_kundwani.png" alt="Ravi Shankar" class="avatar">
-                    <p class="testimonial-text">"HackerzGuide is a goldmine of hacking knowledge! The tutorials are top-notch and cyberpunk-styled UI is just sick!"</p>
-                    <h3 class="author">Alex Cyber</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/arfaatk.png" alt="Sreham Hazra" class="avatar">
-                    <p class="testimonial-text">"The best ethical hacking resource I've ever used. The lessons are structured beautifully!"</p>
-                    <h3 class="author">Sreham Hazra</h3>
-                    <div class="rating" data-stars="4"></div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/Japit.png" alt="Neha Gupta" class="avatar">
-                    <p class="testimonial-text">"Learned so much about penetration testing. The dark cyberpunk theme keeps me engaged!"</p>
-                    <h3 class="author">Neha Gupta</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/Ayush.png" alt="Vikram Singh" class="avatar">
-                    <p class="testimonial-text">"The tutorials are top-notch. The lessons are structured Perfectly!"</p>
-                    <h3 class="author">Vikram Singh</h3>
-                    <div class="rating" data-stars="4"></div>
-                </div>
-            </div>
-            <button class="next-btn">⫸</button>
+        <!-- Performance Graph -->
+        <div class="performance-section">
+            <h3>Performance Overview</h3>
+            <canvas id="performanceChart"></canvas>
         </div>
-    </section>
 
-    <section class="feature-guide">
-        <h2 class="section-title">
-            🚀 <span>Feature Guide</span> 🚀
-        </h2>
-        <div class="feature-container">
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/1000x1000/84/94/sophisticated-digital-information-security-vector-21248494.webp" alt="Feature 1">
-                <h3>Advanced Security</h3>
-                <p>Stay ahead with our top-notch cybersecurity solutions.</p>
-            </div>
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/2000v/93/81/futuristic-cyber-security-vector-50379381.avif" alt="Feature 2">
-                <h3>Anonymous Browsing</h3>
-                <p>Browse the web without leaving a trace.</p>
-            </div>
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/2000v/82/46/ai-healthcare-security-concept-with-glowing-vector-54938246.avif" alt="Feature 3">
-                <h3>AI-Powered Protection</h3>
-                <p>Leverage AI to detect and prevent cyber threats.</p>
-            </div>
+        <!-- Answer Review -->
+        <div class="review-section">
+            <h3>Review Your Answers</h3>
+            <ul id="answer-review"></ul>
         </div>
-    </section>
 
-        
-        <section id="contact" class="content-section fade-in">
-            <h2 class="section-title">Contact Us</h2>
-            <p class="contact-text">We’d love to hear your questions, suggestions, or feedback. Get in touch anytime!</p>
-            <div class="button-container">
-                <a href="mailto:info@hackerzguide.com" class="cta-button">Get in Touch</a>
-            </div>
-        </section>
-       
-       
-    </main>
+        <!-- Achievements -->
+        <div class="achievements">
+            <h3>Your Achievements</h3>
+            <div id="achievement-badge"></div>
+            <p id="achievement-description"></p>
+        </div>
 
-     <!-- Footer -->
+    <!-- ================== Leaderboard Section ================== -->
+<section class="leaderboard-section">
+    <h2>🏆 Leaderboard</h2>
+
+    <!-- Tabs for switching categories -->
+    <div class="leaderboard-tabs">
+        <button class="tab-button active" onclick="showTab('all-time')">All Time</button>
+        <button class="tab-button" onclick="showTab('weekly')">Weekly</button>
+        <button class="tab-button" onclick="showTab('daily')">Daily</button>
+    </div>
+
+    <!-- Leaderboard Table -->
+    <div class="leaderboard-container">
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                <!-- Leaderboard data will be inserted dynamically -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- JavaScript for Tabs -->
+<script>
+    function showTab(tabName) {
+        let buttons = document.querySelectorAll(".tab-button");
+        buttons.forEach(btn => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Here you can implement filtering logic based on `tabName`
+        console.log("Switched to:", tabName);
+    }
+</script>
+
+
+        <!-- Social Sharing -->
+        <h3>Share Your Results</h3>
+        <div class="share-buttons">
+            <a href="#" id="share-facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="share-instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" id="share-twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" id="share-linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" id="share-whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>            
+                
+
+
+
+
+        <!-- 🔹 Navigation Buttons -->
+        <div class="navigation-buttons">
+            <button onclick="restartQuiz()">🔄 Restart</button>
+            <button onclick="goToMainMenu()">🏠 Main Menu</button>
+        </div>
+</section>
+
+   
      <!-- Footer Section -->
      <footer>
         <div class="footer-container">
@@ -200,7 +166,7 @@
                         <li><a href="resources.html">Resources</a></li>
                         <li><a href="quiz.html">Quiz</a></li>
                         <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="#categoriess">Categories</a></li>
+                        <li><a href="index.html#categoriess">Categories</a></li>
                     </ul>
                 </div>
 
@@ -295,7 +261,8 @@
     </div>
 </div>
 </div>
-
-
 </body>
 </html>
+
+
+

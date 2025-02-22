@@ -3,204 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HackeRZGuide - Weekly Quiz Guide">
-    <title>HackeRZGuide - Weekly Quiz Guide</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="quizstyle.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Cyber-Themed Quiz</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="quiz.css">
+
+    <!-- JavaScript -->
+    <script defer src="quiz.js"></script>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
+            <!-- Logo (Left) -->
             <div class="logo">
                 <a href="index.html">HackeRZGuide</a>
             </div>
+    
+            <!-- Navigation Links (Centered) -->
             <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
                     <li class="dropdown">
-                        <a href="#categories" class="dropdown-toggle">Categories</a>
+                        <a href="index.html#categoriess" class="dropdown-toggle">Categories</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#hacking">Hacking</a></li>
-                            <li><a href="#coding">Coding</a></li>
-                            <li><a href="#tech">Tech Trends</a></li>
+                            <li><a href="#Web Development">Web Development</a></li>
+                            <li><a href="#coding">Android Development</a></li>
+                            <li><a href="#tech">Game Development</a></li>
+                            <li><a href="#hacking">Cloud Computing</a></li>
+                            <li><a href="#coding">Cybersecurity</a></li>
+                            <li><a href="#tech">Artificial Intelligence</a></li>
                         </ul>
                     </li>
-                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
                     <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contribute">Contribute</a></li>
                 </ul>
+            </div>
+    
+            <!-- Contribute Button & Search Bar (Right) -->
+            <div class="right-section">
+                <button class="contribute-btn" onclick="window.location.href='#contribute'">Contribute</button>
                 <div class="search-bar">
                     <input type="text" placeholder="Search..." aria-label="Search">
                 </div>
             </div>
         </nav>
     </header>
+    
+    <!-- 🔹 Header -->
+    <header class="site-header">
+        <h1>HackeRZGuide - Weekly Quiz Guide</h1>
+        <p>Test your knowledge across cyber domains and challenge yourself.</p>
+    </header>
 
-    <div class="hero">
-        <h1>⚡ Welcome to the HackerZGuide Quiz! ⚡</h1>
-        <p>Challenge your mind, earn rewards, and show off your skills!</p>
-        <button id="startQuiz">Start Quiz</button>
-        <div class="quiz-info">
-            <h2>Quiz Details</h2>
-            <p>⏳ Duration: 3 minutes</p>
-            <p>📋 Questions: 3</p>
-            <p>💡 Difficulty: Easy</p>
-        </div>
-    </div>
-
-    <div id="quizContainer" class="hidden">
-        <div class="timer-container">
-            <h2>Time Remaining: <span id="timeRemaining">3:00</span></h2>
-        </div>
-        <div id="questionSection">
-            <h2 id="questionTitle" aria-live="polite">Question Title</h2>
-            <p id="questionText"></p>
-            <div id="answerOptions"></div>
-        </div>
-        <div id="progressTracker">
-            <div id="progressBar"></div>
-        </div>
-        <button id="submitQuiz" class="btn hidden">Submit Quiz</button>
-    </div>
-
-    <section id="resultSection" class="hidden">
-        <h2>🎉 Your Results 🎉</h2>
-        <p id="scoreDisplay"></p>
-
-        <!-- Performance Feedback -->
-        <div id="performanceFeedback">
-            <h3>Performance Feedback:</h3>
-            <p id="feedbackMessage"></p>
-            <div id="performanceChart">
-                <canvas id="performanceCanvas"></canvas>
-            </div>
-        </div>
-
-        <!-- Review Answers -->
-        <div id="reviewAnswers">
-            <h3>Review Your Answers:</h3>
-            <ul id="answerReview"></ul>
-        </div>
-
-        <!-- Leaderboard -->
-        <div id="leaderboard">
-            <h3>📊 Leaderboard</h3>
-            <div id="leaderboardFilter">
-                <label for="filterLeaderboard">Filter by:</label>
-                <select id="filterLeaderboard">
-                    <option value="all">All Time</option>
-                    <option value="today">Today</option>
-                    <option value="week">This Week</option>
-                    <option value="month">This Month</option>
-                </select>
-            </div>
-            <ul id="leaderboardList"></ul>
-            <form id="submitScoreForm">
-                <label for="username">Enter Your Name: </label>
-                <input type="text" id="username" required>
-                <button type="submit" class="btn">Submit Name</button>
-            </form>
-        </div>
-
-        <!-- Social Share -->
-        <div id="socialShare" class="hidden">
-            <h3>📢 Share Your Score!</h3>
-            <div class="social-icons">
-                <a id="shareFacebook" class="social-icon" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
-                <a id="shareTwitter" class="social-icon" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
-                <a id="shareWhatsApp" class="social-icon" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a id="shareLinkedIn" class="social-icon" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a id="shareInstagram" class="social-icon" title="Share on Instagram"><i class="fab fa-instagram"></i></a>
-                <a id="shareGitHub" class="social-icon" title="Share on GitHub"><i class="fab fa-github"></i></a>
-            </div>
-            <div id="copyLink">
-                <label for="shareableLink" class="visually-hidden">Shareable Link</label>
-                <input type="text" id="shareableLink" placeholder="Shareable Link" readonly>
-                <button id="copyLinkButton" class="btn">Copy Link</button>
-            </div>
-        </div>
-
-        <div id="feedbackSection" class="hidden">
-            <h3>Thank you for submitting your score!</h3>
-            <button id="restartQuiz" class="btn">Restart Quiz</button>
-            <button id="viewLeaderboard" class="btn">View Leaderboard</button>
-        </div>
-
-        <div id="achievementsSection">
-            <h3>🏆 Achievements Unlocked</h3>
-            <div id="achievementsList"></div>
-        </div>
-
-        
-        <div id="progressTracker">
-            <h3>📈 Your Progress</h3>
-            <div id="progressBarContainer">
-                <div id="progressBarFill"></div>
-            </div>
-            <p id="progressText">0% Complete</p>
+    <!-- 🔹 Quiz Categories -->
+    <section class="categories">
+        <h2>[ Select a Quiz Domain ]</h2>
+        <div class="category-grid">
+            <!-- Categories (Dynamically generated via JS) -->
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="footer-container">
-            
-            <div class="footer-section">
-                <h3>About HackerZGuide</h3>
-                <p>HackerZGuide is your ultimate resource for cybersecurity knowledge, tools, and community-driven learning. Join us to explore, learn, and contribute to the world of ethical hacking.</p>
+    <!-- 🔹 Quiz Confirmation Popup -->
+<dialog id="confirmation-popup" class="popup" aria-labelledby="popup-title" aria-hidden="true">
+    <div class="popup-content">
+        <button class="close-btn" aria-label="Close" onclick="closePopup()">&times;</button>
+        <h2 id="popup-title">Ready to start?</h2>
+        <p>Enter your name to proceed:</p>
+        <input type="text" id="username" placeholder="Your Name" aria-label="Enter your name">
+        <div class="popup-buttons">
+            <button class="yes-btn" onclick="startQuiz()">Proceed</button>
+        </div>
+    </div>
+</dialog>
+
+
+
+
+ <!-- Footer Section -->
+ <footer>
+    <div class="footer-container">
+        
+        <!-- First Row -->
+        <div class="footer-row">
+            <!-- About Column -->
+            <div class="footer-column">
+                <h3 id="about-hackerzguide">ABOUT HACKERZGUIDE</h3>
+                <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide insights, tutorials, and guidance to help individuals achieve their goals.</p>
             </div>
 
-           
-            <div class="footer-section">
-                <h3>Quick Links</h3>
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h3 id="quick-links-title">QUICK LINKS</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#quiz">Quiz</a></li>
-                    <li><a href="#contribute">Contribute</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="index.html#categoriess">Categories</a></li>
                 </ul>
             </div>
 
-            
-            <div class="footer-section">
-                <h3>Follow Us</h3>
+            <!-- Customer Support Column -->
+            <div class="footer-column">
+                <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>
+                <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a></p>
+                <p><strong> Phone : </strong> +91 62XXX XXXXX</p>
+                <p><strong> Address : </strong> University Institute Of Technology,
+                    The University of Burdwan,
+                    Golapbag (North), Burdwan-713104,
+                    West Bengal.</p>
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="footer-row">
+            <!-- Social Media Column -->
+            <div class="footer-column social-media">
+                <h3 id="follow-us-title">FOLLOW US</h3>
                 <div class="social-icons">
-                    <a href="https://github.com/HackerZGuide" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://discord.gg/hackerzguide" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
-                    <a href="https://twitter.com/HackerZGuide" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com/company/hackerzguide" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-
             
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>Email us for support:</p>
-                <a href="mailto:support@hackerzguide.com" class="contact-email">support@hackerzguide.com</a>
+
+            <!-- Language Selector Column -->
+            <div class="footer-column">
+                <h3>Language</h3>
+                <select id="language-selector" title="Select Language" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                </select>
             </div>
 
-            
-            <div class="footer-section">
-                <h3>Subscribe to Our Newsletter</h3>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
+            <!-- Newsletter Subscription Column -->
+            <div class="footer-column">
+                <h3 id="newsletter-title">NEWSLETTER</h3>
+                <p id="subscribe-text">Subscribe to get the latest updates and exclusive content.</p>
+                <input type="email" id="newsletter-email" placeholder="Enter your email">
+                <button onclick="subscribeNewsletter()">Subscribe</button>
             </div>
         </div>
 
-        
-        <div class="footer-credits">
-            <p>© 2025 HackerZGuide. Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT</a>.</p>
-            <p>Made with ❤ by the HackerZGuide Community.</p>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
+    </div>
+</footer>
+
+
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<!-- Chatbot Button -->
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+    <i class="fas fa-comment-alt"></i>
+</button>
+
+<!-- Chatbot Window -->
+<div id="chatbot-window">
+    <div class="chatbot-header">
+        <h3>HackerZGuide Chatbot</h3>
+        <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+    </div>
+    <div class="chatbot-body">
+        <!-- Categories Section -->
+        <div id="chatbot-categories"></div>
+        <!-- Questions Section -->
+        <div id="chatbot-questions"></div>
+        <!-- Answers Section -->
+        <div id="chatbot-messages">
+            <p class="bot-msg">Hi! How can I assist you today?</p>
         </div>
+        <!-- Input & Buttons -->
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Ask me something...">
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
+    </div>
+</div>
 
-        
-        <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-    </footer>
 
-    <script src="quizscript.js"></script>
+
+
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+

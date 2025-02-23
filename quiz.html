@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HackeRZGuide - Weekly Quiz Guide">
+    <title>HackeRZGuide - Weekly Quiz Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="quizstyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">HackeRZGuide</a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#categories" class="dropdown-toggle">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#hacking">Hacking</a></li>
+                            <li><a href="#coding">Coding</a></li>
+                            <li><a href="#tech">Tech Trends</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contribute">Contribute</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>⚡ Welcome to the HackerZGuide Quiz! ⚡</h1>
+        <p>Challenge your mind, earn rewards, and show off your skills!</p>
+        <button id="startQuiz">Start Quiz</button>
+        <div class="quiz-info">
+            <h2>Quiz Details</h2>
+            <p>⏳ Duration: 3 minutes</p>
+            <p>📋 Questions: 3</p>
+            <p>💡 Difficulty: Easy</p>
+        </div>
+    </div>
+
+    <div id="quizContainer" class="hidden">
+        <div class="timer-container">
+            <h2>Time Remaining: <span id="timeRemaining">3:00</span></h2>
+        </div>
+        <div id="questionSection">
+            <h2 id="questionTitle" aria-live="polite">Question Title</h2>
+            <p id="questionText"></p>
+            <div id="answerOptions"></div>
+        </div>
+        <div id="progressTracker">
+            <div id="progressBar"></div>
+        </div>
+        <button id="submitQuiz" class="btn hidden">Submit Quiz</button>
+    </div>
+
+    <section id="resultSection" class="hidden">
+        <h2>🎉 Your Results 🎉</h2>
+        <p id="scoreDisplay"></p>
+
+        <!-- Performance Feedback -->
+        <div id="performanceFeedback">
+            <h3>Performance Feedback:</h3>
+            <p id="feedbackMessage"></p>
+            <div id="performanceChart">
+                <canvas id="performanceCanvas"></canvas>
+            </div>
+        </div>
+
+        <!-- Review Answers -->
+        <div id="reviewAnswers">
+            <h3>Review Your Answers:</h3>
+            <ul id="answerReview"></ul>
+        </div>
+
+        <!-- Leaderboard -->
+        <div id="leaderboard">
+            <h3>📊 Leaderboard</h3>
+            <div id="leaderboardFilter">
+                <label for="filterLeaderboard">Filter by:</label>
+                <select id="filterLeaderboard">
+                    <option value="all">All Time</option>
+                    <option value="today">Today</option>
+                    <option value="week">This Week</option>
+                    <option value="month">This Month</option>
+                </select>
+            </div>
+            <ul id="leaderboardList"></ul>
+            <form id="submitScoreForm">
+                <label for="username">Enter Your Name: </label>
+                <input type="text" id="username" required>
+                <button type="submit" class="btn">Submit Name</button>
+            </form>
+        </div>
+
+        <!-- Social Share -->
+        <div id="socialShare" class="hidden">
+            <h3>📢 Share Your Score!</h3>
+            <div class="social-icons">
+                <a id="shareFacebook" class="social-icon" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+                <a id="shareTwitter" class="social-icon" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                <a id="shareWhatsApp" class="social-icon" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a id="shareLinkedIn" class="social-icon" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a id="shareInstagram" class="social-icon" title="Share on Instagram"><i class="fab fa-instagram"></i></a>
+                <a id="shareGitHub" class="social-icon" title="Share on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <div id="copyLink">
+                <label for="shareableLink" class="visually-hidden">Shareable Link</label>
+                <input type="text" id="shareableLink" placeholder="Shareable Link" readonly>
+                <button id="copyLinkButton" class="btn">Copy Link</button>
+            </div>
+        </div>
+
+        <div id="feedbackSection" class="hidden">
+            <h3>Thank you for submitting your score!</h3>
+            <button id="restartQuiz" class="btn">Restart Quiz</button>
+            <button id="viewLeaderboard" class="btn">View Leaderboard</button>
+        </div>
+
+        <div id="achievementsSection">
+            <h3>🏆 Achievements Unlocked</h3>
+            <div id="achievementsList"></div>
+        </div>
+
+        
+        <div id="progressTracker">
+            <h3>📈 Your Progress</h3>
+            <div id="progressBarContainer">
+                <div id="progressBarFill"></div>
+            </div>
+            <p id="progressText">0% Complete</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-section">
+                <h3>About HackerZGuide</h3>
+                <p>HackerZGuide is your ultimate resource for cybersecurity knowledge, tools, and community-driven learning. Join us to explore, learn, and contribute to the world of ethical hacking.</p>
+            </div>
+
+           
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                    <li><a href="#contribute">Contribute</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://github.com/HackerZGuide" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.gg/hackerzguide" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="https://twitter.com/HackerZGuide" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com/company/hackerzguide" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email us for support:</p>
+                <a href="mailto:support@hackerzguide.com" class="contact-email">support@hackerzguide.com</a>
+            </div>
+
+            
+            <div class="footer-section">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        
+        <div class="footer-credits">
+            <p>© 2025 HackerZGuide. Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT</a>.</p>
+            <p>Made with ❤ by the HackerZGuide Community.</p>
+        </div>
+
+        
+        <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    </footer>
+
+    <script src="quizscript.js"></script>
+</body>
+</html>

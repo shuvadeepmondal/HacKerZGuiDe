@@ -6,6 +6,8 @@
     <meta name="description" content="HackeRZGuide - Your go-to resource for hacking, coding, and tech guides.">
     <title>HackeRZGuide - Futuristic Tech Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -28,7 +30,7 @@
                         </ul>
                     </li>
                     <li><a href="#resources">Resources</a></li>
-                    <li><a href="#quiz">Quiz</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contribute">Contribute</a></li>
                 </ul>
@@ -53,10 +55,35 @@
              </div>
          </section> 
     
-        <section id="about" class="content-section fade-in">
-            <h2 class="section-title">About Us</h2>
-            <p class="about-text">HackeRZGuide is your go-to hub for mastering ethical hacking, programming, and exploring cutting-edge technologies. Our comprehensive guides are designed to empower enthusiasts of all levels with the skills they need to excel in the ever-evolving tech world.</p>
-        </section>
+         <section id="about">
+          <div class="about-container">
+              <h1>About Us</h1>
+              <div class="about-content">
+                  <p>
+                      <strong>HackerZGuide</strong> is a platform designed to guide individuals toward achieving their future goals. 
+                      Our mission is to empower users by providing valuable insights, resources, and strategies that help them 
+                      navigate challenges, develop skills, and unlock their full potential for personal and professional success.
+                  </p>
+                  <h2>Our Mission</h2>
+                  <p>
+                      To inspire and enable individuals to achieve their goals by equipping them with the tools, knowledge, 
+                      and guidance they need to excel in their journeys.
+                  </p>
+                  <h2>Our Vision</h2>
+                  <p>
+                      To be the go-to platform for goal-oriented individuals, fostering a community of learners, innovators, 
+                      and achievers who are committed to personal and professional growth.
+                  </p>
+                  <h2>Our Purpose</h2>
+                  <p>
+                      At HackerZGuide, we believe in creating a supportive environment where users can discover their 
+                      strengths, overcome challenges, and achieve success on their terms.
+                  </p>
+              </div>
+          </div>
+      </section>
+  
+
 
         
         <section id="guides" class="content-section fade-in">
@@ -89,15 +116,65 @@
        
     </main>
 
-    
-    <footer>
-        <p>&copy; 2025 HackeRZGuide. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="#" class="icon facebook" aria-label="Facebook"></a>
-            <a href="#" class="icon twitter" aria-label="Twitter"></a>
-            <a href="#" class="icon linkedin" aria-label="LinkedIn"></a>
-            <a href="#" class="icon github" aria-label="GitHub"></a>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section">
+          <h3>About HackerZGuide</h3>
+          <p>HackerZGuide is your ultimate resource for cybersecurity knowledge, tools, and community-driven learning. Join us to explore, learn, and contribute to the world of ethical hacking.</p>
         </div>
+    
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#contribute">Contribute</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </div>
+    
+        <!-- Social Media Section -->
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://github.com/HackerZGuide" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/hackerzguide" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://twitter.com/HackerZGuide" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/company/hackerzguide" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+    
+        <!-- Contact Info Section -->
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p>Email us for support:</p>
+          <a href="mailto:support@hackerzguide.com" class="contact-email">support@hackerzguide.com</a>
+        </div>
+    
+        <!-- Newsletter Section -->
+        <div class="footer-section">
+          <h3>Subscribe to Our Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    
+      <!-- Credits Section -->
+      <div class="footer-credits">
+        <p>© 2025 HackerZGuide. Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT</a>.</p>
+        <p>Made with ❤️ by the HackerZGuide Community.</p>
+      </div>
+    
+      <!-- Back to Top Button -->
+      <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     </footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>

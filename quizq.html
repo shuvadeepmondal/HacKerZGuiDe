@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HackeRZGuide - Your go-to resource for hacking, coding, and tech guides.">
-    <title>HackeRZGuide - Futuristic Tech Hub</title>
+    <title>Cyber Quiz</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
-
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="quizq.css">
+    <script defer src="quizq.js"></script>
 </head>
 <body>
     <header>
@@ -66,118 +63,43 @@
         </nav>
     </header>
 
+    <header class="site-header">
+        <h1>⚡ Start the Quiz ⚡</h1>
+    </header>
 
-    <main>
-        
-        <section class="hero">
-            <h1>Welcome to HackeRZGuide </h1>
-             <p>"Hack it, Crack it, Master it"</p>
-             <div class="button">
-                 <a href="resourece.html" class="Explore">Explore Resource</a>
-                 <a href="resourece.html" class="Contribute">Contribute now</a>
-             </div>
-         </section> 
-    
-         <section id="about">
-          <div class="about-container">
-              <h1>About Us</h1>
-              <div class="about-content">
-                  <p>
-                      <strong>HackerZGuide</strong> is a platform designed to guide individuals toward achieving their future goals. 
-                      Our mission is to empower users by providing valuable insights, resources, and strategies that help them 
-                      navigate challenges, develop skills, and unlock their full potential for personal and professional success.
-                  </p>
-                  <h2>Our Mission</h2>
-                  <p>
-                      To inspire and enable individuals to achieve their goals by equipping them with the tools, knowledge, 
-                      and guidance they need to excel in their journeys.
-                  </p>
-                  <h2>Our Vision</h2>
-                  <p>
-                      To be the go-to platform for goal-oriented individuals, fostering a community of learners, innovators, 
-                      and achievers who are committed to personal and professional growth.
-                  </p>
-                  <h2>Our Purpose</h2>
-                  <p>
-                      At HackerZGuide, we believe in creating a supportive environment where users can discover their 
-                      strengths, overcome challenges, and achieve success on their terms.
-                  </p>
-              </div>
-          </div>
-      </section>
-  
-
-    <!-- ✅ Testimonial Section -->
-    <section class="testimonial-section">
-        <h2>🚀 What Hackers Say About Us 🚀</h2>
-        <div class="carousel">
-            <button class="prev-btn">⫷</button>
-            <div class="testimonial-container">
-                <div class="testimonial-card active">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/kunal_kundwani.png" alt="Ravi Shankar" class="avatar">
-                    <p class="testimonial-text">"HackerzGuide is a goldmine of hacking knowledge! The tutorials are top-notch and cyberpunk-styled UI is just sick!"</p>
-                    <h3 class="author">Alex Cyber</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/arfaatk.png" alt="Sreham Hazra" class="avatar">
-                    <p class="testimonial-text">"The best ethical hacking resource I've ever used. The lessons are structured beautifully!"</p>
-                    <h3 class="author">Sreham Hazra</h3>
-                    <div class="rating" data-stars="4"></div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/Japit.png" alt="Neha Gupta" class="avatar">
-                    <p class="testimonial-text">"Learned so much about penetration testing. The dark cyberpunk theme keeps me engaged!"</p>
-                    <h3 class="author">Neha Gupta</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/Ayush.png" alt="Vikram Singh" class="avatar">
-                    <p class="testimonial-text">"The tutorials are top-notch. The lessons are structured Perfectly!"</p>
-                    <h3 class="author">Vikram Singh</h3>
-                    <div class="rating" data-stars="4"></div>
-                </div>
-            </div>
-            <button class="next-btn">⫸</button>
+    <section class="quiz-container">
+        <!-- User Info & Timer -->
+        <div class="quiz-header">
+            <p id="username-display">Player: <span id="username"></span></p>
+            <div class="timer">⏳ Time Taken: <span id="countdown">0:00</span></div>
         </div>
-    </section>
 
-    <section class="feature-guide">
-        <h2 class="section-title">
-            🚀 <span>Feature Guide</span> 🚀
-        </h2>
-        <div class="feature-container">
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/1000x1000/84/94/sophisticated-digital-information-security-vector-21248494.webp" alt="Feature 1">
-                <h3>Advanced Security</h3>
-                <p>Stay ahead with our top-notch cybersecurity solutions.</p>
-            </div>
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/2000v/93/81/futuristic-cyber-security-vector-50379381.avif" alt="Feature 2">
-                <h3>Anonymous Browsing</h3>
-                <p>Browse the web without leaving a trace.</p>
-            </div>
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/2000v/82/46/ai-healthcare-security-concept-with-glowing-vector-54938246.avif" alt="Feature 3">
-                <h3>AI-Powered Protection</h3>
-                <p>Leverage AI to detect and prevent cyber threats.</p>
-            </div>
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <progress id="progress-bar" value="0" max="10"></progress>
+            <p>Question <span id="question-number">1</span> / 10</p>
         </div>
-    </section>
 
-        
-        <section id="contact" class="content-section fade-in">
-            <h2 class="section-title">Contact Us</h2>
-            <p class="contact-text">We’d love to hear your questions, suggestions, or feedback. Get in touch anytime!</p>
-            <div class="button-container">
-                <a href="mailto:info@hackerzguide.com" class="cta-button">Get in Touch</a>
-            </div>
-        </section>
-       
-       
-    </main>
+        <!-- Question Area -->
+        <div class="question-container">
+            <h2 id="question-text">Loading question...</h2>
+            <ul class="answer-options">
+                <li><button class="option" data-index="0">Option 1</button></li>
+                <li><button class="option" data-index="1">Option 2</button></li>
+                <li><button class="option" data-index="2">Option 3</button></li>
+                <li><button class="option" data-index="3">Option 4</button></li>
+            </ul>
+        </div>
 
-     <!-- Footer -->
+        <!-- 🔹 Navigation & Submission -->
+<div class="quiz-controls">
+    <button id="prev-button" disabled>⬅️ Previous</button>
+    <button id="next-button">Next ➡️</button>
+    <button id="submit-button" onclick="submitQuiz()">Submit Quiz</button>
+</div>
+</section>
+
+ 
      <!-- Footer Section -->
      <footer>
         <div class="footer-container">
@@ -199,7 +121,7 @@
                         <li><a href="resources.html">Resources</a></li>
                         <li><a href="quiz.html">Quiz</a></li>
                         <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="#categoriess">Categories</a></li>
+                        <li><a href="index.html#categoriess">Categories</a></li>
                     </ul>
                 </div>
 
@@ -258,7 +180,7 @@
             <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
         </div>
     </footer>
-
+    
  <!-- Back to Top Button -->
  <button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
     <i class="fas fa-arrow-up"></i>
@@ -294,7 +216,10 @@
     </div>
 </div>
 </div>
-
-
 </body>
 </html>
+
+
+
+
+

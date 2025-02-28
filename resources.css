@@ -231,7 +231,8 @@ p {
 margin-bottom: 10px;
 }
 a:-webkit-any-link {
-cursor: pointer;
+color: greenyellow;
+cursor: pointer;   
 text-decoration: none;
 }
 html {
@@ -275,6 +276,14 @@ font-size: 2rem;
 color: #00a6ff;
 text-shadow: 0px 0px 10px #00a6ff;
 }
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    }
+    .image-container:hover img {
+    filter: blur(3px) brightness(60%);
+    }
 .image-container img {
 width: 100%;
 height: 200px;
@@ -302,19 +311,6 @@ transition: 0.3s ease-in-out;
 box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
 transform: scale(1.05);
 }
-.image-container {
-position: relative;
-overflow: hidden;
-border-radius: 10px;
-}
-.image-container img {
-width: 100%;
-border-radius: 10px;
-transition: 0.3s ease-in-out;
-}
-.image-container:hover img {
-filter: blur(3px) brightness(60%);
-}
 .hover-info {
 position: absolute;
 top: 50%;
@@ -332,25 +328,7 @@ text-align: center;
 .image-container:hover .hover-info {
 opacity: 1;
 }
-.button {
-display: inline-block;
-padding: 12px 20px;
-background: #ff0077;
-color: white;
-font-weight: bold;
-text-transform: uppercase;
-border: 2px solid #ff0077;
-border-radius: 5px;
-transition: 0.3s;
-box-shadow: 0px 0px 10px rgba(255, 0, 119, 0.5);
-text-decoration: none;
-}
-.button:hover {
-background: #00a6ff;
-border-color: #00a6ff;
-box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
-transform: scale(1.1);
-}
+    
 @keyframes fadeIn {
 from {
 opacity: 0;
@@ -479,25 +457,6 @@ color: #00a6ff;
 text-shadow: 0px 0px 10px #00a6ff;
 margin-bottom: 10px;
 }
-.button {
-display: inline-block;
-padding: 12px 20px;
-background: #ff0077;
-color: white;
-font-weight: bold;
-text-transform: uppercase;
-border: 2px solid #ff0077;
-border-radius: 5px;
-transition: 0.3s;
-box-shadow: 0px 0px 10px rgba(255, 0, 119, 0.5);
-}
-.button:hover {
-background: #00a6ff;
-border-color: #00a6ff;
-box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
-transform: scale(1.1);
-}
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 html, body {
 background: #0a0a0a;
@@ -666,23 +625,7 @@ transition: 0.3s ease-in-out;
 .blog-card .image-container:hover img {
 filter: blur(3px) brightness(60%);
 }
-.hover-info {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background: rgba(0, 0, 0, 0.8);
-color: #00ff99;
-padding: 10px;
-border-radius: 5px;
-opacity: 0;
-transition: opacity 0.3s ease-in-out;
-width: 80%;
-text-align: center;
-}
-.image-container:hover .hover-info {
-opacity: 1;
-}
+
 @keyframes fadeIn {
 from {
 opacity: 0;
@@ -1087,10 +1030,7 @@ text-transform: uppercase;
 letter-spacing: 1px;
 border-top: 1px solid #40ff00;
 }
-a:-webkit-any-link {
-color: greenyellow;
-cursor: pointer;
-}
+
 @media screen and (max-width: 1024px) {
 .footer-row {
 flex-direction: column;

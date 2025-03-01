@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Computing</title>
+    <link rel="stylesheet" href="cc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="cc.js"></script></head>
+<body>
+    <header>
+        <nav class="navbar">
+            
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                ☰
+            </div>
+            
+            <div class="logo">
+                <a href="index.html">HackeRZGuide</a>
+            </div>
+            
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="right-section">
+                <button class="contribute-btn" onclick="window.location.href='#contribute'">Contribute</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                </div>
+            </div>
+            
+<div class="mobile-nav" id="mobileNav">
+    
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resource.html">Resources</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="mobile-right-section">
+        <button class="contribute-btn" onclick="window.location.href='resource.html'">Contribute</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+
+    
+    <header class="category-header cloud">
+        <h1>Cloud Computing</h1>
+        <p>Explore cloud services, virtualization, security, DevOps, and future cloud trends.</p>
+    </header>
+
+    
+    <section class="introduction">
+        <img src="cloud-computing-intro.jpg" alt="Cloud Computing">
+        <h2>What is Cloud Computing?</h2>
+        <p>Cloud Computing enables access to computing resources like servers, storage, and databases over the internet without requiring direct infrastructure management.</p>
+        <ul>
+            <li><strong><b>Infrastructure as a Service (IaaS):</b></strong> Virtual machines and cloud storage.</li>
+            <li><strong><b>Platform as a Service (PaaS):</b></strong> Cloud platforms for application development.</li>
+            <li><strong><b>Software as a Service (SaaS):</b></strong> Cloud-based applications for end users.</li>
+        </ul>
+        <p>Cloud computing enhances scalability, security, and cost-efficiency for businesses and developers.</p>
+    </section>
+
+    <section class="cloud-types">
+        <h2>Types of Cloud Computing</h2>
+        <p>Cloud computing services are classified into various models:</p>
+        <ul>
+            <li><strong><b>Infrastructure as a Service (IaaS):</b></strong><i> Cloud-based virtual machines, storage, and networking.</i></li>
+            <li><strong><b>Platform as a Service (PaaS):</b></strong><i> Cloud platforms for software development and deployment.</i></li>
+            <li><strong><b>Software as a Service (SaaS):</b></strong><i> Cloud-hosted applications like Gmail and Dropbox.</i></li>
+            <li><strong><b>Hybrid Cloud:</b></strong><i> A mix of private and public cloud environments.</i></li>
+            <li><strong><b>Edge Computing:</b></strong><i> Processing data closer to users for faster performance.</i></li>
+        </ul>
+    </section>
+    
+    <section class="cloud-process">
+        <h2>The Cloud Computing Process</h2>
+        <p>Implementing cloud computing follows structured steps:</p>
+        <ol>
+            <li><strong><b>Assessment & Planning:</b></strong><i> Identifying business needs and selecting a cloud strategy.</i></li>
+            <li><strong><b>Cloud Architecture Design:</b></strong><i> Setting up virtual machines, networks, and databases.</i></li>
+            <li><strong><b>Migration:</b></strong><i> Transferring applications and data to cloud platforms.</i></li>
+            <li><strong><b>Deployment & Optimization:</b></strong><i> Configuring and fine-tuning cloud performance.</i></li>
+            <li><strong><b>Security & Compliance:</b></strong><i> Ensuring data protection and regulatory compliance.</i></li>
+        </ol>
+    </section>
+    
+
+    
+    <section class="history">
+        <h2>History of Cloud Computing</h2>
+        <p>The evolution of cloud computing has revolutionized how data and applications are stored and managed. Below is a timeline highlighting key milestones.</p>
+        <div class="timeline">
+            <div class="timeline-line"></div> 
+            
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>1. Early Concepts (1960s - 1990s)</h3>
+                    <h2>Origins of Virtualization & Networking</h2>
+                    <p>John McCarthy proposed the idea of utility computing in the 1960s. In the 1990s, virtualization and distributed computing laid the foundation for cloud technology.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2. The Rise of Internet & Hosting (1990s - Early 2000s)</h3>
+                    <h2>Web Hosting & Virtual Private Networks (VPNs)</h2>
+                    <p>With the internet's growth, companies began offering shared hosting and VPNs, providing early forms of cloud services.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>3. The Birth of Cloud Computing (2006 - 2010)</h3>
+                    <h2>Amazon Web Services (AWS) & SaaS Expansion</h2>
+                    <p>Amazon launched AWS in 2006, introducing cloud-based storage and computing. Google and Microsoft followed with cloud platforms.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>4. Cloud Adoption Boom (2010s)</h3>
+                    <h2>Hybrid Cloud & Enterprise Solutions</h2>
+                    <p>Companies adopted cloud computing at scale, integrating hybrid cloud models and AI-driven cloud solutions.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>5. Serverless Computing & Edge Computing (2015 - Present)</h3>
+                    <h2>Cloud Becomes Mainstream</h2>
+                    <p>Serverless platforms like AWS Lambda and edge computing improved performance, reducing dependency on centralized data centers.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>6. The Future - AI & Decentralized Cloud</h3>
+                    <h2>AI-Powered & Blockchain-Based Cloud Computing</h2>
+                    <p>Artificial Intelligence enhances cloud automation, while blockchain introduces decentralized storage and computing models.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <section class="applications">
+        <h2>Applications of Cloud Computing</h2>
+        <ul class="visible-list">
+            <li>Cloud Storage - Services like Google Drive and Dropbox.</li>
+            <li>Cloud Hosting - Hosting websites and applications on platforms like AWS and Azure.</li>
+            <li>Big Data Analytics - Processing large datasets using cloud computing.</li>
+            <li>AI & Machine Learning - Running AI models on cloud infrastructure.</li>
+            <li>IoT - Managing connected devices using cloud platforms.</li>
+        </ul>
+        <button class="read-more-btn2"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay2">
+        <div class="popup-content2">
+            <h2>Complete List of Applications of Cloud Computing</h2>
+            <div class="scrollable-content2">
+                <ul class="full-list2">
+                    <li>Cloud Storage - Services like Google Drive, OneDrive, and Dropbox.</li>
+                    <li>Cloud Hosting - Hosting websites and applications using AWS, Azure, and Google Cloud.</li>
+                    <li>Big Data Analytics - Processing large-scale data using cloud-based tools.</li>
+                    <li>AI & Machine Learning - Running deep learning models and AI applications on the cloud.</li>
+                    <li>IoT - Managing connected devices through cloud infrastructure.</li>
+                    <li>Software as a Service (SaaS) - Cloud-hosted applications like Gmail, Slack, and Zoom.</li>
+                    <li>Platform as a Service (PaaS) - Development environments like Google App Engine.</li>
+                    <li>Infrastructure as a Service (IaaS) - Virtual machines and cloud networks.</li>
+                    <li>Disaster Recovery & Backup - Storing backup data securely in the cloud.</li>
+                    <li>Cloud Gaming - Services like Google Stadia and NVIDIA GeForce Now.</li>
+                    <li>Enterprise Cloud Solutions - Cloud-based ERP and CRM systems like Salesforce.</li>
+                    <li>Healthcare & Telemedicine - Cloud-based patient data storage and telehealth services.</li>
+                    <li>Streaming Services - Video and music streaming platforms like Netflix and Spotify.</li>
+                    <li>Cybersecurity & Compliance - Cloud-based security solutions and encryption services.</li>
+                    <li>Collaboration Tools - Cloud-powered workspaces like Microsoft 365 and Google Workspace.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <section class="content">
+        <h2>Cloud Computing Topics</h2>
+        <div class="cloud-topics">
+            <div class="topic-card">
+                <h3>Cloud Service Models</h3>
+                <p>Learn about IaaS, PaaS, and SaaS and their use cases.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Cloud Providers</h3>
+                <p>Explore AWS, Microsoft Azure, Google Cloud, and other platforms.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Cloud Security</h3>
+                <p>Understand encryption, compliance, and threat prevention in cloud environments.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Virtualization & Containers</h3>
+                <p>Learn about Docker, Kubernetes, and virtual machines.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="cloud-technologies">
+        <h2>Cloud Computing Technologies & Tools</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>AWS</td><td>Cloud Platform</td><td>IaaS/PaaS</td><td>Hosting and managing cloud services</td></tr>
+                <tr><td>Google Cloud</td><td>Cloud Platform</td><td>IaaS/PaaS</td><td>Cloud computing and storage solutions</td></tr>
+                <tr><td>Microsoft Azure</td><td>Cloud Platform</td><td>IaaS/PaaS</td><td>Enterprise cloud services and hosting</td></tr>
+                <tr><td>Docker</td><td>DevOps</td><td>Containerization</td><td>Deploying applications in isolated environments</td></tr>
+                <tr><td>Kubernetes</td><td>DevOps</td><td>Orchestration</td><td>Managing containerized applications</td></tr>
+            </tbody>
+        </table>
+        <button class="read-more-btn"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2>Full List of Cloud Computing Technologies</h2>
+            <div class="scrollable-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>AWS</td><td>Cloud Platform</td><td>IaaS/PaaS</td><td>Hosting and managing cloud services</td></tr>
+                    <tr><td>Google Cloud</td><td>Cloud Platform</td><td>IaaS/PaaS</td><td>Cloud computing and storage solutions</td></tr>
+                    <tr><td>Microsoft Azure</td><td>Cloud Platform</td><td>IaaS/PaaS</td><td>Enterprise cloud services and hosting</td></tr>
+                    <tr><td>IBM Cloud</td><td>Cloud Platform</td><td>IaaS/PaaS</td><td>Hybrid cloud and AI services</td></tr>
+                    <tr><td>Oracle Cloud</td><td>Cloud Platform</td><td>IaaS/PaaS</td><td>Cloud solutions for enterprises</td></tr>
+                    <tr><td>Docker</td><td>DevOps</td><td>Containerization</td><td>Deploying applications in isolated environments</td></tr>
+                    <tr><td>Kubernetes</td><td>DevOps</td><td>Orchestration</td><td>Managing containerized applications</td></tr>
+                    <tr><td>Terraform</td><td>Infrastructure as Code</td><td>Automation</td><td>Managing cloud infrastructure</td></tr>
+                    <tr><td>OpenStack</td><td>Cloud Platform</td><td>IaaS</td><td>Open-source cloud infrastructure</td></tr>
+                    <tr><td>Apache CloudStack</td><td>Cloud Platform</td><td>IaaS</td><td>Managing cloud services</td></tr>
+                    <tr><td>VMware vSphere</td><td>Virtualization</td><td>Hypervisor</td><td>Managing virtual machines</td></tr>
+                    <tr><td>Red Hat OpenShift</td><td>DevOps</td><td>Container Platform</td><td>Enterprise Kubernetes-based PaaS</td></tr>
+                    <tr><td>Google Kubernetes Engine (GKE)</td><td>DevOps</td><td>Orchestration</td><td>Managing container workloads</td></tr>
+                    <tr><td>Cloudflare</td><td>Security</td><td>CDN & Protection</td><td>Enhancing security and performance</td></tr>
+                    <tr><td>Azure DevOps</td><td>DevOps</td><td>CI/CD</td><td>Automating cloud deployments</td></tr>
+                    <tr><td>Jenkins</td><td>DevOps</td><td>CI/CD</td><td>Continuous integration and deployment</td></tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="challenges">
+        <h2>Challenges in Cloud Computing</h2>
+        <p>Cloud computing presents several challenges for businesses and developers, including:</p>
+        <ul class="visible-list">
+            <li><strong>Security & Privacy:</strong> Protecting sensitive data from cyber threats and unauthorized access.</li>
+            <li><strong>Downtime & Reliability:</strong> Ensuring consistent uptime and minimizing service disruptions.</li>
+            <li><strong>Compliance & Legal Issues:</strong> Adhering to regulations like GDPR, HIPAA, and SOC 2.</li>
+            <li><strong>Performance Optimization:</strong> Managing latency and optimizing cloud-based applications.</li>
+            <li><strong>Cost Management:</strong> Controlling expenses related to cloud storage, computing, and networking.</li>
+        </ul>
+        <button class="read-more-btn1"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay1">
+        <div class="popup-content1">
+            <h2>Complete List of Cloud Computing Challenges</h2>
+            <div class="scrollable-content1">
+                <ul class="full-list1">
+                    <li><strong>Security & Privacy:</strong> Protecting sensitive data from cyber threats and unauthorized access.</li>
+                    <li><strong>Downtime & Reliability:</strong> Ensuring consistent uptime and minimizing service disruptions.</li>
+                    <li><strong>Compliance & Legal Issues:</strong> Adhering to regulations like GDPR, HIPAA, and SOC 2.</li>
+                    <li><strong>Performance Optimization:</strong> Managing latency and optimizing cloud-based applications.</li>
+                    <li><strong>Cost Management:</strong> Controlling expenses related to cloud storage, computing, and networking.</li>
+                    <li><strong>Data Migration Complexity:</strong> Moving large datasets between cloud providers efficiently.</li>
+                    <li><strong>Vendor Lock-in:</strong> Avoiding dependency on a single cloud provider’s ecosystem.</li>
+                    <li><strong>Hybrid Cloud Integration:</strong> Ensuring smooth operations between on-premise and cloud systems.</li>
+                    <li><strong>Multi-cloud Strategy:</strong> Managing workloads across multiple cloud providers.</li>
+                    <li><strong>Latency & Bandwidth Issues:</strong> Minimizing network delays for real-time applications.</li>
+                    <li><strong>Resource Allocation:</strong> Efficiently distributing computing resources to avoid wastage.</li>
+                    <li><strong>Data Loss & Backup:</strong> Preventing accidental deletion or corruption of cloud data.</li>
+                    <li><strong>Scalability Challenges:</strong> Managing dynamic resource allocation during high demand.</li>
+                    <li><strong>Monitoring & Logging:</strong> Tracking cloud usage and troubleshooting performance issues.</li>
+                    <li><strong>Automation & Orchestration:</strong> Streamlining cloud operations with automated workflows.</li>
+                    <li><strong>Edge Computing Integration:</strong> Combining cloud services with edge devices for faster processing.</li>
+                    <li><strong>Identity & Access Management (IAM):</strong> Controlling user permissions securely.</li>
+                    <li><strong>Artificial Intelligence in Cloud:</strong> Optimizing AI-powered services in cloud environments.</li>
+                    <li><strong>Serverless Computing Challenges:</strong> Managing execution limits and function cold starts.</li>
+                    <li><strong>Environment Sustainability:</strong> Reducing the carbon footprint of cloud data centers.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="future">
+        <h2>Future Trends in Cloud Computing</h2>
+        <p>Cloud computing continues to evolve with emerging technologies such as:</p>
+        <ul>
+            <li><strong>Edge Computing:</strong> Processing data closer to users for faster performance and reduced latency.</li>
+            <li><strong>AI and Machine Learning Integration:</strong> Enhancing cloud services with intelligent automation and analytics.</li>
+            <li><strong>Multi-Cloud Strategies:</strong> Using multiple cloud providers to optimize performance and reliability.</li>
+            <li><strong>Quantum Computing:</strong> Leveraging quantum technology for advanced computing power in cloud environments.</li>
+            <li><strong>Serverless Architecture:</strong> Running applications without managing servers, improving scalability and efficiency.</li>
+            <li><strong>Zero Trust Security:</strong> Implementing strict authentication and access control for enhanced data protection.</li>
+        </ul>
+    </section>
+    
+
+    <section class="video">
+        <h2>Watch Cloud Computing in Action</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/M988_fsOSWo" title="Cloud Computing Video" allowfullscreen></iframe>
+    </section>
+    <section class="quiz-section">
+        <div class="quiz-content">
+            <h3>Test Your Knowledge about <br> Cloud Computing </h3>
+            <a href="quiz.html"><button class="read-more-btn3">Take the Test</button></a>
+        </div>
+        <div class="cta-content">
+            <h3>Want to become a Expert on<br> Cloud Computing?</h3>
+            <a href="resources.html"><button class="explore-btn">Explore More</button></a>
+        </div>
+    </section>
+    
+    <section class="newsletter">
+        <h2>Subscribe to Cloud Computing Updates</h2>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">What is Cloud Computing? <span class="plus">+</span></h3>
+            <p class="faq-answer">Cloud computing enables access to computing resources over the internet without needing physical infrastructure.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What are the types of cloud computing? <span class="plus">+</span></h3>
+            <p class="faq-answer">The main types are IaaS (Infrastructure as a Service), PaaS (Platform as a Service), and SaaS (Software as a Service).</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What are the benefits of using cloud computing? <span class="plus">+</span></h3>
+            <p class="faq-answer">Cloud computing offers scalability, cost-efficiency, remote accessibility, and enhanced security.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Is cloud computing secure? <span class="plus">+</span></h3>
+            <p class="faq-answer">Yes, cloud providers implement encryption, firewalls, and compliance measures to protect data.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is the difference between public, private, and hybrid clouds? <span class="plus">+</span></h3>
+            <p class="faq-answer">Public clouds are shared, private clouds are dedicated to one organization, and hybrid clouds combine both.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What are some popular cloud service providers? <span class="plus">+</span></h3>
+            <p class="faq-answer">Leading providers include AWS (Amazon Web Services), Google Cloud, Microsoft Azure, and IBM Cloud.</p>
+        </div>
+    </section>
+    
+
+    <section class="container1">
+        <h2 class="main-title">🌌 Explore Futuristic Tech Domains</h2>
+        <p class="subtitle">Discover the cutting-edge fields of technology shaping our future.</p>
+        
+        <div class="domain-grid">
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" alt="Game Development">
+                    <div class="hover-info"><p>Bringing immersive experiences to life through game engines and cutting-edge graphics.</p></div>
+                </div>
+                <h3>Game Development</h3>
+                <a href="gd.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn1.vectorstock.com/i/1000x1000/82/20/website-development-neon-label-vector-26918220.jpg" alt="Web Development">
+                    <div class="hover-info"><p>Building the future of the internet with modern web technologies.</p></div>
+                </div>
+                <h3>Web Development</h3>
+                <a href="wd.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/41/99/app-development-round-colored-outline-vector-23654199.webp" alt="Android Development">
+                    <div class="hover-info"><p>Developing innovative mobile applications for the Android ecosystem with cutting-edge tools.</p></div>
+                </div>
+                <h3>Android Development</h3>
+                <a href="ad.html" class="button1">Know More</a>
+            </div>
+             
+             <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000v/59/38/crct-bg-ai-chip-and-circuit-cntr-lp-bl-vector-51515938.avif" alt="Artificial Intelligence">
+                    <div class="hover-info"><p>AI is revolutionizing industries with deep learning, automation, and robotics.</p></div>
+                </div>
+                <h3>Artificial Intelligence</h3>
+                <a href="ai.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/38/16/cyber-security-glowing-neon-sign-internet-vector-23303816.webp" alt="Cybersecurity">
+                    <div class="hover-info"><p>Securing digital landscapes through ethical hacking, encryption, and AI-powered defenses.</p></div>
+                </div>
+                <h3>Cybersecurity</h3>
+                <a href="cs.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/45/26/cloud-service-security-glowing-neon-sign-internet-vector-23104526.webp" alt="Cloud Computing">
+                    <div class="hover-info"><p>Empowering businesses with scalable, flexible, and secure cloud infrastructure.</p></div>
+                </div>
+                <h3>Cloud Computing</h3>
+                <a href="cc.html" class="button1">Know More</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-row">
+                
+                <div class="footer-column">
+                    <h3 id="about-hackerzguide">ABOUT HACKERZGUIDE</h3>
+                    <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide insights, tutorials, and guidance to help individuals achieve their goals.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="quick-links-title">QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="#categoriess">Categories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>
+                    <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a></p>
+                    <p><strong> Phone : </strong> +91 62XXX XXXXX</p>
+                    <p><strong> Address : </strong> University Institute Of Technology,
+                        The University of Burdwan,
+                        Golapbag (North), Burdwan-713104,
+                        West Bengal.</p>
+                </div>
+            </div>
+            
+            <div class="footer-row">
+                
+                <div class="footer-column social-media">
+                    <h3 id="follow-us-title">FOLLOW US</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Language</h3>
+                    <select id="language-selector" title="Select Language" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                    </select>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="newsletter-title">NEWSLETTER</h3>
+                    <p id="subscribe-text">Subscribe to get the latest updates and exclusive content.</p>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email">
+                    <button onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
+        </div>
+    </footer>
+ 
+ <button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+<i class="fas fa-comment-alt"></i>
+</button>
+
+<div id="chatbot-window">
+<div class="chatbot-header">
+    <h3>HackerZGuide Chatbot</h3>
+    <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+</div>
+<div class="chatbot-body">
+    
+    <div id="chatbot-categories"></div>
+    
+    <div id="chatbot-questions"></div>
+    
+    <div id="chatbot-messages">
+        <p class="bot-msg">Hi! How can I assist you today?</p>
+    </div>
+    
+    <div class="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Ask me something...">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
+            <i class="fas fa-microphone"></i>
+        </button>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Development</title>
+    <link rel="stylesheet" href="gd.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="gd.js"></script></head>
+<body>
+    <header>
+        <nav class="navbar">
+            
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                ☰
+            </div>
+            
+            <div class="logo">
+                <a href="index.html">HackeRZGuide</a>
+            </div>
+            
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="right-section">
+                <button class="contribute-btn" onclick="window.location.href='#contribute'">Contribute</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                </div>
+            </div>
+            
+<div class="mobile-nav" id="mobileNav">
+    
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resource.html">Resources</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="mobile-right-section">
+        <button class="contribute-btn" onclick="window.location.href='resource.html'">Contribute</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+
+    
+    <header class="category-header game-dev">
+        <h1>Game Development</h1>
+        <p>Explore game engines, graphics, AI, physics, and multiplayer systems.</p>
+    </header>
+
+    
+    <section class="introduction">
+        <img src="game-dev-intro.jpg" alt="Game Development">
+        <h2>What is Game Development?</h2>
+        <p>Game development is the process of designing, building, and programming interactive experiences using engines like Unity, Unreal Engine, and Godot. It involves various disciplines, including game design, graphics rendering, AI programming, and physics simulation.</p>
+        <ul>
+            <li><strong><b>Game Design:</b></strong> Creating gameplay mechanics, levels, and storytelling elements.</li>
+            <li><strong><b>Programming:</b></strong> Writing code for game logic, AI, and physics interactions.</li>
+            <li><strong><b>Art & Animation:</b></strong> Designing 2D/3D assets, animations, and special effects.</li>
+        </ul>
+        <p>Modern game development also focuses on optimizing performance, multiplayer networking, and immersive experiences across different platforms, including PC, consoles, and mobile devices.</p>
+    </section>
+    
+    <section class="game-types">
+        <h2>Types of Game Development</h2>
+        <p>Game development is categorized based on platforms, genres, and technology stacks:</p>
+        <ul>
+            <li><strong><b>PC Games:</b></strong><i> Games designed for Windows, macOS, and Linux platforms.</i></li>
+            <li><strong><b>Console Games:</b></strong><i> Games developed for PlayStation, Xbox, and Nintendo consoles.</i></li>
+            <li><strong><b>Mobile Games:</b></strong><i> Games built for Android and iOS devices, including casual and hyper-casual games.</i></li>
+            <li><strong><b>VR/AR Games:</b></strong><i> Immersive experiences using Virtual Reality and Augmented Reality technology.</i></li>
+            <li><strong><b>Browser Games:</b></strong><i> Lightweight games playable on web browsers without installation.</i></li>
+            <li><strong><b>Multiplayer & Online Games:</b></strong><i> Games that connect players over the internet, including MMOs and battle royale games.</i></li>
+            <li><strong><b>Indie Games:</b></strong><i> Small-scale projects developed by independent studios or solo developers.</i></li>
+        </ul>
+    </section>
+    
+    <section class="game-process">
+        <h2>The Game Development Process</h2>
+        <p>Game development involves a structured workflow to ensure functionality and player engagement:</p>
+        <ol>
+            <li><strong><b>Concept & Planning:</b></strong><i> Defining the game idea, story, mechanics, and target audience.</i></li>
+            <li><strong><b>Design & Prototyping:</b></strong><i> Creating wireframes, UI elements, and early prototypes.</i></li>
+            <li><strong><b>Development:</b></strong><i> Writing game logic using engines like Unity, Unreal Engine, and Godot.</i></li>
+            <li><strong><b>Testing & Debugging:</b></strong><i> Identifying bugs, optimizing performance, and refining mechanics.</i></li>
+            <li><strong><b>Launch:</b></strong><i> Releasing the game on platforms like Steam, Play Store, and App Store.</i></li>
+            <li><strong><b>Post-launch & Updates:</b></strong><i> Releasing patches, content updates, and engaging with the community.</i></li>
+        </ol>
+    </section>
+    
+
+    
+    <section class="history">
+        <h2>History of Game Development</h2>
+        <p>The evolution of game development has been marked by groundbreaking innovations. Below is a timeline highlighting key milestones.</p>
+        <div class="timeline">
+            <div class="timeline-line"></div> 
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>1. The Birth of Gaming (1950s - 1970s)</h3>
+                    <h2>Early Arcade & Computer Games</h2>
+                    <p>The first video games emerged with titles like "Spacewar!" (1962) and arcade classics like "Pong" (1972), introducing interactive entertainment.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2. The Rise of Consoles (1980s)</h3>
+                    <h2>Home Gaming Revolution</h2>
+                    <p>The Nintendo Entertainment System (NES) and Sega Master System brought gaming into homes, with legendary titles like Super Mario Bros. and The Legend of Zelda.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>3. 3D Graphics & CD-ROM Era (1990s)</h3>
+                    <h2>Advancements in Graphics & Gameplay</h2>
+                    <p>With the PlayStation and Nintendo 64, 3D gaming became mainstream. Games like "Final Fantasy VII" and "The Legend of Zelda: Ocarina of Time" set new industry standards.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>4. Online Multiplayer & HD Gaming (2000s)</h3>
+                    <h2>The Era of Online & Open-World Games</h2>
+                    <p>With the rise of broadband, online gaming flourished with Xbox Live and MMORPGs like "World of Warcraft." HD graphics and open-world exploration became more prominent.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>5. The Modern Era (2010s - Present)</h3>
+                    <h2>VR, AI, and Cloud Gaming</h2>
+                    <p>Advanced game engines, VR technology, AI-driven NPCs, and cloud gaming services like Google Stadia and Xbox Cloud Gaming revolutionized the industry.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>6. The Future of Gaming</h3>
+                    <h2>Metaverse, AI, and Next-Gen Experiences</h2>
+                    <p>Game development is moving towards AI-driven content generation, blockchain-based economies, and immersive metaverse experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <section class="applications">
+        <h2>Applications of Game Development</h2>
+        <ul class="visible-list">
+            <li>PC Games - Titles designed for Windows, macOS, and Linux.</li>
+            <li>Console Games - Games for PlayStation, Xbox, and Nintendo.</li>
+            <li>Mobile Games - Android and iOS games, including casual and AAA titles.</li>
+            <li>VR & AR Games - Immersive experiences using virtual and augmented reality.</li>
+            <li>Online Multiplayer Games - Competitive and cooperative games played over the internet.</li>
+        </ul>
+        <button class="read-more-btn2"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay2">
+        <div class="popup-content2">
+            <h2>Complete List of Applications of Game Development</h2>
+            <div class="scrollable-content2">
+                <ul class="full-list2">
+                    <li>PC Games - Titles designed for Windows, macOS, and Linux.</li>
+                    <li>Console Games - Games for PlayStation, Xbox, and Nintendo.</li>
+                    <li>Mobile Games - Android and iOS games, including casual and AAA titles.</li>
+                    <li>VR & AR Games - Immersive experiences using virtual and augmented reality.</li>
+                    <li>Online Multiplayer Games - Competitive and cooperative games played over the internet.</li>
+                    <li>Indie Games - Small-scale projects developed by independent creators.</li>
+                    <li>Educational Games - Games designed for learning and skill development.</li>
+                    <li>Serious Games - Simulations used for training in healthcare, military, and corporate environments.</li>
+                    <li>Esports - Competitive gaming with professional tournaments and leagues.</li>
+                    <li>Simulation Games - Games replicating real-world scenarios, such as flight simulators.</li>
+                    <li>Game-Based Marketing - Advergames and interactive brand experiences.</li>
+                    <li>Fitness & Health Games - Motion-based games like Just Dance and Ring Fit Adventure.</li>
+                    <li>Interactive Storytelling - Narrative-driven games that focus on player choices.</li>
+                    <li>Cloud Gaming - Streaming-based gaming platforms like Xbox Cloud Gaming and NVIDIA GeForce Now.</li>
+                    <li>Blockchain & NFT Games - Play-to-earn games utilizing blockchain technology.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <section class="content">
+        <h2>Game Development Topics</h2>
+        <div class="game-topics">
+            <div class="topic-card">
+                <h3>Game Engines</h3>
+                <p>Learn about Unity, Unreal Engine, and Godot for game creation.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Game Programming</h3>
+                <p>Understand C#, C++, and scripting for interactive gameplay.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Game Design & Mechanics</h3>
+                <p>Explore level design, character movement, and game physics.</p>
+            </div>
+            <div class="topic-card">
+                <h3>AI & Animation</h3>
+                <p>Learn how to create NPC behaviors and smooth character animations.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="game-technologies">
+        <h2>Game Development Technologies & Tools</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Unity</td><td>Game Engine</td><td>Development Platform</td><td>Creating 2D and 3D games</td></tr>
+                <tr><td>Unreal Engine</td><td>Game Engine</td><td>Development Platform</td><td>Developing high-quality graphics games</td></tr>
+                <tr><td>Godot</td><td>Game Engine</td><td>Open-Source Platform</td><td>Building 2D and 3D games</td></tr>
+                <tr><td>C#</td><td>Programming Language</td><td>Code Development</td><td>Writing scripts for Unity games</td></tr>
+                <tr><td>C++</td><td>Programming Language</td><td>Code Development</td><td>Used in Unreal Engine and performance-critical applications</td></tr>
+            </tbody>
+        </table>
+        <button class="read-more-btn"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2>Full List of Game Development Technologies</h2>
+            <div class="scrollable-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Unity</td><td>Game Engine</td><td>Development Platform</td><td>Creating 2D and 3D games</td></tr>
+                    <tr><td>Unreal Engine</td><td>Game Engine</td><td>Development Platform</td><td>Developing high-quality graphics games</td></tr>
+                    <tr><td>Godot</td><td>Game Engine</td><td>Open-Source Platform</td><td>Building 2D and 3D games</td></tr>
+                    <tr><td>C#</td><td>Programming Language</td><td>Code Development</td><td>Writing scripts for Unity games</td></tr>
+                    <tr><td>C++</td><td>Programming Language</td><td>Code Development</td><td>Used in Unreal Engine and performance-critical applications</td></tr>
+                    <tr><td>Python</td><td>Programming Language</td><td>Code Development</td><td>Used for AI and game scripting</td></tr>
+                    <tr><td>JavaScript</td><td>Programming Language</td><td>Code Development</td><td>Developing browser-based games</td></tr>
+                    <tr><td>Blender</td><td>3D Modeling</td><td>Graphics Tool</td><td>Creating game assets and animations</td></tr>
+                    <tr><td>Autodesk Maya</td><td>3D Modeling</td><td>Graphics Tool</td><td>Designing characters and environments</td></tr>
+                    <tr><td>Photoshop</td><td>2D Art</td><td>Graphics Tool</td><td>Creating textures, UI, and game graphics</td></tr>
+                    <tr><td>Houdini</td><td>VFX & Animation</td><td>Graphics Tool</td><td>Generating procedural animations and effects</td></tr>
+                    <tr><td>FMOD</td><td>Audio Engine</td><td>Sound Design</td><td>Adding immersive sound effects</td></tr>
+                    <tr><td>Wwise</td><td>Audio Engine</td><td>Sound Design</td><td>Implementing dynamic audio in games</td></tr>
+                    <tr><td>Photon</td><td>Networking</td><td>Multiplayer Framework</td><td>Developing online multiplayer games</td></tr>
+                    <tr><td>Git</td><td>Version Control</td><td>Tool</td><td>Managing game development code</td></tr>
+                    <tr><td>JIRA</td><td>Project Management</td><td>Tool</td><td>Tracking tasks and team collaboration</td></tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="challenges">
+        <h2>Challenges in Game Development</h2>
+        <p>Game developers encounter various technical and creative obstacles, including:</p>
+        <ul class="visible-list">
+            <li><strong>Performance Optimization:</strong> Ensuring smooth gameplay with high FPS and minimal lag.</li>
+            <li><strong>Cross-Platform Compatibility:</strong> Making games work on PC, consoles, and mobile devices.</li>
+            <li><strong>Game Balance:</strong> Maintaining fair gameplay mechanics for all players.</li>
+            <li><strong>AI Development:</strong> Creating realistic and challenging non-player characters (NPCs).</li>
+            <li><strong>Bug Fixing & Debugging:</strong> Identifying and resolving issues that affect gameplay.</li>
+        </ul>
+        <button class="read-more-btn1"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay1">
+        <div class="popup-content1">
+            <h2>Complete List of Game Development Challenges</h2>
+            <div class="scrollable-content1">
+                <ul class="full-list1">
+                    <li><strong>Performance Optimization:</strong> Ensuring smooth gameplay with high FPS and minimal lag.</li>
+                    <li><strong>Cross-Platform Compatibility:</strong> Making games work on PC, consoles, and mobile devices.</li>
+                    <li><strong>Game Balance:</strong> Maintaining fair gameplay mechanics for all players.</li>
+                    <li><strong>AI Development:</strong> Creating realistic and challenging non-player characters (NPCs).</li>
+                    <li><strong>Bug Fixing & Debugging:</strong> Identifying and resolving issues that affect gameplay.</li>
+                    <li><strong>Network & Multiplayer Stability:</strong> Managing latency and preventing cheating in online games.</li>
+                    <li><strong>Asset Optimization:</strong> Reducing file sizes while maintaining high-quality graphics.</li>
+                    <li><strong>Rendering & Graphics:</strong> Developing realistic animations and visual effects.</li>
+                    <li><strong>Memory Management:</strong> Preventing crashes and optimizing resource allocation.</li>
+                    <li><strong>Level Design Complexity:</strong> Balancing aesthetics with functionality in game environments.</li>
+                    <li><strong>Physics Engine Accuracy:</strong> Ensuring realistic in-game physics for movement and interactions.</li>
+                    <li><strong>Sound Design & Music:</strong> Creating immersive audio experiences for players.</li>
+                    <li><strong>Game Monetization:</strong> Balancing in-game purchases and ads without disrupting gameplay.</li>
+                    <li><strong>Legal & Copyright Issues:</strong> Ensuring compliance with licensing and intellectual property laws.</li>
+                    <li><strong>Project Scope & Budget:</strong> Managing resources efficiently to avoid feature creep.</li>
+                    <li><strong>Adapting to New Technologies:</strong> Keeping up with the latest game engines and trends.</li>
+                    <li><strong>VR & AR Development:</strong> Creating engaging and optimized virtual and augmented reality experiences.</li>
+                    <li><strong>Player Retention & Engagement:</strong> Keeping players interested with regular updates and new content.</li>
+                    <li><strong>Cybersecurity in Games:</strong> Preventing hacking, cheating, and data breaches.</li>
+                    <li><strong>Localization & Globalization:</strong> Adapting content for different languages and cultures.</li>
+                    <li><strong>QA & Playtesting:</strong> Conducting extensive testing to refine gameplay experience.</li>
+                    <li><strong>Storytelling & Narrative Design:</strong> Crafting compelling storylines and character development.</li>
+                    <li><strong>UI/UX Challenges:</strong> Designing intuitive interfaces for players of all skill levels.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="future">
+        <h2>Future Trends in Game Development</h2>
+        <p>The gaming industry is evolving rapidly with new technologies shaping the future:</p>
+        <ul>
+            <li><strong>Cloud Gaming:</strong> Streaming high-quality games without requiring powerful hardware.</li>
+            <li><strong>Artificial Intelligence:</strong> AI-driven NPCs, adaptive game mechanics, and realistic behaviors.</li>
+            <li><strong>Blockchain & NFTs:</strong> Decentralized game assets, play-to-earn models, and digital ownership.</li>
+            <li><strong>Virtual Reality & Augmented Reality:</strong> Immersive gaming experiences with VR headsets and AR integration.</li>
+            <li><strong>Cross-Platform Gaming:</strong> Seamless gameplay across PC, console, and mobile devices.</li>
+            <li><strong>Procedural Content Generation:</strong> AI-generated levels, quests, and dynamic game environments.</li>
+        </ul>
+    </section>
+    
+
+    <section class="video">
+        <h2>Watch Game Development in Action</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Yx8Ni5P5IuY" title="Game Development Video" allowfullscreen></iframe>
+    </section>
+    <section class="quiz-section">
+        <div class="quiz-content">
+            <h3>Test Your Knowledge about <br> Game Development </h3>
+            <a href="quiz.html"><button class="read-more-btn3">Take the Test</button></a>
+        </div>
+        <div class="cta-content">
+            <h3>Want to become a Expert on<br> Game Development ?</h3>
+            <a href="resources.html"><button class="explore-btn">Explore More</button></a>
+        </div>
+    </section>
+    
+    <section class="newsletter">
+        <h2>Subscribe to Game Dev Updates</h2>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">What is Game Development? <span class="plus">+</span></h3>
+            <p class="faq-answer">Game development is the process of designing, coding, and creating interactive digital experiences.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What programming languages are used in game development? <span class="plus">+</span></h3>
+            <p class="faq-answer">Popular languages include C++, C#, Python, and JavaScript, depending on the game engine.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What are the best game engines for beginners? <span class="plus">+</span></h3>
+            <p class="faq-answer">Unity and Unreal Engine are widely used. Godot is a great open-source alternative for beginners.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is the difference between 2D and 3D game development? <span class="plus">+</span></h3>
+            <p class="faq-answer">2D games use flat graphics, while 3D games involve models, physics, and depth perception.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Do I need to learn coding to make games? <span class="plus">+</span></h3>
+            <p class="faq-answer">While coding is essential for complex games, engines like Unity and Unreal offer visual scripting.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How long does it take to develop a game? <span class="plus">+</span></h3>
+            <p class="faq-answer">Simple games take weeks or months, while AAA titles can take years to develop.</p>
+        </div>
+    </section>
+    
+<section class="container1">
+    <h2 class="main-title">🌌 Explore Futuristic Tech Domains</h2>
+    <p class="subtitle">Discover the cutting-edge fields of technology shaping our future.</p>
+    
+    <div class="domain-grid">
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" alt="Game Development">
+                <div class="hover-info"><p>Bringing immersive experiences to life through game engines and cutting-edge graphics.</p></div>
+            </div>
+            <h3>Game Development</h3>
+            <a href="gd.html" class="button1">Know More</a>
+        </div>
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn1.vectorstock.com/i/1000x1000/82/20/website-development-neon-label-vector-26918220.jpg" alt="Web Development">
+                <div class="hover-info"><p>Building the future of the internet with modern web technologies.</p></div>
+            </div>
+            <h3>Web Development</h3>
+            <a href="wd.html" class="button1">Know More</a>
+        </div>
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/1000x1000/41/99/app-development-round-colored-outline-vector-23654199.webp" alt="Android Development">
+                <div class="hover-info"><p>Developing innovative mobile applications for the Android ecosystem with cutting-edge tools.</p></div>
+            </div>
+            <h3>Android Development</h3>
+            <a href="ad.html" class="button1">Know More</a>
+        </div>
+         
+         <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/1000v/59/38/crct-bg-ai-chip-and-circuit-cntr-lp-bl-vector-51515938.avif" alt="Artificial Intelligence">
+                <div class="hover-info"><p>AI is revolutionizing industries with deep learning, automation, and robotics.</p></div>
+            </div>
+            <h3>Artificial Intelligence</h3>
+            <a href="ai.html" class="button1">Know More</a>
+        </div>
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/1000x1000/38/16/cyber-security-glowing-neon-sign-internet-vector-23303816.webp" alt="Cybersecurity">
+                <div class="hover-info"><p>Securing digital landscapes through ethical hacking, encryption, and AI-powered defenses.</p></div>
+            </div>
+            <h3>Cybersecurity</h3>
+            <a href="cs.html" class="button1">Know More</a>
+        </div>
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/1000x1000/45/26/cloud-service-security-glowing-neon-sign-internet-vector-23104526.webp" alt="Cloud Computing">
+                <div class="hover-info"><p>Empowering businesses with scalable, flexible, and secure cloud infrastructure.</p></div>
+            </div>
+            <h3>Cloud Computing</h3>
+            <a href="cc.html" class="button1">Know More</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-row">
+            
+            <div class="footer-column">
+                <h3 id="about-hackerzguide">ABOUT HACKERZGUIDE</h3>
+                <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide insights, tutorials, and guidance to help individuals achieve their goals.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3 id="quick-links-title">QUICK LINKS</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="#categoriess">Categories</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>
+                <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a></p>
+                <p><strong> Phone : </strong> +91 62XXX XXXXX</p>
+                <p><strong> Address : </strong> University Institute Of Technology,
+                    The University of Burdwan,
+                    Golapbag (North), Burdwan-713104,
+                    West Bengal.</p>
+            </div>
+        </div>
+        
+        <div class="footer-row">
+            
+            <div class="footer-column social-media">
+                <h3 id="follow-us-title">FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Language</h3>
+                <select id="language-selector" title="Select Language" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                </select>
+            </div>
+            
+            <div class="footer-column">
+                <h3 id="newsletter-title">NEWSLETTER</h3>
+                <p id="subscribe-text">Subscribe to get the latest updates and exclusive content.</p>
+                <input type="email" id="newsletter-email" placeholder="Enter your email">
+                <button onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
+    </div>
+</footer>
+
+<button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
+<i class="fas fa-arrow-up"></i>
+</button>
+
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+<i class="fas fa-comment-alt"></i>
+</button>
+
+<div id="chatbot-window">
+<div class="chatbot-header">
+<h3>HackerZGuide Chatbot</h3>
+<button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+</div>
+<div class="chatbot-body">
+
+<div id="chatbot-categories"></div>
+
+<div id="chatbot-questions"></div>
+
+<div id="chatbot-messages">
+    <p class="bot-msg">Hi! How can I assist you today?</p>
+</div>
+
+<div class="chatbot-input-container">
+    <input type="text" id="chatbot-input" placeholder="Ask me something...">
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
+        <i class="fas fa-microphone"></i>
+    </button>
+</div>
+</div>
+</div>
+</body>
+</html>

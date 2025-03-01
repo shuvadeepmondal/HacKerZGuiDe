@@ -1,39 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const faqItems = document.querySelectorAll(".faq-item");
-    faqItems.forEach(item => {
-        const question = item.querySelector(".faq-question");
-        const answer = item.querySelector(".faq-answer");
-        const plusIcon = item.querySelector(".toggle-icon");
-        question.addEventListener("click", function () {
-            if (answer.style.display === "block") {
-                answer.style.display = "none";
-                plusIcon.textContent = "+";
-            } else {
-                faqItems.forEach(faq => {
-                    faq.querySelector(".faq-answer").style.display = "none";
-                    faq.querySelector(".toggle-icon").textContent = "+";
-                });
-                answer.style.display = "block";
-                plusIcon.textContent = "−";
-                typeEffect(answer, answer.dataset.text);
-            }
-        });
-        answer.dataset.text = answer.innerHTML;
-        answer.innerHTML = ""; 
-    });
-    function typeEffect(element, text) {
-        element.innerHTML = ""; 
-        let i = 0;
-        function typing() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 30); 
-            }
-        }
-        typing();
-    }
-});
 function changeLanguage() {
     let selectedLanguage = document.getElementById("language-selector").value;
     const translations = {
@@ -77,8 +41,8 @@ function changeLanguage() {
     document.getElementById("newsletter-title").textContent = translations[selectedLanguage].newsletter;
     document.getElementById("subscribe-text").textContent = translations[selectedLanguage].subscribe;
     alert(`Language changed to: ${selectedLanguage}`);
-}
-function subscribeNewsletter() {
+  }
+  function subscribeNewsletter() {
     let email = document.getElementById("newsletter-email").value.trim();
     let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (email === "") {
@@ -90,24 +54,24 @@ function subscribeNewsletter() {
         return;
     }
     alert(`Thank you for subscribing, ${email}!`);
-}
-window.onscroll = function () {
+  }
+  window.onscroll = function () {
     let backToTop = document.getElementById("back-to-top");
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         backToTop.style.display = "block";
     } else {
         backToTop.style.display = "none";
     }
-};
-function scrollToTop() {
+  };
+  function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
-}
-function toggleChatbot() {
+  }
+  function toggleChatbot() {
     let chatbotWindow = document.getElementById("chatbot-window");
     chatbotWindow.classList.toggle("active");
     displayCategories(); 
-}
-const categories = {
+  }
+  const categories = {
     "General": [
         "What is HackerZGuide?",
         "What features does this website have?",
@@ -183,8 +147,8 @@ const categories = {
         "What is blockchain",
         "What is cloud computing"
     ]
-};
-const responses = {
+  };
+  const responses = {
     "hello": "Hello! How can I assist you today?",
     "hi": "Hi there! Need any help?",
     "hey": "Hey! How's it going?",
@@ -235,8 +199,8 @@ const responses = {
     "what is blockchain": "Blockchain is a decentralized, secure ledger technology used in cryptocurrencies and secure transactions.",
     "what is cloud computing": "Cloud computing provides internet-based computing services like storage, networking, and databases.",
     "default": "I'm not sure about that. Try asking about the website, navbar, footer, quizzes, or tech topics!"
-}; 
-function displayCategories() {
+  }; 
+  function displayCategories() {
     let categoryDiv = document.getElementById("chatbot-categories");
     categoryDiv.innerHTML = ""; 
     for (let category in categories) {
@@ -246,8 +210,8 @@ function displayCategories() {
         btn.onclick = () => displayQuestions(category);
         categoryDiv.appendChild(btn);
     }
-}
-function displayQuestions(category) {
+  }
+  function displayQuestions(category) {
     let questionDiv = document.getElementById("chatbot-questions");
     questionDiv.innerHTML = ""; 
     categories[category].forEach(question => {
@@ -257,8 +221,8 @@ function displayQuestions(category) {
         btn.onclick = () => sendPredefinedMessage(question);
         questionDiv.appendChild(btn);
     });
-}
-function sendPredefinedMessage(question) {
+  }
+  function sendPredefinedMessage(question) {
     let chatbotMessages = document.getElementById("chatbot-messages");
     let userMsg = document.createElement("p");
     userMsg.className = "user-msg";
@@ -273,8 +237,8 @@ function sendPredefinedMessage(question) {
         chatbotMessages.appendChild(botMsg);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight; 
     }, 500);
-}
-function sendMessage() {
+  }
+  function sendMessage() {
     let inputField = document.getElementById("chatbot-input");
     let input = inputField.value.toLowerCase().trim();
     if (input === "") return;
@@ -293,8 +257,8 @@ function sendMessage() {
         chatbotBody.scrollTop = chatbotBody.scrollHeight;
     }, 500);
     inputField.value = ""; 
-}
-function startVoiceRecognition() {
+  }
+  function startVoiceRecognition() {
     if (!("webkitSpeechRecognition" in window)) {
         alert("Sorry, your browser doesn't support voice recognition.");
         return;
@@ -310,36 +274,130 @@ function startVoiceRecognition() {
     recognition.onerror = function(event) {
         alert("Voice recognition error. Please try again.");
     };
-}
-document.addEventListener("DOMContentLoaded", () => {
-    const mobileNav = document.getElementById("mobileNav");
-    const hamburgerMenu = document.querySelector(".hamburger-menu");
-    const closeButton = document.querySelector(".close-btn");
-    const searchInput = document.querySelector(".search-bar input");
-    const contributeBtn = document.querySelector(".contribute-btn");
-    const body = document.body;
-    function toggleMenu() {
-        mobileNav.classList.toggle("active");
-        body.classList.toggle("no-scroll"); 
-    }
-    hamburgerMenu.addEventListener("click", () => {
-        mobileNav.classList.add("active");
-        body.classList.add("no-scroll");
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+      const mobileNav = document.getElementById("mobileNav");
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const closeButton = document.querySelector(".close-btn");
+      const searchInput = document.querySelector(".search-bar input");
+      const contributeBtn = document.querySelector(".contribute-btn");
+      const body = document.body;
+      function toggleMenu() {
+          mobileNav.classList.toggle("active");
+          body.classList.toggle("no-scroll"); 
+      }
+      hamburgerMenu.addEventListener("click", () => {
+          mobileNav.classList.add("active");
+          body.classList.add("no-scroll");
+      });
+      closeButton.addEventListener("click", () => {
+          mobileNav.classList.remove("active");
+          body.classList.remove("no-scroll");
+      });
+      searchInput.addEventListener("focus", () => {
+          contributeBtn.style.display = "none";
+      });
+      searchInput.addEventListener("blur", () => {
+          contributeBtn.style.display = "inline-block";
+      });
+      document.addEventListener("click", (event) => {
+          if (!mobileNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+              mobileNav.classList.remove("active");
+              body.classList.remove("no-scroll");
+          }
+      });
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    let readMoreBtn = document.querySelector(".read-more-btn");
+    let popupOverlay = document.querySelector(".popup-overlay");
+    let body = document.body;
+    readMoreBtn.addEventListener("click", function () {
+        popupOverlay.style.display = "flex";
+        body.classList.add("popup-active");
     });
-    closeButton.addEventListener("click", () => {
-        mobileNav.classList.remove("active");
-        body.classList.remove("no-scroll");
-    });
-    searchInput.addEventListener("focus", () => {
-        contributeBtn.style.display = "none";
-    });
-    searchInput.addEventListener("blur", () => {
-        contributeBtn.style.display = "inline-block";
-    });
-    document.addEventListener("click", (event) => {
-        if (!mobileNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-            mobileNav.classList.remove("active");
-            body.classList.remove("no-scroll");
+    popupOverlay.addEventListener("click", function (event) {
+        if (event.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+            body.classList.remove("popup-active");
         }
     });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let readMoreBtn = document.querySelector(".read-more-btn1");
+    let popupOverlay = document.querySelector(".popup-overlay1");
+    let body = document.body;
+    readMoreBtn.addEventListener("click", function () {
+        popupOverlay.style.display = "flex";
+        body.classList.add("popup-active");
+    });
+    popupOverlay.addEventListener("click", function (event) {
+        if (event.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+            body.classList.remove("popup-active");
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let readMoreBtn = document.querySelector(".read-more-btn2");
+    let popupOverlay = document.querySelector(".popup-overlay2");
+    let body = document.body;
+    readMoreBtn.addEventListener("click", function () {
+        popupOverlay.style.display = "flex";
+        body.classList.add("popup-active");
+    });
+    popupOverlay.addEventListener("click", function (event) {
+        if (event.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+            body.classList.remove("popup-active");
+        }
+    });
+});
+document.addEventListener("scroll", function() {
+    let items = document.querySelectorAll(".timeline-item");
+    let windowHeight = window.innerHeight;
+    items.forEach(item => {
+        let position = item.getBoundingClientRect().top;
+        if (position < windowHeight - 100) {
+            item.classList.add("show");
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+        const plusIcon = item.querySelector(".plus");
+        question.addEventListener("click", function () {
+            if (answer.classList.contains("active")) {
+                answer.classList.remove("active");
+                answer.style.display = "none";
+                plusIcon.textContent = "+";
+            } else {
+                faqItems.forEach(faq => {
+                    faq.querySelector(".faq-answer").classList.remove("active");
+                    faq.querySelector(".faq-answer").style.display = "none";
+                    faq.querySelector(".plus").textContent = "+";
+                });
+                answer.classList.add("active");
+                answer.style.display = "block";
+                plusIcon.textContent = "−";
+                typeEffect(answer, answer.dataset.text);
+            }
+        });
+        answer.dataset.text = answer.textContent;
+        answer.textContent = ""; 
+    });
+    function typeEffect(element, text) {
+        element.textContent = ""; 
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(typing, 50); 
+            }
+        }
+        typing();
+    }
 });

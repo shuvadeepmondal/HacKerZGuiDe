@@ -419,3 +419,80 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector(".site-header h1");
+
+    function glitchEffect() {
+        if (header) {
+            header.style.transition = "transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out";
+            header.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+            header.style.textShadow = `${Math.random() * 5}px ${Math.random() * 5}px 15px #00ff00`;
+        }
+    }
+
+    setInterval(glitchEffect, 300);
+
+    const categoryCards = document.querySelectorAll(".category-card");
+    const beepSound = new Audio("https://www.fesliyanstudios.com/play-mp3/4380");
+
+    categoryCards.forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+            beepSound.currentTime = 0;
+            beepSound.play();
+        });
+    });
+
+    const modal = document.getElementById("category-modal");
+    const modalTitle = document.getElementById("category-title");
+    const modalDescription = document.getElementById("category-description");
+    const closeModalBtn = document.querySelector(".close");
+
+    categoryCards.forEach((card) => {
+        card.addEventListener("click", function () {
+            const category = this.querySelector("h3").innerText;
+            showCategoryInfo(category);
+        });
+    });
+
+    function showCategoryInfo(category) {
+        if (categoryInfo[category]) {
+            modalTitle.innerText = category;
+            modalDescription.innerText = categoryInfo[category];
+            modal.style.display = "flex";
+        }
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", closeModal);
+    }
+
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    const cyberImage = document.querySelector(".cyber-image");
+
+    if (cyberImage) {
+        document.addEventListener("mousemove", (e) => {
+            const x = (window.innerWidth / 2 - e.clientX) / 40;
+            const y = (window.innerHeight / 2 - e.clientY) / 40;
+            cyberImage.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+        });
+    }
+});
+
+const categoryInfo = {
+    "Web Development": "Hack and build the most secure web apps.",
+    "Android Development": "Master mobile app exploits & ethical hacking.",
+    "Game Development": "Mod, reverse-engineer, and hack games.",
+    "Cloud Computing": "Explore cloud security & ethical cloud hacking.",
+    "Cybersecurity": "Pentest & secure top cyber systems.",
+    "Artificial Intelligence": "Hack AI and build intelligent systems."
+};

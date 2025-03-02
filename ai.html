@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence</title>
+    <link rel="stylesheet" href="ai.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="ai.js"></script></head>
+<body>
+    <header>
+        <nav class="navbar">
+            
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                ☰
+            </div>
+            
+            <div class="logo">
+                <a href="index.html">HackeRZGuide</a>
+            </div>
+            
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="right-section">
+                <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                </div>
+            </div>
+            
+<div class="mobile-nav" id="mobileNav">
+    
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="mobile-right-section">
+        <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+
+    
+    <header class="category-header ai">
+        <h1>Artificial Intelligence</h1>
+        <p>Explore AI security, adversarial attacks, and ethical AI hacking.</p>
+    </header>
+
+    
+    <section class="introduction">
+        <img src="https://miro.medium.com/v2/resize:fit:800/1*XgwJgF0EcYUShkNjqz8NeA.gif" alt="Artificial Intelligence">
+        <h2>What is Artificial Intelligence?</h2>
+        <p>Artificial Intelligence (AI) is the simulation of human intelligence in machines. It includes learning, reasoning, problem-solving, and decision-making.</p>
+        <ul>
+            <li><strong><b>Machine Learning:</b></strong> Algorithms that improve through experience.</li>
+            <li><strong><b>Natural Language Processing:</b></strong> AI systems that understand and process human language.</li>
+            <li><strong><b>Computer Vision:</b></strong> AI-powered image and video analysis.</li>
+        </ul>
+        <p>AI is used in automation, data analysis, and intelligent systems, revolutionizing industries like healthcare, finance, and robotics.</p>
+    </section>
+
+    <section class="ai-types">
+        <h2>Types of Artificial Intelligence</h2>
+        <p>AI is categorized based on functionality and application areas:</p>
+        <ul>
+            <li><strong><b>Machine Learning (ML):</b></strong><i> Algorithms that improve through experience and data analysis.</i></li>
+            <li><strong><b>Deep Learning:</b></strong><i> Neural networks that mimic human brain function.</i></li>
+            <li><strong><b>Natural Language Processing (NLP):</b></strong><i> AI that processes and understands human language.</i></li>
+            <li><strong><b>Computer Vision:</b></strong><i> AI for image and video analysis, facial recognition, and object detection.</i></li>
+            <li><strong><b>Robotics:</b></strong><i> AI-powered robots that perform automated tasks.</i></li>
+            <li><strong><b>AI for Business:</b></strong><i> AI-driven automation, recommendation systems, and analytics.</i></li>
+        </ul>
+    </section>
+    
+    <section class="ai-process">
+        <h2>The AI Development Process</h2>
+        <p>Building AI models involves various stages for efficiency and accuracy:</p>
+        <ol>
+            <li><strong><b>Problem Definition:</b></strong><i> Identifying a challenge and determining AI's role in solving it.</i></li>
+            <li><strong><b>Data Collection & Preparation:</b></strong><i> Gathering and preprocessing data for AI models.</i></li>
+            <li><strong><b>Model Development:</b></strong><i> Training AI models using machine learning techniques.</i></li>
+            <li><strong><b>Testing & Validation:</b></strong><i> Evaluating model performance and optimizing accuracy.</i></li>
+            <li><strong><b>Deployment:</b></strong><i> Integrating AI into real-world applications.</i></li>
+            <li><strong><b>Continuous Learning:</b></strong><i> Improving AI models with new data and updates.</i></li>
+        </ol>
+    </section>
+    
+
+    
+    <section class="history">
+        <h2>History of Artificial Intelligence</h2>
+        <p>The development of Artificial Intelligence (AI) has progressed through various groundbreaking milestones. Below is a timeline highlighting key events.</p>
+        <div class="timeline">
+            <div class="timeline-line"></div> 
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>1. The Birth of AI (1950s - 1960s)</h3>
+                    <h2>Early Theories & Foundations</h2>
+                    <p>Alan Turing introduced the Turing Test in 1950. The first AI programs, such as the Logic Theorist, were developed, and the term "Artificial Intelligence" was coined in 1956 at the Dartmouth Conference.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2. AI Winter & Slow Progress (1970s - 1980s)</h3>
+                    <h2>Funding Cuts & Challenges</h2>
+                    <p>AI research faced skepticism due to limited computing power and unfulfilled expectations. Funding decreased, leading to the first AI winter.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>3. Expert Systems & Neural Networks (1980s - 1990s)</h3>
+                    <h2>Revival of AI</h2>
+                    <p>Rule-based expert systems were developed for business applications. Neural networks gained attention with backpropagation, reigniting AI research.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>4. Machine Learning & Big Data (2000s - Early 2010s)</h3>
+                    <h2>Rise of Data-Driven AI</h2>
+                    <p>Advancements in computing power and the availability of large datasets led to significant breakthroughs in machine learning and deep learning.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>5. AI Boom & Deep Learning (2010s - Present)</h3>
+                    <h2>Transformational AI Applications</h2>
+                    <p>Neural networks, natural language processing, and AI-powered applications such as virtual assistants, self-driving cars, and facial recognition became mainstream.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>6. The Future - AGI & Ethical AI</h3>
+                    <h2>General AI & Responsible Development</h2>
+                    <p>Research is focused on achieving Artificial General Intelligence (AGI) while ensuring ethical AI development and minimizing biases in AI systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="applications">
+        <h2>Applications of Artificial Intelligence</h2>
+        <ul class="visible-list">
+            <li>Machine Learning - Algorithms that improve through experience.</li>
+            <li>Natural Language Processing - AI-powered chatbots and virtual assistants.</li>
+            <li>Computer Vision - Image recognition and facial detection.</li>
+            <li>Autonomous Vehicles - AI-driven self-driving cars and drones.</li>
+            <li>Healthcare AI - AI-assisted diagnostics and medical imaging.</li>
+        </ul>
+        <button class="read-more-btn2"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay2">
+        <div class="popup-content2">
+            <h2>Complete List of Applications of Artificial Intelligence</h2>
+            <div class="scrollable-content2">
+                <ul class="full-list2">
+                    <li>Machine Learning - Algorithms that improve through experience.</li>
+                    <li>Natural Language Processing - AI-powered chatbots and virtual assistants.</li>
+                    <li>Computer Vision - Image recognition and facial detection.</li>
+                    <li>Autonomous Vehicles - AI-driven self-driving cars and drones.</li>
+                    <li>Healthcare AI - AI-assisted diagnostics and medical imaging.</li>
+                    <li>Financial Services - Fraud detection, risk analysis, and stock market predictions.</li>
+                    <li>Robotics - AI-powered automation in industries and smart homes.</li>
+                    <li>Speech Recognition - Voice assistants like Siri and Alexa.</li>
+                    <li>Cybersecurity - AI-based threat detection and risk assessment.</li>
+                    <li>Marketing & Advertising - AI-driven recommendations and targeted ads.</li>
+                    <li>Personalized Content - AI-based recommendations on Netflix and YouTube.</li>
+                    <li>AI in Education - Automated tutoring, assessments, and e-learning enhancements.</li>
+                    <li>Smart Cities - AI-powered traffic control, energy management, and security systems.</li>
+                    <li>AI in Agriculture - Crop monitoring, soil analysis, and automated harvesting.</li>
+                    <li>Gaming AI - AI-driven NPCs and procedural content generation.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <section class="content">
+        <h2>Artificial Intelligence Topics</h2>
+        <div class="ai-topics">
+            <div class="topic-card">
+                <h3>Machine Learning</h3>
+                <p>Understand supervised, unsupervised, and reinforcement learning.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Deep Learning & Neural Networks</h3>
+                <p>Explore artificial neural networks, CNNs, and RNNs.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Natural Language Processing (NLP)</h3>
+                <p>Learn text analysis, chatbots, and language models.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Computer Vision</h3>
+                <p>Discover image recognition, object detection, and AI-driven vision.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="ai-technologies">
+        <h2>Artificial Intelligence Technologies & Tools</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>TensorFlow</td><td>AI/ML</td><td>Framework</td><td>Building and training AI models</td></tr>
+                <tr><td>PyTorch</td><td>AI/ML</td><td>Framework</td><td>Deep learning and neural networks</td></tr>
+                <tr><td>OpenAI GPT</td><td>AI/ML</td><td>Language Model</td><td>Generating human-like text</td></tr>
+                <tr><td>Keras</td><td>AI/ML</td><td>Library</td><td>High-level neural network API</td></tr>
+                <tr><td>Scikit-learn</td><td>AI/ML</td><td>Library</td><td>Machine learning algorithms</td></tr>
+            </tbody>
+        </table>
+        <button class="read-more-btn"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2>Full List of AI Technologies</h2>
+            <div class="scrollable-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>TensorFlow</td><td>AI/ML</td><td>Framework</td><td>Building and training AI models</td></tr>
+                    <tr><td>PyTorch</td><td>AI/ML</td><td>Framework</td><td>Deep learning and neural networks</td></tr>
+                    <tr><td>OpenAI GPT</td><td>AI/ML</td><td>Language Model</td><td>Generating human-like text</td></tr>
+                    <tr><td>Keras</td><td>AI/ML</td><td>Library</td><td>High-level neural network API</td></tr>
+                    <tr><td>Scikit-learn</td><td>AI/ML</td><td>Library</td><td>Machine learning algorithms</td></tr>
+                    <tr><td>IBM Watson</td><td>AI/ML</td><td>AI Service</td><td>Enterprise AI for business analytics</td></tr>
+                    <tr><td>Google Cloud AI</td><td>AI/ML</td><td>Cloud Service</td><td>AI-powered cloud computing</td></tr>
+                    <tr><td>Amazon SageMaker</td><td>AI/ML</td><td>Cloud Service</td><td>Building, training, and deploying ML models</td></tr>
+                    <tr><td>Hugging Face Transformers</td><td>AI/ML</td><td>Library</td><td>Pre-trained NLP models</td></tr>
+                    <tr><td>OpenCV</td><td>Computer Vision</td><td>Library</td><td>Image and video processing</td></tr>
+                    <tr><td>DeepMind AlphaFold</td><td>AI/ML</td><td>Biotech AI</td><td>Protein structure prediction</td></tr>
+                    <tr><td>Microsoft Azure AI</td><td>AI/ML</td><td>Cloud Service</td><td>AI solutions for enterprise applications</td></tr>
+                    <tr><td>Reinforcement Learning</td><td>AI/ML</td><td>Algorithm</td><td>Decision-making and automation</td></tr>
+                    <tr><td>AutoML</td><td>AI/ML</td><td>Tool</td><td>Automated machine learning model development</td></tr>
+                    <tr><td>RASA</td><td>NLP</td><td>Framework</td><td>Building conversational AI chatbots</td></tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="challenges">
+        <h2>Challenges in Artificial Intelligence</h2>
+        <p>AI development faces several obstacles that impact its efficiency and reliability:</p>
+        <ul class="visible-list">
+            <li><strong>Data Quality:</strong> Ensuring AI models are trained on accurate, unbiased, and relevant datasets.</li>
+            <li><strong>Ethical Concerns:</strong> Addressing AI biases, fairness, and ethical decision-making.</li>
+            <li><strong>Model Interpretability:</strong> Making AI decisions transparent and explainable to humans.</li>
+            <li><strong>Computational Power:</strong> Managing high processing requirements for deep learning models.</li>
+            <li><strong>Security Threats:</strong> Preventing adversarial attacks and unauthorized AI model manipulation.</li>
+        </ul>
+        <button class="read-more-btn1"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay1">
+        <div class="popup-content1">
+            <h2>Complete List of AI Development Challenges</h2>
+            <div class="scrollable-content1">
+                <ul class="full-list1">
+                    <li><strong>Data Quality:</strong> Ensuring AI models are trained on accurate, unbiased, and relevant datasets.</li>
+                    <li><strong>Ethical Concerns:</strong> Addressing AI biases, fairness, and ethical decision-making.</li>
+                    <li><strong>Model Interpretability:</strong> Making AI decisions transparent and explainable to humans.</li>
+                    <li><strong>Computational Power:</strong> Managing high processing requirements for deep learning models.</li>
+                    <li><strong>Security Threats:</strong> Preventing adversarial attacks and unauthorized AI model manipulation.</li>
+                    <li><strong>AI Regulation & Compliance:</strong> Adhering to legal frameworks like GDPR and AI ethics guidelines.</li>
+                    <li><strong>Limited Training Data:</strong> Ensuring AI models generalize well despite limited or biased data.</li>
+                    <li><strong>Scalability:</strong> Adapting AI solutions to large-scale applications efficiently.</li>
+                    <li><strong>Real-Time Processing:</strong> Ensuring AI applications respond instantly in critical use cases.</li>
+                    <li><strong>Cost of AI Development:</strong> Managing high costs associated with AI research, development, and infrastructure.</li>
+                    <li><strong>Energy Consumption:</strong> Reducing the environmental impact of training large AI models.</li>
+                    <li><strong>Human-AI Collaboration:</strong> Integrating AI with human workflows while maintaining efficiency.</li>
+                    <li><strong>AI in Healthcare:</strong> Ensuring AI-driven medical diagnoses are accurate and reliable.</li>
+                    <li><strong>Autonomous AI Risks:</strong> Controlling AI decision-making in autonomous systems like self-driving cars.</li>
+                    <li><strong>Data Privacy:</strong> Protecting sensitive information used in AI models from breaches.</li>
+                    <li><strong>Bias in AI Models:</strong> Eliminating racial, gender, or social biases from AI predictions.</li>
+                    <li><strong>AI Explainability:</strong> Making deep learning models more interpretable and understandable.</li>
+                    <li><strong>Generalization vs. Overfitting:</strong> Ensuring AI models perform well on unseen data.</li>
+                    <li><strong>Human Perception & Trust:</strong> Increasing user confidence in AI-driven decisions.</li>
+                    <li><strong>Edge AI Challenges:</strong> Optimizing AI models for low-power, on-device inference.</li>
+                    <li><strong>Adversarial AI Attacks:</strong> Protecting AI models from being tricked by malicious inputs.</li>
+                    <li><strong>Domain Adaptation:</strong> Making AI models adaptable across different industries and applications.</li>
+                    <li><strong>AI in Autonomous Weapons:</strong> Addressing ethical concerns in military AI applications.</li>
+                    <li><strong>Data Labeling Challenges:</strong> Automating and improving the accuracy of labeled datasets.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="future">
+        <h2>Future Trends in Artificial Intelligence</h2>
+        <p>AI is continuously evolving, shaping the future with emerging technologies such as:</p>
+        <ul>
+            <li><strong>Explainable AI (XAI):</strong> Enhancing transparency in AI decision-making processes.</li>
+            <li><strong>AI in Healthcare:</strong> Advanced diagnostics, personalized treatments, and robotic surgeries.</li>
+            <li><strong>Quantum AI:</strong> Leveraging quantum computing for faster and more complex problem-solving.</li>
+            <li><strong>Autonomous AI Systems:</strong> Self-learning robots and AI-driven automation in industries.</li>
+            <li><strong>AI Ethics & Regulation:</strong> Developing guidelines for responsible and unbiased AI deployment.</li>
+        </ul>
+    </section>
+    
+
+    <section class="video">
+        <h2>Watch Artificial Intelligence in Action</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2ePf9rue1Ao" title="AI Video" allowfullscreen></iframe>
+    </section>
+    <section class="quiz-section">
+        <div class="quiz-content">
+            <h3>Test Your Knowledge about <br> AI </h3>
+            <a href="quiz.html"><button class="read-more-btn3">Take the Test</button></a>
+        </div>
+        <div class="cta-content">
+            <h3>Want to become a Expert on<br> AI?</h3>
+            <a href="resources.html"><button class="explore-btn">Explore More</button></a>
+        </div>
+    </section>
+    
+    <section class="newsletter">
+        <h2>Subscribe to AI Updates</h2>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">What is Artificial Intelligence? <span class="plus">+</span></h3>
+            <p class="faq-answer">Artificial Intelligence (AI) is the simulation of human intelligence in machines to perform tasks like learning, reasoning, and problem-solving.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What are the main types of AI? <span class="plus">+</span></h3>
+            <p class="faq-answer">AI is categorized into Narrow AI (task-specific), General AI (human-like intelligence), and Super AI (beyond human intelligence, still theoretical).</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is Machine Learning? <span class="plus">+</span></h3>
+            <p class="faq-answer">Machine Learning is a subset of AI that allows computers to learn from data without being explicitly programmed.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How is AI used in daily life? <span class="plus">+</span></h3>
+            <p class="faq-answer">AI powers virtual assistants, recommendation systems, facial recognition, self-driving cars, and much more.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What programming languages are used in AI? <span class="plus">+</span></h3>
+            <p class="faq-answer">Python is the most popular language for AI, along with R, Java, C++, and Julia for specialized applications.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Is AI dangerous? <span class="plus">+</span></h3>
+            <p class="faq-answer">AI is a powerful tool, but ethical concerns, bias, and job automation risks must be managed carefully.</p>
+        </div>
+    </section>
+    
+
+
+    <section class="container1">
+        <h2 class="main-title">🌌 Explore Futuristic Tech Domains</h2>
+        <p class="subtitle">Discover the cutting-edge fields of technology shaping our future.</p>
+        
+        <div class="domain-grid">
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" alt="Game Development">
+                    <div class="hover-info"><p>Bringing immersive experiences to life through game engines and cutting-edge graphics.</p></div>
+                </div>
+                <h3>Game Development</h3>
+                <a href="gd.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn1.vectorstock.com/i/1000x1000/82/20/website-development-neon-label-vector-26918220.jpg" alt="Web Development">
+                    <div class="hover-info"><p>Building the future of the internet with modern web technologies.</p></div>
+                </div>
+                <h3>Web Development</h3>
+                <a href="wd.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/41/99/app-development-round-colored-outline-vector-23654199.webp" alt="Android Development">
+                    <div class="hover-info"><p>Developing innovative mobile applications for the Android ecosystem with cutting-edge tools.</p></div>
+                </div>
+                <h3>Android Development</h3>
+                <a href="ad.html" class="button1">Know More</a>
+            </div>
+             
+             <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000v/59/38/crct-bg-ai-chip-and-circuit-cntr-lp-bl-vector-51515938.avif" alt="Artificial Intelligence">
+                    <div class="hover-info"><p>AI is revolutionizing industries with deep learning, automation, and robotics.</p></div>
+                </div>
+                <h3>Artificial Intelligence</h3>
+                <a href="ai.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/38/16/cyber-security-glowing-neon-sign-internet-vector-23303816.webp" alt="Cybersecurity">
+                    <div class="hover-info"><p>Securing digital landscapes through ethical hacking, encryption, and AI-powered defenses.</p></div>
+                </div>
+                <h3>Cybersecurity</h3>
+                <a href="cs.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/45/26/cloud-service-security-glowing-neon-sign-internet-vector-23104526.webp" alt="Cloud Computing">
+                    <div class="hover-info"><p>Empowering businesses with scalable, flexible, and secure cloud infrastructure.</p></div>
+                </div>
+                <h3>Cloud Computing</h3>
+                <a href="cc.html" class="button1">Know More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-row">
+                
+                <div class="footer-column">
+                    <h3 id="about-hackerzguide">ABOUT HACKERZGUIDE</h3>
+                    <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide insights, tutorials, and guidance to help individuals achieve their goals.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="quick-links-title">QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="#categoriess">Categories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>
+                    <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a></p>
+                    <p><strong> Phone : </strong> +91 62XXX XXXXX</p>
+                    <p><strong> Address : </strong> University Institute Of Technology,
+                        The University of Burdwan,
+                        Golapbag (North), Burdwan-713104,
+                        West Bengal.</p>
+                </div>
+            </div>
+            
+            <div class="footer-row">
+                
+                <div class="footer-column social-media">
+                    <h3 id="follow-us-title">FOLLOW US</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Language</h3>
+                    <select id="language-selector" title="Select Language" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                    </select>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="newsletter-title">NEWSLETTER</h3>
+                    <p id="subscribe-text">Subscribe to get the latest updates and exclusive content.</p>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email">
+                    <button onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
+        </div>
+    </footer>
+ 
+ <button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+<i class="fas fa-comment-alt"></i>
+</button>
+
+<div id="chatbot-window">
+<div class="chatbot-header">
+    <h3>HackerZGuide Chatbot</h3>
+    <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+</div>
+<div class="chatbot-body">
+    
+    <div id="chatbot-categories"></div>
+    
+    <div id="chatbot-questions"></div>
+    
+    <div id="chatbot-messages">
+        <p class="bot-msg">Hi! How can I assist you today?</p>
+    </div>
+    
+    <div class="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Ask me something...">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
+            <i class="fas fa-microphone"></i>
+        </button>
+    </div>
+</div>
+</div>
+</body>
+</html>

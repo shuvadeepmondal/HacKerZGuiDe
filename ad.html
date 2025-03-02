@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Development</title>
+    <link rel="stylesheet" href="ad.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="ad.js"></script></head>
+<body>
+    <header>
+        <nav class="navbar">
+            
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                ☰
+            </div>
+            
+            <div class="logo">
+                <a href="index.html">HackeRZGuide</a>
+            </div>
+            
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="right-section">
+                <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                </div>
+            </div>
+            
+<div class="mobile-nav" id="mobileNav">
+    
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="mobile-right-section">
+        <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+
+    
+    <header class="category-header android-dev">
+        <h1>Android Development</h1>
+        <p>Explore Kotlin, Java, Jetpack, Android UI, APIs, and security in mobile development.</p>
+    </header>
+
+    
+    <section class="introduction">
+        <img src="https://cdn.dribbble.com/users/1233499/screenshots/3852878/mobile-development2-2.gif" alt="Android Development">
+        <h2>What is Android Development?</h2>
+        <p>Android development is the process of building mobile applications for devices running the Android operating system using Java, Kotlin, and frameworks like Jetpack.</p>
+        <ul>
+            <li><strong><b>Native Development:</b></strong> Using Kotlin and Java for optimal performance.</li>
+            <li><strong><b>Cross-platform Development:</b></strong> Frameworks like Flutter and React Native for multi-platform apps.</li>
+            <li><strong><b>UI/UX Design:</b></strong> Creating responsive and user-friendly mobile interfaces.</li>
+        </ul>
+        <p>Android developers focus on optimizing app performance, security, and compatibility across different devices and screen sizes.</p>
+    </section>
+
+    <section class="android-types">
+        <h2>Types of Android Development</h2>
+        <p>Android apps can be classified based on their development approach:</p>
+        <ul>
+            <li><strong><b>Native Apps:</b></strong><i> Built with Kotlin and Java for optimal performance.</i></li>
+            <li><strong><b>Hybrid Apps:</b></strong><i> Developed using web technologies and wrapped in native containers.</i></li>
+            <li><strong><b>Cross-Platform Apps:</b></strong><i> Created using Flutter or React Native for multiple platforms.</i></li>
+            <li><strong><b>Wearable Apps:</b></strong><i> Applications designed for smartwatches and IoT devices.</i></li>
+        </ul>
+    </section>
+
+    <section class="android-process">
+        <h2>The Android Development Process</h2>
+        <p>Building an Android application follows a structured process for efficiency and performance:</p>
+        <ol>
+            <li><strong><b>Requirement Analysis:</b></strong><i> Understanding user needs, target audience, and app functionality.</i></li>
+            <li><strong><b>UI/UX Design:</b></strong><i> Creating wireframes, layouts, and interactive prototypes using design tools.</i></li>
+            <li><strong><b>Development:</b></strong><i> Writing code in Java or Kotlin, integrating APIs, and building features.</i></li>
+            <li><strong><b>Testing & Debugging:</b></strong><i> Ensuring compatibility across different devices and fixing issues.</i></li>
+            <li><strong><b>Deployment:</b></strong><i> Publishing the app on the Google Play Store and optimizing performance.</i></li>
+            <li><strong><b>Maintenance & Updates:</b></strong><i> Releasing new features, bug fixes, and security patches.</i></li>
+        </ol>
+    </section>
+    
+
+    
+    <section class="history">
+        <h2>History of Android Development</h2>
+        <p>The evolution of Android development has been shaped by technological advancements and user needs. Below is a timeline highlighting key milestones.</p>
+        <div class="timeline">
+            <div class="timeline-line"></div> 
+    
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>1. The Beginning (2003 - 2008)</h3>
+                    <h2>Android is Born</h2>
+                    <p>Android Inc. was founded in 2003, and Google acquired it in 2005. The first Android device, the HTC Dream (T-Mobile G1), was released in 2008.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2. The Rise of Apps (2010 - 2013)</h3>
+                    <h2>Google Play & Open Ecosystem</h2>
+                    <p>The Android Market (later Google Play Store) launched, allowing developers to publish apps. Android became the dominant mobile OS.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>3. Material Design & Performance (2014 - 2016)</h3>
+                    <h2>Modern UI & Optimization</h2>
+                    <p>Google introduced Material Design for a unified UI experience. Android Lollipop focused on battery optimization and performance.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>4. Kotlin & AI Integration (2017 - 2019)</h3>
+                    <h2>New Programming Era</h2>
+                    <p>Google announced Kotlin as an official language for Android development. AI-driven features and machine learning APIs became prominent.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>5. Jetpack & Foldable Devices (2020 - Present)</h3>
+                    <h2>Modern Toolkits & Multi-Screen Support</h2>
+                    <p>Android Jetpack streamlined development with pre-built libraries. Foldable devices and wearable tech expanded Android's ecosystem.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>6. The Future - AI, 5G & Beyond</h3>
+                    <h2>Smarter, Faster, More Connected</h2>
+                    <p>AI-powered apps, enhanced 5G experiences, and augmented reality will define the next phase of Android development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <section class="applications">
+        <h2>Applications of Android Development</h2>
+        <ul class="visible-list">
+            <li>Social Media Apps - Platforms like Facebook, Instagram, and Twitter.</li>
+            <li>Entertainment & Streaming - Apps like YouTube, Netflix, and Spotify.</li>
+            <li>E-commerce - Shopping apps like Amazon, eBay, and Shopify.</li>
+            <li>Mobile Games - Android gaming apps including casual and AAA titles.</li>
+            <li>Health & Fitness - Apps for tracking workouts, diets, and meditation.</li>
+        </ul>
+        <button class="read-more-btn2"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay2">
+        <div class="popup-content2">
+            <h2>Complete List of Applications of Android Development</h2>
+            <div class="scrollable-content2">
+                <ul class="full-list2">
+                    <li>Social Media Apps - Platforms like Facebook, Instagram, and Twitter.</li>
+                    <li>Entertainment & Streaming - Apps like YouTube, Netflix, and Spotify.</li>
+                    <li>E-commerce - Shopping apps like Amazon, eBay, and Shopify.</li>
+                    <li>Mobile Games - Android gaming apps including casual and AAA titles.</li>
+                    <li>Health & Fitness - Apps for tracking workouts, diets, and meditation.</li>
+                    <li>Banking & Finance - Mobile banking, payment apps, and stock trading.</li>
+                    <li>Navigation & Travel - GPS-based apps like Google Maps, Uber, and Airbnb.</li>
+                    <li>Education & E-learning - Learning platforms like Coursera, Udemy, and Duolingo.</li>
+                    <li>Productivity Apps - Task managers, note-taking, and cloud storage apps.</li>
+                    <li>Business & Communication - Tools like Slack, Zoom, and Microsoft Teams.</li>
+                    <li>Smart Home & IoT - Apps for controlling smart home devices.</li>
+                    <li>Photo & Video Editing - Apps like Adobe Lightroom, Canva, and InShot.</li>
+                    <li>News & Magazines - News apps like Google News and Flipboard.</li>
+                    <li>Augmented Reality (AR) & Virtual Reality (VR) - AR/VR applications for gaming, shopping, and productivity.</li>
+                    <li>Security & Privacy - Antivirus, VPN, and authentication apps.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <section class="content">
+        <h2>Android Development Topics</h2>
+        <div class="android-topics">
+            <div class="topic-card">
+                <h3>Kotlin & Java</h3>
+                <p>Learn the core programming languages for Android development.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Android UI/UX Design</h3>
+                <p>Understand Material Design principles and UI components.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Android Jetpack & Architecture</h3>
+                <p>Explore Jetpack libraries, MVVM architecture, and best practices.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Database & APIs</h3>
+                <p>Learn SQLite, Room Database, and how to integrate REST APIs.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="android-technologies">
+        <h2>Android Development Technologies & Tools</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Java</td><td>Back-End & Front-End</td><td>Programming Language</td><td>Developing native Android applications</td></tr>
+                <tr><td>Kotlin</td><td>Back-End & Front-End</td><td>Programming Language</td><td>Modern language for Android development</td></tr>
+                <tr><td>Android Studio</td><td>Development Tool</td><td>IDE</td><td>Official IDE for building Android apps</td></tr>
+                <tr><td>Jetpack Compose</td><td>Front-End</td><td>UI Toolkit</td><td>Building modern Android UI</td></tr>
+                <tr><td>XML</td><td>Front-End</td><td>Markup Language</td><td>Defining UI layouts</td></tr>
+            </tbody>
+        </table>
+        <button class="read-more-btn"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2>Full List of Android Development Technologies</h2>
+            <div class="scrollable-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Java</td><td>Back-End & Front-End</td><td>Programming Language</td><td>Developing native Android applications</td></tr>
+                    <tr><td>Kotlin</td><td>Back-End & Front-End</td><td>Programming Language</td><td>Modern language for Android development</td></tr>
+                    <tr><td>Android Studio</td><td>Development Tool</td><td>IDE</td><td>Official IDE for building Android apps</td></tr>
+                    <tr><td>Jetpack Compose</td><td>Front-End</td><td>UI Toolkit</td><td>Building modern Android UI</td></tr>
+                    <tr><td>XML</td><td>Front-End</td><td>Markup Language</td><td>Defining UI layouts</td></tr>
+                    <tr><td>Gradle</td><td>Build Tool</td><td>Automation</td><td>Managing dependencies and project builds</td></tr>
+                    <tr><td>Firebase</td><td>Back-End</td><td>Cloud Platform</td><td>Authentication, database, and cloud functions</td></tr>
+                    <tr><td>SQLite</td><td>Back-End</td><td>Database</td><td>Storing structured data locally</td></tr>
+                    <tr><td>Room Database</td><td>Back-End</td><td>Database</td><td>Android’s local database solution</td></tr>
+                    <tr><td>Retrofit</td><td>Back-End</td><td>Networking Library</td><td>Handling API requests</td></tr>
+                    <tr><td>Volley</td><td>Back-End</td><td>Networking Library</td><td>Making network calls efficiently</td></tr>
+                    <tr><td>Coroutines</td><td>Back-End</td><td>Concurrency</td><td>Managing background tasks asynchronously</td></tr>
+                    <tr><td>LiveData</td><td>Front-End</td><td>Architecture Component</td><td>Handling UI data changes dynamically</td></tr>
+                    <tr><td>ViewModel</td><td>Front-End</td><td>Architecture Component</td><td>Managing UI-related data</td></tr>
+                    <tr><td>Navigation Component</td><td>Front-End</td><td>Framework</td><td>Managing app navigation flows</td></tr>
+                    <tr><td>WorkManager</td><td>Back-End</td><td>Task Management</td><td>Handling background tasks efficiently</td></tr>
+                    <tr><td>Hilt/Dagger</td><td>Back-End</td><td>Dependency Injection</td><td>Managing dependencies efficiently</td></tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="challenges">
+        <h2>Challenges in Android Development</h2>
+        <p>Developers face several obstacles while building Android applications, including:</p>
+        <ul class="visible-list">
+            <li><strong>Device Fragmentation:</strong> Ensuring compatibility across multiple screen sizes and Android versions.</li>
+            <li><strong>Performance Optimization:</strong> Managing memory, battery usage, and app speed.</li>
+            <li><strong>Security Risks:</strong> Protecting apps from malware, reverse engineering, and data leaks.</li>
+            <li><strong>App Store Approval:</strong> Meeting Google Play policies and avoiding rejections.</li>
+            <li><strong>Network Connectivity Issues:</strong> Handling poor or no internet conditions gracefully.</li>
+        </ul>
+        <button class="read-more-btn1"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay1">
+        <div class="popup-content1">
+            <h2>Complete List of Android Development Challenges</h2>
+            <div class="scrollable-content1">
+                <ul class="full-list1">
+                    <li><strong>Device Fragmentation:</strong> Ensuring compatibility across multiple screen sizes and Android versions.</li>
+                    <li><strong>Performance Optimization:</strong> Managing memory, battery usage, and app speed.</li>
+                    <li><strong>Security Risks:</strong> Protecting apps from malware, reverse engineering, and data leaks.</li>
+                    <li><strong>App Store Approval:</strong> Meeting Google Play policies and avoiding rejections.</li>
+                    <li><strong>Network Connectivity Issues:</strong> Handling poor or no internet conditions gracefully.</li>
+                    <li><strong>UI/UX Consistency:</strong> Designing interfaces that follow Material Design principles.</li>
+                    <li><strong>Handling Background Tasks:</strong> Managing services and broadcasts efficiently.</li>
+                    <li><strong>Memory Leaks & Garbage Collection:</strong> Avoiding excessive memory consumption.</li>
+                    <li><strong>Backward Compatibility:</strong> Supporting older Android versions without breaking functionality.</li>
+                    <li><strong>API Changes:</strong> Adapting to new Android SDK updates and deprecated features.</li>
+                    <li><strong>Localization & Internationalization:</strong> Supporting multiple languages and regions.</li>
+                    <li><strong>Crash Management & Debugging:</strong> Identifying and resolving crashes efficiently.</li>
+                    <li><strong>Data Synchronization:</strong> Managing offline mode and real-time data syncing.</li>
+                    <li><strong>Dependency Management:</strong> Handling third-party libraries and avoiding conflicts.</li>
+                    <li><strong>Efficient Testing:</strong> Performing unit, integration, and UI testing using tools like Espresso.</li>
+                    <li><strong>Multitasking & Multi-threading:</strong> Managing concurrent processes without UI lag.</li>
+                    <li><strong>In-App Purchases & Monetization:</strong> Implementing ads, subscriptions, and payment gateways.</li>
+                    <li><strong>Battery Efficiency:</strong> Reducing app power consumption and optimizing background processes.</li>
+                    <li><strong>Push Notifications:</strong> Implementing reliable Firebase Cloud Messaging (FCM) notifications.</li>
+                    <li><strong>Accessibility Compliance:</strong> Ensuring apps are usable for people with disabilities.</li>
+                    <li><strong>Cloud Integration:</strong> Implementing cloud-based storage and backend services.</li>
+                    <li><strong>App Performance Analytics:</strong> Tracking crashes, user behavior, and performance issues.</li>
+                    <li><strong>Legal Compliance & Privacy:</strong> Following GDPR, CCPA, and Google Play privacy policies.</li>
+                    <li><strong>Code Maintainability:</strong> Writing clean, modular, and scalable code.</li>
+                    <li><strong>CI/CD Pipeline:</strong> Automating testing, builds, and deployment workflows.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="future">
+        <h2>Future Trends in Android Development</h2>
+        <p>The Android ecosystem is evolving with cutting-edge technologies such as:</p>
+        <ul>
+            <li><strong>AI & Machine Learning:</strong> Smarter apps with AI-driven automation, voice assistants, and predictive analytics.</li>
+            <li><strong>5G Integration:</strong> Faster connectivity enabling seamless streaming, gaming, and real-time communication.</li>
+            <li><strong>Augmented Reality (AR) & Virtual Reality (VR):</strong> Enhanced user experiences in gaming, retail, and education.</li>
+            <li><strong>Wearable Technology:</strong> Growth of smartwatch apps and IoT-connected devices.</li>
+            <li><strong>Instant Apps:</strong> Apps that run without installation, improving accessibility and user engagement.</li>
+            <li><strong>Blockchain & Security:</strong> Decentralized apps (DApps) and improved mobile security features.</li>
+        </ul>
+    </section>
+    
+
+    <section class="video">
+        <h2>Watch Android Development in Action</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fis26HvvDII" title="Android Development Video" allowfullscreen></iframe>
+    </section>
+    <section class="quiz-section">
+        <div class="quiz-content">
+            <h3>Test Your Knowledge about <br> Android Development </h3>
+            <a href="quiz.html"><button class="read-more-btn3">Take the Test</button></a>
+        </div>
+        <div class="cta-content">
+            <h3>Want to become a Expert on<br> Android Development?</h3>
+            <a href="resources.html"><button class="explore-btn">Explore More</button></a>
+        </div>
+    </section>
+    
+    <section class="newsletter">
+        <h2>Subscribe to Android Dev Updates</h2>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">What is Android Development? <span class="plus">+</span></h3>
+            <p class="faq-answer">Android development is the process of creating mobile applications for Android devices.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What programming languages are used for Android development? <span class="plus">+</span></h3>
+            <p class="faq-answer">Java and Kotlin are the primary languages for Android development.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is the best IDE for Android development? <span class="plus">+</span></h3>
+            <p class="faq-answer">Android Studio is the official IDE for developing Android applications.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is the difference between Native and Hybrid apps? <span class="plus">+</span></h3>
+            <p class="faq-answer">Native apps are built specifically for Android using Kotlin/Java, while Hybrid apps use web technologies like HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How can I publish an app on the Google Play Store? <span class="plus">+</span></h3>
+            <p class="faq-answer">You need to create a Google Play Developer account, follow the submission guidelines, and upload your APK/AAB file.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is Jetpack in Android development? <span class="plus">+</span></h3>
+            <p class="faq-answer">Jetpack is a suite of libraries that help developers build high-quality Android apps efficiently.</p>
+        </div>
+    </section>
+    
+
+
+    <section class="container1">
+        <h2 class="main-title">🌌 Explore Futuristic Tech Domains</h2>
+        <p class="subtitle">Discover the cutting-edge fields of technology shaping our future.</p>
+        
+        <div class="domain-grid">
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" alt="Game Development">
+                    <div class="hover-info"><p>Bringing immersive experiences to life through game engines and cutting-edge graphics.</p></div>
+                </div>
+                <h3>Game Development</h3>
+                <a href="gd.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn1.vectorstock.com/i/1000x1000/82/20/website-development-neon-label-vector-26918220.jpg" alt="Web Development">
+                    <div class="hover-info"><p>Building the future of the internet with modern web technologies.</p></div>
+                </div>
+                <h3>Web Development</h3>
+                <a href="wd.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/41/99/app-development-round-colored-outline-vector-23654199.webp" alt="Android Development">
+                    <div class="hover-info"><p>Developing innovative mobile applications for the Android ecosystem with cutting-edge tools.</p></div>
+                </div>
+                <h3>Android Development</h3>
+                <a href="ad.html" class="button1">Know More</a>
+            </div>
+             
+             <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000v/59/38/crct-bg-ai-chip-and-circuit-cntr-lp-bl-vector-51515938.avif" alt="Artificial Intelligence">
+                    <div class="hover-info"><p>AI is revolutionizing industries with deep learning, automation, and robotics.</p></div>
+                </div>
+                <h3>Artificial Intelligence</h3>
+                <a href="ai.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/38/16/cyber-security-glowing-neon-sign-internet-vector-23303816.webp" alt="Cybersecurity">
+                    <div class="hover-info"><p>Securing digital landscapes through ethical hacking, encryption, and AI-powered defenses.</p></div>
+                </div>
+                <h3>Cybersecurity</h3>
+                <a href="cs.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/45/26/cloud-service-security-glowing-neon-sign-internet-vector-23104526.webp" alt="Cloud Computing">
+                    <div class="hover-info"><p>Empowering businesses with scalable, flexible, and secure cloud infrastructure.</p></div>
+                </div>
+                <h3>Cloud Computing</h3>
+                <a href="cc.html" class="button1">Know More</a>
+            </div>
+        </div>
+    </section>
+         
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-row">
+                
+                <div class="footer-column">
+                    <h3 id="about-hackerzguide">ABOUT HACKERZGUIDE</h3>
+                    <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide insights, tutorials, and guidance to help individuals achieve their goals.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="quick-links-title">QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="#categoriess">Categories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>
+                    <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a></p>
+                    <p><strong> Phone : </strong> +91 62XXX XXXXX</p>
+                    <p><strong> Address : </strong> University Institute Of Technology,
+                        The University of Burdwan,
+                        Golapbag (North), Burdwan-713104,
+                        West Bengal.</p>
+                </div>
+            </div>
+            
+            <div class="footer-row">
+                
+                <div class="footer-column social-media">
+                    <h3 id="follow-us-title">FOLLOW US</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Language</h3>
+                    <select id="language-selector" title="Select Language" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                    </select>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="newsletter-title">NEWSLETTER</h3>
+                    <p id="subscribe-text">Subscribe to get the latest updates and exclusive content.</p>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email">
+                    <button onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
+        </div>
+    </footer>
+ 
+ <button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+<i class="fas fa-comment-alt"></i>
+</button>
+
+<div id="chatbot-window">
+<div class="chatbot-header">
+    <h3>HackerZGuide Chatbot</h3>
+    <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+</div>
+<div class="chatbot-body">
+    
+    <div id="chatbot-categories"></div>
+    
+    <div id="chatbot-questions"></div>
+    
+    <div id="chatbot-messages">
+        <p class="bot-msg">Hi! How can I assist you today?</p>
+    </div>
+    
+    <div class="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Ask me something...">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
+            <i class="fas fa-microphone"></i>
+        </button>
+    </div>
+</div>
+</div>
+</body>
+</html>

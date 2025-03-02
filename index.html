@@ -32,12 +32,13 @@
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="faq.html">FAQs</a></li>
                     <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
     
             <!-- Right Section (Contribute Button & Search) -->
             <div class="right-section">
-                <button class="contribute-btn" onclick="window.location.href='#contribute'">Contribute</button>
+                <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
                 <div class="search-bar">
                     <input type="text" placeholder="Search..." aria-label="Search">
                 </div>
@@ -50,14 +51,15 @@
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="resource.html">Resources</a></li>
+        <li><a href="resources.html">Resources</a></li>
         <li><a href="faq.html">FAQs</a></li>
         <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
 
     <!-- Right Section for Mobile -->
     <div class="mobile-right-section">
-        <button class="contribute-btn" onclick="window.location.href='resource.html'">Contribute</button>
+        <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
         <div class="search-bar">
             <input type="text" placeholder="Search..." aria-label="Search">
         </div>
@@ -73,8 +75,8 @@
             <h1>Welcome to HackeRZGuide </h1>
              <p>"Hack it, Crack it, Master it"</p>
              <div class="button">
-                 <a href="resourece.html" class="Explore">Explore Resource</a>
-                 <a href="resourece.html" class="Contribute">Contribute now</a>
+                 <a href="resources.html" class="Explore">Explore Resource</a>
+                 <a href="resources.html" class="Contribute">Contribute now</a>
              </div>
          </section> 
     
@@ -120,42 +122,48 @@
             <img src="https://cdn1.vectorstock.com/i/1000x1000/82/20/website-development-neon-label-vector-26918220.jpg" alt="Web Development">
             <h3 class="highlight-green">Web Development</h3>
             <p class="highlight-black">Hack the web, build advanced sites. Learn about front-end and back-end development, web security, and modern web technologies to create robust and secure web applications.</p>
-            <a href="#" class="cta-button">Know more</a>
+            <a href="#" class="cta-button">View</a>
+            <a href="wd.html" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Android Development')">
             <img src="https://cdn.vectorstock.com/i/1000x1000/41/99/app-development-round-colored-outline-vector-23654199.webp" alt="Android Development">
             <h3 class="highlight-green">Android Development</h3>
             <p class="highlight-black">Explore mobile exploits & ethical hacking. Dive into Android app development, understand the Android OS architecture, and learn how to secure mobile applications against various threats.</p>
-            <a href="#" class="cta-button">Know more</a>
+            <a href="#" class="cta-button">View</a>
+            <a href="ad.html" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Game Development')">
             <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" alt="Game Development">
             <h3 class="highlight-green">Game Development</h3>
             <p class="highlight-black">Reverse-engineer & mod game engines. Gain insights into game design, development, and security. Learn how to create and modify games using popular game engines and protect them from vulnerabilities.</p>
-            <a href="#" class="cta-button">Know more</a>
+            <a href="#" class="cta-button">View</a>
+            <a href="gd.html" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Cloud Computing')">
             <img src="https://cdn.vectorstock.com/i/1000x1000/45/26/cloud-service-security-glowing-neon-sign-internet-vector-23104526.webp" alt="Cloud Computing">
             <h3 class="highlight-green">Cloud Computing</h3>
             <p class="highlight-black">Cloud security & ethical penetration testing. Understand cloud infrastructure, services, and security. Learn how to perform penetration testing on cloud environments to ensure data protection and compliance.</p>
-            <a href="#" class="cta-button">Know more</a>
+            <a href="#" class="cta-button">View</a>
+            <a href="cc.html" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Cybersecurity')">
             <img src="https://cdn.vectorstock.com/i/1000x1000/38/16/cyber-security-glowing-neon-sign-internet-vector-23303816.webp" alt="Cybersecurity">
             <h3 class="highlight-green">Cybersecurity</h3>
             <p class="highlight-black">Master ethical hacking & pentesting. Delve into the world of cybersecurity, learn about various attack vectors, and develop skills to protect systems and networks from cyber threats.</p>
-            <a href="#" class="cta-button">Know more</a>
+            <a href="#" class="cta-button">View</a>
+            <a href="cs.html" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Artificial Intelligence')">
             <img src="https://cdn.vectorstock.com/i/1000v/59/38/crct-bg-ai-chip-and-circuit-cntr-lp-bl-vector-51515938.avif" alt="Artificial Intelligence">
             <h3 class="highlight-green">Artificial Intelligence</h3>
             <p class="highlight-black">Hack AI systems & build intelligent exploits. Explore the field of AI, understand machine learning algorithms, and learn how to secure AI systems against adversarial attacks and vulnerabilities.</p>
-            <a href="#" class="cta-button">Know more</a>
+            <a href="#" class="cta-button">View</a>
+            <a href="ai.html" class="cta-button">Learn more</a>
         </button>
     </div>
 </section>
@@ -166,7 +174,7 @@
         <button class="close" onclick="closeModal()">&times;</button>
         <h2 id="category-title" aria-live="polite">Category Title</h2>
         <p id="category-description"></p>
-    </div>
+    </div>
 </div>
 
     <!-- ✅ Testimonial Section -->
@@ -176,29 +184,81 @@
             <button class="prev-btn">⫷</button>
             <div class="testimonial-container">
                 <div class="testimonial-card active">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/kunal_kundwani.png" alt="Ravi Shankar" class="avatar">
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Tanveer_Mech.jpg" alt="Tanveer Ahmad" class="avatar">
                     <p class="testimonial-text">"HackerzGuide is a goldmine of hacking knowledge! The tutorials are top-notch and cyberpunk-styled UI is just sick!"</p>
-                    <h3 class="author">Alex Cyber</h3>
+                    <h3 class="author">Tanveer Ahmad</h3>
                     <div class="rating" data-stars="5"></div>
                 </div>
                 <div class="testimonial-card">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/arfaatk.png" alt="Sreham Hazra" class="avatar">
-                    <p class="testimonial-text">"The best ethical hacking resource I've ever used. The lessons are structured beautifully!"</p>
-                    <h3 class="author">Sreham Hazra</h3>
-                    <div class="rating" data-stars="4"></div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/Japit.png" alt="Neha Gupta" class="avatar">
-                    <p class="testimonial-text">"Learned so much about penetration testing. The dark cyberpunk theme keeps me engaged!"</p>
-                    <h3 class="author">Neha Gupta</h3>
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Nitin_jangir.jpg" alt="Ankit Verma" class="avatar">
+                    <p class="testimonial-text">"HackerZGuide made learning ethical hacking so much fun! The content is practical and well-structured."</p>
+                    <h3 class="author">Ankit Verma</h3>
                     <div class="rating" data-stars="5"></div>
                 </div>
+                
                 <div class="testimonial-card">
-                    <img src="https://cdn1.byjus.com/byjusweb/img/successpage/Ayush.png" alt="Vikram Singh" class="avatar">
-                    <p class="testimonial-text">"The tutorials are top-notch. The lessons are structured Perfectly!"</p>
-                    <h3 class="author">Vikram Singh</h3>
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Aadhya_Chaturvedi.jpg" alt="Priyanka Sharma" class="avatar">
+                    <p class="testimonial-text">"Finally found a cybersecurity platform that explains complex topics in an easy way!"</p>
+                    <h3 class="author">Priyanka Sharma</h3>
+                    <div class="rating" data-stars="5"></div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Naveen_Bansal_.jpg" alt="Rahul Kumar" class="avatar">
+                    <p class="testimonial-text">"The cyberpunk-themed UI makes it a great learning experience. Super engaging tutorials!"</p>
+                    <h3 class="author">Rahul Kumar</h3>
                     <div class="rating" data-stars="4"></div>
                 </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Adeeba_CSE_IN.jpeg" alt="Sonali Mishra" class="avatar">
+                    <p class="testimonial-text">"Best resource for beginners in ethical hacking. Love the hands-on projects!"</p>
+                    <h3 class="author">Sonali Mishra</h3>
+                    <div class="rating" data-stars="5"></div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Abhishek_Singh_CSE_IN.jpeg" alt="Aman Singh" class="avatar">
+                    <p class="testimonial-text">"The real-world hacking scenarios and CTF challenges are awesome!"</p>
+                    <h3 class="author">Aman Singh</h3>
+                    <div class="rating" data-stars="4"></div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Harshita_CSE_IN.jpeg" alt="Megha Agrawal" class="avatar">
+                    <p class="testimonial-text">"Step-by-step guides make learning easy, even for absolute beginners!"</p>
+                    <h3 class="author">Megha Agrawal</h3>
+                    <div class="rating" data-stars="5"></div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Sanchit_Bhatnagar_CSE_IN.jpeg" alt="Harshit Rana" class="avatar">
+                    <p class="testimonial-text">"The dark UI, interactive lessons, and projects make this my go-to cybersecurity site!"</p>
+                    <h3 class="author">Harshit Rana</h3>
+                    <div class="rating" data-stars="5"></div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Aditi_Semwal.jpg" alt="Kavita Singh" class="avatar">
+                    <p class="testimonial-text">"HackerZGuide provides the best ethical hacking roadmap. A must-visit for aspiring hackers!"</p>
+                    <h3 class="author">Kavita Singh</h3>
+                    <div class="rating" data-stars="5"></div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Kshitij_Sharma.jpg" alt="Sumit Malhotra" class="avatar">
+                    <p class="testimonial-text">"The detailed explanations and real-world case studies make this platform stand out!"</p>
+                    <h3 class="author">Sumit Malhotra</h3>
+                    <div class="rating" data-stars="4"></div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Subina_Adhikari1.jpg" alt="Divya Rajput" class="avatar">
+                    <p class="testimonial-text">"The interactive labs and guided hacking missions are just next-level!"</p>
+                    <h3 class="author">Divya Rajput</h3>
+                    <div class="rating" data-stars="5"></div>
+                </div>
+                
             </div>
             <button class="next-btn">⫸</button>
         </div>
@@ -232,7 +292,7 @@
             <h2 class="section-title">Contact Us</h2>
             <p class="contact-text">We’d love to hear your questions, suggestions, or feedback. Get in touch anytime!</p>
             <div class="button-container">
-                <a href="mailto:info@hackerzguide.com" class="cta-button">Get in Touch</a>
+                <a href="contact.html" class="cta-button">Get in Touch</a>
             </div>
         </section>
        

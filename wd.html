@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="wd.css">
+    <script src="wd.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                ☰
+            </div>
+            
+            <div class="logo">
+                <a href="index.html">HackeRZGuide</a>
+            </div>
+            
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="right-section">
+                <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                </div>
+            </div>
+            
+<div class="mobile-nav" id="mobileNav">
+    
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="mobile-right-section">
+        <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+    
+    <header class="category-header web-dev">
+        <h1>Web Development</h1>
+        <p>Explore front-end, back-end, full-stack development, and modern web technologies.</p>
+    </header>
+    
+    <section class="introduction">
+        <img src="https://media.licdn.com/dms/image/v2/C4E12AQHohaaJm6qNNw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1630526455370?e=2147483647&v=beta&t=DM6sk3A1cJulBl2uA9_5ToGmIjZE3xdlvZuTh_YkGDc" alt="Web Development">
+        <h2>What is Web Development?</h2>
+        <p>Web development refers to the process of designing, building, and maintaining websites and web applications. It includes:</p>
+        <ul>
+            <li><strong><b>Front-end Development:</b></strong> Creating the visual elements of a website using HTML, CSS, and JavaScript.</li>
+            <li><strong><b>Back-end Development:</b></strong> Managing databases, server logic, and user authentication.</li>
+            <li><strong><b>Full-stack Development:</b></strong> Combining both front-end and back-end development.</li>
+        </ul>
+        <p>With the rise of mobile and responsive design, web developers now focus on optimizing websites for various screen sizes and improving user experience.</p>
+    </section>
+    <section class="web-types">
+        <h2>Types of Web Development</h2>
+        <p>Web development is divided into various categories based on specialization and technology stack:</p>
+        <ul>
+            <li><strong><b>Static Websites:</b></strong><i>  Simple sites that display fixed content.</i></li>
+            <li><strong><b>Dynamic Websites:</b></strong><i> Websites that change content dynamically using JavaScript and databases</i> .</li>
+            <li><strong><b>Single Page Applications (SPA):</b></strong><i> Fast and interactive applications that load content dynamically.</i> </li>
+            <li><strong><b>Progressive Web Apps (PWA):</b></strong><i> Web applications that work offline and provide a native app-like experience.</i> </li>
+            <li><strong><b>Enterprise Web Applications:</b></strong><i> Large-scale applications used by businesses for internal and external operations.</i> </li>
+            <li><strong><b></b>E-commerce Websites:</b></strong><i>  Online stores like Amazon and Shopify that facilitate buying and selling.</i> </li>
+            <li><strong><b>Content Management Systems (CMS):</b></strong><i>  Platforms like WordPress and Joomla that allow easy website management.</i> </li>
+            <li><strong><b>Social Media Platforms:</b></strong><i>  Websites like Facebook, Twitter, and Instagram that enable social interaction.</i> </li>
+            <li><strong><b>Web Portals:</b></strong><i>  Centralized platforms providing various services, such as university or corporate portals.</i> </li>
+            <li><strong><b>AI-Powered Websites:</b></strong><i>  Websites that use AI for chatbots, personalization, and automation, such as AI-driven recommendation systems.</i> </li>
+        </ul>
+    </section>
+    <section class="web-process">
+        <h2>The Web Development Process</h2>
+        <p>Building a website follows a structured process to ensure efficiency and quality:</p>
+        <ol>
+            <li><strong><b>Planning:</b></strong><i>Understanding client needs, defining goals, and wireframing.</i> </li>
+            <li><strong><b>Designing:</b></strong><i>Creating UI/UX designs and prototypes using tools like Figma and Adobe XD.</i> </li>
+            <li><strong><b>Development:</b></strong><i>Writing code using HTML, CSS, JavaScript, and frameworks.</i> </li>
+            <li><strong><b>Testing:</b></strong><i>Debugging and optimizing for various devices and browsers.</i> </li>
+            <li><strong><b>Deployment:</b></strong><i>Launching the website on servers and optimizing performance.</i> </li>
+            <li><strong><b>Maintenance:</b></strong><i>Updating content, fixing bugs, and enhancing security.</i> </li>
+        </ol>
+    </section>
+
+<section class="history">
+    <h2>History of Web Development</h2>
+    <p>The evolution of web development has been marked by significant advancements. Below is a timeline highlighting key milestones.</p>
+    <div class="timeline">
+        <div class="timeline-line"></div> 
+        <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>1. The Early Days (1990s) </h3>
+                <h2>Rise of Static Web Pages</h2>
+                <p>The web began with simple HTML pages. Tim Berners-Lee created the first website in 1991, and browsers like Mosaic and Netscape helped popularize it.</p>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>2. CSS & JavaScript <br> (Late 1990s - Early 2000s) </h3>
+                <h2>Styling & Interactivity</h2>
+                <p>CSS introduced design separation, and JavaScript brought interactivity. Websites became more engaging.</p>
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>3. Dynamic Web (2000s) </h3>
+                <h2>Server-Side Programming & Databases</h2>
+                <p>PHP, ASP.NET, and databases enabled dynamic content, leading to blogs, forums, and e-commerce.</p>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>4. Web 2.0 <br> (Mid-2000s - 2010s) </h3>
+                <h2>Social Media & User Interaction</h2>
+                <p>AJAX allowed real-time updates. Social media and JavaScript libraries like jQuery became popular.</p>
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>5. The Modern Web <br> (2010s - Present)</h3>
+                <h2>Responsive Design & Cloud Computing</h2>
+                <p>Responsive design, React, Angular, Vue.js, and cloud-based applications revolutionized web development.</p>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>6. The Future - Web 3.0 & AI</h3>
+                <h2>Decentralization & Intelligent Applications</h2>
+                <p>Blockchain, AI-driven applications, and decentralized platforms will shape the future.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <section class="applications">
+        <h2>Applications of Web Development</h2>
+        <ul class="visible-list">
+            <li>Business Websites - Corporate sites, portfolios, and blogs.</li>
+            <li>E-commerce - Online stores like Amazon and Shopify.</li>
+            <li>Social Media - Platforms like Facebook and Twitter.</li>
+            <li>Web Apps - Interactive web applications like Google Docs.</li>
+            <li>Progressive Web Apps (PWA) - Apps that work offline and behave like native mobile apps.</li>
+        </ul>
+        <button class="read-more-btn2"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay2">
+        <div class="popup-content2">
+            <h2>Complete List of Applications of Web Development</h2>
+            <div class="scrollable-content2">
+                <ul class="full-list2">
+                    <li>Business Websites - Corporate sites, portfolios, and blogs.</li>
+                    <li>E-commerce - Online stores like Amazon and Shopify.</li>
+                    <li>Social Media - Platforms like Facebook and Twitter.</li>
+                    <li>Web Apps - Interactive web applications like Google Docs.</li>
+                    <li>Progressive Web Apps (PWA) - Apps that work offline and behave like native mobile apps.</li>
+                    <li>Online Learning Platforms - E-learning portals like Coursera and Udemy.</li>
+                    <li>Streaming Services - Video and audio streaming platforms like YouTube and Netflix.</li>
+                    <li>Banking & Finance - Online banking and stock trading apps.</li>
+                    <li>Healthcare Portals - Telemedicine and patient management systems.</li>
+                    <li>News & Media - Digital newspapers and magazine websites.</li>
+                    <li>Government & Public Services - Portals for online applications and citizen services.</li>
+                    <li>Job Portals - Platforms like LinkedIn and Indeed for job searches.</li>
+                    <li>Travel & Booking - Websites for flight, hotel, and car rentals like Airbnb and Expedia.</li>
+                    <li>Entertainment & Gaming - Online gaming platforms and interactive content sites.</li>
+                    <li>Customer Support & Chatbots - AI-powered chat systems for customer service.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <section class="content">
+        <h2>Web Development Topics</h2>
+        <div class="web-topics">
+            <div class="topic-card">
+                <h3>HTML & CSS</h3>
+                <p>Learn the basics of structuring and styling web pages.</p>
+            </div>
+            <div class="topic-card">
+                <h3>JavaScript & Frameworks</h3>
+                <p>Understand JavaScript, React, Angular, and Vue.js.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Back-End Development</h3>
+                <p>Explore server-side languages like Node.js, PHP, and Python.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Databases & APIs</h3>
+                <p>Learn SQL, NoSQL, and how to connect to APIs.</p>
+            </div>
+        </div>
+    </section>
+    
+<section class="web-technologies">
+    <h2>Web Development Technologies & Tools</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Technology</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>HTML5</td><td>Front-End</td><td>Markup Language</td><td>Structuring web pages</td></tr>
+            <tr><td>CSS3</td><td>Front-End</td><td>Style Sheet Language</td><td>Designing and styling websites</td></tr>
+            <tr><td>JavaScript</td><td>Front-End & Back-End</td><td>Programming Language</td><td>Making web pages interactive</td></tr>
+            <tr><td>React.js</td><td>Front-End</td><td>Framework</td><td>Building user interfaces</td></tr>
+            <tr><td>Angular</td><td>Front-End</td><td>Framework</td><td>Building UI components</td></tr>
+        </tbody>
+    </table>
+    <button class="read-more-btn"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+</section>
+
+<div class="popup-overlay">
+    <div class="popup-content">
+        <h2>Full List of Web Technologies</h2>
+        <div class="scrollable-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>HTML5</td><td>Front-End</td><td>Markup Language</td><td>Structuring web pages</td></tr>
+                <tr><td>CSS3</td><td>Front-End</td><td>Style Sheet Language</td><td>Designing and styling websites</td></tr>
+                <tr><td>JavaScript</td><td>Front-End & Back-End</td><td>Programming Language</td><td>Making web pages interactive</td></tr>
+                <tr><td>React.js</td><td>Front-End</td><td>Framework</td><td>Building user interfaces</td></tr>
+                <tr><td>Angular</td><td>Front-End</td><td>Framework</td><td>Building UI components</td></tr>
+                <tr><td>Node.js</td><td>Back-End</td><td>Runtime Environment</td><td>Creating server-side applications</td></tr>
+                <tr><td>MongoDB</td><td>Back-End</td><td>Database</td><td>Storing and managing data</td></tr>
+                <tr><td>Express.js</td><td>Back-End</td><td>Framework</td><td>Building web applications with Node.js</td></tr>
+                <tr><td>Vue.js</td><td>Front-End</td><td>Framework</td><td>Developing dynamic user interfaces</td></tr>
+                <tr><td>Bootstrap</td><td>Front-End</td><td>CSS Framework</td><td>Creating responsive designs</td></tr>
+                <tr><td>TypeScript</td><td>Front-End & Back-End</td><td>Programming Language</td><td>Enhancing JavaScript with static types</td></tr>
+                <tr><td>PHP</td><td>Back-End</td><td>Programming Language</td><td>Developing dynamic web applications</td></tr>
+                <tr><td>MySQL</td><td>Back-End</td><td>Database</td><td>Relational data storage</td></tr>
+                <tr><td>GraphQL</td><td>Back-End</td><td>Query Language</td><td>Fetching data efficiently</td></tr>
+                <tr><td>Git</td><td>Version Control</td><td>Tool</td><td>Managing code versions</td></tr>
+                <tr><td>Docker</td><td>DevOps</td><td>Containerization</td><td>Deploying applications in isolated environments</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+    
+<section class="challenges">
+    <h2>Challenges in Web Development</h2>
+    <p>Developers face several obstacles while building websites, including:</p>
+    <ul class="visible-list">
+        <li><strong>Cross-browser Compatibility:</strong> Ensuring the site works on Chrome, Firefox, Safari, and Edge.</li>
+        <li><strong>Security Issues:</strong> Preventing SQL injection, XSS attacks, and data breaches.</li>
+        <li><strong>Performance Optimization:</strong> Reducing page load times and optimizing resources.</li>
+        <li><strong>Scalability:</strong> Making sure the website can handle increasing traffic.</li>
+        <li><strong>Mobile Responsiveness:</strong> Ensuring the design adapts to different screen sizes.</li>
+    </ul>
+    <button class="read-more-btn1"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+</section>
+
+<div class="popup-overlay1">
+    <div class="popup-content1">
+        <h2>Complete List of Web Development Challenges</h2>
+        <div class="scrollable-content1">
+            <ul class="full-list1">
+                <li><strong>Cross-browser Compatibility:</strong> Ensuring the site works on Chrome, Firefox, Safari, and Edge.</li>
+                <li><strong>Security Issues:</strong> Preventing SQL injection, XSS attacks, and data breaches.</li>
+                <li><strong>Performance Optimization:</strong> Reducing page load times and optimizing resources.</li>
+                <li><strong>Scalability:</strong> Making sure the website can handle increasing traffic.</li>
+                <li><strong>Mobile Responsiveness:</strong> Ensuring the design adapts to different screen sizes.</li>
+                <li><strong>SEO Optimization:</strong> Implementing best practices to improve search engine ranking.</li>
+                <li><strong>Accessibility Compliance:</strong> Making websites usable for people with disabilities (WCAG guidelines).</li>
+                <li><strong>API Integration:</strong> Connecting third-party services smoothly and securely.</li>
+                <li><strong>Maintaining Code Quality:</strong> Writing clean, maintainable, and scalable code.</li>
+                <li><strong>Content Management:</strong> Keeping website content dynamic and up to date.</li>
+                <li><strong>Database Management:</strong> Ensuring efficient data storage, retrieval, and security.</li>
+                <li><strong>Version Control & Collaboration:</strong> Managing code changes and working in teams using Git.</li>
+                <li><strong>Adapting to New Technologies:</strong> Keeping up with evolving frameworks, libraries, and industry trends.</li>
+                <li><strong>User Experience (UX) Design:</strong> Creating intuitive, user-friendly interfaces.</li>
+                <li><strong>Website Downtime & Reliability:</strong> Ensuring minimal downtime and quick recovery from failures.</li>
+                <li><strong>Load Balancing:</strong> Distributing traffic efficiently to prevent server overload.</li>
+                <li><strong>Testing & Debugging:</strong> Identifying and fixing bugs before deployment.</li>
+                <li><strong>Legal Compliance & Privacy:</strong> Following GDPR, CCPA, and other data protection laws.</li>
+                <li><strong>Hosting & Deployment:</strong> Choosing the right hosting environment and deploying efficiently.</li>
+                <li><strong>Cost Management:</strong> Balancing development costs with project budgets.</li>
+                <li><strong>Effective Documentation:</strong> Keeping project documentation clear for future development.</li>
+                <li><strong>Handling Legacy Code:</strong> Maintaining and upgrading older codebases without breaking functionality.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    <section class="future">
+        <h2>Future Trends in Web Development</h2>
+        <p>The industry is evolving rapidly with emerging technologies such as:</p>
+        <ul>
+            <li><strong>Artificial Intelligence:</strong> AI-driven chatbots, automated content creation, and personalization.</li>
+            <li><strong>Blockchain Integration:</strong> Decentralized web applications and smart contracts.</li>
+            <li><strong>Web 3.0:</strong> A more decentralized internet powered by blockchain and AI.</li>
+            <li><strong>Serverless Computing:</strong> Running applications without managing server infrastructure.</li>
+            <li><strong>Augmented Reality & Virtual Reality:</strong> Interactive experiences in e-commerce and gaming.</li>
+        </ul>
+    </section>
+    
+    <section class="video">
+        <h2>Watch Web Development in Action</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PkZNo7MFNFg" title="Web Development Video" allowfullscreen></iframe>
+    </section>
+    <section class="quiz-section">
+        <div class="quiz-content">
+            <h3>Test Your Knowledge about <br> Web Development </h3>
+            <a href="quiz.html"><button class="read-more-btn3">Take the Test</button></a>
+        </div>
+        <div class="cta-content">
+            <h3>Want to become a Expert on<br> web development?</h3>
+            <a href="resources.html"><button class="explore-btn">Explore More</button></a>
+        </div>
+    </section>
+    
+    <section class="newsletter">
+        <h2>Subscribe to Web Dev Updates</h2>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+    
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <h3 class="faq-question">What is Web Development? <span class="plus">+</span></h3>
+        <p class="faq-answer">Web development is the process of creating websites and web applications.</p>
+    </div>
+    <div class="faq-item">
+        <h3 class="faq-question">What languages should I learn? <span class="plus">+</span></h3>
+        <p class="faq-answer">Start with HTML, CSS, JavaScript, and then explore frameworks like React or Vue.</p>
+    </div>
+    <div class="faq-item">
+        <h3 class="faq-question">What is the difference between Front-end and Back-end? <span class="plus">+</span></h3>
+        <p class="faq-answer">Front-end deals with UI (HTML, CSS, JS), while Back-end handles databases and servers.</p>
+    </div>
+    <div class="faq-item">
+        <h3 class="faq-question">What is Responsive Web Design? <span class="plus">+</span></h3>
+        <p class="faq-answer">It ensures that a website looks good on all devices, using flexible layouts and media queries.</p>
+    </div>
+    <div class="faq-item">
+        <h3 class="faq-question">How long does it take to learn web development? <span class="plus">+</span></h3>
+        <p class="faq-answer">It depends on your dedication. Basic skills take a few months; mastering it takes years.</p>
+    </div>
+    <div class="faq-item">
+        <h3 class="faq-question">What is SEO in web development? <span class="plus">+</span></h3>
+        <p class="faq-answer">SEO (Search Engine Optimization) helps websites rank higher on search engines.</p>
+    </div>
+</section>
+
+<section class="container1">
+    <h2 class="main-title">🌌 Explore Futuristic Tech Domains</h2>
+    <p class="subtitle">Discover the cutting-edge fields of technology shaping our future.</p>
+    
+    <div class="domain-grid">
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" alt="Game Development">
+                <div class="hover-info"><p>Bringing immersive experiences to life through game engines and cutting-edge graphics.</p></div>
+            </div>
+            <h3>Game Development</h3>
+            <a href="gd.html" class="button1">Know More</a>
+        </div>
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn1.vectorstock.com/i/1000x1000/82/20/website-development-neon-label-vector-26918220.jpg" alt="Web Development">
+                <div class="hover-info"><p>Building the future of the internet with modern web technologies.</p></div>
+            </div>
+            <h3>Web Development</h3>
+            <a href="wd.html" class="button1">Know More</a>
+        </div>
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/1000x1000/41/99/app-development-round-colored-outline-vector-23654199.webp" alt="Android Development">
+                <div class="hover-info"><p>Developing innovative mobile applications for the Android ecosystem with cutting-edge tools.</p></div>
+            </div>
+            <h3>Android Development</h3>
+            <a href="ad.html" class="button1">Know More</a>
+        </div>
+         
+         <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/1000v/59/38/crct-bg-ai-chip-and-circuit-cntr-lp-bl-vector-51515938.avif" alt="Artificial Intelligence">
+                <div class="hover-info"><p>AI is revolutionizing industries with deep learning, automation, and robotics.</p></div>
+            </div>
+            <h3>Artificial Intelligence</h3>
+            <a href="ai.html" class="button1">Know More</a>
+        </div>
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/1000x1000/38/16/cyber-security-glowing-neon-sign-internet-vector-23303816.webp" alt="Cybersecurity">
+                <div class="hover-info"><p>Securing digital landscapes through ethical hacking, encryption, and AI-powered defenses.</p></div>
+            </div>
+            <h3>Cybersecurity</h3>
+            <a href="cs.html" class="button1">Know More</a>
+        </div>
+        
+        <div class="domain-card">
+            <div class="image-container">
+                <img src="https://cdn.vectorstock.com/i/1000x1000/45/26/cloud-service-security-glowing-neon-sign-internet-vector-23104526.webp" alt="Cloud Computing">
+                <div class="hover-info"><p>Empowering businesses with scalable, flexible, and secure cloud infrastructure.</p></div>
+            </div>
+            <h3>Cloud Computing</h3>
+            <a href="cc.html" class="button1">Know More</a>
+        </div>
+    </div>
+</section>
+     
+     <footer>
+        <div class="footer-container">
+            
+            <div class="footer-row">
+                
+                <div class="footer-column">
+                    <h3 id="about-hackerzguide">ABOUT HACKERZGUIDE</h3>
+                    <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide insights, tutorials, and guidance to help individuals achieve their goals.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="quick-links-title">QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="#categoriess">Categories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>
+                    <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a></p>
+                    <p><strong> Phone : </strong> +91 62XXX XXXXX</p>
+                    <p><strong> Address : </strong> University Institute Of Technology,
+                        The University of Burdwan,
+                        Golapbag (North), Burdwan-713104,
+                        West Bengal.</p>
+                </div>
+            </div>
+            
+            <div class="footer-row">
+                
+                <div class="footer-column social-media">
+                    <h3 id="follow-us-title">FOLLOW US</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Language</h3>
+                    <select id="language-selector" title="Select Language" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                    </select>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="newsletter-title">NEWSLETTER</h3>
+                    <p id="subscribe-text">Subscribe to get the latest updates and exclusive content.</p>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email">
+                    <button onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
+        </div>
+    </footer>
+ 
+ <button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+<i class="fas fa-comment-alt"></i>
+</button>
+
+<div id="chatbot-window">
+<div class="chatbot-header">
+    <h3>HackerZGuide Chatbot</h3>
+    <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+</div>
+<div class="chatbot-body">
+    
+    <div id="chatbot-categories"></div>
+    
+    <div id="chatbot-questions"></div>
+    
+    <div id="chatbot-messages">
+        <p class="bot-msg">Hi! How can I assist you today?</p>
+    </div>
+    
+    <div class="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Ask me something...">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
+            <i class="fas fa-microphone"></i>
+        </button>
+    </div>
+</div>
+</div>
+</body>
+</html>

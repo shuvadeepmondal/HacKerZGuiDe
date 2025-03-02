@@ -18,7 +18,9 @@ scroll-behavior: smooth;
 .no-scroll {
   overflow: hidden;
 }
-
+body, header, h1, h2, h3, p, a, span {
+  text-shadow: 0 0 4px rgba(64, 255, 0, 0.3), 0 0 8px rgba(0, 166, 255, 0.2) !important;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;

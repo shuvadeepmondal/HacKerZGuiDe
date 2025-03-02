@@ -1287,7 +1287,7 @@ header p {
 
 @keyframes neonGlow {
   0% { text-shadow: 0 0 15px #40ff00, 0 0 30px #00a6ff; }
-  100% { text-shadow: 0 0 20px #40ff00, 0 0 35px #00a6ff; }
+  100% { text-shadow: 0 0 20px #40ff00, 0 0 35px #00a6ff; }
 }
 
 /* Smallest screens (200px and above) */
@@ -1405,7 +1405,7 @@ header p {
   .modal-content {
     max-width: 700px;
     padding: 40px;
-  }
+ }
 }
 
 footer {

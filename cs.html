@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity</title>
+    <link rel="stylesheet" href="cs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="cs.js"></script></head>
+<body>
+    <header>
+        <nav class="navbar">
+            
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                ☰
+            </div>
+            
+            <div class="logo">
+                <a href="index.html">HackeRZGuide</a>
+            </div>
+            
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="right-section">
+                <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                </div>
+            </div>
+            
+<div class="mobile-nav" id="mobileNav">
+    
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="mobile-right-section">
+        <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+
+    
+    <header class="category-header cybersecurity">
+        <h1>Cybersecurity</h1>
+        <p>Explore cyber threats, ethical hacking, cryptography, and network security.</p>
+    </header>
+
+    
+    <section class="introduction">
+        <img src="https://i.pinimg.com/originals/8b/fd/01/8bfd01c18be1b5059bc0d7770d9dabf1.gif" alt="Cybersecurity">
+        <h2>What is Cybersecurity?</h2>
+        <p>Cybersecurity refers to the protection of digital systems, networks, and data from cyber threats like hacking, malware, and data breaches.</p>
+        <ul>
+            <li><strong><b>Network Security:</b></strong> Securing networks from unauthorized access.</li>
+            <li><strong><b>Data Encryption:</b></strong> Protecting sensitive data through encryption techniques.</li>
+            <li><strong><b>Ethical Hacking:</b></strong> Identifying vulnerabilities to strengthen security.</li>
+        </ul>
+        <p>Cybersecurity is crucial for safeguarding personal, corporate, and government data against cyberattacks.</p>
+    </section>
+
+    <section class="cybersecurity-types">
+        <h2>Types of Cybersecurity</h2>
+        <p>Cybersecurity measures protect systems, data, and users from threats:</p>
+        <ul>
+            <li><strong><b>Network Security:</b></strong><i> Preventing unauthorized access to networks.</i></li>
+            <li><strong><b>Data Security:</b></strong><i> Encrypting and protecting sensitive information.</i></li>
+            <li><strong><b>Endpoint Security:</b></strong><i> Securing devices like computers and mobile phones.</i></li>
+            <li><strong><b>Cloud Security:</b></strong><i> Protecting data stored in cloud environments.</i></li>
+            <li><strong><b>Application Security:</b></strong><i> Safeguarding software from cyber threats.</i></li>
+        </ul>
+    </section>
+
+    <section class="cybersecurity-process">
+        <h2>The Cybersecurity Process</h2>
+        <p>Ensuring cybersecurity involves multiple layers of protection and continuous monitoring:</p>
+        <ol>
+            <li><strong><b>Risk Assessment:</b></strong><i> Identifying potential threats, vulnerabilities, and security gaps.</i></li>
+            <li><strong><b>Security Planning:</b></strong><i> Developing security policies, encryption standards, and access control mechanisms.</i></li>
+            <li><strong><b>Implementation:</b></strong><i> Deploying firewalls, antivirus software, and secure authentication systems.</i></li>
+            <li><strong><b>Monitoring & Detection:</b></strong><i> Continuously monitoring networks and systems for potential cyber threats.</i></li>
+            <li><strong><b>Incident Response:</b></strong><i> Detecting, analyzing, and mitigating security breaches.</i></li>
+            <li><strong><b>Continuous Improvement:</b></strong><i> Updating security measures and staying ahead of evolving threats.</i></li>
+        </ol>
+    </section>
+        
+
+    
+    <section class="history">
+    <h2>History of Cybersecurity</h2>
+    <p>The evolution of cybersecurity has been driven by the need to protect digital systems from emerging threats. Below is a timeline highlighting key milestones.</p>
+    <div class="timeline">
+        <div class="timeline-line"></div> 
+        
+        <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>1. The Early Days (1960s - 1980s)</h3>
+                <h2>Birth of Cybersecurity</h2>
+                <p>With the rise of computers, the first security threats appeared. The first computer worm, "Creeper," was created in the 1970s, leading to the first antivirus program.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>2. The Internet Era (1990s)</h3>
+                <h2>Rise of Hacking & Viruses</h2>
+                <p>As the internet grew, cyber threats like malware, phishing, and network breaches emerged. The first firewall was developed to protect networks.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>3. Cybersecurity Regulations (2000s)</h3>
+                <h2>Governments Take Action</h2>
+                <p>Major cyberattacks led to security laws like HIPAA, PCI-DSS, and GDPR. Organizations started investing in cybersecurity strategies.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>4. Advanced Threats (2010s)</h3>
+                <h2>Rise of Ransomware & AI-Powered Attacks</h2>
+                <p>Cybercriminals used advanced techniques like ransomware, DDoS attacks, and AI-driven hacking, increasing the need for stronger security defenses.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>5. Cloud Security & Zero Trust (2020s - Present)</h3>
+                <h2>Defending Digital Infrastructure</h2>
+                <p>With cloud computing and IoT growth, Zero Trust security models and AI-driven cybersecurity solutions are now essential.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>6. The Future - Quantum & AI Security</h3>
+                <h2>Next-Gen Cybersecurity</h2>
+                <p>Quantum computing and AI will revolutionize security, enabling both stronger encryption and more sophisticated cyber threats.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+    <section class="applications">
+        <h2>Applications of Cybersecurity</h2>
+        <ul class="visible-list">
+            <li>Network Security - Protecting IT infrastructure from unauthorized access.</li>
+            <li>Data Protection - Encrypting sensitive data to prevent breaches.</li>
+            <li>Cloud Security - Securing cloud-based applications and storage.</li>
+            <li>Cybercrime Prevention - Detecting and preventing fraud, phishing, and ransomware attacks.</li>
+            <li>Endpoint Security - Safeguarding devices like computers and mobile phones.</li>
+        </ul>
+        <button class="read-more-btn2"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay2">
+        <div class="popup-content2">
+            <h2>Complete List of Applications of Cybersecurity</h2>
+            <div class="scrollable-content2">
+                <ul class="full-list2">
+                    <li>Network Security - Protecting IT infrastructure from unauthorized access.</li>
+                    <li>Data Protection - Encrypting sensitive data to prevent breaches.</li>
+                    <li>Cloud Security - Securing cloud-based applications and storage.</li>
+                    <li>Cybercrime Prevention - Detecting and preventing fraud, phishing, and ransomware attacks.</li>
+                    <li>Endpoint Security - Safeguarding devices like computers and mobile phones.</li>
+                    <li>IoT Security - Securing smart devices and connected systems.</li>
+                    <li>Identity & Access Management - Managing user authentication and permissions.</li>
+                    <li>Application Security - Protecting software and web applications from vulnerabilities.</li>
+                    <li>AI-Driven Threat Detection - Using AI for real-time security monitoring and analysis.</li>
+                    <li>Incident Response & Recovery - Detecting breaches and mitigating their impact.</li>
+                    <li>Digital Forensics - Investigating cybercrimes and tracking hackers.</li>
+                    <li>Blockchain Security - Ensuring the integrity of decentralized financial transactions.</li>
+                    <li>Cybersecurity in Healthcare - Protecting patient data and medical devices.</li>
+                    <li>Government & Defense - Securing critical infrastructure and classified data.</li>
+                    <li>Social Engineering Protection - Educating users to prevent phishing and impersonation attacks.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <section class="content">
+        <h2>Cybersecurity Topics</h2>
+        <div class="cybersecurity-topics">
+            <div class="topic-card">
+                <h3>Network Security</h3>
+                <p>Learn how to secure networks using firewalls, VPNs, and encryption.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Ethical Hacking & Penetration Testing</h3>
+                <p>Understand hacking techniques, vulnerability assessment, and penetration testing.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Data Protection & Encryption</h3>
+                <p>Explore cryptography, secure data storage, and encryption standards.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Cyber Threats & Incident Response</h3>
+                <p>Learn about malware, phishing, ransomware, and how to respond to attacks.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="cybersecurity-technologies">
+        <h2>Cybersecurity Technologies & Tools</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Firewall</td><td>Network Security</td><td>Security Tool</td><td>Filtering incoming and outgoing traffic</td></tr>
+                <tr><td>Antivirus Software</td><td>Endpoint Security</td><td>Security Software</td><td>Detecting and removing malware</td></tr>
+                <tr><td>Encryption</td><td>Data Security</td><td>Cryptographic Technology</td><td>Protecting sensitive information</td></tr>
+                <tr><td>Intrusion Detection System (IDS)</td><td>Network Security</td><td>Security Tool</td><td>Detecting unauthorized access</td></tr>
+                <tr><td>Multi-Factor Authentication (MFA)</td><td>Access Control</td><td>Authentication System</td><td>Enhancing login security</td></tr>
+            </tbody>
+        </table>
+        <button class="read-more-btn"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2>Full List of Cybersecurity Technologies</h2>
+            <div class="scrollable-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Firewall</td><td>Network Security</td><td>Security Tool</td><td>Filtering incoming and outgoing traffic</td></tr>
+                    <tr><td>Antivirus Software</td><td>Endpoint Security</td><td>Security Software</td><td>Detecting and removing malware</td></tr>
+                    <tr><td>Encryption</td><td>Data Security</td><td>Cryptographic Technology</td><td>Protecting sensitive information</td></tr>
+                    <tr><td>Intrusion Detection System (IDS)</td><td>Network Security</td><td>Security Tool</td><td>Detecting unauthorized access</td></tr>
+                    <tr><td>Multi-Factor Authentication (MFA)</td><td>Access Control</td><td>Authentication System</td><td>Enhancing login security</td></tr>
+                    <tr><td>Virtual Private Network (VPN)</td><td>Network Security</td><td>Privacy Tool</td><td>Securing internet connections</td></tr>
+                    <tr><td>SIEM (Security Information & Event Management)</td><td>Threat Detection</td><td>Security Platform</td><td>Monitoring and analyzing security events</td></tr>
+                    <tr><td>Penetration Testing Tools</td><td>Ethical Hacking</td><td>Testing Tool</td><td>Finding vulnerabilities in systems</td></tr>
+                    <tr><td>Zero Trust Security</td><td>Access Control</td><td>Security Framework</td><td>Restricting unauthorized access</td></tr>
+                    <tr><td>Cloud Security Solutions</td><td>Cloud Security</td><td>Security Service</td><td>Protecting cloud-based resources</td></tr>
+                    <tr><td>Security Awareness Training</td><td>Human Factor</td><td>Education</td><td>Training employees to recognize cyber threats</td></tr>
+                    <tr><td>Blockchain Security</td><td>Data Security</td><td>Technology</td><td>Enhancing transaction security</td></tr>
+                    <tr><td>Access Control Lists (ACL)</td><td>Network Security</td><td>Security Policy</td><td>Defining permissions for network traffic</td></tr>
+                    <tr><td>Identity & Access Management (IAM)</td><td>Authentication</td><td>Security Management</td><td>Controlling user access to resources</td></tr>
+                    <tr><td>Cyber Threat Intelligence</td><td>Threat Analysis</td><td>Security Strategy</td><td>Gathering and analyzing cybersecurity threats</td></tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="challenges">
+        <h2>Challenges in Cybersecurity</h2>
+        <p>Cybersecurity professionals face numerous challenges in protecting digital assets, including:</p>
+        <ul class="visible-list">
+            <li><strong>Rising Cyber Threats:</strong> Increasing sophistication of malware, phishing, and ransomware attacks.</li>
+            <li><strong>Data Privacy & Compliance:</strong> Ensuring adherence to regulations like GDPR and CCPA.</li>
+            <li><strong>Zero-Day Vulnerabilities:</strong> Protecting systems from newly discovered security flaws.</li>
+            <li><strong>Insider Threats:</strong> Preventing security risks from employees or trusted personnel.</li>
+            <li><strong>Cloud Security:</strong> Safeguarding sensitive data in cloud environments.</li>
+        </ul>
+        <button class="read-more-btn1"><span>&#x2193;&#x2193;</span> Read More <span>&#x2193;&#x2193;</span></button>
+    </section>
+    
+    <div class="popup-overlay1">
+        <div class="popup-content1">
+            <h2>Complete List of Cybersecurity Challenges</h2>
+            <div class="scrollable-content1">
+                <ul class="full-list1">
+                    <li><strong>Rising Cyber Threats:</strong> Increasing sophistication of malware, phishing, and ransomware attacks.</li>
+                    <li><strong>Data Privacy & Compliance:</strong> Ensuring adherence to regulations like GDPR and CCPA.</li>
+                    <li><strong>Zero-Day Vulnerabilities:</strong> Protecting systems from newly discovered security flaws.</li>
+                    <li><strong>Insider Threats:</strong> Preventing security risks from employees or trusted personnel.</li>
+                    <li><strong>Cloud Security:</strong> Safeguarding sensitive data in cloud environments.</li>
+                    <li><strong>IoT Security Risks:</strong> Protecting smart devices from unauthorized access.</li>
+                    <li><strong>Network Security:</strong> Preventing unauthorized intrusions and data breaches.</li>
+                    <li><strong>AI & Machine Learning Threats:</strong> Addressing AI-driven cyberattacks and deepfake technology.</li>
+                    <li><strong>Endpoint Security:</strong> Securing personal and enterprise devices against cyber threats.</li>
+                    <li><strong>Password & Authentication Issues:</strong> Ensuring secure login mechanisms to prevent credential theft.</li>
+                    <li><strong>Phishing & Social Engineering:</strong> Educating users to recognize and avoid fraudulent schemes.</li>
+                    <li><strong>Security Patch Management:</strong> Keeping systems updated against known vulnerabilities.</li>
+                    <li><strong>Supply Chain Attacks:</strong> Securing third-party services and dependencies.</li>
+                    <li><strong>BYOD (Bring Your Own Device) Risks:</strong> Managing personal devices used in corporate networks.</li>
+                    <li><strong>Cybersecurity Skill Shortage:</strong> Addressing the global shortage of skilled security professionals.</li>
+                    <li><strong>Data Loss Prevention (DLP):</strong> Implementing measures to prevent accidental or malicious data leaks.</li>
+                    <li><strong>Advanced Persistent Threats (APTs):</strong> Detecting and mitigating long-term, targeted cyberattacks.</li>
+                    <li><strong>Cloud Misconfigurations:</strong> Avoiding security gaps caused by improper cloud setups.</li>
+                    <li><strong>Incident Response & Recovery:</strong> Developing strategies to minimize damage from cyber incidents.</li>
+                    <li><strong>Threat Intelligence & Analysis:</strong> Continuously monitoring and analyzing emerging threats.</li>
+                    <li><strong>Security Awareness Training:</strong> Educating employees and users on best cybersecurity practices.</li>
+                    <li><strong>Ransomware Defense:</strong> Implementing backup and recovery plans to counter ransomware attacks.</li>
+                    <li><strong>Identity & Access Management (IAM):</strong> Controlling and monitoring user access to sensitive data.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <section class="future">
+        <h2>Future Trends in Cybersecurity</h2>
+        <p>Cybersecurity is evolving rapidly to counter emerging threats with technologies such as:</p>
+        <ul>
+            <li><strong>Artificial Intelligence & Machine Learning:</strong> AI-driven threat detection and automated security responses.</li>
+            <li><strong>Zero Trust Security:</strong> Verifying every user and device before granting access.</li>
+            <li><strong>Quantum Cryptography:</strong> Advanced encryption methods resistant to quantum computing attacks.</li>
+            <li><strong>Biometric Authentication:</strong> Enhanced security using fingerprint, facial recognition, and voice authentication.</li>
+            <li><strong>Cloud Security Innovations:</strong> Advanced encryption and AI-powered threat monitoring for cloud-based systems.</li>
+        </ul>
+    </section>
+    
+
+    <section class="video">
+        <h2>Watch Cybersecurity in Action</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/inWWhr5tnEA" title="Cybersecurity Video" allowfullscreen></iframe>
+    </section>
+    <section class="quiz-section">
+        <div class="quiz-content">
+            <h3>Test Your Knowledge about <br> Cybersecurity </h3>
+            <a href="quiz.html"><button class="read-more-btn3">Take the Test</button></a>
+        </div>
+        <div class="cta-content">
+            <h3>Want to become a Expert on<br> Cybersecurity?</h3>
+            <a href="resources.html"><button class="explore-btn">Explore More</button></a>
+        </div>
+    </section>
+    
+    <section class="newsletter">
+        <h2>Subscribe to Cybersecurity Updates</h2>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">What is Cybersecurity? <span class="plus">+</span></h3>
+            <p class="faq-answer">Cybersecurity is the practice of protecting systems, networks, and data from cyber threats.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Why is Cybersecurity important? <span class="plus">+</span></h3>
+            <p class="faq-answer">It prevents data breaches, identity theft, and cyber attacks that can harm individuals and businesses.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What are common types of cyber threats? <span class="plus">+</span></h3>
+            <p class="faq-answer">Common threats include malware, phishing attacks, ransomware, and DDoS attacks.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How can I protect my personal data online? <span class="plus">+</span></h3>
+            <p class="faq-answer">Use strong passwords, enable two-factor authentication, and avoid suspicious links.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is ethical hacking? <span class="plus">+</span></h3>
+            <p class="faq-answer">Ethical hacking involves testing systems for vulnerabilities to strengthen security.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What are the best practices for cybersecurity? <span class="plus">+</span></h3>
+            <p class="faq-answer">Keep software updated, use firewalls, encrypt sensitive data, and educate employees on security risks.</p>
+        </div>
+    </section>
+
+    <section class="container1">
+        <h2 class="main-title">🌌 Explore Futuristic Tech Domains</h2>
+        <p class="subtitle">Discover the cutting-edge fields of technology shaping our future.</p>
+        
+        <div class="domain-grid">
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" alt="Game Development">
+                    <div class="hover-info"><p>Bringing immersive experiences to life through game engines and cutting-edge graphics.</p></div>
+                </div>
+                <h3>Game Development</h3>
+                <a href="gd.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn1.vectorstock.com/i/1000x1000/82/20/website-development-neon-label-vector-26918220.jpg" alt="Web Development">
+                    <div class="hover-info"><p>Building the future of the internet with modern web technologies.</p></div>
+                </div>
+                <h3>Web Development</h3>
+                <a href="wd.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/41/99/app-development-round-colored-outline-vector-23654199.webp" alt="Android Development">
+                    <div class="hover-info"><p>Developing innovative mobile applications for the Android ecosystem with cutting-edge tools.</p></div>
+                </div>
+                <h3>Android Development</h3>
+                <a href="ad.html" class="button1">Know More</a>
+            </div>
+             
+             <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000v/59/38/crct-bg-ai-chip-and-circuit-cntr-lp-bl-vector-51515938.avif" alt="Artificial Intelligence">
+                    <div class="hover-info"><p>AI is revolutionizing industries with deep learning, automation, and robotics.</p></div>
+                </div>
+                <h3>Artificial Intelligence</h3>
+                <a href="ai.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/38/16/cyber-security-glowing-neon-sign-internet-vector-23303816.webp" alt="Cybersecurity">
+                    <div class="hover-info"><p>Securing digital landscapes through ethical hacking, encryption, and AI-powered defenses.</p></div>
+                </div>
+                <h3>Cybersecurity</h3>
+                <a href="cs.html" class="button1">Know More</a>
+            </div>
+            
+            <div class="domain-card">
+                <div class="image-container">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/45/26/cloud-service-security-glowing-neon-sign-internet-vector-23104526.webp" alt="Cloud Computing">
+                    <div class="hover-info"><p>Empowering businesses with scalable, flexible, and secure cloud infrastructure.</p></div>
+                </div>
+                <h3>Cloud Computing</h3>
+                <a href="cc.html" class="button1">Know More</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-row">
+                
+                <div class="footer-column">
+                    <h3 id="about-hackerzguide">ABOUT HACKERZGUIDE</h3>
+                    <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide insights, tutorials, and guidance to help individuals achieve their goals.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="quick-links-title">QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="#categoriess">Categories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>
+                    <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a></p>
+                    <p><strong> Phone : </strong> +91 62XXX XXXXX</p>
+                    <p><strong> Address : </strong> University Institute Of Technology,
+                        The University of Burdwan,
+                        Golapbag (North), Burdwan-713104,
+                        West Bengal.</p>
+                </div>
+            </div>
+            
+            <div class="footer-row">
+                
+                <div class="footer-column social-media">
+                    <h3 id="follow-us-title">FOLLOW US</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Language</h3>
+                    <select id="language-selector" title="Select Language" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                    </select>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="newsletter-title">NEWSLETTER</h3>
+                    <p id="subscribe-text">Subscribe to get the latest updates and exclusive content.</p>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email">
+                    <button onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
+        </div>
+    </footer>
+ 
+ <button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+<i class="fas fa-comment-alt"></i>
+</button>
+
+<div id="chatbot-window">
+<div class="chatbot-header">
+    <h3>HackerZGuide Chatbot</h3>
+    <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+</div>
+<div class="chatbot-body">
+    
+    <div id="chatbot-categories"></div>
+    
+    <div id="chatbot-questions"></div>
+    
+    <div id="chatbot-messages">
+        <p class="bot-msg">Hi! How can I assist you today?</p>
+    </div>
+    
+    <div class="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Ask me something...">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
+            <i class="fas fa-microphone"></i>
+        </button>
+    </div>
+</div>
+</div>
+</body>
+</html>

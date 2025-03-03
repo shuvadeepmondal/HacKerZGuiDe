@@ -704,69 +704,24 @@ p {
 }
 
 .share-buttons a {
-    display: inline-block;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    width: 100px;
-    font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ffffff; 
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-#share-whatsapp {
-    color: #25D366;
-    background-color: white;
-}
 
-#share-linkedin {
-    color: #0077B5;
-    background-color: white;
-}
-
-#share-twitter {
-    color: #65c4ff;
-    background-color: white;
-}
-
-#share-facebook {
-    color: #3b5998;
-    background-color: white;
-}
-
-#share-instagram {
-    color: #b10000;
-    background-color: white;
-}
-#share-whatsapp:hover {
-    color: #25D366;
-    background-color: black;
-}
-
-#share-linkedin:hover {
-    color: #0077B5;
-    background-color: black;
-}
-
-#share-twitter:hover {
-    color: #65c4ff;
-    background-color: black;
-}
-
-#share-facebook:hover {
-    color: #3b5998;
-    background-color: black;
-}
-
-#share-instagram:hover {
-    color: #b10000;
-    background-color: black;
-}
 .share-buttons a:hover {
     transform: scale(1.2);
     opacity: 0.9;
 }
+
+
 
 .navigation-buttons {
     display: flex;

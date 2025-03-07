@@ -482,7 +482,7 @@ header p {
 
 .category-header {
 position: relative;
-background: url('img/artificial-intelligence-bg.jpg') no-repeat center center/cover;
+background: url('../img/artificial-intelligence-bg.jpg') no-repeat center center/cover;
 padding: 80px 20px;
 text-align: center;
 color: #00ff55; 

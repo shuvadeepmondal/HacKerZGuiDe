@@ -807,6 +807,8 @@ footer::before {
 .social-icons {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 15px;
   margin-top: 10px;
 }
@@ -823,11 +825,7 @@ footer::before {
   transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.social-icon i {
-  font-size: 1.6rem;
-  color: #40ff00; 
-  transition: color 0.3s ease-in-out;
-}
+
 
 .social-icon:hover {
   transform: scale(1.2);
@@ -835,12 +833,7 @@ footer::before {
   box-shadow: 0px 0px 10px rgba(21, 255, 0, 0.837);
 }
 
-.social-icon[title="Facebook"] i { color: #3b5998; }
-.social-icon[title="Instagram"] i { color: #e1306c; }
-.social-icon[title="Twitter"] i { color: #1da1f2; }
-.social-icon[title="GitHub"] i { color: #242424; }
-.social-icon[title="LinkedIn"] i { color: #0077b5; }
-.social-icon[title="WhatsApp"] i { color: #25D366; }
+
 
 .footer-column select {
   width: 80%;
@@ -1476,3 +1469,4 @@ footer::before {
       grid-template-columns: 1fr 1fr 1fr;
   }
 }
+

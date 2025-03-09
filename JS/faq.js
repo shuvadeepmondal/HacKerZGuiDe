@@ -1,3 +1,39 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+        const plusIcon = item.querySelector(".toggle-icon");
+        question.addEventListener("click", function () {
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                plusIcon.textContent = "+";
+            } else {
+                faqItems.forEach(faq => {
+                    faq.querySelector(".faq-answer").style.display = "none";
+                    faq.querySelector(".toggle-icon").textContent = "+";
+                });
+                answer.style.display = "block";
+                plusIcon.textContent = "−";
+                typeEffect(answer, answer.dataset.text);
+            }
+        });
+        answer.dataset.text = answer.innerHTML;
+        answer.innerHTML = ""; 
+    });
+    function typeEffect(element, text) {
+        element.innerHTML = ""; 
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 30); 
+            }
+        }
+        typing();
+    }
+});
 function changeLanguage() {
     let selectedLanguage = document.getElementById("language-selector").value;
     const translations = {
@@ -41,8 +77,8 @@ function changeLanguage() {
     document.getElementById("newsletter-title").textContent = translations[selectedLanguage].newsletter;
     document.getElementById("subscribe-text").textContent = translations[selectedLanguage].subscribe;
     alert(`Language changed to: ${selectedLanguage}`);
-  }
-  function subscribeNewsletter() {
+}
+function subscribeNewsletter() {
     let email = document.getElementById("newsletter-email").value.trim();
     let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (email === "") {
@@ -54,24 +90,24 @@ function changeLanguage() {
         return;
     }
     alert(`Thank you for subscribing, ${email}!`);
-  }
-  window.onscroll = function () {
+}
+window.onscroll = function () {
     let backToTop = document.getElementById("back-to-top");
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         backToTop.style.display = "block";
     } else {
         backToTop.style.display = "none";
     }
-  };
-  function scrollToTop() {
+};
+function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-  function toggleChatbot() {
+}
+function toggleChatbot() {
     let chatbotWindow = document.getElementById("chatbot-window");
     chatbotWindow.classList.toggle("active");
     displayCategories(); 
-  }
-  const categories = {
+}
+const categories = {
     "General": [
         "What is HackerZGuide?",
         "What features does this website have?",
@@ -147,8 +183,8 @@ function changeLanguage() {
         "What is blockchain",
         "What is cloud computing"
     ]
-  };
-  const responses = {
+};
+const responses = {
     "hello": "Hello! How can I assist you today?",
     "hi": "Hi there! Need any help?",
     "hey": "Hey! How's it going?",
@@ -199,8 +235,8 @@ function changeLanguage() {
     "what is blockchain": "Blockchain is a decentralized, secure ledger technology used in cryptocurrencies and secure transactions.",
     "what is cloud computing": "Cloud computing provides internet-based computing services like storage, networking, and databases.",
     "default": "I'm not sure about that. Try asking about the website, navbar, footer, quizzes, or tech topics!"
-  }; 
-  function displayCategories() {
+}; 
+function displayCategories() {
     let categoryDiv = document.getElementById("chatbot-categories");
     categoryDiv.innerHTML = ""; 
     for (let category in categories) {
@@ -210,8 +246,8 @@ function changeLanguage() {
         btn.onclick = () => displayQuestions(category);
         categoryDiv.appendChild(btn);
     }
-  }
-  function displayQuestions(category) {
+}
+function displayQuestions(category) {
     let questionDiv = document.getElementById("chatbot-questions");
     questionDiv.innerHTML = ""; 
     categories[category].forEach(question => {
@@ -221,8 +257,8 @@ function changeLanguage() {
         btn.onclick = () => sendPredefinedMessage(question);
         questionDiv.appendChild(btn);
     });
-  }
-  function sendPredefinedMessage(question) {
+}
+function sendPredefinedMessage(question) {
     let chatbotMessages = document.getElementById("chatbot-messages");
     let userMsg = document.createElement("p");
     userMsg.className = "user-msg";
@@ -237,8 +273,8 @@ function changeLanguage() {
         chatbotMessages.appendChild(botMsg);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight; 
     }, 500);
-  }
-  function sendMessage() {
+}
+function sendMessage() {
     let inputField = document.getElementById("chatbot-input");
     let input = inputField.value.toLowerCase().trim();
     if (input === "") return;
@@ -257,8 +293,8 @@ function changeLanguage() {
         chatbotBody.scrollTop = chatbotBody.scrollHeight;
     }, 500);
     inputField.value = ""; 
-  }
-  function startVoiceRecognition() {
+}
+function startVoiceRecognition() {
     if (!("webkitSpeechRecognition" in window)) {
         alert("Sorry, your browser doesn't support voice recognition.");
         return;
@@ -274,130 +310,96 @@ function changeLanguage() {
     recognition.onerror = function(event) {
         alert("Voice recognition error. Please try again.");
     };
-  }
-  document.addEventListener("DOMContentLoaded", () => {
-      const mobileNav = document.getElementById("mobileNav");
-      const hamburgerMenu = document.querySelector(".hamburger-menu");
-      const closeButton = document.querySelector(".close-btn");
-      const searchInput = document.querySelector(".search-bar input");
-      const contributeBtn = document.querySelector(".contribute-btn");
-      const body = document.body;
-      function toggleMenu() {
-          mobileNav.classList.toggle("active");
-          body.classList.toggle("no-scroll"); 
-      }
-      hamburgerMenu.addEventListener("click", () => {
-          mobileNav.classList.add("active");
-          body.classList.add("no-scroll");
-      });
-      closeButton.addEventListener("click", () => {
-          mobileNav.classList.remove("active");
-          body.classList.remove("no-scroll");
-      });
-      searchInput.addEventListener("focus", () => {
-          contributeBtn.style.display = "none";
-      });
-      searchInput.addEventListener("blur", () => {
-          contributeBtn.style.display = "inline-block";
-      });
-      document.addEventListener("click", (event) => {
-          if (!mobileNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-              mobileNav.classList.remove("active");
-              body.classList.remove("no-scroll");
-          }
-      });
-  });
-  document.addEventListener("DOMContentLoaded", function () {
-    let readMoreBtn = document.querySelector(".read-more-btn");
-    let popupOverlay = document.querySelector(".popup-overlay");
-    let body = document.body;
-    readMoreBtn.addEventListener("click", function () {
-        popupOverlay.style.display = "flex";
-        body.classList.add("popup-active");
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileNav = document.getElementById("mobileNav");
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const closeButton = document.querySelector(".close-btn");
+    const searchInput = document.querySelector(".search-bar input");
+    const contributeBtn = document.querySelector(".contribute-btn");
+    const body = document.body;
+    function toggleMenu() {
+        mobileNav.classList.toggle("active");
+        body.classList.toggle("no-scroll"); 
+    }
+    hamburgerMenu.addEventListener("click", () => {
+        mobileNav.classList.add("active");
+        body.classList.add("no-scroll");
     });
-    popupOverlay.addEventListener("click", function (event) {
-        if (event.target === popupOverlay) {
-            popupOverlay.style.display = "none";
-            body.classList.remove("popup-active");
+    closeButton.addEventListener("click", () => {
+        mobileNav.classList.remove("active");
+        body.classList.remove("no-scroll");
+    });
+    searchInput.addEventListener("focus", () => {
+        contributeBtn.style.display = "none";
+    });
+    searchInput.addEventListener("blur", () => {
+        contributeBtn.style.display = "inline-block";
+    });
+    document.addEventListener("click", (event) => {
+        if (!mobileNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            mobileNav.classList.remove("active");
+            body.classList.remove("no-scroll");
         }
     });
 });
 document.addEventListener("DOMContentLoaded", function () {
-    let readMoreBtn = document.querySelector(".read-more-btn1");
-    let popupOverlay = document.querySelector(".popup-overlay1");
-    let body = document.body;
-    readMoreBtn.addEventListener("click", function () {
-        popupOverlay.style.display = "flex";
-        body.classList.add("popup-active");
-    });
-    popupOverlay.addEventListener("click", function (event) {
-        if (event.target === popupOverlay) {
-            popupOverlay.style.display = "none";
-            body.classList.remove("popup-active");
-        }
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    let readMoreBtn = document.querySelector(".read-more-btn2");
-    let popupOverlay = document.querySelector(".popup-overlay2");
-    let body = document.body;
-    readMoreBtn.addEventListener("click", function () {
-        popupOverlay.style.display = "flex";
-        body.classList.add("popup-active");
-    });
-    popupOverlay.addEventListener("click", function (event) {
-        if (event.target === popupOverlay) {
-            popupOverlay.style.display = "none";
-            body.classList.remove("popup-active");
-        }
-    });
-});
-document.addEventListener("scroll", function() {
-    let items = document.querySelectorAll(".timeline-item");
-    let windowHeight = window.innerHeight;
-    items.forEach(item => {
-        let position = item.getBoundingClientRect().top;
-        if (position < windowHeight - 100) {
-            item.classList.add("show");
-        }
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const faqItems = document.querySelectorAll(".faq-item");
-    faqItems.forEach(item => {
-        const question = item.querySelector(".faq-question");
-        const answer = item.querySelector(".faq-answer");
-        const plusIcon = item.querySelector(".plus");
-        question.addEventListener("click", function () {
-            if (answer.classList.contains("active")) {
-                answer.classList.remove("active");
-                answer.style.display = "none";
-                plusIcon.textContent = "+";
-            } else {
-                faqItems.forEach(faq => {
-                    faq.querySelector(".faq-answer").classList.remove("active");
-                    faq.querySelector(".faq-answer").style.display = "none";
-                    faq.querySelector(".plus").textContent = "+";
-                });
-                answer.classList.add("active");
-                answer.style.display = "block";
-                plusIcon.textContent = "−";
-                typeEffect(answer, answer.dataset.text);
+    let searchInput = document.querySelector(".search-bar input");
+    if (searchInput) {
+        searchInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                let searchQuery = searchInput.value.trim().toLowerCase();
+                let pages = {
+                    "home": "index.html",
+                    "about": "about.html",
+                    "resources": "resources.html",
+                    "faq": "faq.html",
+                    "faqs": "faq.html",
+                    "quiz": "quiz.html",
+                    "contact": "contact.html",
+                    "contribute": "resources.html",
+                    "cybersecurity": "cs.html",
+                    "androiddevelopment": "ad.html",
+                    "gamedevelopment": "gd.html",
+                    "webdevelopment": "wd.html",
+                    "artificialintelligence": "ai.html",
+                    "cloudcomputing": "cc.html",
+                    "cyber": "cs.html",
+                    "androiddeveloper": "ad.html",
+                    "gamedeveloper": "gd.html",
+                    "web developer": "wd.html",
+                    "artificial-intelligence": "ai.html",
+                    "cloud-computing": "cc.html",
+                    "security": "cs.html",
+                    "android development": "ad.html",
+                    "game development": "gd.html",
+                    "web development": "wd.html",
+                    "artificial intelligence": "ai.html",
+                    "cloud computing": "cc.html",
+                    "cloud": "cs.html",
+                    "android": "ad.html",
+                    "game": "gd.html",
+                    "web": "wd.html",
+                    "artificial": "wd.html",
+                    "intelligence": "ai.html",
+                    "computing": "cc.html",
+                    "cs": "cs.html",
+                    "ad": "ad.html",
+                    "gd": "gd.html",
+                    "wd": "wd.html",
+                    "ai": "ai.html",
+                    "cc": "cc.html",
+                };
+                if (pages[searchQuery]) {
+                    window.location.href = pages[searchQuery]; 
+                } else {
+                    alert("No matching page found! Try searching for Home, About, Resources, FAQs, Quiz, or Contact.");
+                }
             }
         });
-        answer.dataset.text = answer.textContent;
-        answer.textContent = ""; 
-    });
-    function typeEffect(element, text) {
-        element.textContent = ""; 
-        let i = 0;
-        function typing() {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-                setTimeout(typing, 50); 
-            }
-        }
-        typing();
     }
 });
+function toggleMenu() {
+    let mobileNav = document.getElementById("mobileNav");
+    mobileNav.classList.toggle("open");
+}

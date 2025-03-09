@@ -482,7 +482,7 @@ header p {
 
 .category-header {
 position: relative;
-background: url('img/cloud-computing-bg.jpg') no-repeat center center/cover;
+background: url('../img/cybersecurity-bg.jpg') no-repeat center center/cover;
 padding: 80px 20px;
 text-align: center;
 color: #00ff55; 
@@ -564,12 +564,12 @@ section {
   box-shadow: 0px 0px 15px #00a6ff;
 }
 
-.applications ul, .introduction ul, .cloud-process ol, .cloud-types ul, .challenges ul, .future ul {
+.applications ul, .introduction ul, .cybersecurity-process ol, .cybersecurity-types ul, .challenges ul, .future ul {
   list-style: none;
   padding: 0;
 }
 
-.applications li, .introduction li, .cloud-process li, .cloud-types li, .challenges li, .future li {
+.applications li, .introduction li, .cybersecurity-process li, .cybersecurity-types li, .challenges li, .future li {
   background-color: rgba(20, 20, 60, 0.95);
   padding: 15px;
   margin: 10px 0;
@@ -577,7 +577,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-.applications li:hover, .introduction li:hover, .cloud-process li:hover, .cloud-types li:hover, .challenges li:hover, .future li:hover {
+.applications li:hover, .introduction li:hover, .cybersecurity-process li:hover, .cybersecurity-types li:hover, .challenges li:hover, .future li:hover {
   background-color: #102030;
 }
 
@@ -589,7 +589,7 @@ section {
   margin-bottom: 20px;
 }
 
-.cloud-topics {
+.cybersecurity-topics {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -637,7 +637,7 @@ tr:nth-child(even) {
   background-color: #102030;
 }
 
-.introduction, .history, .applications, .content, .android-technologies, .challenges, .future, .contact, .cloud-process , .cloud-types, .cloud-technologies, .video, .quiz-section {
+.introduction, .history, .applications, .content, .android-technologies, .challenges, .future, .contact, .cybersecurity-process , .cybersecurity-types, .cybersecurity-technologies, .video, .quiz-section {
 margin-bottom: 20px;
 }
 .introduction{
@@ -892,7 +892,7 @@ body.popup-active::before {
       padding: 30px 15px;
   }
 
-  .cloud-topics {
+  .cybersecurity-topics {
       flex-direction: column;
   }
 
@@ -930,7 +930,7 @@ body.popup-active::before {
       padding: 40px 20px;
   }
 
-  .cloud-topics {
+  .cybersecurity-topics {
       flex-direction: column;
   }
 
@@ -972,7 +972,7 @@ body.popup-active::before {
       padding: 50px 30px;
   }
 
-  .cloud-topics {
+  .cybersecurity-topics {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -1015,7 +1015,7 @@ body.popup-active::before {
       padding: 60px 40px;
   }
 
-  .cloud-topics {
+  .cybersecurity-topics {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -1057,7 +1057,7 @@ body.popup-active::before {
       padding: 70px 50px;
   }
 
-  .cloud-topics {
+  .cybersecurity-topics {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;

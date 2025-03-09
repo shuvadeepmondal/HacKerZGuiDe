@@ -98,3 +98,63 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    let searchInput = document.querySelector(".search-bar input");
+    if (searchInput) {
+        searchInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                let searchQuery = searchInput.value.trim().toLowerCase();
+                let pages = {
+                    "home": "index.html",
+                    "about": "about.html",
+                    "resources": "resources.html",
+                    "faq": "faq.html",
+                    "faqs": "faq.html",
+                    "quiz": "quiz.html",
+                    "contact": "contact.html",
+                    "contribute": "resources.html",
+                    "cybersecurity": "cs.html",
+                    "androiddevelopment": "ad.html",
+                    "gamedevelopment": "gd.html",
+                    "webdevelopment": "wd.html",
+                    "artificialintelligence": "ai.html",
+                    "cloudcomputing": "cc.html",
+                    "cyber": "cs.html",
+                    "androiddeveloper": "ad.html",
+                    "gamedeveloper": "gd.html",
+                    "web developer": "wd.html",
+                    "artificial-intelligence": "ai.html",
+                    "cloud-computing": "cc.html",
+                    "security": "cs.html",
+                    "android development": "ad.html",
+                    "game development": "gd.html",
+                    "web development": "wd.html",
+                    "artificial intelligence": "ai.html",
+                    "cloud computing": "cc.html",
+                    "cloud": "cs.html",
+                    "android": "ad.html",
+                    "game": "gd.html",
+                    "web": "wd.html",
+                    "artificial": "wd.html",
+                    "intelligence": "ai.html",
+                    "computing": "cc.html",
+                    "cs": "cs.html",
+                    "ad": "ad.html",
+                    "gd": "gd.html",
+                    "wd": "wd.html",
+                    "ai": "ai.html",
+                    "cc": "cc.html",
+                };
+                if (pages[searchQuery]) {
+                    window.location.href = pages[searchQuery]; 
+                } else {
+                    alert("No matching page found! Try searching for Home, About, Resources, FAQs, Quiz, or Contact.");
+                }
+            }
+        });
+    }
+});
+function toggleMenu() {
+    let mobileNav = document.getElementById("mobileNav");
+    mobileNav.classList.toggle("open");
+}

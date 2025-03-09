@@ -1,6 +1,68 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const categories = [
+        { name: "Web Development", img: "https://cdn1.vectorstock.com/i/1000x1000/82/20/website-development-neon-label-vector-26918220.jpg" },
+        { name: "Android Development", img: "https://cdn.vectorstock.com/i/1000x1000/41/99/app-development-round-colored-outline-vector-23654199.webp" },
+        { name: "Game Development", img: "https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" },
+        { name: "Cloud Computing", img: "https://cdn.vectorstock.com/i/1000x1000/45/26/cloud-service-security-glowing-neon-sign-internet-vector-23104526.webp" },
+        { name: "Cybersecurity", img: "https://cdn.vectorstock.com/i/1000x1000/38/16/cyber-security-glowing-neon-sign-internet-vector-23303816.webp" },
+        { name: "Artificial Intelligence", img: "https://cdn.vectorstock.com/i/1000v/59/38/crct-bg-ai-chip-and-circuit-cntr-lp-bl-vector-51515938.avif" }
+    ];
+
+    const categoryGrid = document.querySelector(".category-grid");
+    categoryGrid.innerHTML = categories.map(category => `
+        <button class="category-card" data-category="${category.name}">
+            <img src="${category.img}" alt="${category.name}">
+            <h3>${category.name}</h3>
+        </button>
+    `).join("");
+
+    document.addEventListener("click", event => {
+        if (event.target.closest(".category-card")) {
+            const category = event.target.closest(".category-card").dataset.category;
+            localStorage.setItem("category", category);
+            document.getElementById("confirmation-popup").style.display = "block";
+        }
+    });
+
+    const popup = document.getElementById("confirmation-popup");
+    const closeButton = document.querySelector(".close-btn");
+
+    popup.addEventListener("click", (event) => {
+        if (event.target === popup) closePopup();
+    });
+
+    closeButton.addEventListener("click", closePopup);
+});
+
+function openPopup() {
+    const popup = document.getElementById("confirmation-popup");
+
+    if (popup instanceof HTMLDialogElement) {
+        popup.showModal();
+    } else {
+        popup.style.display = "block"; 
+    }
+}
+
+function closePopup() {
+    const popup = document.getElementById("confirmation-popup");
+    popup.close();  
+}
+
+function startQuiz() {
+    const username = document.getElementById("username").value.trim();
+    if (username) {
+        localStorage.setItem("username", username);
+        closePopup();
+        window.location.href = "quizq.html"; 
+    } else {
+        alert("Please enter your name!");
+    }
+}
+
 function changeLanguage() {
     let selectedLanguage = document.getElementById("language-selector").value;
-  
+
     const translations = {
         "en": {
             "about": "ABOUT HACKERZGUIDE",
@@ -35,54 +97,54 @@ function changeLanguage() {
             "subscribe": "Abonnieren Sie, um die neuesten Updates und exklusiven Inhalte zu erhalten."
         }
     };
-  
+
     document.getElementById("about-hackerzguide").textContent = translations[selectedLanguage].about;
     document.getElementById("quick-links-title").textContent = translations[selectedLanguage].quickLinks;
     document.getElementById("customer-support-title").textContent = translations[selectedLanguage].customerSupport;
     document.getElementById("follow-us-title").textContent = translations[selectedLanguage].followUs;
     document.getElementById("newsletter-title").textContent = translations[selectedLanguage].newsletter;
     document.getElementById("subscribe-text").textContent = translations[selectedLanguage].subscribe;
-  
+
     alert(`Language changed to: ${selectedLanguage}`);
-  }
-  
-  function subscribeNewsletter() {
+}
+
+function subscribeNewsletter() {
     let email = document.getElementById("newsletter-email").value.trim();
     let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  
+
     if (email === "") {
         alert("Please enter a valid email.");
         return;
     }
-  
+
     if (!emailPattern.test(email)) {
         alert("Invalid email format. Please enter a correct email.");
         return;
     }
-  
+
     alert(`Thank you for subscribing, ${email}!`);
-  }
-  
-  window.onscroll = function () {
+}
+
+window.onscroll = function () {
     let backToTop = document.getElementById("back-to-top");
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         backToTop.style.display = "block";
     } else {
         backToTop.style.display = "none";
     }
-  };
-  
-  function scrollToTop() {
+};
+
+function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-  
-  function toggleChatbot() {
+}
+
+function toggleChatbot() {
     let chatbotWindow = document.getElementById("chatbot-window");
     chatbotWindow.classList.toggle("active");
     displayCategories(); 
-  }
-  
-  const categories = {
+}
+
+const categories = {
     "General": [
         "What is HackerZGuide?",
         "What features does this website have?",
@@ -138,7 +200,7 @@ function changeLanguage() {
         "who is your creator",
         "what is your favorite programming language"
     ],
-  
+
     "Miscellaneous": [
         "what is the latest tech trend",
         "how can i improve my coding skills",
@@ -159,15 +221,15 @@ function changeLanguage() {
         "What is blockchain",
         "What is cloud computing"
     ]
-  };
-  
-  const responses = {
-  
+};
+
+const responses = {
+
     "hello": "Hello! How can I assist you today?",
     "hi": "Hi there! Need any help?",
     "hey": "Hey! How's it going?",
     "how are you": "I'm just a chatbot, but I'm here to assist you!",
-  
+
     "what is hackerzguide": "HackerZGuide is a platform providing cyber-related resources, quizzes, and tutorials.",
     "what is this website about": "This website provides knowledge on cybersecurity, coding, hacking, and tech trends.",
     "where can i find resources": "You can check the 'Resources' section in the navigation bar.",
@@ -178,14 +240,14 @@ function changeLanguage() {
     "where can i contact support": "You can contact support via email at support@hackerzguide.com or visit the footer section.",
     "back to top": "Click the 'Back to Top' button to scroll up.",
     "chatbot": "I am here to assist you! Ask me anything about this website.",
-  
+
     "what are the features of this website": "Our website includes interactive quizzes, cybersecurity guides, coding tutorials, and the latest tech trends.",
     "where can i find the latest updates": "You can find the latest updates in the 'Resources' section or follow us on social media.",
     "does this website have a newsletter": "Yes! You can subscribe to our newsletter in the footer section.",
     "is this website free": "Yes! All resources, quizzes, and guides on HackerZGuide are completely free.",
     "do i need an account": "No, you can access most of the content without an account. However, contributing may require registration.",
     "is there a dark mode": "Currently, we don't have a dark mode, but we might add it in future updates!",
-  
+
     "what categories are available": "The available categories are Hacking, Coding, Tech Trends, Cybersecurity, AI, and Cloud Computing.",
     "tell me about hacking": "Hacking involves finding vulnerabilities in systems, either ethically (white hat) or maliciously (black hat).",
     "tell me about coding": "Coding is the process of writing instructions for computers using programming languages like Python, JavaScript, and C++.",
@@ -195,23 +257,23 @@ function changeLanguage() {
     "what is ethical hacking": "Ethical hacking is legally testing systems for vulnerabilities to improve security, often done by penetration testers.",
     "what is the best programming language": "The best language depends on your goals. Python is great for AI, JavaScript for web, and C++ for performance.",
     "how can i start learning cybersecurity": "Start with networking basics, learn ethical hacking tools like Kali Linux, and study cybersecurity certifications like CEH.",
-  
+
     "how can i prepare for a quiz": "Review the topics in the Resources section, take practice quizzes, and apply real-world examples.",
     "how many questions are in a quiz": "Each quiz contains 10 multiple-choice questions based on the selected topic.",
     "is there a time limit for quizzes": "Yes, most quizzes have a 3-minute timer to test your quick thinking skills.",
     "can i retake a quiz": "Yes! You can retake quizzes as many times as you want to improve your score.",
     "how can i see my quiz results": "Your quiz results will be shown after submission, along with correct answers for review.",
-  
+
     "the website is not loading": "Try refreshing the page or clearing your browser cache. If the problem persists, contact support.",
     "i found a bug": "We appreciate your feedback! You can report bugs via the 'Contact Support' section.",
     "how can i reset my password": "Currently, we don’t have user accounts, but if we add them, password reset options will be available.",
     "where can i find the privacy policy": "You can find our Privacy Policy linked at the bottom of the website in the footer.",
-  
+
     "do you know any jokes": "Sure! Why do programmers prefer dark mode? Because light attracts bugs!",
     "tell me a tech joke": "Why do Java developers wear glasses? Because they don’t C#!",
     "who is your creator": "I was developed by the HackerZGuide team to assist visitors like you!",
     "what is your favorite programming language": "I like all languages, but JavaScript runs me, so I have a soft spot for it!",
-  
+
     "what is the latest tech trend": "AI, blockchain, and quantum computing are among the top trends in 2025.",
     "how can i improve my coding skills": "Practice regularly, build projects, contribute to open-source, and join coding communities.",
     "what is the best cybersecurity certification": "Popular certifications include CEH (Certified Ethical Hacker), CISSP, and CompTIA Security+.",
@@ -219,14 +281,14 @@ function changeLanguage() {
     "how do i take a quiz": "Click the 'Quiz' section in the navbar to start a quiz.",
     "what is blockchain": "Blockchain is a decentralized, secure ledger technology used in cryptocurrencies and secure transactions.",
     "what is cloud computing": "Cloud computing provides internet-based computing services like storage, networking, and databases.",
-  
+
     "default": "I'm not sure about that. Try asking about the website, navbar, footer, quizzes, or tech topics!"
-  }; 
-  
-  function displayCategories() {
+}; 
+
+function displayCategories() {
     let categoryDiv = document.getElementById("chatbot-categories");
     categoryDiv.innerHTML = ""; 
-  
+
     for (let category in categories) {
         let btn = document.createElement("button");
         btn.className = "category-btn";
@@ -234,12 +296,12 @@ function changeLanguage() {
         btn.onclick = () => displayQuestions(category);
         categoryDiv.appendChild(btn);
     }
-  }
-  
-  function displayQuestions(category) {
+}
+
+function displayQuestions(category) {
     let questionDiv = document.getElementById("chatbot-questions");
     questionDiv.innerHTML = ""; 
-  
+
     categories[category].forEach(question => {
         let btn = document.createElement("button");
         btn.className = "question-btn";
@@ -247,19 +309,19 @@ function changeLanguage() {
         btn.onclick = () => sendPredefinedMessage(question);
         questionDiv.appendChild(btn);
     });
-  }
-  
-  function sendPredefinedMessage(question) {
+}
+
+function sendPredefinedMessage(question) {
     let chatbotMessages = document.getElementById("chatbot-messages");
-  
+
     let userMsg = document.createElement("p");
     userMsg.className = "user-msg";
     userMsg.textContent = question;
     chatbotMessages.appendChild(userMsg);
-  
+
     let responseKey = question.toLowerCase();
     let response = responses[responseKey] || responses["default"];
-  
+
     setTimeout(() => {
         let botMsg = document.createElement("p");
         botMsg.className = "bot-msg";
@@ -267,232 +329,157 @@ function changeLanguage() {
         chatbotMessages.appendChild(botMsg);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight; 
     }, 500);
-  }
-  
-  function sendMessage() {
+}
+
+function sendMessage() {
     let inputField = document.getElementById("chatbot-input");
     let input = inputField.value.toLowerCase().trim();
     if (input === "") return;
-  
+
     let chatbotMessages = document.getElementById("chatbot-messages");
     let chatbotBody = document.querySelector(".chatbot-body");
-  
+
     let userMsg = document.createElement("p");
     userMsg.className = "user-msg";
     userMsg.textContent = input;
     chatbotMessages.appendChild(userMsg);
-  
+
     let response = responses[input] || responses["default"];
-  
+
     setTimeout(() => {
         let botMsg = document.createElement("p");
         botMsg.className = "bot-msg";
         botMsg.textContent = response;
         chatbotMessages.appendChild(botMsg);
-  
+
         chatbotBody.scrollTop = chatbotBody.scrollHeight;
     }, 500);
-  
+
     inputField.value = ""; 
-  }
-  
-  function startVoiceRecognition() {
+}
+
+function startVoiceRecognition() {
     if (!("webkitSpeechRecognition" in window)) {
         alert("Sorry, your browser doesn't support voice recognition.");
         return;
     }
-  
+
     let recognition = new webkitSpeechRecognition();
     recognition.lang = "en-US";
     recognition.start();
-  
+
     recognition.onresult = function(event) {
         let voiceInput = event.results[0][0].transcript.toLowerCase();
         document.getElementById("chatbot-input").value = voiceInput;
         sendMessage();
     };
-  
+
     recognition.onerror = function(event) {
         alert("Voice recognition error. Please try again.");
     };
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const testimonials = document.querySelectorAll(".testimonial-card");
-    let currentIndex = 0;
-  
-    function updateCarousel() {
-        testimonials.forEach((testimonial, index) => {
-            testimonial.classList.remove("active");
-            testimonial.style.opacity = "0"; 
-            testimonial.style.position = "absolute";
-        });
-  
-        testimonials[currentIndex].classList.add("active");
-        testimonials[currentIndex].style.opacity = "1"; 
-        testimonials[currentIndex].style.position = "relative";
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileNav = document.getElementById("mobileNav");
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const closeButton = document.querySelector(".close-btn");
+    const searchInput = document.querySelector(".search-bar input");
+    const contributeBtn = document.querySelector(".contribute-btn");
+    const body = document.body;
+
+    // Toggle Mobile Menu
+    function toggleMenu() {
+        mobileNav.classList.toggle("active");
+        body.classList.toggle("no-scroll"); // Prevent scrolling when menu is open
     }
-  
-    document.querySelector(".next-btn").addEventListener("click", function () {
-        currentIndex = (currentIndex + 1) % testimonials.length;
-        updateCarousel();
+
+    // Open Mobile Menu
+    hamburgerMenu.addEventListener("click", () => {
+        mobileNav.classList.add("active");
+        body.classList.add("no-scroll");
     });
-  
-    document.querySelector(".prev-btn").addEventListener("click", function () {
-        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-        updateCarousel();
+
+    // Close Mobile Menu
+    closeButton.addEventListener("click", () => {
+        mobileNav.classList.remove("active");
+        body.classList.remove("no-scroll");
     });
-  
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % testimonials.length;
-        updateCarousel();
-    }, 2000);
-  
-    updateCarousel(); 
-  });
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const featureCards = document.querySelectorAll(".feature-card");
-  
-    featureCards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        }, index * 200); 
+
+    // Hide contribute button when search bar is active
+    searchInput.addEventListener("focus", () => {
+        contributeBtn.style.display = "none";
     });
-  });
-  
-  
-  
-  document.addEventListener("DOMContentLoaded", () => {
-      const mobileNav = document.getElementById("mobileNav");
-      const hamburgerMenu = document.querySelector(".hamburger-menu");
-      const closeButton = document.querySelector(".close-btn");
-      const searchInput = document.querySelector(".search-bar input");
-      const contributeBtn = document.querySelector(".contribute-btn");
-      const body = document.body;
-  
-      // Toggle Mobile Menu
-      function toggleMenu() {
-          mobileNav.classList.toggle("active");
-          body.classList.toggle("no-scroll"); // Prevent scrolling when menu is open
-      }
-  
-      // Open Mobile Menu
-      hamburgerMenu.addEventListener("click", () => {
-          mobileNav.classList.add("active");
-          body.classList.add("no-scroll");
-      });
-  
-      // Close Mobile Menu
-      closeButton.addEventListener("click", () => {
-          mobileNav.classList.remove("active");
-          body.classList.remove("no-scroll");
-      });
-  
-      // Hide contribute button when search bar is active
-      searchInput.addEventListener("focus", () => {
-          contributeBtn.style.display = "none";
-      });
-  
-      searchInput.addEventListener("blur", () => {
-          contributeBtn.style.display = "inline-block";
-      });
-  
-      // Close menu when clicking outside (on overlay)
-      document.addEventListener("click", (event) => {
-          if (!mobileNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-              mobileNav.classList.remove("active");
-              body.classList.remove("no-scroll");
-          }
-      });
-  });
-  
-  document.addEventListener("DOMContentLoaded", function () {
-      const header = document.querySelector(".site-header h1");
-  
-      function glitchEffect() {
-          if (header) {
-              header.style.transition = "transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out";
-              header.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
-              header.style.textShadow = `${Math.random() * 5}px ${Math.random() * 5}px 15px #00ff00`;
-          }
-      }
-  
-      setInterval(glitchEffect, 300);
-  
-      const categoryCards = document.querySelectorAll(".category-card");
-      const beepSound = new Audio("https://www.fesliyanstudios.com/play-mp3/4380");
-  
-      categoryCards.forEach((card) => {
-          card.addEventListener("mouseenter", () => {
-              beepSound.currentTime = 0;
-              beepSound.play();
-          });
-      });
-  
-      const modal = document.getElementById("category-modal");
-      const modalTitle = document.getElementById("category-title");
-      const modalDescription = document.getElementById("category-description");
-      const closeModalBtn = document.querySelector(".close");
-  
-      categoryCards.forEach((card) => {
-          card.addEventListener("click", function () {
-              const category = this.querySelector("h3").innerText;
-              showCategoryInfo(category);
-          });
-      });
-  
-      function showCategoryInfo(category) {
-          if (categoryInfo[category]) {
-              modalTitle.innerText = category;
-              modalDescription.innerText = categoryInfo[category];
-              modal.style.display = "flex";
-          }
-      }
-  
-      function closeModal() {
-          modal.style.display = "none";
-      }
-  
-      if (closeModalBtn) {
-          closeModalBtn.addEventListener("click", closeModal);
-      }
-  
-      window.addEventListener("click", (e) => {
-          if (e.target === modal) {
-              closeModal();
-          }
-      });
-  
-      const cyberImage = document.querySelector(".cyber-image");
-  
-      if (cyberImage) {
-          document.addEventListener("mousemove", (e) => {
-              const x = (window.innerWidth / 2 - e.clientX) / 40;
-              const y = (window.innerHeight / 2 - e.clientY) / 40;
-              cyberImage.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-          });
-      }
-  });
-  
-  const categoryInfo = {
-      "Web Development": "Hack and build the most secure web apps.",
-      "Android Development": "Master mobile app exploits & ethical hacking.",
-      "Game Development": "Mod, reverse-engineer, and hack games.",
-      "Cloud Computing": "Explore cloud security & ethical cloud hacking.",
-      "Cybersecurity": "Pentest & secure top cyber systems.",
-      "Artificial Intelligence": "Hack AI and build intelligent systems."
-  };
+
+    searchInput.addEventListener("blur", () => {
+        contributeBtn.style.display = "inline-block";
+    });
+
+    // Close menu when clicking outside (on overlay)
+    document.addEventListener("click", (event) => {
+        if (!mobileNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            mobileNav.classList.remove("active");
+            body.classList.remove("no-scroll");
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let searchInput = document.querySelector(".search-bar input");
+    if (searchInput) {
+        searchInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                let searchQuery = searchInput.value.trim().toLowerCase();
+                let pages = {
+                    "home": "index.html",
+                    "about": "about.html",
+                    "resources": "resources.html",
+                    "faq": "faq.html",
+                    "faqs": "faq.html",
+                    "quiz": "quiz.html",
+                    "contact": "contact.html",
+                    "contribute": "resources.html",
+                    "cybersecurity": "cs.html",
+                    "androiddevelopment": "ad.html",
+                    "gamedevelopment": "gd.html",
+                    "webdevelopment": "wd.html",
+                    "artificialintelligence": "ai.html",
+                    "cloudcomputing": "cc.html",
+                    "cyber": "cs.html",
+                    "androiddeveloper": "ad.html",
+                    "gamedeveloper": "gd.html",
+                    "web developer": "wd.html",
+                    "artificial-intelligence": "ai.html",
+                    "cloud-computing": "cc.html",
+                    "security": "cs.html",
+                    "android development": "ad.html",
+                    "game development": "gd.html",
+                    "web development": "wd.html",
+                    "artificial intelligence": "ai.html",
+                    "cloud computing": "cc.html",
+                    "cloud": "cs.html",
+                    "android": "ad.html",
+                    "game": "gd.html",
+                    "web": "wd.html",
+                    "artificial": "wd.html",
+                    "intelligence": "ai.html",
+                    "computing": "cc.html",
+                    "cs": "cs.html",
+                    "ad": "ad.html",
+                    "gd": "gd.html",
+                    "wd": "wd.html",
+                    "ai": "ai.html",
+                    "cc": "cc.html",
+                };
+                if (pages[searchQuery]) {
+                    window.location.href = pages[searchQuery]; 
+                } else {
+                    alert("No matching page found! Try searching for Home, About, Resources, FAQs, Quiz, or Contact.");
+                }
+            }
+        });
+    }
+});
+function toggleMenu() {
+    let mobileNav = document.getElementById("mobileNav");
+    mobileNav.classList.toggle("open");
+}

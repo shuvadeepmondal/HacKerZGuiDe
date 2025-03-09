@@ -307,31 +307,157 @@ function changeLanguage() {
           }
       });
   });
-  function openTab(evt, tabName) {
-    let i, tabcontent, tabbuttons;
-    tabcontent = document.getElementsByClassName("tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+  document.addEventListener("DOMContentLoaded", function () {
+    let readMoreBtn = document.querySelector(".read-more-btn");
+    let popupOverlay = document.querySelector(".popup-overlay");
+    let body = document.body;
+    readMoreBtn.addEventListener("click", function () {
+        popupOverlay.style.display = "flex";
+        body.classList.add("popup-active");
+    });
+    popupOverlay.addEventListener("click", function (event) {
+        if (event.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+            body.classList.remove("popup-active");
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let readMoreBtn = document.querySelector(".read-more-btn1");
+    let popupOverlay = document.querySelector(".popup-overlay1");
+    let body = document.body;
+    readMoreBtn.addEventListener("click", function () {
+        popupOverlay.style.display = "flex";
+        body.classList.add("popup-active");
+    });
+    popupOverlay.addEventListener("click", function (event) {
+        if (event.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+            body.classList.remove("popup-active");
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let readMoreBtn = document.querySelector(".read-more-btn2");
+    let popupOverlay = document.querySelector(".popup-overlay2");
+    let body = document.body;
+    readMoreBtn.addEventListener("click", function () {
+        popupOverlay.style.display = "flex";
+        body.classList.add("popup-active");
+    });
+    popupOverlay.addEventListener("click", function (event) {
+        if (event.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+            body.classList.remove("popup-active");
+        }
+    });
+});
+document.addEventListener("scroll", function() {
+    let items = document.querySelectorAll(".timeline-item");
+    let windowHeight = window.innerHeight;
+    items.forEach(item => {
+        let position = item.getBoundingClientRect().top;
+        if (position < windowHeight - 100) {
+            item.classList.add("show");
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+        const plusIcon = item.querySelector(".plus");
+        question.addEventListener("click", function () {
+            if (answer.classList.contains("active")) {
+                answer.classList.remove("active");
+                answer.style.display = "none";
+                plusIcon.textContent = "+";
+            } else {
+                faqItems.forEach(faq => {
+                    faq.querySelector(".faq-answer").classList.remove("active");
+                    faq.querySelector(".faq-answer").style.display = "none";
+                    faq.querySelector(".plus").textContent = "+";
+                });
+                answer.classList.add("active");
+                answer.style.display = "block";
+                plusIcon.textContent = "−";
+                typeEffect(answer, answer.dataset.text);
+            }
+        });
+        answer.dataset.text = answer.textContent;
+        answer.textContent = ""; 
+    });
+    function typeEffect(element, text) {
+        element.textContent = ""; 
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(typing, 50); 
+            }
+        }
+        typing();
     }
-    tabbuttons = document.getElementsByClassName("tab-button");
-    for (i = 0; i < tabbuttons.length; i++) {
-        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let searchInput = document.querySelector(".search-bar input");
+    if (searchInput) {
+        searchInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                let searchQuery = searchInput.value.trim().toLowerCase();
+                let pages = {
+                    "home": "index.html",
+                    "about": "about.html",
+                    "resources": "resources.html",
+                    "faq": "faq.html",
+                    "faqs": "faq.html",
+                    "quiz": "quiz.html",
+                    "contact": "contact.html",
+                    "contribute": "resources.html",
+                    "cybersecurity": "cs.html",
+                    "androiddevelopment": "ad.html",
+                    "gamedevelopment": "gd.html",
+                    "webdevelopment": "wd.html",
+                    "artificialintelligence": "ai.html",
+                    "cloudcomputing": "cc.html",
+                    "cyber": "cs.html",
+                    "androiddeveloper": "ad.html",
+                    "gamedeveloper": "gd.html",
+                    "web developer": "wd.html",
+                    "artificial-intelligence": "ai.html",
+                    "cloud-computing": "cc.html",
+                    "security": "cs.html",
+                    "android development": "ad.html",
+                    "game development": "gd.html",
+                    "web development": "wd.html",
+                    "artificial intelligence": "ai.html",
+                    "cloud computing": "cc.html",
+                    "cloud": "cs.html",
+                    "android": "ad.html",
+                    "game": "gd.html",
+                    "web": "wd.html",
+                    "artificial": "wd.html",
+                    "intelligence": "ai.html",
+                    "computing": "cc.html",
+                    "cs": "cs.html",
+                    "ad": "ad.html",
+                    "gd": "gd.html",
+                    "wd": "wd.html",
+                    "ai": "ai.html",
+                    "cc": "cc.html",
+                };
+                if (pages[searchQuery]) {
+                    window.location.href = pages[searchQuery]; 
+                } else {
+                    alert("No matching page found! Try searching for Home, About, Resources, FAQs, Quiz, or Contact.");
+                }
+            }
+        });
     }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
+});
+function toggleMenu() {
+    let mobileNav = document.getElementById("mobileNav");
+    mobileNav.classList.toggle("open");
 }
-function openSubTab(evt, subTabName) {
-    let i, subtabcontent, subtabbuttons;
-    subtabcontent = document.getElementsByClassName("sub-tab-content");
-    for (i = 0; i < subtabcontent.length; i++) {
-        subtabcontent[i].style.display = "none";
-    }
-    subtabbuttons = document.getElementsByClassName("sub-tab-button");
-    for (i = 0; i < subtabbuttons.length; i++) {
-        subtabbuttons[i].className = subtabbuttons[i].className.replace(" active", "");
-    }
-    document.getElementById(subTabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-document.getElementById("all-blogs").style.display = "block";
-document.getElementById("ai-blogs").style.display = "block";

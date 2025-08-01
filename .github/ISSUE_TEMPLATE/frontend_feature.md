@@ -14,9 +14,9 @@ Explain the purpose and benefit of this feature for the user.
 
 ## Tech Stack / Components Involved
 
-- [ ] React Component
-- [ ] Tailwind UI
-- [ ] State Management
+- [ ] HTML
+- [ ] CSS
+- [ ] Javascript
 - [ ] Others (please specify):
 
 ## Checklist

@@ -1,38 +1,79 @@
-# 🐞 Bug Report
+---
+name: Bug report
+about: Create a report to help us improve
+title: ''
+labels: ''
+assignees: ''
 
-## Description
+---
 
-Clearly describe the bug or unexpected behavior.
+---
+name: 🐞 Bug Report
+about: Help us squash a bug by providing a detailed and clear report
+title: "[Bug] <your concise title here>"
+labels: bug, needs-triage
+assignees: ''
+---
 
-## Steps to Reproduce
+# 🐛 Bug Report
 
-- [ ] Step 1:
-- [ ] Step 2:
-- [ ] Step 3:
+Thanks for reporting an issue! Please take a moment to fill out this form with as much detail as possible. It helps us solve the problem faster and more accurately.
 
-## Expected Behavior
+---
 
-Describe what you expected to happen.
+## 📌 Summary
 
-## Actual Behavior
+> A brief, one-sentence summary of the issue.
 
-What actually happened?
+**Example:**  
+> The sidebar collapses unexpectedly when clicking on the "Dashboard" button.
 
-## Screenshots (if applicable)
+---
 
-Attach screenshots or recordings to explain the issue better.
+## 🔁 Steps to Reproduce
 
-## Environment
+List all steps required to recreate the issue. Include code snippets or screenshots if needed.
 
-- OS: [e.g., Windows, Linux, macOS]
-- Browser: [e.g., Chrome, Firefox]
-- Device: [e.g., Desktop, Mobile]
-- Version: [e.g., v1.2.3]
+1. Go to `...`
+2. Click on `...`
+3. Observe the bug: `...`
 
-## Checklist
+---
 
-- [ ] I’ve checked for existing open/closed issues.
-- [ ] I’ve included all required details to reproduce the issue.
-- [ ] I have read and followed the [Code of Conduct](../CODE_OF_CONDUCT.md).
-- [ ] I have read and followed the [Contributing Guidelines](../CONTRIBUTING.md).
-- [ ] I am a participant of GSSoC (optional)
+## ✅ Expected Behavior
+
+> What should have happened instead?
+
+---
+
+## ❌ Actual Behavior
+
+> What actually happened?
+
+---
+
+## 🖼️ Visual Proof (if applicable)
+
+> Add screenshots, screen recordings, or logs that show the problem:
+
+---
+
+## 🧠 Additional Context
+
+> Anything else we should know? Dependencies, error logs, recent changes, or edge cases?
+
+---
+
+## 📋 Checklist Before Submitting
+
+- [ ] I’ve searched for existing issues related to this bug.
+- [ ] I’ve included clear steps to reproduce the issue.
+- [ ] I’ve attached all necessary screenshots/logs.
+- [ ] I’ve followed the [Code of Conduct](../CODE_OF_CONDUCT.md).
+- [ ] I’ve read and followed the [Contributing Guidelines](../CONTRIBUTING.md).
+- [ ] I am a participant of GSSoC (optional).
+
+---
+
+🙌 **Thank you for helping improve this project!**  
+We’ll review your report and get back to you soon.

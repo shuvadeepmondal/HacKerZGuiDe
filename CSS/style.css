@@ -2176,3 +2176,45 @@ to {
     grid-template-columns: 1fr 1fr 1fr;
 }
 }
+/* ========================
+   Navigation Visibility Fix
+   ======================== */
+
+/* Hide mobile nav and hamburger by default (desktop) */
+.mobile-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+/* Show desktop nav by default */
+.nav-links {
+  display: flex;
+}
+
+/* Responsive for Mobile View */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none; /* hidden by default */
+    position: absolute;
+    top: 60px; /* adjust based on your navbar height */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 999;
+  }
+
+  .mobile-nav.open {
+    display: block;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+}

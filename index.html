@@ -8,16 +8,18 @@
     <title>HackeRZGuide - Futuristic Tech Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
 
-    <script defer src="../JS/script.js"></script>
+    <script defer src="JS/script.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <!-- Hamburger Menu (Mobile) -->
             <div class="hamburger-menu" onclick="toggleMenu()">
-                ☰
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
     
             <!-- Logo (Center in Mobile, Left in Desktop) -->
@@ -26,7 +28,7 @@
             </div>
     
             <!-- Navigation Links (Desktop View) -->
-            <div class="nav-container">
+            
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -35,7 +37,6 @@
                     <li><a href="quiz.html">Quiz</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </div>
     
             <!-- Right Section (Contribute Button & Search) -->
             <div class="right-section">
@@ -46,9 +47,9 @@
             </div>
     
             <!-- Mobile Navigation (Slide-in Menu) -->
-<div class="mobile-nav" id="mobileNav">
+<div id="mobileNav" class="mobile-nav">
     <!-- Close Button -->
-    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>

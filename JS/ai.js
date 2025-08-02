@@ -63,15 +63,23 @@ function changeLanguage() {
         backToTop.style.display = "none";
     }
   };
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+ function toggleChatbot() {
+  const chatbot = document.getElementById('chatbot-window');
+
+  if (!chatbot) {
+    console.error("❌ Chatbot window not found");
+    return;
   }
-  function toggleChatbot() {
-    let chatbotWindow = document.getElementById("chatbot-window");
-    chatbotWindow.classList.toggle("active");
-    displayCategories(); 
+
+  if (chatbot.style.display === 'flex') {
+    chatbot.style.display = 'none';
+  } else {
+    chatbot.style.display = 'flex';  // ✅ Make sure it uses flex to show
+    displayCategories();             // ✅ Load categories when opened
   }
-  const categories = {
+}
+
+const categories = {
     "General": [
         "What is HackerZGuide?",
         "What features does this website have?",
@@ -81,32 +89,32 @@ function changeLanguage() {
         "what is hackerzguide",
         "what is this website about",
         "where can i find resources",
-         "how to take a quiz",
-         "where is the faq page",
-         "who created this website",
-          "how to contribute",
-         "where can i contact support",
-         "back to top",
-          "chatbot"
+        "how to take a quiz",
+        "where is the faq page",
+        "who created this website",
+        "how to contribute",
+        "where can i contact support",
+        "back to top",
+        "chatbot"
     ],
     "Website Features & Sections": [
         "what are the features of this website",
         "where can i find the latest updates",
-         "does this website have a newsletter",
-         "is this website free",
-         "do i need an account",
-         "is there a dark mode"
+        "does this website have a newsletter",
+        "is this website free",
+        "do i need an account",
+        "is there a dark mode"
     ],
     "Categories & Topics": [
         "what categories are available",
-         "tell me about hacking",
-         "tell me about coding",
-         "tell me about cybersecurity",
-         "tell me about ai",
-         "tell me about cloud computing",
-          "what is ethical hacking",
-          "what is the best programming language",
-          "how can i start learning cybersecurity"
+        "tell me about hacking",
+        "tell me about coding",
+        "tell me about cybersecurity",
+        "tell me about ai",
+        "tell me about cloud computing",
+        "what is ethical hacking",
+        "what is the best programming language",
+        "how can i start learning cybersecurity"
     ],
     "Quizzes & Learning": [
         "how can i prepare for a quiz",
@@ -147,8 +155,9 @@ function changeLanguage() {
         "What is blockchain",
         "What is cloud computing"
     ]
-  };
-  const responses = {
+};
+
+const responses = {
     "hello": "Hello! How can I assist you today?",
     "hi": "Hi there! Need any help?",
     "hey": "Hey! How's it going?",
@@ -199,10 +208,14 @@ function changeLanguage() {
     "what is blockchain": "Blockchain is a decentralized, secure ledger technology used in cryptocurrencies and secure transactions.",
     "what is cloud computing": "Cloud computing provides internet-based computing services like storage, networking, and databases.",
     "default": "I'm not sure about that. Try asking about the website, navbar, footer, quizzes, or tech topics!"
-  }; 
-  function displayCategories() {
+};
+
+
+function displayCategories() {
     let categoryDiv = document.getElementById("chatbot-categories");
-    categoryDiv.innerHTML = ""; 
+    if (!categoryDiv) return;
+    categoryDiv.innerHTML = "";
+
     for (let category in categories) {
         let btn = document.createElement("button");
         btn.className = "category-btn";
@@ -210,10 +223,13 @@ function changeLanguage() {
         btn.onclick = () => displayQuestions(category);
         categoryDiv.appendChild(btn);
     }
-  }
-  function displayQuestions(category) {
+}
+
+function displayQuestions(category) {
     let questionDiv = document.getElementById("chatbot-questions");
-    questionDiv.innerHTML = ""; 
+    if (!questionDiv) return;
+    questionDiv.innerHTML = "";
+
     categories[category].forEach(question => {
         let btn = document.createElement("button");
         btn.className = "question-btn";
@@ -221,43 +237,61 @@ function changeLanguage() {
         btn.onclick = () => sendPredefinedMessage(question);
         questionDiv.appendChild(btn);
     });
-  }
-  function sendPredefinedMessage(question) {
+}
+
+function sendPredefinedMessage(question) {
     let chatbotMessages = document.getElementById("chatbot-messages");
+
+    // ✅ Show user question
     let userMsg = document.createElement("p");
     userMsg.className = "user-msg";
     userMsg.textContent = question;
     chatbotMessages.appendChild(userMsg);
-    let responseKey = question.toLowerCase();
-    let response = responses[responseKey] || responses["default"];
+
+    // ✅ Normalize question for matching
+    let responseKey = question.toLowerCase().trim();
+    let response = responses[responseKey] || responses["default"] || "🤖 Sorry, I don't have an answer for that yet.";
+
+    // ✅ Show bot reply with delay
     setTimeout(() => {
         let botMsg = document.createElement("p");
         botMsg.className = "bot-msg";
         botMsg.textContent = response;
         chatbotMessages.appendChild(botMsg);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight; 
+
+        // ✅ Scroll to bottom
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }, 500);
-  }
-  function sendMessage() {
+}
+
+
+function sendMessage() {
     let inputField = document.getElementById("chatbot-input");
-    let input = inputField.value.toLowerCase().trim();
+    let input = inputField.value.trim();
     if (input === "") return;
+
     let chatbotMessages = document.getElementById("chatbot-messages");
-    let chatbotBody = document.querySelector(".chatbot-body");
     let userMsg = document.createElement("p");
     userMsg.className = "user-msg";
     userMsg.textContent = input;
     chatbotMessages.appendChild(userMsg);
-    let response = responses[input] || responses["default"];
+
+    // ✅ Lowercase for matching keys
+    let responseKey = input.toLowerCase();
+    let response = responses[responseKey] || responses["default"];
+
     setTimeout(() => {
         let botMsg = document.createElement("p");
         botMsg.className = "bot-msg";
         botMsg.textContent = response;
         chatbotMessages.appendChild(botMsg);
-        chatbotBody.scrollTop = chatbotBody.scrollHeight;
-    }, 500);
-    inputField.value = ""; 
-  }
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }, 400);
+
+    inputField.value = "";
+}
+
+
   function startVoiceRecognition() {
     if (!("webkitSpeechRecognition" in window)) {
         alert("Sorry, your browser doesn't support voice recognition.");

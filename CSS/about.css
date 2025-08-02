@@ -486,7 +486,7 @@ header p {
     border-radius: 12px;
     margin: 60px auto;
     width: 75%;
-    border: 2px solid #40ff00;
+    /* border: 2px solid #40ff00; */
     box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.6);
     transition: transform 0.3s ease-in-out;
 }
@@ -537,13 +537,22 @@ header p {
 .about-image img {
     width: 100%;
     border-radius: 12px;
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+    box-shadow: 0px 0px 20px rgba(117, 199, 168, 0.5);
     transition: transform 0.3s ease-in-out;
 }
 
 .about-image img:hover {
     transform: scale(1.05);
 }
+
+.about-card{
+  border-radius: 15px;
+  padding: 20px;
+  background: linear-gradient(#1a4e7f,#302b63);
+ box-shadow: 0px 0px 20px #9ab591;
+}
+
+
 
 .beliefs-container {
     margin-top: 60px;
@@ -553,7 +562,7 @@ header p {
 .beliefs-container h2 {
     font-size: 2.2rem;
     color: #40ff00;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
     text-shadow: 0 0 12px #40ff00;
 }
 
@@ -561,7 +570,7 @@ header p {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(2, 1fr);    
-    gap: 20px; 
+    gap: 40px; 
     justify-content: center;
     align-items: center;
     max-width: 600px; 
@@ -569,28 +578,45 @@ header p {
 }
 
 .belief-item {
-    background: rgba(82, 118, 70, 0.2);
-    border: 2px solid #40ff00;
-    padding: 20px;
-    font-size: 1.3rem;
+    padding: 12px;
+    /* font-size: 1rem; */
     font-weight: bold;
     text-transform: uppercase;
-    border-radius: 12px;
+    border-radius: 45px;
     transition: 0.3s ease-in-out;
     cursor: pointer;
-    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
     text-align: center;
     width: 500px; 
     height: 100px; 
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(-45deg, #4a132e, #7873f5, #1a4e7f, #219538);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: white;
+    box-shadow: 0 0 30px rgba(111, 221, 255, 0.6), 
+                0 0 60px rgba(120, 115, 245, 0.4), 
+                0 0 90px rgba(74, 222, 128, 0.3);
+    border: none;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
+
 .belief-item:hover {
-    background: #00a6ff;
+    background: none;
     border-color: #00a6ff;
-    color: black;
+    color: rgb(255, 255, 255);
     box-shadow: 0px 0px 20px #00a6ff;
     transform: scale(1.05);
 }

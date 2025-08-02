@@ -1,0 +1,82 @@
+/* HERO SECTION - Futuristic Black & Neon Green Theme */
+.hero {
+  background: linear-gradient(120deg, #0f0f0f, #1a1a1a);
+  color: #00ff88;
+  padding: 80px 20px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center everything horizontally */
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 255, 136, 0.1), transparent 60%);
+  z-index: 0;
+}
+
+.hero .content {
+  z-index: 1;
+  position: relative;
+  max-width: 800px; /* Keeps the content centered and balanced */
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #00ffcc;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #b3ffe6;
+  margin-bottom: 40px;
+}
+
+.hero .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.hero .btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: 2px solid #00ffcc;
+  border-radius: 5px;
+  color: #0f0f0f;
+  background-color: #00ffcc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.hero .btn:hover {
+  background-color: transparent;
+  color: #00ffcc;
+  box-shadow: 0 0 20px #00ffcc;
+  cursor: pointer;
+}
+
+.hero .btn.secondary {
+  background-color: transparent;
+  color: #00ffcc;
+}
+
+.hero .btn.secondary:hover {
+  background-color: #00ffcc;
+  color: #0f0f0f;
+}

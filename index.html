@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <link rel="stylesheet" href="../CSS/style.css">
+     <link rel="stylesheet" href="chatbot.css">
 
     <script defer src="../JS/script.js"></script>
 </head>
@@ -395,38 +396,188 @@
     </svg>
 
 </button>
-
-<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
-    <svg width="30" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 2V16H6V22L12 16H22V2H2ZM20 14H11.171L8 17.171V14H4V4H20V14ZM6 7H18V9H6V7ZM6 10H14V12H6V10Z" fill="white"/>
-    </svg>
-</button>
-
 <div id="chatbot-window">
-<div class="chatbot-header">
+  <div class="chatbot-header">
     <h3>HackerZGuide Chatbot</h3>
     <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
-</div>
-<div class="chatbot-body">
-    
+  </div>
+
+  <div class="chatbot-body">
     <div id="chatbot-categories"></div>
-    
     <div id="chatbot-questions"></div>
-    
     <div id="chatbot-messages">
-        <p class="bot-msg">Hi! How can I assist you today?</p>
+      <p class="bot-msg">👋 Hi! How can I assist you today?</p>
     </div>
-    
+
     <div class="chatbot-input-container">
-        <input type="text" id="chatbot-input" placeholder="Ask me something...">
-        <button onclick="sendMessage()">Send</button>
-        <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C10.9 2 10 2.9 10 4V12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12V4C14 2.9 13.1 2 12 2ZM18 11V12C18 15.31 15.31 18 12 18C8.69 18 6 15.31 6 12V11H4V12C4 16.08 7.05 19.44 11 19.93V22H13V19.93C16.95 19.44 20 16.08 20 12V11H18Z" fill="white"/>
-            </svg>
-        </button>
+      <input type="text" id="chatbot-input" placeholder="Ask me something...">
+      <button onclick="sendMessage()">Send</button>
     </div>
+  </div>
 </div>
-</div>
+
+<!-- ✅ Floating Button -->
+<a href="#" id="chatbot-link" onclick="toggleChatbot()">💬</a>
+
+<!-- ✅ CSS -->
+<style>
+/* ✅ Floating Button */
+#chatbot-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding: 16px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: 0.3s;
+  z-index: 9999;
+  animation: pulse 1.5s infinite;
+}
+#chatbot-link:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+}
+
+/* ✅ Pulse */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* ✅ Chatbot Window */
+#chatbot-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 380px;
+  max-width: 95vw;
+  height: 550px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+}
+
+/* ✅ Header */
+.chatbot-header {
+  background: #007bff;
+  color: #fff;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* ✅ Chatbot Body */
+.chatbot-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  background: #f9f9f9;
+  overflow: hidden;
+}
+
+/* ✅ Categories & Questions */
+#chatbot-categories, #chatbot-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px;
+  max-height: 80px;          /* 🔥 Limited height */
+  overflow-y: auto;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ✅ Messages Section */
+#chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  background: #fdfdfd;
+  scroll-behavior: smooth;
+  min-height: 250px;         /* 🔥 Always big enough */
+}
+
+/* ✅ Custom Scrollbar */
+#chatbot-messages::-webkit-scrollbar {
+  width: 8px;
+}
+#chatbot-messages::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 6px;
+}
+#chatbot-messages::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+#chatbot-messages::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 6px;
+}
+
+/* ✅ Messages */
+.bot-msg, .user-msg {
+  padding: 8px 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  max-width: 85%;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.bot-msg {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+
+.user-msg {
+  background: #007bff;
+  color: #fff;
+  align-self: flex-end;
+}
+
+/* ✅ Input Box */
+.chatbot-input-container {
+  display: flex;
+  padding: 8px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.chatbot-input-container button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+.chatbot-input-container button:hover {
+  background: #0056b3;
+}
+
+</style>
+<!-- ✅ External JS -->
+<script src="js/ai.js"></script>
 </body>
 </html>

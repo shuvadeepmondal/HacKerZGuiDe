@@ -564,31 +564,377 @@
     </svg>
 </button>
 
+<!-- 🌟 Floating Chatbot Button -->
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2V16H6V22L12 16H22V2H2ZM20 14H11.171L8 17.171V14H4V4H20V14ZM6 7H18V9H6V7ZM6 10H14V12H6V10Z"/>
+    </svg>
+</button>
+
+<!-- 🌟 Chatbot Window -->
 <div id="chatbot-window">
-<div class="chatbot-header">
-    <h3>HackerZGuide Chatbot</h3>
-    <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
-</div>
-<div class="chatbot-body">
-    
-    <div id="chatbot-categories"></div>
-    
-    <div id="chatbot-questions"></div>
-    
-    <div id="chatbot-messages">
-        <p class="bot-msg">Hi! How can I assist you today?</p>
+    <div class="chatbot-header">
+        <h3>🤖 HackerZGuide Chatbot</h3>
+        <div class="header-actions">
+            <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+            <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+        </div>
     </div>
-    
-    <div class="chatbot-input-container">
-        <input type="text" id="chatbot-input" placeholder="Ask me something...">
-        <button onclick="sendMessage()">Send</button>
-        <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C10.9 2 10 2.9 10 4V12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12V4C14 2.9 13.1 2 12 2ZM18 11V12C18 15.31 15.31 18 12 18C8.69 18 6 15.31 6 12V11H4V12C4 16.08 7.05 19.44 11 19.93V22H13V19.93C16.95 19.44 20 16.08 20 12V11H18Z" fill="white"/>
-            </svg>
-        </button>
+
+    <div class="chatbot-body">
+        <div id="chatbot-categories"></div>
+        <div id="chatbot-questions"></div>
+        <div id="chatbot-messages">
+            <p class="bot-msg">👋 Hi! How can I assist you today?</p>
+        </div>
+
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Ask me something...">
+            <button onclick="sendMessage()" class="send-btn">Send</button>
+            <button onclick="startVoiceRecognition()" id="voice-btn" title="Voice Input">🎤</button>
+        </div>
     </div>
 </div>
+
+<!-- 🌟 Floating Chatbot Button -->
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2V16H6V22L12 16H22V2H2ZM20 14H11.171L8 17.171V14H4V4H20V14ZM6 7H18V9H6V7ZM6 10H14V12H6V10Z"/>
+    </svg>
+</button>
+
+<style>
+/* 🌟 Modern Chatbot Button */
+#chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(145deg, #007bff, #00c6ff);
+    border: none;
+    padding: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    animation: pulseGlow 2s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🌟 Hover Effect */
+#chatbot-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(145deg, #0056b3, #0096ff);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* 🌟 Glow Animation */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); }
+    50% { box-shadow: 0 0 20px rgba(0, 214, 255, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); }
+}
+
+/* SVG Icon Size */
+#chatbot-btn svg {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease;
+}
+#chatbot-btn:hover svg {
+    transform: rotate(10deg) scale(1.1);
+}
+
+#chatbot-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* ✅ Chatbot Window */
+#chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 360px;
+    max-width: 95vw;
+    height: 520px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    display: none;
+    flex-direction: column;
+    z-index: 9999;
+    animation: fadeIn 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+/* ✅ Body with Scroll */
+.chatbot-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 8px;
+    overflow: hidden;
+}
+
+/* ✅ Animated Gradient Header */
+.chatbot-header {
+    background: linear-gradient(135deg, #007bff, #00d4ff, #6a5acd);
+    background-size: 300% 300%;
+    animation: gradientMove 6s ease infinite;
+    color: #fff;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 20px 20px 0 0;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* ✅ Close Button */
+.close-chatbot {
+    background: #ff4d4d;
+    border: none;
+    color: white;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+.close-chatbot:hover {
+    background: #ff1a1a;
+    transform: rotate(90deg);
+}
+
+/* ✅ Categories as Gradient Pills */
+.category-btn, .question-btn {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.category-btn:hover, .question-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #0056b3, #0096d6);
+}
+/* ✅ Categories & Questions with Scroll */
+#chatbot-categories, #chatbot-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 5px;
+    max-height: 100px;         /* 🔥 Set height */
+    overflow-y: auto;          /* 🔥 Scrollable */
+    padding-right: 5px;
+}
+
+/* ✅ Messages Section with Scroll */
+#chatbot-messages {
+    flex: 1;
+    min-height: 150px;
+    max-height: 250px;         /* 🔥 Adjustable */
+    overflow-y: auto;          /* 🔥 Scrollable */
+    padding: 8px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #e0e0e0;
+}
+#chatbot-messages::-webkit-scrollbar {
+    width: 8px;
+}
+#chatbot-messages::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 4px;
+}
+
+/* ✅ Chat Bubbles */
+.bot-msg, .user-msg {
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 15px;
+    max-width: 80%;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.bot-msg {
+    background: #f1f1f1;
+    align-self: flex-start;
+    animation: slideInLeft 0.3s ease;
+}
+.user-msg {
+    background: #007bff;
+    color: #fff;
+    align-self: flex-end;
+    animation: slideInRight 0.3s ease;
+}
+
+/* ✅ Input Section */
+.chatbot-input-container {
+    display: flex;
+    gap: 6px;
+    margin-top: auto;
+}
+.chatbot-input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    outline: none;
+}
+.send-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.send-btn:hover {
+    background: #0056b3;
+}
+#voice-btn {
+    background: #00c853;
+    border: none;
+    padding: 10px 14px;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#voice-btn:hover {
+    background: #009624;
+    transform: scale(1.1);
+}
+
+/* ✅ Floating Button */
+#chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    border: none;
+    padding: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+#chatbot-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ✅ Animations */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+</style>
+
+<!-- 🌟 JS -->
+<script src="js/ai.js"></script>
+<script>
+let chatHistory = [];
+
+function toggleChatbot() {
+    const chatbot = document.getElementById('chatbot-window');
+    chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+    if (chatbot.style.display === 'flex') displayCategories();
+}
+
+function startVoiceRecognition() {
+    if (!('webkitSpeechRecognition' in window)) {
+        alert('Voice recognition not supported.');
+        return;
+    }
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.onresult = function(event) {
+        document.getElementById('chatbot-input').value = event.results[0][0].transcript;
+        sendMessage();
+    };
+    recognition.start();
+}
+
+function speak(text) {
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'en-US';
+    window.speechSynthesis.speak(utter);
+}
+
+function botResponse(text) {
+    const messages = document.getElementById("chatbot-messages");
+    const typing = document.createElement("p");
+    typing.className = "bot-msg";
+    typing.textContent = "🤖 Typing...";
+    messages.appendChild(typing);
+    messages.scrollTop = messages.scrollHeight;
+
+    setTimeout(() => {
+        typing.remove();
+        const botMsg = document.createElement("p");
+        botMsg.className = "bot-msg";
+        botMsg.textContent = text;
+        messages.appendChild(botMsg);
+        messages.scrollTop = messages.scrollHeight;
+        speak(text);
+    }, Math.min(2000, text.length * 50));
+}
+
+function sendMessage() {
+    const inputField = document.getElementById("chatbot-input");
+    const input = inputField.value.trim();
+    if (!input) return;
+
+    const messages = document.getElementById("chatbot-messages");
+    const userMsg = document.createElement("p");
+    userMsg.className = "user-msg";
+    userMsg.textContent = input;
+    messages.appendChild(userMsg);
+    messages.scrollTop = messages.scrollHeight;
+
+    chatHistory.push(input);
+
+    const responseKey = input.toLowerCase();
+    const response = responses[responseKey] || "🤔 I don't have an answer for that yet.";
+    botResponse(response);
+
+    inputField.value = "";
+}
+</script>
 </div>
 </body>
 </html>

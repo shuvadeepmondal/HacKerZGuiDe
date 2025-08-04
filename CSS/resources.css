@@ -1275,8 +1275,11 @@ font-weight: bold;
 font-size: 1rem;
 opacity: 0.9;
 }
+
 .resource-box .button {
-display: inline-block;
+display: flex;
+justify-content: center;
+align-items: center;
 padding: 10px 15px;
 background: #f1c40f;
 color: #000;
@@ -1285,8 +1288,15 @@ text-transform: uppercase;
 border-radius: 5px;
 transition: 0.3s;
 text-decoration: none;
-margin-top: 10px;
+margin: 0 auto;
+width: 100%;
+text-align: center;
+box-sizing: border-box;
 }
+
+
+
+
 .resource-box .button:hover {
 background: #e67e22;
 box-shadow: 0px 0px 10px rgba(230, 126, 34, 0.7);

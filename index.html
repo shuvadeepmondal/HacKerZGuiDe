@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <link rel="stylesheet" href="../CSS/style.css">
+     <link rel="stylesheet" href="chatbot.css">
 
     <script defer src="../JS/script.js"></script>
 </head>
@@ -394,40 +395,111 @@
     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 4L4 12H10V20H14V12H20L12 4Z" fill="white"/>
     </svg>
-
 </button>
-
-<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
-    <svg width="30" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 2V16H6V22L12 16H22V2H2ZM20 14H11.171L8 17.171V14H4V4H20V14ZM6 7H18V9H6V7ZM6 10H14V12H6V10Z" fill="white"/>
-    </svg>
-</button>
-
-<div id="chatbot-window">
-<div class="chatbot-header">
-    <h3>HackerZGuide Chatbot</h3>
-    <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
-</div>
-<div class="chatbot-body">
-    
-    <div id="chatbot-categories"></div>
-    
-    <div id="chatbot-questions"></div>
-    
-    <div id="chatbot-messages">
-        <p class="bot-msg">Hi! How can I assist you today?</p>
+<div id="chatbot-container"></div>
+<script>
+fetch("ai.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("chatbot-container").innerHTML = data;
+  });
+</script>
+<!-- 🌟 Chatbot Window -->
+<div id="chatbot-window" class="light-mode">
+    <div class="chatbot-header">
+        <h3>🤖 HackerZGuide Chatbot</h3>
+        <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+        <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
     </div>
-    
-    <div class="chatbot-input-container">
-        <input type="text" id="chatbot-input" placeholder="Ask me something...">
-        <button onclick="sendMessage()">Send</button>
-        <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C10.9 2 10 2.9 10 4V12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12V4C14 2.9 13.1 2 12 2ZM18 11V12C18 15.31 15.31 18 12 18C8.69 18 6 15.31 6 12V11H4V12C4 16.08 7.05 19.44 11 19.93V22H13V19.93C16.95 19.44 20 16.08 20 12V11H18Z" fill="white"/>
-            </svg>
-        </button>
+
+    <div class="chatbot-body">
+        <div id="chatbot-categories"></div>
+        <div id="chatbot-questions"></div>
+        <div id="chatbot-messages">
+            <p class="bot-msg">👋 Hi! How can I assist you today?</p>
+        </div>
+
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Ask me something...">
+            <button onclick="sendMessage()" class="send-btn">Send</button>
+        </div>
     </div>
 </div>
-</div>
+
+<style>
+/* 🌟 Light Theme */
+#chatbot-window.light-mode {
+    background: #fff;
+    color: #000;
+}
+#chatbot-window.light-mode .chatbot-header {
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: #fff;
+}
+#chatbot-window.light-mode #chatbot-messages {
+    background: #f9f9f9;
+}
+#chatbot-window.light-mode .bot-msg {
+    background: #e6e6e6;
+    color: #000;
+}
+#chatbot-window.light-mode .user-msg {
+    background: #007bff;
+    color: #fff;
+}
+
+/* 🌟 Dark Theme */
+#chatbot-window.dark-mode {
+    background: #1e1e1e;
+    color: #f5f5f5;
+}
+#chatbot-window.dark-mode .chatbot-header {
+    background: linear-gradient(135deg, #222, #444);
+    color: #fff;
+}
+#chatbot-window.dark-mode #chatbot-messages {
+    background: #2a2a2a;
+}
+#chatbot-window.dark-mode .bot-msg {
+    background: #333;
+    color: #f5f5f5;
+}
+#chatbot-window.dark-mode .user-msg {
+    background: #007bff;
+    color: #fff;
+}
+</style>
+
+<script>
+function toggleTheme() {
+    const chatbot = document.getElementById("chatbot-window");
+    const themeToggle = document.getElementById("theme-toggle");
+
+    chatbot.classList.toggle("dark-mode");
+    chatbot.classList.toggle("light-mode");
+
+    // Save user preference
+    if (chatbot.classList.contains("dark-mode")) {
+        localStorage.setItem("chatbot-theme", "dark");
+        themeToggle.textContent = "☀️";
+    } else {
+        localStorage.setItem("chatbot-theme", "light");
+        themeToggle.textContent = "🌙";
+    }
+}
+
+// Load theme on page load
+window.addEventListener("load", () => {
+    const savedTheme = localStorage.getItem("chatbot-theme") || "light";
+    const chatbot = document.getElementById("chatbot-window");
+    const themeToggle = document.getElementById("theme-toggle");
+
+    chatbot.classList.remove("dark-mode", "light-mode");
+    chatbot.classList.add(savedTheme + "-mode");
+    themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+});
+</script>
+<!-- ✅ External JS -->
+<script src="js/ai.js"></script>
 </body>
 </html>

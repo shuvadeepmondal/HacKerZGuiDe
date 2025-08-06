@@ -761,18 +761,29 @@ header p {
   padding: 60px 20px;
   width: 90%;
   max-width: 800px;
-  margin-top: 20px;
-  margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
-  background: rgba(15, 12, 41, 0.9);
-  border-radius: 15px;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    background: linear-gradient(45deg,
+  rgba(26, 92, 82, 0.6),
+  rgb(34, 93, 182,0.6),  
+  rgba(62, 142, 228, 0.6),
+  rgba(35, 101, 91, 0.6)  
+
+);
+box-shadow:
+  0 4px 30px rgba(151, 148, 148, 0.6),
+  0 8px 40px rgba(126, 123, 123, 0.6);
+  border-radius:25px;
+   margin-top: 30vh;
+   margin-bottom: 30vh;
+    border-radius: 8px 95px;
 }
 
 .testimonial-section h2 {
   font-size: 2rem;
-  color: #00ffcc;
+   font-family: "Tinos", serif;
+  font-weight: 700;
+  color: #00c853;
   text-align: center;
   text-shadow: 0 0 20px #00ffcc, 0 0 40px #40ff00;
   animation: neonGlow 1.5s infinite alternate;
@@ -835,16 +846,17 @@ header p {
 }
 
 .prev-btn, .next-btn {
-  background: transparent;
-  border: 2px solid #00a6ff;
-  color: #00a6ff;
+   color: #e1e9ed;
   padding: 10px 15px;
   font-size: 2rem;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
   position: absolute;
   top: 50%;
+  border-radius: 16px;
+  border: none;
+   background:linear-gradient(#5b1853,#1e0529) ;
+  box-shadow: 0 4px 12px rgb(87, 85, 85);
   transform: translateY(-50%);
 }
 
@@ -852,8 +864,8 @@ header p {
 .next-btn { right: -50px; }
 
 .prev-btn:hover, .next-btn:hover {
-  background: #00a6ff;
-  color: black;
+  background:linear-gradient(#1e0529,#5b1853) ;
+  color: #e1e9ed;
   box-shadow: 0px 0px 25px #40ff00;
 }
 
@@ -892,13 +904,27 @@ header p {
 }
 
 .feature-card {
-  background: #0a0025;
   padding: 20px;
   width: 300px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
+   background: linear-gradient(to right, #0a0025, rgb(66, 96, 181), #0a0025);
+  background-size: 300% 100%;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .feature-card img {

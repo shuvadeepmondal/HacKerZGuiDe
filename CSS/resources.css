@@ -23,6 +23,8 @@ body, header, h1, h2, h3, p, a, span {
 }
 .button-container {
   display: flex;
+  flex-wrap: wrap;
+   justify-content: center;
   gap: 16px;
   margin-top: 1rem;
 }

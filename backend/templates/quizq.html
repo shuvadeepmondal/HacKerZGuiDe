@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/HACKERZGUIDE.png">
-    <title>Cyber-Themed Quiz</title>
-    
+    <title>Cyber Quiz</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <link rel="stylesheet" href="../CSS/quiz.css">
-
-    
-    <script defer src="../JS/quiz.js"></script>
+    <link rel="stylesheet" href="../CSS/quizq.css">
+    <script defer src="../JS/quizq.js"></script>
 </head>
 <body>
-
     <header>
         <nav class="navbar">
             
@@ -28,14 +23,14 @@
             </div>
     
             
-            <div class="nav-container">
+             <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="resources">Resources</a></li>
+                    <li><a href="faq">FAQs</a></li>
+                    <li><a href="quiz">Quiz</a></li>
+                    <li><a href="contact">Contact</a></li>
                 </ul>
             </div>
     
@@ -52,12 +47,12 @@
     
     <div class="close-btn" onclick="toggleMenu()">✖</div>
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index">Home</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="resources">Resources</a></li>
+        <li><a href="faq">FAQs</a></li>
+        <li><a href="quiz">Quiz</a></li>
+        <li><a href="contact">Contact</a></li>
     </ul>
 
     
@@ -70,37 +65,44 @@
 </div>
         </nav>
     </header>
-    
-    
+
     <header class="site-header">
-        <h1>HackeRZGuide - Weekly Quiz Guide</h1>
-        <p>Test your knowledge across cyber domains and challenge yourself.</p>
+        <h1>⚡ Start the Quiz ⚡</h1>
     </header>
 
-    
-    <section class="categories">
-        <h2>[ Select a Quiz Domain ]</h2>
-        <div class="category-grid">
-            
+    <section class="quiz-container">
+        
+        <div class="quiz-header">
+            <p id="username-display">Player: <span id="username"></span></p>
+            <div class="timer">⏳ Time Taken: <span id="countdown">0:00</span></div>
         </div>
-    </section>
 
-    
-<dialog id="confirmation-popup" class="popup" aria-labelledby="popup-title" aria-hidden="true">
-    <div class="popup-content">
-        <button class="close-btn" aria-label="Close" onclick="closePopup()">&times;</button>
-        <h2 id="popup-title">Ready to start?</h2>
-        <p>Enter your name to proceed:</p>
-        <input type="text" id="username" placeholder="Your Name" aria-label="Enter your name">
-        <div class="popup-buttons">
-            <button class="yes-btn" onclick="startQuiz()">Proceed</button>
+        
+        <div class="progress-container">
+            <progress id="progress-bar" value="0" max="10"></progress>
+            <p>Question <span id="question-number">1</span> / 10</p>
         </div>
-    </div>
-</dialog>
 
+        
+        <div class="question-container">
+            <h2 id="question-text">Loading question...</h2>
+            <ul class="answer-options">
+                <li><button class="option" data-index="0">Option 1</button></li>
+                <li><button class="option" data-index="1">Option 2</button></li>
+                <li><button class="option" data-index="2">Option 3</button></li>
+                <li><button class="option" data-index="3">Option 4</button></li>
+            </ul>
+        </div>
 
+        
+<div class="quiz-controls">
+    <button id="prev-button" disabled>⬅️ Previous</button>
+    <button id="next-button">Next ➡️</button>
+    <button id="submit-button" onclick="submitQuiz()">Submit Quiz</button>
+</div>
+</section>
 
-
+ 
 <footer>
     <div class="footer-container">
         
@@ -112,16 +114,16 @@
             </div>
             
             <div class="footer-column">
-                <h3 id="quick-links-title">QUICK LINKS</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
-                    <li><a href="index.html#categoriess">Categories</a></li>
-                </ul>
-            </div>
+                    <h3 id="quick-links-title">QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="index">Home</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="resources">Resources</a></li>
+                        <li><a href="quiz">Quiz</a></li>
+                        <li><a href="faq">FAQs</a></li>
+                        <li><a href="index.html#categoriess">Categories</a></li>
+                    </ul>
+                </div>
             
             <div class="footer-column">
                 <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>

@@ -8,10 +8,12 @@
     <title>HackeRZGuide - Futuristic Tech Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link rel="stylesheet" href="../CSS/style.css">
-     <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 
-    <script defer src="../JS/script.js"></script>
+    <!-- This style file is not present , please look into it , if it plays any role ------------------------------------------------------ -->
+    <link rel="stylesheet" href="chatbot.css">  
+
+    <script defer src="../static/js/script.js"></script>
 </head>
 <body>
     <header>
@@ -23,18 +25,18 @@
     
             <!-- Logo (Center in Mobile, Left in Desktop) -->
             <div class="logo">
-                <a href="index.html">HackeRZGuide</a>
+                <a href="index">HackeRZGuide</a>
             </div>
     
             <!-- Navigation Links (Desktop View) -->
             <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="resources">Resources</a></li>
+                    <li><a href="faq">FAQs</a></li>
+                    <li><a href="quiz">Quiz</a></li>
+                    <li><a href="contact">Contact</a></li>
                 </ul>
             </div>
     
@@ -51,17 +53,17 @@
     <!-- Close Button -->
     <div class="close-btn" onclick="toggleMenu()">✖</div>
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index">Home</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="resources">Resources</a></li>
+        <li><a href="faq">FAQs</a></li>
+        <li><a href="quiz">Quiz</a></li>
+        <li><a href="contact">Contact</a></li>
     </ul>
 
     <!-- Right Section for Mobile -->
     <div class="mobile-right-section">
-        <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+        <button class="contribute-btn" onclick="window.location.href='resources'">Contribute</button>
         <div class="search-bar">
             <input type="text" placeholder="Search..." aria-label="Search">
         </div>
@@ -77,8 +79,8 @@
             <h1>Welcome to HackeRZGuide </h1>
              <p>"Hack it, Crack it, Master it"</p>
              <div class="button">
-                 <a href="resources.html" class="Explore">Explore Resource</a>
-                 <a href="resources.html" class="Contribute">Contribute now</a>
+                 <a href="resources" class="Explore">Explore Resource</a>
+                 <a href="resources" class="Contribute">Contribute now</a>
              </div>
          </section> 
     
@@ -125,7 +127,7 @@
             <h3 class="highlight-green">Web Development</h3>
             <p class="highlight-black">Hack the web, build advanced sites. Learn about front-end and back-end development, web security, and modern web technologies to create robust and secure web applications.</p>
             <a href="#" class="cta-button">View</a>
-            <a href="wd.html" class="cta-button">Learn more</a>
+            <a href="web-dev" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Android Development')">
@@ -133,7 +135,7 @@
             <h3 class="highlight-green">Android Development</h3>
             <p class="highlight-black">Explore mobile exploits & ethical hacking. Dive into Android app development, understand the Android OS architecture, and learn how to secure mobile applications against various threats.</p>
             <a href="#" class="cta-button">View</a>
-            <a href="ad.html" class="cta-button">Learn more</a>
+            <a href="android-dev" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Game Development')">
@@ -141,7 +143,7 @@
             <h3 class="highlight-green">Game Development</h3>
             <p class="highlight-black">Reverse-engineer & mod game engines. Gain insights into game design, development, and security. Learn how to create and modify games using popular game engines and protect them from vulnerabilities.</p>
             <a href="#" class="cta-button">View</a>
-            <a href="gd.html" class="cta-button">Learn more</a>
+            <a href="game-dev" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Cloud Computing')">
@@ -149,7 +151,7 @@
             <h3 class="highlight-green">Cloud Computing</h3>
             <p class="highlight-black">Cloud security & ethical penetration testing. Understand cloud infrastructure, services, and security. Learn how to perform penetration testing on cloud environments to ensure data protection and compliance.</p>
             <a href="#" class="cta-button">View</a>
-            <a href="cc.html" class="cta-button">Learn more</a>
+            <a href="cloud-computing" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Cybersecurity')">
@@ -157,7 +159,7 @@
             <h3 class="highlight-green">Cybersecurity</h3>
             <p class="highlight-black">Master ethical hacking & pentesting. Delve into the world of cybersecurity, learn about various attack vectors, and develop skills to protect systems and networks from cyber threats.</p>
             <a href="#" class="cta-button">View</a>
-            <a href="cs.html" class="cta-button">Learn more</a>
+            <a href="cyber-security" class="cta-button">Learn more</a>
         </button>
         
         <button class="category-card" onclick="showCategoryInfo('Artificial Intelligence')">
@@ -165,7 +167,7 @@
             <h3 class="highlight-green">Artificial Intelligence</h3>
             <p class="highlight-black">Hack AI systems & build intelligent exploits. Explore the field of AI, understand machine learning algorithms, and learn how to secure AI systems against adversarial attacks and vulnerabilities.</p>
             <a href="#" class="cta-button">View</a>
-            <a href="ai.html" class="cta-button">Learn more</a>
+            <a href="ai" class="cta-button">Learn more</a>
         </button>
     </div>
 </section>
@@ -294,7 +296,7 @@
             <h2 class="section-title">Contact Us</h2>
             <p class="contact-text">We’d love to hear your questions, suggestions, or feedback. Get in touch anytime!</p>
             <div class="button-container">
-                <a href="contact.html" class="cta-button">Get in Touch</a>
+                <a href="contact" class="cta-button">Get in Touch</a>
             </div>
         </section>
        
@@ -314,11 +316,11 @@
                 <div class="footer-column">
                     <h3 id="quick-links-title">QUICK LINKS</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="quiz.html">Quiz</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="index">Home</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="resources">Resources</a></li>
+                        <li><a href="quiz">Quiz</a></li>
+                        <li><a href="faq">FAQs</a></li>
                         <li><a href="index.html#categoriess">Categories</a></li>
                     </ul>
                 </div>
@@ -387,7 +389,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
+            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp">Privacy Policy</a> | <a href="tc">Terms & Conditions</a></p></p>
         </div>
     </footer>
  
@@ -398,7 +400,7 @@
 </button>
 <div id="chatbot-container"></div>
 <script>
-fetch("ai.html")
+fetch("./ai.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("chatbot-container").innerHTML = data;
@@ -500,6 +502,6 @@ window.addEventListener("load", () => {
 });
 </script>
 <!-- ✅ External JS -->
-<script src="js/ai.js"></script>
+<script src="../static/js/ai.js"></script>
 </body>
 </html>

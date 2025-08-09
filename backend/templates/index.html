@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HackeRZGuide - Your go-to resource for hacking, coding, and tech guides.">
-    <link rel="icon" href="./img/HACKERZGUIDE.png">
+    <link rel="icon" href="../static/img/HACKERZGUIDE.png">
     <title>HackeRZGuide - Futuristic Tech Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -31,7 +31,7 @@
             <!-- Navigation Links (Desktop View) -->
             <div class="nav-container">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="resources">Resources</a></li>
                     <li><a href="faq">FAQs</a></li>
@@ -42,7 +42,7 @@
     
             <!-- Right Section (Contribute Button & Search) -->
             <div class="right-section">
-                <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+                <button class="contribute-btn" onclick="window.location.href='resources'">Contribute</button>
                 <div class="search-bar">
                     <input type="text" placeholder="Search..." aria-label="Search">
                 </div>
@@ -53,7 +53,8 @@
     <!-- Close Button -->
     <div class="close-btn" onclick="toggleMenu()">✖</div>
     <ul>
-        <li><a href="index">Home</a></li>
+        <li><a href="/">Home</a></li>
+
         <li><a href="about">About</a></li>
         <li><a href="resources">Resources</a></li>
         <li><a href="faq">FAQs</a></li>
@@ -316,12 +317,13 @@
                 <div class="footer-column">
                     <h3 id="quick-links-title">QUICK LINKS</h3>
                     <ul>
-                        <li><a href="index">Home</a></li>
+                        <li><a href="/">Home</a></li>
+
                         <li><a href="about">About Us</a></li>
                         <li><a href="resources">Resources</a></li>
                         <li><a href="quiz">Quiz</a></li>
                         <li><a href="faq">FAQs</a></li>
-                        <li><a href="index.html#categoriess">Categories</a></li>
+                        <li><a href="/">Categories</a></li>
                     </ul>
                 </div>
                 
@@ -400,7 +402,7 @@
 </button>
 <div id="chatbot-container"></div>
 <script>
-fetch("./ai.html")
+fetch("./ai")
   .then(res => res.text())
   .then(data => {
     document.getElementById("chatbot-container").innerHTML = data;

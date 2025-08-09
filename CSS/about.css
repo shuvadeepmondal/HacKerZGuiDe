@@ -54,15 +54,16 @@ overflow-x: hidden;
 }
 
 .navbar {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  padding: 12px 30px;
+  background: #1c1c21; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px 40px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 1000;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-  border-radius: 5px;
+  border-radius: 0;
 }
 
 .logo {
@@ -70,17 +71,19 @@ overflow-x: hidden;
 }
 
 .logo a {
-  font-size: 1.5rem;
-  color: #40ff00;
+  color: #e0e0e0; /* A soft, elegant off-white */
   font-weight: bold;
+  font-size: 1.6rem;
   text-transform: uppercase;
-  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .logo a:hover {
-  color: #00a6ff;
-  text-shadow: 0px 0px 10px #00a6ff;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
+
+
 
 .nav-container {
   display: flex;
@@ -98,25 +101,28 @@ overflow-x: hidden;
   position: relative;
 }
 
-.nav-links a {
-  color: #40ff00;
+.nav-links a,
+.mobile-nav ul li a { 
+  color: #a0a0a0; 
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
   padding: 8px 12px;
-  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.nav-links a:hover {
-  color: #00a6ff;
-  text-shadow: 0px 0px 5px #00a6ff;
+.nav-links a:hover,
+.mobile-nav ul li a:hover {
+  color: #ffd700; 
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  transform: translateY(-2px);
 }
 
 .contribute-btn {
-  background: #40ff00;
-  border: 2px solid #40ff00;
-  padding: 8px 15px;
-  color: black;
+  background: transparent;
+  border: 1px solid #ffd700; 
+  padding: 10px 20px;
+  color: #ffd700; 
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 5px;
@@ -125,11 +131,11 @@ overflow-x: hidden;
 }
 
 .contribute-btn:hover {
-  background: #00a6ff;
-  color: white;
-  border-color: #00a6ff;
-  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.7);
-  transform: scale(1.1);
+  background: #ffd700; 
+  color: #1c1c21; 
+  border-color: #ffd700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  transform: scale(1.05);
 }
 
 .contribute-btn:active {

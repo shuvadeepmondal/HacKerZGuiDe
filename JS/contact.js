@@ -3,10 +3,26 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
     let message = document.getElementById("message").value.trim();
-    if (name === "" || email === "" || message === "") {
-        alert("Please fill in all fields.");
+    // Name validation
+    if (name.length < 4) {
+        alert("Name must be at least 4 characters long.");
         return;
     }
+
+    // Email validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    // Message validation
+    let wordCount = message.split(/\s+/).filter(word => word.length > 0).length;
+    if (wordCount < 3) {
+        alert("Message must contain at least 3 words.");
+        return;
+    }
+
     alert(`Thank you, ${name}! Your message has been sent.`);
     document.getElementById("contact-form").reset();
 });

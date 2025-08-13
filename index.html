@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,25 +15,28 @@
      <link rel="stylesheet" href="chatbot.css">
 
 
+    <link rel="stylesheet" href="chatbot.css">
+
+
+
     <script defer src="JS/script.js"></script>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
-            <!-- Hamburger Menu (Mobile) -->
+
             <div class="hamburger-menu" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+                ☰
             </div>
-    
-            <!-- Logo (Center in Mobile, Left in Desktop) -->
+
+
             <div class="logo">
                 <a href="index.html">HackeRZGuide</a>
             </div>
-    
-            <!-- Navigation Links (Desktop View) -->
-            
+
+
+            <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -41,44 +45,45 @@
                     <li><a href="quiz.html">Quiz</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-    
-            <!-- Right Section (Contribute Button & Search) -->
+            </div>
+
+
             <div class="right-section">
                 <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
                 <div class="search-bar">
                     <input type="text" placeholder="Search..." aria-label="Search">
                 </div>
             </div>
-    
-            <!-- Mobile Navigation (Slide-in Menu) -->
-<div id="mobileNav" class="mobile-nav">
-    <!-- Close Button -->
-    
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
 
-    <!-- Right Section for Mobile -->
-    <div class="mobile-right-section">
-        <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
-        <div class="search-bar">
-            <input type="text" placeholder="Search..." aria-label="Search">
-        </div>
-    </div>
-</div>
+
+            <div class="mobile-nav" id="mobileNav">
+
+                <div class="close-btn" onclick="toggleMenu()">✖</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+
+                <div class="mobile-right-section">
+                    <button class="contribute-btn" onclick="window.location.href='resources.html'">Contribute</button>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search..." aria-label="Search">
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
-
     <main>
-        
+
         <section class="hero">
             <h1>Welcome to HackeRZGuide </h1>
+
              <p>"Hack it, Crack it, Master it"</p>
              <div class="button">
                  <a href="resources.html" class="Explore">Explore Resource</a>
@@ -96,20 +101,22 @@
                       navigate challenges, develop skills, and unlock their full potential for personal and professional success.
                   </p>
                   <h2>Our Mission</h2>
-                  <p>
+                  <div class="about-para"> <p>
                       To inspire and enable individuals to achieve their goals by equipping them with the tools, knowledge, 
                       and guidance they need to excel in their journeys.
-                  </p>
+                  </p></div>
+                 
                   <h2>Our Vision</h2>
-                  <p>
+                  <div class="about-para"><p>
                       To be the go-to platform for goal-oriented individuals, fostering a community of learners, innovators, 
                       and achievers who are committed to personal and professional growth.
-                  </p>
+                  </p></div>
+                  
                   <h2>Our Purpose</h2>
-                  <p>
+                  <div class="about-para"><p>
                       At HackerZGuide, we believe in creating a supportive environment where users can discover their 
                       strengths, overcome challenges, and achieve success on their terms.
-                  </p>
+                  </p></div>
               </div>
           </div>
       </section>
@@ -183,6 +190,12 @@
     </div>
 </div>
 
+<div class="section-separator">
+    <div class="separator-line"></div>
+    <div class="separator-label">◉</div>
+    <div class="separator-line"></div>
+  </div>
+
     <!-- ✅ Testimonial Section -->
     <section class="testimonial-section">
         <h2>🚀 What Hackers Say About Us 🚀</h2>
@@ -235,86 +248,294 @@
                     <p class="testimonial-text">"Step-by-step guides make learning easy, even for absolute beginners!"</p>
                     <h3 class="author">Megha Agrawal</h3>
                     <div class="rating" data-stars="5"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Sanchit_Bhatnagar_CSE_IN.jpeg" alt="Harshit Rana" class="avatar">
-                    <p class="testimonial-text">"The dark UI, interactive lessons, and projects make this my go-to cybersecurity site!"</p>
-                    <h3 class="author">Harshit Rana</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Aditi_Semwal.jpg" alt="Kavita Singh" class="avatar">
-                    <p class="testimonial-text">"HackerZGuide provides the best ethical hacking roadmap. A must-visit for aspiring hackers!"</p>
-                    <h3 class="author">Kavita Singh</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Kshitij_Sharma.jpg" alt="Sumit Malhotra" class="avatar">
-                    <p class="testimonial-text">"The detailed explanations and real-world case studies make this platform stand out!"</p>
-                    <h3 class="author">Sumit Malhotra</h3>
-                    <div class="rating" data-stars="4"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Subina_Adhikari1.jpg" alt="Divya Rajput" class="avatar">
-                    <p class="testimonial-text">"The interactive labs and guided hacking missions are just next-level!"</p>
-                    <h3 class="author">Divya Rajput</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                
-            </div>
-            <button class="next-btn">⫸</button>
-        </div>
-    </section>
 
-    <section class="feature-guide">
-        <h2 class="section-title">
-            🚀 <span>Feature Guide</span> 🚀
-        </h2>
-        <div class="feature-container">
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/1000x1000/84/94/sophisticated-digital-information-security-vector-21248494.webp" alt="Feature 1">
-                <h3>Advanced Security</h3>
-                <p>Stay ahead with our top-notch cybersecurity solutions.</p>
+            <p>"Hack it, Crack it, Master it"</p>
+            <div class="button">
+                <a href="resources.html" class="Explore">Explore Resource</a>
+                <a href="https://github.com/shuvadeepmondal/HacKerZGuiDe" class="Contribute">Contribute now</a>
             </div>
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/2000v/93/81/futuristic-cyber-security-vector-50379381.avif" alt="Feature 2">
-                <h3>Anonymous Browsing</h3>
-                <p>Browse the web without leaving a trace.</p>
+        </section>
+
+        <section id="about">
+            <div class="about-container">
+                <h1>About Us</h1>
+                <div class="about-content">
+                    <p>
+                        <strong>HackerZGuide</strong> is a platform designed to guide individuals toward achieving their
+                        future goals.
+                        Our mission is to empower users by providing valuable insights, resources, and strategies that
+                        help them
+                        navigate challenges, develop skills, and unlock their full potential for personal and
+                        professional success.
+                    </p>
+                    <h2>Our Mission</h2>
+                    <p>
+                        To inspire and enable individuals to achieve their goals by equipping them with the tools,
+                        knowledge,
+                        and guidance they need to excel in their journeys.
+                    </p>
+                    <h2>Our Vision</h2>
+                    <p>
+                        To be the go-to platform for goal-oriented individuals, fostering a community of learners,
+                        innovators,
+                        and achievers who are committed to personal and professional growth.
+                    </p>
+                    <h2>Our Purpose</h2>
+                    <p>
+                        At HackerZGuide, we believe in creating a supportive environment where users can discover their
+                        strengths, overcome challenges, and achieve success on their terms.
+                    </p>
+
+                </div>
             </div>
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/2000v/82/46/ai-healthcare-security-concept-with-glowing-vector-54938246.avif" alt="Feature 3">
-                <h3>AI-Powered Protection</h3>
-                <p>Leverage AI to detect and prevent cyber threats.</p>
+        </section>
+
+        <!-- Header Section -->
+        <header class="site-header">
+            <h1>💻 Categories Section 💻</h1>
+            <p>Select your hacking domain and start mastering today!</p>
+        </header>
+
+        <!-- Categories Grid Section -->
+        <section class="categories" id="categoriess">
+            <div class="category-grid">
+                <!-- Category Cards -->
+                <button class="category-card" onclick="showCategoryInfo('Web Development')">
+                    <img src="https://cdn1.vectorstock.com/i/1000x1000/82/20/website-development-neon-label-vector-26918220.jpg"
+                        alt="Web Development">
+                    <h3 class="highlight-green">Web Development</h3>
+                    <p class="highlight-black">Hack the web, build advanced sites. Learn about front-end and back-end
+                        development, web security, and modern web technologies to create robust and secure web
+                        applications.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="wd.html" class="cta-button">Learn more</a>
+                </button>
+
+                <button class="category-card" onclick="showCategoryInfo('Android Development')">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/41/99/app-development-round-colored-outline-vector-23654199.webp"
+                        alt="Android Development">
+                    <h3 class="highlight-green">Android Development</h3>
+                    <p class="highlight-black">Explore mobile exploits & ethical hacking. Dive into Android app
+                        development, understand the Android OS architecture, and learn how to secure mobile applications
+                        against various threats.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="ad.html" class="cta-button">Learn more</a>
+                </button>
+
+                <button class="category-card" onclick="showCategoryInfo('Game Development')">
+                    <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif"
+                        alt="Game Development">
+                    <h3 class="highlight-green">Game Development</h3>
+                    <p class="highlight-black">Reverse-engineer & mod game engines. Gain insights into game design,
+                        development, and security. Learn how to create and modify games using popular game engines and
+                        protect them from vulnerabilities.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="gd.html" class="cta-button">Learn more</a>
+                </button>
+
+                <button class="category-card" onclick="showCategoryInfo('Cloud Computing')">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/45/26/cloud-service-security-glowing-neon-sign-internet-vector-23104526.webp"
+                        alt="Cloud Computing">
+                    <h3 class="highlight-green">Cloud Computing</h3>
+                    <p class="highlight-black">Cloud security & ethical penetration testing. Understand cloud
+                        infrastructure, services, and security. Learn how to perform penetration testing on cloud
+                        environments to ensure data protection and compliance.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="cc.html" class="cta-button">Learn more</a>
+                </button>
+
+                <button class="category-card" onclick="showCategoryInfo('Cybersecurity')">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/38/16/cyber-security-glowing-neon-sign-internet-vector-23303816.webp"
+                        alt="Cybersecurity">
+                    <h3 class="highlight-green">Cybersecurity</h3>
+                    <p class="highlight-black">Master ethical hacking & pentesting. Delve into the world of
+                        cybersecurity, learn about various attack vectors, and develop skills to protect systems and
+                        networks from cyber threats.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="cs.html" class="cta-button">Learn more</a>
+                </button>
+
+                <button class="category-card" onclick="showCategoryInfo('Artificial Intelligence')">
+                    <img src="https://cdn.vectorstock.com/i/1000v/59/38/crct-bg-ai-chip-and-circuit-cntr-lp-bl-vector-51515938.avif"
+                        alt="Artificial Intelligence">
+                    <h3 class="highlight-green">Artificial Intelligence</h3>
+                    <p class="highlight-black">Hack AI systems & build intelligent exploits. Explore the field of AI,
+                        understand machine learning algorithms, and learn how to secure AI systems against adversarial
+                        attacks and vulnerabilities.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="ai.html" class="cta-button">Learn more</a>
+                </button>
+            </div>
+        </section>
+
+        <!-- Category Modal -->
+        <div id="category-modal" class="modal">
+            <div class="modal-content">
+                <button class="close" onclick="closeModal()">&times;</button>
+                <h2 id="category-title" aria-live="polite">Category Title</h2>
+                <p id="category-description"></p>
             </div>
         </div>
-    </section>
 
-        
+        <!-- ✅ Testimonial Section -->
+        <section class="testimonial-section">
+            <h2>🚀 What Hackers Say About Us 🚀</h2>
+            <div class="carousel">
+                <button class="prev-btn">⫷</button>
+                <div class="testimonial-container">
+                    <div class="testimonial-card active">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Tanveer_Mech.jpg"
+                            alt="Tanveer Ahmad" class="avatar">
+                        <p class="testimonial-text">"HackerzGuide is a goldmine of hacking knowledge! The tutorials are
+                            top-notch and cyberpunk-styled UI is just sick!"</p>
+                        <h3 class="author">Tanveer Ahmad</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Nitin_jangir.jpg"
+                            alt="Ankit Verma" class="avatar">
+                        <p class="testimonial-text">"HackerZGuide made learning ethical hacking so much fun! The content
+                            is practical and well-structured."</p>
+                        <h3 class="author">Ankit Verma</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Aadhya_Chaturvedi.jpg"
+                            alt="Priyanka Sharma" class="avatar">
+                        <p class="testimonial-text">"Finally found a cybersecurity platform that explains complex topics
+                            in an easy way!"</p>
+                        <h3 class="author">Priyanka Sharma</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Naveen_Bansal_.jpg"
+                            alt="Rahul Kumar" class="avatar">
+                        <p class="testimonial-text">"The cyberpunk-themed UI makes it a great learning experience. Super
+                            engaging tutorials!"</p>
+                        <h3 class="author">Rahul Kumar</h3>
+                        <div class="rating" data-stars="4"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Adeeba_CSE_IN.jpeg"
+                            alt="Sonali Mishra" class="avatar">
+                        <p class="testimonial-text">"Best resource for beginners in ethical hacking. Love the hands-on
+                            projects!"</p>
+                        <h3 class="author">Sonali Mishra</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Abhishek_Singh_CSE_IN.jpeg"
+                            alt="Aman Singh" class="avatar">
+                        <p class="testimonial-text">"The real-world hacking scenarios and CTF challenges are awesome!"
+                        </p>
+                        <h3 class="author">Aman Singh</h3>
+                        <div class="rating" data-stars="4"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Harshita_CSE_IN.jpeg"
+                            alt="Megha Agrawal" class="avatar">
+                        <p class="testimonial-text">"Step-by-step guides make learning easy, even for absolute
+                            beginners!"</p>
+                        <h3 class="author">Megha Agrawal</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Sanchit_Bhatnagar_CSE_IN.jpeg"
+                            alt="Harshit Rana" class="avatar">
+                        <p class="testimonial-text">"The dark UI, interactive lessons, and projects make this my go-to
+                            cybersecurity site!"</p>
+                        <h3 class="author">Harshit Rana</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Aditi_Semwal.jpg"
+                            alt="Kavita Singh" class="avatar">
+                        <p class="testimonial-text">"HackerZGuide provides the best ethical hacking roadmap. A
+                            must-visit for aspiring hackers!"</p>
+                        <h3 class="author">Kavita Singh</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Kshitij_Sharma.jpg"
+                            alt="Sumit Malhotra" class="avatar">
+                        <p class="testimonial-text">"The detailed explanations and real-world case studies make this
+                            platform stand out!"</p>
+                        <h3 class="author">Sumit Malhotra</h3>
+                        <div class="rating" data-stars="4"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Subina_Adhikari1.jpg"
+                            alt="Divya Rajput" class="avatar">
+                        <p class="testimonial-text">"The interactive labs and guided hacking missions are just
+                            next-level!"</p>
+                        <h3 class="author">Divya Rajput</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                </div>
+                <button class="next-btn">⫸</button>
+            </div>
+        </section>
+
+        <section class="feature-guide">
+            <h2 class="section-title">
+                🚀 <span>Feature Guide</span> 🚀
+            </h2>
+            <div class="feature-container">
+                <div class="feature-card">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/84/94/sophisticated-digital-information-security-vector-21248494.webp"
+                        alt="Feature 1">
+                    <h3>Advanced Security</h3>
+                    <p>Stay ahead with our top-notch cybersecurity solutions.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://cdn.vectorstock.com/i/2000v/93/81/futuristic-cyber-security-vector-50379381.avif"
+                        alt="Feature 2">
+                    <h3>Anonymous Browsing</h3>
+                    <p>Browse the web without leaving a trace.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://cdn.vectorstock.com/i/2000v/82/46/ai-healthcare-security-concept-with-glowing-vector-54938246.avif"
+                        alt="Feature 3">
+                    <h3>AI-Powered Protection</h3>
+                    <p>Leverage AI to detect and prevent cyber threats.</p>
+                </div>
+            </div>
+        </section>
+
+
         <section id="contact" class="content-section fade-in">
             <h2 class="section-title">Contact Us</h2>
-            <p class="contact-text">We’d love to hear your questions, suggestions, or feedback. Get in touch anytime!</p>
+            <p class="contact-text">We’d love to hear your questions, suggestions, or feedback. Get in touch anytime!
+            </p>
             <div class="button-container">
                 <a href="contact.html" class="cta-button">Get in Touch</a>
             </div>
         </section>
-       
-       
+
+
     </main>
 
     <footer>
         <div class="footer-container">
-            
+
             <div class="footer-row">
-                
+
                 <div class="footer-column">
                     <h3 id="about-hackerzguide">ABOUT HACKERZGUIDE</h3>
-                    <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide insights, tutorials, and guidance to help individuals achieve their goals.</p>
+                    <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide
+                        insights, tutorials, and guidance to help individuals achieve their goals.</p>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3 id="quick-links-title">QUICK LINKS</h3>
                     <ul>
@@ -326,10 +547,11 @@
                         <li><a href="index.html#categoriess">Categories</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>
-                    <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a></p>
+                    <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a>
+                    </p>
                     <p><strong> Phone : </strong> +91 62XXX XXXXX</p>
                     <p><strong> Address : </strong> University Institute Of Technology,
                         The University of Burdwan,
@@ -337,36 +559,103 @@
                         West Bengal.</p>
                 </div>
             </div>
-            
+
             <div class="footer-row">
-                
+
                 <div class="footer-column social-media">
                     <h3 id="follow-us-title">FOLLOW US</h3>
                     <div class="social-icons">
                         <!-- Facebook -->
-                        <a href="#" class="social-icon facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
-                        <svg width="64px" height="64px" viewBox="-9.6 -9.6 67.20 67.20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#3B5998"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z" fill="white"></path> </g></svg>                        
+                        <a href="#" class="social-icon facebook" title="Facebook" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg width="64px" height="64px" viewBox="-9.6 -9.6 67.20 67.20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <circle cx="24" cy="24" r="20" fill="#3B5998"></circle>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z"
+                                        fill="white"></path>
+                                </g>
+                            </svg>
                         </a>
                         <!-- Twitter -->
-                        <a href="#" class="social-icon twitter" title="Twitter" target="_blank" rel="noopener noreferrer">
-                        <svg width="64px" height="64px" viewBox="-10.56 -10.56 69.12 69.12" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#1DA1F2"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M36 16.3086C35.1177 16.7006 34.1681 16.9646 33.1722 17.0838C34.1889 16.4742 34.9697 15.5095 35.3368 14.36C34.3865 14.9247 33.3314 15.3335 32.2107 15.5551C31.3123 14.5984 30.0316 14 28.6165 14C25.8975 14 23.6928 16.2047 23.6928 18.9237C23.6928 19.3092 23.7368 19.6852 23.8208 20.046C19.7283 19.8412 16.1005 17.8805 13.6719 14.9015C13.2479 15.6287 13.0055 16.4742 13.0055 17.3766C13.0055 19.0845 13.8735 20.5916 15.1958 21.4747C14.3878 21.4491 13.6295 21.2275 12.9647 20.8587V20.9203C12.9647 23.3066 14.663 25.296 16.9141 25.7496C16.5013 25.8616 16.0661 25.9224 15.6174 25.9224C15.2998 25.9224 14.991 25.8912 14.6902 25.8336C15.3166 27.7895 17.1357 29.2134 19.2899 29.2534C17.6052 30.5733 15.4822 31.3612 13.1751 31.3612C12.7767 31.3612 12.3848 31.338 12 31.2916C14.1791 32.6884 16.7669 33.5043 19.5475 33.5043C28.6037 33.5043 33.5562 26.0016 33.5562 19.4956C33.5562 19.282 33.5522 19.0693 33.5418 18.8589C34.5049 18.1629 35.34 17.2958 36 16.3086Z" fill="white"></path> </g></svg>                        
+                        <a href="#" class="social-icon twitter" title="Twitter" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg width="64px" height="64px" viewBox="-10.56 -10.56 69.12 69.12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <circle cx="24" cy="24" r="20" fill="#1DA1F2"></circle>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M36 16.3086C35.1177 16.7006 34.1681 16.9646 33.1722 17.0838C34.1889 16.4742 34.9697 15.5095 35.3368 14.36C34.3865 14.9247 33.3314 15.3335 32.2107 15.5551C31.3123 14.5984 30.0316 14 28.6165 14C25.8975 14 23.6928 16.2047 23.6928 18.9237C23.6928 19.3092 23.7368 19.6852 23.8208 20.046C19.7283 19.8412 16.1005 17.8805 13.6719 14.9015C13.2479 15.6287 13.0055 16.4742 13.0055 17.3766C13.0055 19.0845 13.8735 20.5916 15.1958 21.4747C14.3878 21.4491 13.6295 21.2275 12.9647 20.8587V20.9203C12.9647 23.3066 14.663 25.296 16.9141 25.7496C16.5013 25.8616 16.0661 25.9224 15.6174 25.9224C15.2998 25.9224 14.991 25.8912 14.6902 25.8336C15.3166 27.7895 17.1357 29.2134 19.2899 29.2534C17.6052 30.5733 15.4822 31.3612 13.1751 31.3612C12.7767 31.3612 12.3848 31.338 12 31.2916C14.1791 32.6884 16.7669 33.5043 19.5475 33.5043C28.6037 33.5043 33.5562 26.0016 33.5562 19.4956C33.5562 19.282 33.5522 19.0693 33.5418 18.8589C34.5049 18.1629 35.34 17.2958 36 16.3086Z"
+                                        fill="white"></path>
+                                </g>
+                            </svg>
                         </a>
                         <!-- WhatsApp (Green) -->
-                        <a href="#" class="social-icon whatsapp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
-                        <svg width="64px" height="64px" viewBox="-10.56 -10.56 69.12 69.12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Whatsapp-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Color-" transform="translate(-700.000000, -360.000000)" fill="#67C15E"> <path d="M723.993033,360 C710.762252,360 700,370.765287 700,383.999801 C700,389.248451 701.692661,394.116025 704.570026,398.066947 L701.579605,406.983798 L710.804449,404.035539 C714.598605,406.546975 719.126434,408 724.006967,408 C737.237748,408 748,397.234315 748,384.000199 C748,370.765685 737.237748,360.000398 724.006967,360.000398 L723.993033,360.000398 L723.993033,360 Z M717.29285,372.190836 C716.827488,371.07628 716.474784,371.034071 715.769774,371.005401 C715.529728,370.991464 715.262214,370.977527 714.96564,370.977527 C714.04845,370.977527 713.089462,371.245514 712.511043,371.838033 C711.806033,372.557577 710.056843,374.23638 710.056843,377.679202 C710.056843,381.122023 712.567571,384.451756 712.905944,384.917648 C713.258648,385.382743 717.800808,392.55031 724.853297,395.471492 C730.368379,397.757149 732.00491,397.545307 733.260074,397.27732 C735.093658,396.882308 737.393002,395.527239 737.971421,393.891043 C738.54984,392.25405 738.54984,390.857171 738.380255,390.560912 C738.211068,390.264652 737.745308,390.095816 737.040298,389.742615 C736.335288,389.389811 732.90737,387.696673 732.25849,387.470894 C731.623543,387.231179 731.017259,387.315995 730.537963,387.99333 C729.860819,388.938653 729.198006,389.89831 728.661785,390.476494 C728.238619,390.928051 727.547144,390.984595 726.969123,390.744481 C726.193254,390.420348 724.021298,389.657798 721.340985,387.273388 C719.267356,385.42535 717.856938,383.125756 717.448104,382.434484 C717.038871,381.729275 717.405907,381.319529 717.729948,380.938852 C718.082653,380.501232 718.421026,380.191036 718.77373,379.781688 C719.126434,379.372738 719.323884,379.160897 719.549599,378.681068 C719.789645,378.215575 719.62006,377.735746 719.450874,377.382942 C719.281687,377.030139 717.871269,373.587317 717.29285,372.190836 Z" id="Whatsapp"> </path> </g> </g> </g></svg>                        
+                        <a href="#" class="social-icon whatsapp" title="WhatsApp" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg width="64px" height="64px" viewBox="-10.56 -10.56 69.12 69.12" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <title>Whatsapp-color</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <defs> </defs>
+                                    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="Color-" transform="translate(-700.000000, -360.000000)" fill="#67C15E">
+                                            <path
+                                                d="M723.993033,360 C710.762252,360 700,370.765287 700,383.999801 C700,389.248451 701.692661,394.116025 704.570026,398.066947 L701.579605,406.983798 L710.804449,404.035539 C714.598605,406.546975 719.126434,408 724.006967,408 C737.237748,408 748,397.234315 748,384.000199 C748,370.765685 737.237748,360.000398 724.006967,360.000398 L723.993033,360.000398 L723.993033,360 Z M717.29285,372.190836 C716.827488,371.07628 716.474784,371.034071 715.769774,371.005401 C715.529728,370.991464 715.262214,370.977527 714.96564,370.977527 C714.04845,370.977527 713.089462,371.245514 712.511043,371.838033 C711.806033,372.557577 710.056843,374.23638 710.056843,377.679202 C710.056843,381.122023 712.567571,384.451756 712.905944,384.917648 C713.258648,385.382743 717.800808,392.55031 724.853297,395.471492 C730.368379,397.757149 732.00491,397.545307 733.260074,397.27732 C735.093658,396.882308 737.393002,395.527239 737.971421,393.891043 C738.54984,392.25405 738.54984,390.857171 738.380255,390.560912 C738.211068,390.264652 737.745308,390.095816 737.040298,389.742615 C736.335288,389.389811 732.90737,387.696673 732.25849,387.470894 C731.623543,387.231179 731.017259,387.315995 730.537963,387.99333 C729.860819,388.938653 729.198006,389.89831 728.661785,390.476494 C728.238619,390.928051 727.547144,390.984595 726.969123,390.744481 C726.193254,390.420348 724.021298,389.657798 721.340985,387.273388 C719.267356,385.42535 717.856938,383.125756 717.448104,382.434484 C717.038871,381.729275 717.405907,381.319529 717.729948,380.938852 C718.082653,380.501232 718.421026,380.191036 718.77373,379.781688 C719.126434,379.372738 719.323884,379.160897 719.549599,378.681068 C719.789645,378.215575 719.62006,377.735746 719.450874,377.382942 C719.281687,377.030139 717.871269,373.587317 717.29285,372.190836 Z"
+                                                id="Whatsapp"> </path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
                         </a>
                         <!-- GitHub (Light Black) -->
-                        <a href="https://github.com/shuvadeepmondal/HacKerZGuiDe" class="social-icon github" title="GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg width="64px" height="64px" viewBox="-6.4 -6.4 44.80 44.80" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g fill="none" fill-rule="evenodd"> <path d="m0 0h32v32h-32z"></path> <path d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm-.0080357 7.00602603c-4.9680804-.00200817-8.9919643 4.01986687-8.9919643 8.98392937 0 3.9254464 2.5171875 7.2622767 6.0227679 8.4877232.4720982.1185268.3997767-.2169643.3997767-.4459822v-1.5569196c-2.726116.3194196-2.8366071-1.4845982-3.0194196-1.7859375-.3696429-.6308036-1.24352679-.7915179-.98236607-1.0928572.62075897-.3194196 1.25357147.0803572 1.98683037 1.1631697.5303571.7854911 1.5649553.6529018 2.0892857.5223214.1145089-.4720982.3595982-.8939732.6970982-1.2214286-2.8245536-.50625-4.0017857-2.2299107-4.0017857-4.2790178 0-.9944197.3274554-1.9084822.9703125-2.6457589-.4098214-1.2154018.0381696-2.2560268.0984375-2.4107143 1.1671875-.1044643 2.3805804.8357143 2.475.9100446.6629464-.1787946 1.4203125-.2732143 2.2680804-.2732143.8517857 0 1.6111607.0984375 2.2801339.2792411.2270089-.1727679 1.3520089-.9803571 2.4368303-.8819196.058259.1546875.4962054 1.1712053.1104911 2.3705357.6508929.7392857.9823661 1.6613839.9823661 2.6578125 0 2.053125-1.1852679 3.7787946-4.0178572 4.2770089.4720983.4660714.7654018 1.1129464.7654018 1.828125v2.2600446c.0160715.1808036 0 .3595983.3013393.3595983 3.5578125-1.1993304 6.1191964-4.5602679 6.1191964-8.5198661 0-4.9660714-4.0258928-8.98593827-8.9899553-8.98593827z" fill="#202327"></path> </g> </g></svg>                        </a>
+                        <a href="https://github.com/shuvadeepmondal/HacKerZGuiDe" class="social-icon github"
+                            title="GitHub" target="_blank" rel="noopener noreferrer">
+                            <svg width="64px" height="64px" viewBox="-6.4 -6.4 44.80 44.80"
+                                xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path d="m0 0h32v32h-32z"></path>
+                                        <path
+                                            d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm-.0080357 7.00602603c-4.9680804-.00200817-8.9919643 4.01986687-8.9919643 8.98392937 0 3.9254464 2.5171875 7.2622767 6.0227679 8.4877232.4720982.1185268.3997767-.2169643.3997767-.4459822v-1.5569196c-2.726116.3194196-2.8366071-1.4845982-3.0194196-1.7859375-.3696429-.6308036-1.24352679-.7915179-.98236607-1.0928572.62075897-.3194196 1.25357147.0803572 1.98683037 1.1631697.5303571.7854911 1.5649553.6529018 2.0892857.5223214.1145089-.4720982.3595982-.8939732.6970982-1.2214286-2.8245536-.50625-4.0017857-2.2299107-4.0017857-4.2790178 0-.9944197.3274554-1.9084822.9703125-2.6457589-.4098214-1.2154018.0381696-2.2560268.0984375-2.4107143 1.1671875-.1044643 2.3805804.8357143 2.475.9100446.6629464-.1787946 1.4203125-.2732143 2.2680804-.2732143.8517857 0 1.6111607.0984375 2.2801339.2792411.2270089-.1727679 1.3520089-.9803571 2.4368303-.8819196.058259.1546875.4962054 1.1712053.1104911 2.3705357.6508929.7392857.9823661 1.6613839.9823661 2.6578125 0 2.053125-1.1852679 3.7787946-4.0178572 4.2770089.4720983.4660714.7654018 1.1129464.7654018 1.828125v2.2600446c.0160715.1808036 0 .3595983.3013393.3595983 3.5578125-1.1993304 6.1191964-4.5602679 6.1191964-8.5198661 0-4.9660714-4.0258928-8.98593827-8.9899553-8.98593827z"
+                                            fill="#202327"></path>
+                                    </g>
+                                </g>
+                            </svg> </a>
                         </a>
                         <!-- LinkedIn (Blue) -->
-                        <a href="#" class="social-icon linkedin" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                        <svg width="64px" height="64px" viewBox="-9.6 -9.6 67.20 67.20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#0077B5"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z" fill="white"></path> </g></svg>                        </a>
+                        <a href="#" class="social-icon linkedin" title="LinkedIn" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg width="64px" height="64px" viewBox="-9.6 -9.6 67.20 67.20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <circle cx="24" cy="24" r="20" fill="#0077B5"></circle>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z"
+                                        fill="white"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z"
+                                        fill="white"></path>
+                                </g>
+                            </svg> </a>
                         </a>
                     </div>
-                    
+
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Language</h3>
                     <select id="language-selector" title="Select Language" onchange="changeLanguage()">
@@ -376,7 +665,7 @@
                         <option value="de">German</option>
                     </select>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3 id="newsletter-title">NEWSLETTER</h3>
                     <p id="subscribe-text">Subscribe to get the latest updates and exclusive content.</p>
@@ -385,114 +674,125 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
-            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a href="t&c.html">Terms & Conditions</a></p></p>
+            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="pp.html">Privacy Policy</a> | <a
+                    href="t&c.html">Terms & Conditions</a></p>
+            </p>
         </div>
     </footer>
- 
- <button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 4L4 12H10V20H14V12H20L12 4Z" fill="white"/>
-    </svg>
-</button>
-<div id="chatbot-container"></div>
-<!-- 🌟 Chatbot Window -->
-<div id="chatbot-window" class="light-mode">
-    <div class="chatbot-header">
-        <h3>🤖 HackerZGuide Chatbot</h3>
-        <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
-        <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
-    </div>
 
-    <div class="chatbot-body">
-        <div id="chatbot-categories"></div>
-        <div id="chatbot-questions"></div>
-        <div id="chatbot-messages">
-            <p class="bot-msg">👋 Hi! How can I assist you today?</p>
+    <button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L4 12H10V20H14V12H20L12 4Z" fill="white" />
+        </svg>
+    </button>
+    <div id="chatbot-container"></div>
+    <!-- 🌟 Chatbot Window -->
+    <div id="chatbot-window" class="light-mode">
+        <div class="chatbot-header">
+            <h3>🤖 HackerZGuide Chatbot</h3>
+            <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+            <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
         </div>
 
-        <div class="chatbot-input-container">
-            <input type="text" id="chatbot-input" placeholder="Ask me something...">
-            <button onclick="sendMessage()" class="send-btn">Send</button>
+        <div class="chatbot-body">
+            <div id="chatbot-categories"></div>
+            <div id="chatbot-questions"></div>
+            <div id="chatbot-messages">
+                <p class="bot-msg">👋 Hi! How can I assist you today?</p>
+            </div>
+
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Ask me something...">
+                <button onclick="sendMessage()" class="send-btn">Send</button>
+            </div>
         </div>
     </div>
-</div>
 
-<style>
-/* 🌟 Light Theme */
-#chatbot-window.light-mode {
-    background: #fff;
-    color: #000;
-}
-#chatbot-window.light-mode .chatbot-header {
-    background: linear-gradient(135deg, #007bff, #00d4ff);
-    color: #fff;
-}
-#chatbot-window.light-mode #chatbot-messages {
-    background: #f9f9f9;
-}
-#chatbot-window.light-mode .bot-msg {
-    background: #e6e6e6;
-    color: #000;
-}
-#chatbot-window.light-mode .user-msg {
-    background: #007bff;
-    color: #fff;
-}
+    <style>
+        /* 🌟 Light Theme */
+        #chatbot-window.light-mode {
+            background: #fff;
+            color: #000;
+        }
 
-/* 🌟 Dark Theme */
-#chatbot-window.dark-mode {
-    background: #1e1e1e;
-    color: #f5f5f5;
-}
-#chatbot-window.dark-mode .chatbot-header {
-    background: linear-gradient(135deg, #222, #444);
-    color: #fff;
-}
-#chatbot-window.dark-mode #chatbot-messages {
-    background: #2a2a2a;
-}
-#chatbot-window.dark-mode .bot-msg {
-    background: #333;
-    color: #f5f5f5;
-}
-#chatbot-window.dark-mode .user-msg {
-    background: #007bff;
-    color: #fff;
-}
-</style>
+        #chatbot-window.light-mode .chatbot-header {
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: #fff;
+        }
 
-<script>
-function toggleTheme() {
-    const chatbot = document.getElementById("chatbot-window");
-    const themeToggle = document.getElementById("theme-toggle");
+        #chatbot-window.light-mode #chatbot-messages {
+            background: #f9f9f9;
+        }
 
-    chatbot.classList.toggle("dark-mode");
-    chatbot.classList.toggle("light-mode");
+        #chatbot-window.light-mode .bot-msg {
+            background: #e6e6e6;
+            color: #000;
+        }
 
-    // Save user preference
-    if (chatbot.classList.contains("dark-mode")) {
-        localStorage.setItem("chatbot-theme", "dark");
-        themeToggle.textContent = "☀️";
-    } else {
-        localStorage.setItem("chatbot-theme", "light");
-        themeToggle.textContent = "🌙";
-    }
-}
+        #chatbot-window.light-mode .user-msg {
+            background: #007bff;
+            color: #fff;
+        }
 
-// Load theme on page load
-window.addEventListener("load", () => {
-    const savedTheme = localStorage.getItem("chatbot-theme") || "light";
-    const chatbot = document.getElementById("chatbot-window");
-    const themeToggle = document.getElementById("theme-toggle");
+        /* 🌟 Dark Theme */
+        #chatbot-window.dark-mode {
+            background: #1e1e1e;
+            color: #f5f5f5;
+        }
 
-    chatbot.classList.remove("dark-mode", "light-mode");
-    chatbot.classList.add(savedTheme + "-mode");
-    themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
-});
-</script>
-<!-- ✅ External JS -->
-<script src="js/ai.js"></script>
+        #chatbot-window.dark-mode .chatbot-header {
+            background: linear-gradient(135deg, #222, #444);
+            color: #fff;
+        }
+
+        #chatbot-window.dark-mode #chatbot-messages {
+            background: #2a2a2a;
+        }
+
+        #chatbot-window.dark-mode .bot-msg {
+            background: #333;
+            color: #f5f5f5;
+        }
+
+        #chatbot-window.dark-mode .user-msg {
+            background: #007bff;
+            color: #fff;
+        }
+    </style>
+
+    <script>
+        function toggleTheme() {
+            const chatbot = document.getElementById("chatbot-window");
+            const themeToggle = document.getElementById("theme-toggle");
+
+            chatbot.classList.toggle("dark-mode");
+            chatbot.classList.toggle("light-mode");
+
+            // Save user preference
+            if (chatbot.classList.contains("dark-mode")) {
+                localStorage.setItem("chatbot-theme", "dark");
+                themeToggle.textContent = "☀️";
+            } else {
+                localStorage.setItem("chatbot-theme", "light");
+                themeToggle.textContent = "🌙";
+            }
+        }
+
+        // Load theme on page load
+        window.addEventListener("load", () => {
+            const savedTheme = localStorage.getItem("chatbot-theme") || "light";
+            const chatbot = document.getElementById("chatbot-window");
+            const themeToggle = document.getElementById("theme-toggle");
+
+            chatbot.classList.remove("dark-mode", "light-mode");
+            chatbot.classList.add(savedTheme + "-mode");
+            themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+        });
+    </script>
+    <!-- ✅ External JS -->
+    <script src="js/ai.js"></script>
 </body>
+
 </html>

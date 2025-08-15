@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Prep Sheet</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: radial-gradient(circle at top, #0a0f1e, #000);
+        color: #fff;
+    }
+    h1 {
+        text-align: center;
+        color: #00f7ff;
+        text-shadow: 0 0 10px #00f7ff;
+    }
+    .filters {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    select, input {
+        background: rgba(20, 20, 50, 0.9);
+        color: #00f7ff;
+        border: 1px solid #00a6ff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+    }
+    .topic {
+        background: rgba(20, 20, 50, 0.9);
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid #00a6ff;
+        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
+        overflow: hidden;
+    }
+    .topic-header {
+        padding: 10px;
+        cursor: pointer;
+        background: rgba(0, 166, 255, 0.2);
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .topic-header:hover {
+        background: rgba(0, 166, 255, 0.4);
+    }
+    .topic-questions {
+        display: none;
+        padding: 10px;
+    }
+    .question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255,255,255,0.05);
+        padding: 6px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    .title {
+        color: #00f7ff;
+        text-decoration: none;
+    }
+    .badges {
+        display: flex;
+        gap: 5px;
+    }
+    .badge {
+        padding: 2px 6px;
+        border-radius: 5px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .Easy {
+        background: rgba(0, 255, 0, 0.2);
+        color: #66ff66;
+    }
+    .Medium {
+        background: rgba(255, 255, 0, 0.2);
+        color: #ffff66;
+    }
+    .Hard {
+        background: rgba(255, 0, 0, 0.2);
+        color: #ff4d4d;
+    }
+    .Unsolved {
+        background: rgba(255, 0, 0, 0.3);
+        color: #ff4d4d;
+        cursor: pointer;
+    }
+    .Attempted {
+        background: rgba(255, 255, 0, 0.3);
+        color: #ffff66;
+        cursor: pointer;
+    }
+    .Solved {
+        background: rgba(0, 255, 0, 0.3);
+        color: #66ff66;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <h1>DSA Prep Sheet- LeetCode Edition</h1>
+    <div class="filters">
+        <input type="text" id="search" placeholder="Search questions...">
+        <select id="topicFilter">
+            <option value="">All Topics</option>
+        </select>
+        <select id="difficultyFilter">
+            <option value="">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+    </div>
+    <div id="sheet"></div>
+
+<script>
+const data = [
+    // Arrays
+    {topic: "Arrays", title: "Two Sum", difficulty: "Easy", url: "https://leetcode.com/problems/two-sum/", status: "Unsolved"},
+    {topic: "Arrays", title: "Best Time to Buy and Sell Stock", difficulty: "Easy", url: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/", status: "Unsolved"},
+    {topic: "Arrays", title: "Contains Duplicate", difficulty: "Easy", url: "https://leetcode.com/problems/contains-duplicate/", status: "Unsolved"},
+    {topic: "Arrays", title: "Product of Array Except Self", difficulty: "Medium", url: "https://leetcode.com/problems/product-of-array-except-self/", status: "Unsolved"},
+    {topic: "Arrays", title: "Maximum Subarray", difficulty: "Medium", url: "https://leetcode.com/problems/maximum-subarray/", status: "Unsolved"},
+    {topic: "Arrays", title: "Merge Intervals", difficulty: "Medium", url: "https://leetcode.com/problems/merge-intervals/", status: "Unsolved"},
+    {topic: "Arrays", title: "First Missing Positive", difficulty: "Hard", url: "https://leetcode.com/problems/first-missing-positive/", status: "Unsolved"},
+    {topic: "Arrays", title: "Trapping Rain Water", difficulty: "Hard", url: "https://leetcode.com/problems/trapping-rain-water/", status: "Unsolved"},
+    // Strings
+    {topic: "Strings", title: "Valid Anagram", difficulty: "Easy", url: "https://leetcode.com/problems/valid-anagram/", status: "Unsolved"},
+    {topic: "Strings", title: "Valid Palindrome", difficulty: "Easy", url: "https://leetcode.com/problems/valid-palindrome/", status: "Unsolved"},
+    {topic: "Strings", title: "Longest Substring Without Repeating Characters", difficulty: "Medium", url: "https://leetcode.com/problems/longest-substring-without-repeating-characters/", status: "Unsolved"},
+    {topic: "Strings", title: "Group Anagrams", difficulty: "Medium", url: "https://leetcode.com/problems/group-anagrams/", status: "Unsolved"},
+    {topic: "Strings", title: "Longest Palindromic Substring", difficulty: "Medium", url: "https://leetcode.com/problems/longest-palindromic-substring/", status: "Unsolved"},
+    {topic: "Strings", title: "Minimum Window Substring", difficulty: "Hard", url: "https://leetcode.com/problems/minimum-window-substring/", status: "Unsolved"},
+    {topic: "Strings", title: "Substring with Concatenation of All Words", difficulty: "Hard", url: "https://leetcode.com/problems/substring-with-concatenation-of-all-words/", status: "Unsolved"},
+    // Dynamic Programming
+    {topic: "Dynamic Programming", title: "Climbing Stairs", difficulty: "Easy", url: "https://leetcode.com/problems/climbing-stairs/", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "House Robber", difficulty: "Medium", url: "https://leetcode.com/problems/house-robber/", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Coin Change", difficulty: "Medium", url: "https://leetcode.com/problems/coin-change/", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Longest Increasing Subsequence", difficulty: "Medium", url: "https://leetcode.com/problems/longest-increasing-subsequence/", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Word Break", difficulty: "Medium", url: "https://leetcode.com/problems/word-break/", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Edit Distance", difficulty: "Hard", url: "https://leetcode.com/problems/edit-distance/", status: "Unsolved"},
+    // Trees
+    {topic: "Trees", title: "Invert Binary Tree", difficulty: "Easy", url: "https://leetcode.com/problems/invert-binary-tree/", status: "Unsolved"},
+    {topic: "Trees", title: "Maximum Depth of Binary Tree", difficulty: "Easy", url: "https://leetcode.com/problems/maximum-depth-of-binary-tree/", status: "Unsolved"},
+    {topic: "Trees", title: "Binary Tree Level Order Traversal", difficulty: "Medium", url: "https://leetcode.com/problems/binary-tree-level-order-traversal/", status: "Unsolved"},
+    {topic: "Trees", title: "Serialize and Deserialize Binary Tree", difficulty: "Hard", url: "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/", status: "Unsolved"},
+    // Graphs
+    {topic: "Graphs", title: "Number of Islands", difficulty: "Medium", url: "https://leetcode.com/problems/number-of-islands/", status: "Unsolved"},
+    {topic: "Graphs", title: "Course Schedule", difficulty: "Medium", url: "https://leetcode.com/problems/course-schedule/", status: "Unsolved"},
+    {topic: "Graphs", title: "Word Ladder", difficulty: "Hard", url: "https://leetcode.com/problems/word-ladder/", status: "Unsolved"},
+    {topic: "Graphs", title: "Minimum Spanning Tree", difficulty: "Hard", url: "#", status: "Unsolved"},
+    // Stacks & Queues
+    {topic: "Stacks & Queues", title: "Valid Parentheses", difficulty: "Easy", url: "https://leetcode.com/problems/valid-parentheses/", status: "Unsolved"},
+    {topic: "Stacks & Queues", title: "Min Stack", difficulty: "Medium", url: "https://leetcode.com/problems/min-stack/", status: "Unsolved"},
+    {topic: "Stacks & Queues", title: "Largest Rectangle in Histogram", difficulty: "Hard", url: "https://leetcode.com/problems/largest-rectangle-in-histogram/", status: "Unsolved"},
+    // Math
+    {topic: "Math", title: "Pow(x, n)", difficulty: "Medium", url: "https://leetcode.com/problems/powx-n/", status: "Unsolved"},
+    {topic: "Math", title: "Sqrt(x)", difficulty: "Easy", url: "https://leetcode.com/problems/sqrtx/", status: "Unsolved"},
+    {topic: "Math", title: "Integer to Roman", difficulty: "Medium", url: "https://leetcode.com/problems/integer-to-roman/", status: "Unsolved"},
+    {topic: "Math", title: "Roman to Integer", difficulty: "Easy", url: "https://leetcode.com/problems/roman-to-integer/", status: "Unsolved"}
+];
+
+function renderSheet() {
+    const topicFilter = document.getElementById("topicFilter").value.toLowerCase();
+    const diffFilter = document.getElementById("difficultyFilter").value.toLowerCase();
+    const searchVal = document.getElementById("search").value.toLowerCase();
+    const container = document.getElementById("sheet");
+    container.innerHTML = "";
+
+    const topics = [...new Set(data.map(q => q.topic))];
+
+    topics.forEach(topic => {
+        const topicBox = document.createElement("div");
+        topicBox.className = "topic";
+        
+        const header = document.createElement("div");
+        header.className = "topic-header";
+        header.innerHTML = `<span>${topic}</span><span>+</span>`;
+        header.addEventListener("click", () => {
+            const content = topicBox.querySelector(".topic-questions");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+
+        const questionList = document.createElement("div");
+        questionList.className = "topic-questions";
+
+        data.filter(q => q.topic === topic)
+            .filter(q => !topicFilter || q.topic.toLowerCase() === topicFilter)
+            .filter(q => !diffFilter || q.difficulty.toLowerCase() === diffFilter)
+            .filter(q => q.title.toLowerCase().includes(searchVal))
+            .forEach(q => {
+                const qRow = document.createElement("div");
+                qRow.className = "question";
+                qRow.innerHTML = `
+                    <a href="${q.url}" target="_blank" class="title">${q.title}</a>
+                    <div class="badges">
+                        <span class="badge ${q.difficulty}">${q.difficulty}</span>
+                        <span class="badge ${q.status}" onclick="toggleStatus('${q.title}')">${q.status}</span>
+                    </div>
+                `;
+                questionList.appendChild(qRow);
+            });
+
+        if (questionList.children.length > 0) {
+            topicBox.appendChild(header);
+            topicBox.appendChild(questionList);
+            container.appendChild(topicBox);
+
+            // Auto-expand if filter matches
+            if (topic.toLowerCase() === topicFilter && topicFilter !== "") {
+                questionList.style.display = "block";
+            }
+        }
+    });
+}
+
+function toggleStatus(title) {
+    const q = data.find(x => x.title === title);
+    if (q.status === "Unsolved") q.status = "Attempted";
+    else if (q.status === "Attempted") q.status = "Solved";
+    else q.status = "Unsolved";
+    renderSheet();
+}
+
+// Populate topic filter dropdown
+const topicDropdown = document.getElementById("topicFilter");
+[...new Set(data.map(q => q.topic))].forEach(topic => {
+    const opt = document.createElement("option");
+    opt.value = topic;
+    opt.textContent = topic;
+    topicDropdown.appendChild(opt);
+});
+
+document.getElementById("search").addEventListener("input", renderSheet);
+document.getElementById("topicFilter").addEventListener("change", renderSheet);
+document.getElementById("difficultyFilter").addEventListener("change", renderSheet);
+
+renderSheet();
+</script>
+</body>
+</html>

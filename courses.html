@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Courses</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f1a;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: 2px solid #6a5acd;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #6a5acd;
+      transform: scale(1.05);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .level {
+      margin: 40px 0;
+    }
+
+    .level h2 {
+      text-align: left;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #6a5acd, #00ffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1c1c2b;
+      border-radius: 12px;
+      padding: 20px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, border 0.3s ease;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #ff8a00, #e52e71, #6a5acd, #00ffff);
+      z-index: -1;
+      filter: blur(8px);
+      border-radius: 12px;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #6a5acd;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin: 5px 0;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back-btn" onclick="window.history.back()">⬅ Back</button>
+
+  <h1>Explore Courses</h1>
+
+  <!-- Beginner -->
+  <div class="level">
+    <h2>Beginner Level</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Python Basics</h3>
+        <p>Learn syntax, logic, and problem-solving using Python.</p>
+      </div>
+      <div class="card">
+        <h3>HTML & CSS</h3>
+        <p>Understand the foundation of web development.</p>
+      </div>
+      <div class="card">
+        <h3>JavaScript Fundamentals</h3>
+        <p>Start programming for interactive websites.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Intermediate -->
+  <div class="level">
+    <h2>Intermediate Level</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Data Structures & Algorithms</h3>
+        <p>Strengthen your problem-solving skills with DSA.</p>
+      </div>
+      <div class="card">
+        <h3>Databases (SQL & NoSQL)</h3>
+        <p>Learn how to store and manage data efficiently.</p>
+      </div>
+      <div class="card">
+        <h3>APIs & REST</h3>
+        <p>Build applications that communicate with external services.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advanced -->
+  <div class="level">
+    <h2>Advanced Level</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>System Design</h3>
+        <p>Learn to design scalable and reliable systems.</p>
+      </div>
+      <div class="card">
+        <h3>Machine Learning</h3>
+        <p>Understand the basics of AI and predictive models.</p>
+      </div>
+      <div class="card">
+        <h3>DevOps</h3>
+        <p>Get skilled in automation, CI/CD pipelines, and deployment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Expert -->
+  <div class="level">
+    <h2>Expert Level</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Research & Innovation</h3>
+        <p>Publish papers, explore new technologies, and innovate.</p>
+      </div>
+      <div class="card">
+        <h3>Mentorship</h3>
+        <p>Guide others, contribute to open-source, and build community.</p>
+      </div>
+      <div class="card">
+        <h3>Specialization</h3>
+        <p>Focus on domains like AI, cybersecurity, or full-stack mastery.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

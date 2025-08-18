@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Prep Sheet - HackerRank Edition</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: radial-gradient(circle at top, #0a0f1e, #000);
+        color: #fff;
+    }
+    h1 {
+        text-align: center;
+        color: #00f7ff;
+        text-shadow: 0 0 10px #00f7ff;
+    }
+    .filters {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    select, input {
+        background: rgba(20, 20, 50, 0.9);
+        color: #00f7ff;
+        border: 1px solid #00a6ff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+    }
+    .topic {
+        background: rgba(20, 20, 50, 0.9);
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid #00a6ff;
+        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
+        overflow: hidden;
+    }
+    .topic-header {
+        padding: 10px;
+        cursor: pointer;
+        background: rgba(0, 166, 255, 0.2);
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .topic-header:hover {
+        background: rgba(0, 166, 255, 0.4);
+    }
+    .topic-questions {
+        display: none;
+        padding: 10px;
+    }
+    .question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255,255,255,0.05);
+        padding: 6px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    .title {
+        color: #00f7ff;
+        text-decoration: none;
+    }
+    .badges {
+        display: flex;
+        gap: 5px;
+    }
+    .badge {
+        padding: 2px 6px;
+        border-radius: 5px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .Easy {
+        background: rgba(0, 255, 0, 0.2);
+        color: #66ff66;
+    }
+    .Medium {
+        background: rgba(255, 255, 0, 0.2);
+        color: #ffff66;
+    }
+    .Hard {
+        background: rgba(255, 0, 0, 0.2);
+        color: #ff4d4d;
+    }
+    .Unsolved {
+        background: rgba(255, 0, 0, 0.3);
+        color: #ff4d4d;
+        cursor: pointer;
+    }
+    .Attempted {
+        background: rgba(255, 255, 0, 0.3);
+        color: #ffff66;
+        cursor: pointer;
+    }
+    .Solved {
+        background: rgba(0, 255, 0, 0.3);
+        color: #66ff66;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <h1>DSA Prep Sheet - HackerRank Edition</h1>
+    <div class="filters">
+        <input type="text" id="search" placeholder="Search questions...">
+        <select id="topicFilter">
+            <option value="">All Topics</option>
+        </select>
+        <select id="difficultyFilter">
+            <option value="">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+    </div>
+    <div id="sheet"></div>
+
+<script>
+const data = [
+    // Arrays
+    {topic: "Arrays", title: "Array Manipulation", difficulty: "Hard", url: "https://www.hackerrank.com/challenges/crush/problem", status: "Unsolved"},
+    {topic: "Arrays", title: "2D Array - DS", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/2d-array/problem", status: "Unsolved"},
+    {topic: "Arrays", title: "Left Rotation", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/array-left-rotation/problem", status: "Unsolved"},
+    {topic: "Arrays", title: "New Year Chaos", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/new-year-chaos/problem", status: "Unsolved"},
+    {topic: "Arrays", title: "Minimum Swaps 2", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/minimum-swaps-2/problem", status: "Unsolved"},
+    {topic: "Arrays", title: "Dynamic Array", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/dynamic-array/problem", status: "Unsolved"},
+    {topic: "Arrays", title: "Sparse Arrays", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/sparse-arrays/problem", status: "Unsolved"},
+    {topic: "Arrays", title: "Maximum Element", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/maximum-element/problem", status: "Unsolved"},
+    // Strings
+    {topic: "Strings", title: "Making Anagrams", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/making-anagrams/problem", status: "Unsolved"},
+    {topic: "Strings", title: "Alternating Characters", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/alternating-characters/problem", status: "Unsolved"},
+    {topic: "Strings", title: "Sherlock and the Valid String", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem", status: "Unsolved"},
+    {topic: "Strings", title: "Special Palindrome Again", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/special-palindrome-again/problem", status: "Unsolved"},
+    {topic: "Strings", title: "String Construction", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/string-construction/problem", status: "Unsolved"},
+    {topic: "Strings", title: "Common Child", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/common-child/problem", status: "Unsolved"},
+    {topic: "Strings", title: "Two Strings", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/two-strings/problem", status: "Unsolved"},
+    // Dynamic Programming
+    {topic: "Dynamic Programming", title: "The Coin Change Problem", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/coin-change/problem", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Abbreviation", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/abbr/problem", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Candies", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/candies/problem", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Max Array Sum", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/max-array-sum/problem", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Decibinary Numbers", difficulty: "Hard", url: "https://www.hackerrank.com/challenges/decibinary-numbers/problem", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Substring Diff", difficulty: "Hard", url: "https://www.hackerrank.com/challenges/substring-diff/problem", status: "Unsolved"},
+    // Trees
+    {topic: "Trees", title: "Tree: Height of a Binary Tree", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/problem", status: "Unsolved"},
+    {topic: "Trees", title: "Tree: Level Order Traversal", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/tree-level-order-traversal/problem", status: "Unsolved"},
+    {topic: "Trees", title: "Swap Nodes [Algo]", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/swap-nodes-algo/problem", status: "Unsolved"},
+    {topic: "Trees", title: "Kitty's Calculations on a Tree", difficulty: "Hard", url: "https://www.hackerrank.com/challenges/kittys-calculations-on-a-tree/problem", status: "Unsolved"},
+    // Graphs
+    {topic: "Graphs", title: "BFS: Shortest Reach", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/bfsshortreach/problem", status: "Unsolved"},
+    {topic: "Graphs", title: "DFS: Connected Cell in a Grid", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/connected-cell-in-a-grid/problem", status: "Unsolved"},
+    {topic: "Graphs", title: "Matrix", difficulty: "Hard", url: "https://www.hackerrank.com/challenges/matrix/problem", status: "Unsolved"},
+    {topic: "Graphs", title: "Journey to the Moon", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/journey-to-the-moon/problem", status: "Unsolved"},
+    // Stacks & Queues
+    {topic: "Stacks & Queues", title: "Balanced Brackets", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/balanced-brackets/problem", status: "Unsolved"},
+    {topic: "Stacks & Queues", title: "Maximum Element", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/maximum-element/problem", status: "Unsolved"},
+    {topic: "Stacks & Queues", title: "Largest Rectangle", difficulty: "Hard", url: "https://www.hackerrank.com/challenges/largest-rectangle/problem", status: "Unsolved"},
+    // Math
+    {topic: "Math", title: "Extra Long Factorials", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/extra-long-factorials/problem", status: "Unsolved"},
+    {topic: "Math", title: "Sherlock and Moving Tiles", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/sherlock-and-moving-tiles/problem", status: "Unsolved"},
+    {topic: "Math", title: "Sherlock and Divisors", difficulty: "Easy", url: "https://www.hackerrank.com/challenges/sherlock-and-divisors/problem", status: "Unsolved"},
+    {topic: "Math", title: "Fibonacci Modified", difficulty: "Medium", url: "https://www.hackerrank.com/challenges/fibonacci-modified/problem", status: "Unsolved"}
+];
+
+function renderSheet() {
+    const topicFilter = document.getElementById("topicFilter").value.toLowerCase();
+    const diffFilter = document.getElementById("difficultyFilter").value.toLowerCase();
+    const searchVal = document.getElementById("search").value.toLowerCase();
+    const container = document.getElementById("sheet");
+    container.innerHTML = "";
+
+    const topics = [...new Set(data.map(q => q.topic))];
+
+    topics.forEach(topic => {
+        const topicBox = document.createElement("div");
+        topicBox.className = "topic";
+        
+        const header = document.createElement("div");
+        header.className = "topic-header";
+        header.innerHTML = `<span>${topic}</span><span>+</span>`;
+        header.addEventListener("click", () => {
+            const content = topicBox.querySelector(".topic-questions");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+
+        const questionList = document.createElement("div");
+        questionList.className = "topic-questions";
+
+        data.filter(q => q.topic === topic)
+            .filter(q => !topicFilter || q.topic.toLowerCase() === topicFilter)
+            .filter(q => !diffFilter || q.difficulty.toLowerCase() === diffFilter)
+            .filter(q => q.title.toLowerCase().includes(searchVal))
+            .forEach(q => {
+                const qRow = document.createElement("div");
+                qRow.className = "question";
+                qRow.innerHTML = `
+                    <a href="${q.url}" target="_blank" class="title">${q.title}</a>
+                    <div class="badges">
+                        <span class="badge ${q.difficulty}">${q.difficulty}</span>
+                        <span class="badge ${q.status}" onclick="toggleStatus('${q.title}')">${q.status}</span>
+                    </div>
+                `;
+                questionList.appendChild(qRow);
+            });
+
+        if (questionList.children.length > 0) {
+            topicBox.appendChild(header);
+            topicBox.appendChild(questionList);
+            container.appendChild(topicBox);
+
+            if (topic.toLowerCase() === topicFilter && topicFilter !== "") {
+                questionList.style.display = "block";
+            }
+        }
+    });
+}
+
+function toggleStatus(title) {
+    const q = data.find(x => x.title === title);
+    if (q.status === "Unsolved") q.status = "Attempted";
+    else if (q.status === "Attempted") q.status = "Solved";
+    else q.status = "Unsolved";
+    renderSheet();
+}
+
+const topicDropdown = document.getElementById("topicFilter");
+[...new Set(data.map(q => q.topic))].forEach(topic => {
+    const opt = document.createElement("option");
+    opt.value = topic;
+    opt.textContent = topic;
+    topicDropdown.appendChild(opt);
+});
+
+document.getElementById("search").addEventListener("input", renderSheet);
+document.getElementById("topicFilter").addEventListener("change", renderSheet);
+document.getElementById("difficultyFilter").addEventListener("change", renderSheet);
+
+renderSheet();
+</script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Prep Sheet - GFG Edition</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: radial-gradient(circle at top, #0a0f1e, #000);
+        color: #fff;
+    }
+    h1 {
+        text-align: center;
+        color: #00f7ff;
+        text-shadow: 0 0 10px #00f7ff;
+    }
+    .filters {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    select, input {
+        background: rgba(20, 20, 50, 0.9);
+        color: #00f7ff;
+        border: 1px solid #00a6ff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+    }
+    .topic {
+        background: rgba(20, 20, 50, 0.9);
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid #00a6ff;
+        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
+        overflow: hidden;
+    }
+    .topic-header {
+        padding: 10px;
+        cursor: pointer;
+        background: rgba(0, 166, 255, 0.2);
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .topic-header:hover {
+        background: rgba(0, 166, 255, 0.4);
+    }
+    .topic-questions {
+        display: none;
+        padding: 10px;
+    }
+    .question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255,255,255,0.05);
+        padding: 6px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    .title {
+        color: #00f7ff;
+        text-decoration: none;
+    }
+    .badges {
+        display: flex;
+        gap: 5px;
+    }
+    .badge {
+        padding: 2px 6px;
+        border-radius: 5px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .Easy {
+        background: rgba(0, 255, 0, 0.2);
+        color: #66ff66;
+    }
+    .Medium {
+        background: rgba(255, 255, 0, 0.2);
+        color: #ffff66;
+    }
+    .Hard {
+        background: rgba(255, 0, 0, 0.2);
+        color: #ff4d4d;
+    }
+    .Unsolved {
+        background: rgba(255, 0, 0, 0.3);
+        color: #ff4d4d;
+        cursor: pointer;
+    }
+    .Attempted {
+        background: rgba(255, 255, 0, 0.3);
+        color: #ffff66;
+        cursor: pointer;
+    }
+    .Solved {
+        background: rgba(0, 255, 0, 0.3);
+        color: #66ff66;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <h1>DSA Prep Sheet - GeeksforGeeks</h1>
+    <div class="filters">
+        <input type="text" id="search" placeholder="Search questions...">
+        <select id="topicFilter">
+            <option value="">All Topics</option>
+        </select>
+        <select id="difficultyFilter">
+            <option value="">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+    </div>
+    <div id="sheet"></div>
+
+<script>
+const data = [
+    {topic: "Arrays", title: "Two Sum", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/two-sum/0", status: "Unsolved"},
+    {topic: "Arrays", title: "Kadane's Algorithm", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/kadanes-algorithm/0", status: "Unsolved"},
+    {topic: "Arrays", title: "Merge Without Extra Space", difficulty: "Hard", url: "https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays5135/1", status: "Unsolved"},
+    {topic: "Arrays", title: "Leaders in Array", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1", status: "Unsolved"},
+    {topic: "Arrays", title: "Equilibrium Point", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/equilibrium-point-1587115620/1", status: "Unsolved"},
+
+    {topic: "Strings", title: "Reverse Words in a String", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string/0", status: "Unsolved"},
+    {topic: "Strings", title: "Longest Palindromic Substring", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1", status: "Unsolved"},
+    {topic: "Strings", title: "Anagram", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/anagram-1587115620/1", status: "Unsolved"},
+    {topic: "Strings", title: "Edit Distance", difficulty: "Hard", url: "https://practice.geeksforgeeks.org/problems/edit-distance3702/1", status: "Unsolved"},
+    {topic: "Strings", title: "Longest Common Prefix", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/longest-common-prefix-in-an-array5129/1", status: "Unsolved"},
+
+    {topic: "Dynamic Programming", title: "Climbing Stairs", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair/0", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "0-1 Knapsack", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Coin Change", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/coin-change2448/1", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Egg Dropping Puzzle", difficulty: "Hard", url: "https://practice.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Longest Increasing Subsequence", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1", status: "Unsolved"},
+
+    {topic: "Trees", title: "Height of Binary Tree", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1", status: "Unsolved"},
+    {topic: "Trees", title: "Diameter of Binary Tree", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/diameter-of-binary-tree/1", status: "Unsolved"},
+    {topic: "Trees", title: "Binary Tree Maximum Path Sum", difficulty: "Hard", url: "https://practice.geeksforgeeks.org/problems/maximum-path-sum/1", status: "Unsolved"},
+    {topic: "Trees", title: "Mirror Tree", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/mirror-tree/1", status: "Unsolved"},
+    {topic: "Trees", title: "Check for Balanced Tree", difficulty: "Easy", url: "https://practice.geeksforgeeks.org/problems/check-for-balanced-tree/1", status: "Unsolved"},
+
+    {topic: "Graphs", title: "Number of Islands", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/find-the-number-of-islands/1", status: "Unsolved"},
+    {topic: "Graphs", title: "Detect Cycle in Directed Graph", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1", status: "Unsolved"},
+    {topic: "Graphs", title: "Word Ladder", difficulty: "Hard", url: "https://practice.geeksforgeeks.org/problems/word-ladder/1", status: "Unsolved"},
+    {topic: "Graphs", title: "Minimum Spanning Tree", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1", status: "Unsolved"},
+    {topic: "Graphs", title: "Topological Sort", difficulty: "Medium", url: "https://practice.geeksforgeeks.org/problems/topological-sort/1", status: "Unsolved"}
+];
+
+function renderSheet() {
+    const topicFilter = document.getElementById("topicFilter").value.toLowerCase();
+    const diffFilter = document.getElementById("difficultyFilter").value.toLowerCase();
+    const searchVal = document.getElementById("search").value.toLowerCase();
+    const container = document.getElementById("sheet");
+    container.innerHTML = "";
+
+    const topics = [...new Set(data.map(q => q.topic))];
+
+    topics.forEach(topic => {
+        const topicBox = document.createElement("div");
+        topicBox.className = "topic";
+        
+        const header = document.createElement("div");
+        header.className = "topic-header";
+        header.innerHTML = `<span>${topic}</span><span>+</span>`;
+        header.addEventListener("click", () => {
+            const content = topicBox.querySelector(".topic-questions");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+
+        const questionList = document.createElement("div");
+        questionList.className = "topic-questions";
+
+        data.filter(q => q.topic === topic)
+            .filter(q => !topicFilter || q.topic.toLowerCase() === topicFilter)
+            .filter(q => !diffFilter || q.difficulty.toLowerCase() === diffFilter)
+            .filter(q => q.title.toLowerCase().includes(searchVal))
+            .forEach(q => {
+                const qRow = document.createElement("div");
+                qRow.className = "question";
+                qRow.innerHTML = `
+                    <a href="${q.url}" target="_blank" class="title">${q.title}</a>
+                    <div class="badges">
+                        <span class="badge ${q.difficulty}">${q.difficulty}</span>
+                        <span class="badge ${q.status}" onclick="toggleStatus('${q.title}')">${q.status}</span>
+                    </div>
+                `;
+                questionList.appendChild(qRow);
+            });
+
+        if (questionList.children.length > 0) {
+            topicBox.appendChild(header);
+            topicBox.appendChild(questionList);
+            container.appendChild(topicBox);
+
+            if (topic.toLowerCase() === topicFilter && topicFilter !== "") {
+                questionList.style.display = "block";
+            }
+        }
+    });
+}
+
+function toggleStatus(title) {
+    const q = data.find(x => x.title === title);
+    if (q.status === "Unsolved") q.status = "Attempted";
+    else if (q.status === "Attempted") q.status = "Solved";
+    else q.status = "Unsolved";
+    renderSheet();
+}
+
+const topicDropdown = document.getElementById("topicFilter");
+[...new Set(data.map(q => q.topic))].forEach(topic => {
+    const opt = document.createElement("option");
+    opt.value = topic;
+    opt.textContent = topic;
+    topicDropdown.appendChild(opt);
+});
+
+document.getElementById("search").addEventListener("input", renderSheet);
+document.getElementById("topicFilter").addEventListener("change", renderSheet);
+document.getElementById("difficultyFilter").addEventListener("change", renderSheet);
+
+renderSheet();
+</script>
+</body>
+</html>

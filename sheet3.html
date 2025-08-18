@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Prep Sheet - Codewars Edition</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: radial-gradient(circle at top, #0a0f1e, #000);
+        color: #fff;
+    }
+    h1 {
+        text-align: center;
+        color: #00f7ff;
+        text-shadow: 0 0 10px #00f7ff;
+    }
+    .filters {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    select, input {
+        background: rgba(20, 20, 50, 0.9);
+        color: #00f7ff;
+        border: 1px solid #00a6ff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+    }
+    .topic {
+        background: rgba(20, 20, 50, 0.9);
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid #00a6ff;
+        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
+        overflow: hidden;
+    }
+    .topic-header {
+        padding: 10px;
+        cursor: pointer;
+        background: rgba(0, 166, 255, 0.2);
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .topic-header:hover {
+        background: rgba(0, 166, 255, 0.4);
+    }
+    .topic-questions {
+        display: none;
+        padding: 10px;
+    }
+    .question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255,255,255,0.05);
+        padding: 6px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    .title {
+        color: #00f7ff;
+        text-decoration: none;
+    }
+    .badges {
+        display: flex;
+        gap: 5px;
+    }
+    .badge {
+        padding: 2px 6px;
+        border-radius: 5px;
+        font-size: 0.85em;
+        font-weight: bold;
+    }
+    .Easy {
+        background: rgba(0, 255, 0, 0.2);
+        color: #66ff66;
+    }
+    .Medium {
+        background: rgba(255, 255, 0, 0.2);
+        color: #ffff66;
+    }
+    .Hard {
+        background: rgba(255, 0, 0, 0.2);
+        color: #ff4d4d;
+    }
+    .Unsolved {
+        background: rgba(255, 0, 0, 0.3);
+        color: #ff4d4d;
+        cursor: pointer;
+    }
+    .Attempted {
+        background: rgba(255, 255, 0, 0.3);
+        color: #ffff66;
+        cursor: pointer;
+    }
+    .Solved {
+        background: rgba(0, 255, 0, 0.3);
+        color: #66ff66;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <h1>DSA Prep Sheet - Codewars Edition</h1>
+    <div class="filters">
+        <input type="text" id="search" placeholder="Search questions...">
+        <select id="topicFilter">
+            <option value="">All Topics</option>
+        </select>
+        <select id="difficultyFilter">
+            <option value="">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+    </div>
+    <div id="sheet"></div>
+
+<script>
+const data = [
+    // Arrays
+    {topic: "Arrays", title: "Array Diff", difficulty: "Easy", url: "https://www.codewars.com/kata/523f5d21c841566fde000009", status: "Unsolved"},
+    {topic: "Arrays", title: "Move Zeroes", difficulty: "Easy", url: "https://www.codewars.com/kata/570a6a46455d08ff8d001002", status: "Unsolved"},
+    {topic: "Arrays", title: "Find the Odd Int", difficulty: "Medium", url: "https://www.codewars.com/kata/54da5a58ea159efa38000836", status: "Unsolved"},
+    {topic: "Arrays", title: "Mexican Wave", difficulty: "Medium", url: "https://www.codewars.com/kata/58f5c63f1e26ecda7e000029", status: "Unsolved"},
+    {topic: "Arrays", title: "Rotate Array", difficulty: "Medium", url: "https://www.codewars.com/kata/546d15cebed2e10334000ed9", status: "Unsolved"},
+    {topic: "Arrays", title: "Sum of Differences in Array", difficulty: "Easy", url: "https://www.codewars.com/kata/5b73fe9fb3d9776fbf00009e", status: "Unsolved"},
+    {topic: "Arrays", title: "Find the Unique Number", difficulty: "Medium", url: "https://www.codewars.com/kata/585d7d5adb20cf33cb000235", status: "Unsolved"},
+    {topic: "Arrays", title: "Number of People in the Bus", difficulty: "Easy", url: "https://www.codewars.com/kata/5648b12ce68d9daa6b000099", status: "Unsolved"},
+    // Strings
+    {topic: "Strings", title: "Vowel Count", difficulty: "Easy", url: "https://www.codewars.com/kata/54ff3102c1bad923760001f3", status: "Unsolved"},
+    {topic: "Strings", title: "Stop gninnipS My sdroW!", difficulty: "Medium", url: "https://www.codewars.com/kata/5264d2b162488dc400000001", status: "Unsolved"},
+    {topic: "Strings", title: "Duplicate Encoder", difficulty: "Medium", url: "https://www.codewars.com/kata/54b42f9314d9229fd6000d9c", status: "Unsolved"},
+    {topic: "Strings", title: "Valid Parentheses", difficulty: "Medium", url: "https://www.codewars.com/kata/5277c8a221e209d3f6000b56", status: "Unsolved"},
+    {topic: "Strings", title: "Pig Latin", difficulty: "Medium", url: "https://www.codewars.com/kata/520b9d2ad5c005041100000f", status: "Unsolved"},
+    {topic: "Strings", title: "Scramblies", difficulty: "Hard", url: "https://www.codewars.com/kata/55c04b4cc56a697bb0000048", status: "Unsolved"},
+    {topic: "Strings", title: "Reverse Words", difficulty: "Easy", url: "https://www.codewars.com/kata/5259b20d6021e9e14c0010d4", status: "Unsolved"},
+    // Dynamic Programming
+    {topic: "Dynamic Programming", title: "Can Sum", difficulty: "Medium", url: "https://www.codewars.com/kata/5546180ca783b6d2d5000062", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Best Sum", difficulty: "Hard", url: "https://www.codewars.com/kata/52a89c2ea8ddc5547a000863", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Sum of Pairs", difficulty: "Medium", url: "https://www.codewars.com/kata/54d81488b981293527000c8f", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Number of Proper Fractions", difficulty: "Hard", url: "https://www.codewars.com/kata/55b7bb74a0256d4467000070", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "Fibonacci Streaming", difficulty: "Hard", url: "https://www.codewars.com/kata/55695bc4f75bbaea5100016b", status: "Unsolved"},
+    {topic: "Dynamic Programming", title: "The Lift", difficulty: "Hard", url: "https://www.codewars.com/kata/58905bfa1decb981da00009e", status: "Unsolved"},
+    // Trees
+    {topic: "Trees", title: "Fun with Trees: max sum", difficulty: "Easy", url: "https://www.codewars.com/kata/57e5279b7cf1aea5cf000359", status: "Unsolved"},
+    {topic: "Trees", title: "Fun with Trees: is perfect", difficulty: "Medium", url: "https://www.codewars.com/kata/57e5279b7cf1aea5cf000359", status: "Unsolved"},
+    {topic: "Trees", title: "Binary Tree Traversal", difficulty: "Medium", url: "https://www.codewars.com/kata/5268956c10342831a8000135", status: "Unsolved"},
+    {topic: "Trees", title: "Tree to List", difficulty: "Hard", url: "https://www.codewars.com/kata/56b8903933dbe5831e000c76", status: "Unsolved"},
+    // Graphs
+    {topic: "Graphs", title: "Path Finder #1", difficulty: "Medium", url: "https://www.codewars.com/kata/5765870e190b1472ec0022a2", status: "Unsolved"},
+    {topic: "Graphs", title: "Path Finder #2", difficulty: "Medium", url: "https://www.codewars.com/kata/57658bfa28ed87ecfa00058a", status: "Unsolved"},
+    {topic: "Graphs", title: "Path Finder #3", difficulty: "Hard", url: "https://www.codewars.com/kata/576986639772456f6f00030c", status: "Unsolved"},
+    {topic: "Graphs", title: "Shortest Knight Path", difficulty: "Hard", url: "https://www.codewars.com/kata/549ee8b47111a81214000941", status: "Unsolved"},
+    // Stacks & Queues
+    {topic: "Stacks & Queues", title: "Queue Time Counter", difficulty: "Easy", url: "https://www.codewars.com/kata/57b06f90e298a7b53d000a86", status: "Unsolved"},
+    {topic: "Stacks & Queues", title: "Valid Braces", difficulty: "Medium", url: "https://www.codewars.com/kata/5277c8a221e209d3f6000b56", status: "Unsolved"},
+    {topic: "Stacks & Queues", title: "Josephus Permutation", difficulty: "Hard", url: "https://www.codewars.com/kata/555624b601231dc7a400017a", status: "Unsolved"},
+    // Math
+    {topic: "Math", title: "Sum of Digits / Digital Root", difficulty: "Easy", url: "https://www.codewars.com/kata/541c8630095125aba6000c00", status: "Unsolved"},
+    {topic: "Math", title: "Primes in Numbers", difficulty: "Medium", url: "https://www.codewars.com/kata/54d512e62a5e54c96200019e", status: "Unsolved"},
+    {topic: "Math", title: "Sum Strings as Numbers", difficulty: "Medium", url: "https://www.codewars.com/kata/5324945e2ece5e1f32000370", status: "Unsolved"},
+    {topic: "Math", title: "Hard Sudoku Solver", difficulty: "Hard", url: "https://www.codewars.com/kata/55171d87236d72713d0000a5", status: "Unsolved"}
+];
+
+function renderSheet() {
+    const topicFilter = document.getElementById("topicFilter").value.toLowerCase();
+    const diffFilter = document.getElementById("difficultyFilter").value.toLowerCase();
+    const searchVal = document.getElementById("search").value.toLowerCase();
+    const container = document.getElementById("sheet");
+    container.innerHTML = "";
+
+    const topics = [...new Set(data.map(q => q.topic))];
+
+    topics.forEach(topic => {
+        const topicBox = document.createElement("div");
+        topicBox.className = "topic";
+        
+        const header = document.createElement("div");
+        header.className = "topic-header";
+        header.innerHTML = `<span>${topic}</span><span>+</span>`;
+        header.addEventListener("click", () => {
+            const content = topicBox.querySelector(".topic-questions");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+
+        const questionList = document.createElement("div");
+        questionList.className = "topic-questions";
+
+        data.filter(q => q.topic === topic)
+            .filter(q => !topicFilter || q.topic.toLowerCase() === topicFilter)
+            .filter(q => !diffFilter || q.difficulty.toLowerCase() === diffFilter)
+            .filter(q => q.title.toLowerCase().includes(searchVal))
+            .forEach(q => {
+                const qRow = document.createElement("div");
+                qRow.className = "question";
+                qRow.innerHTML = `
+                    <a href="${q.url}" target="_blank" class="title">${q.title}</a>
+                    <div class="badges">
+                        <span class="badge ${q.difficulty}">${q.difficulty}</span>
+                        <span class="badge ${q.status}" onclick="toggleStatus('${q.title}')">${q.status}</span>
+                    </div>
+                `;
+                questionList.appendChild(qRow);
+            });
+
+        if (questionList.children.length > 0) {
+            topicBox.appendChild(header);
+            topicBox.appendChild(questionList);
+            container.appendChild(topicBox);
+
+            if (topic.toLowerCase() === topicFilter && topicFilter !== "") {
+                questionList.style.display = "block";
+            }
+        }
+    });
+}
+
+function toggleStatus(title) {
+    const q = data.find(x => x.title === title);
+    if (q.status === "Unsolved") q.status = "Attempted";
+    else if (q.status === "Attempted") q.status = "Solved";
+    else q.status = "Unsolved";
+    renderSheet();
+}
+
+const topicDropdown = document.getElementById("topicFilter");
+[...new Set(data.map(q => q.topic))].forEach(topic => {
+    const opt = document.createElement("option");
+    opt.value = topic;
+    opt.textContent = topic;
+    topicDropdown.appendChild(opt);
+});
+
+document.getElementById("search").addEventListener("input", renderSheet);
+document.getElementById("topicFilter").addEventListener("change", renderSheet);
+document.getElementById("difficultyFilter").addEventListener("change", renderSheet);
+
+renderSheet();
+</script>
+</body>
+</html>

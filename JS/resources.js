@@ -42,6 +42,32 @@ function changeLanguage() {
     document.getElementById("subscribe-text").textContent = translations[selectedLanguage].subscribe;
     alert(`Language changed to: ${selectedLanguage}`);
   }
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".preview-btn").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const fileUrl = this.getAttribute("data-url");
+            document.getElementById("previewFrame").setAttribute("src", fileUrl);
+            document.getElementById("previewModal").style.display = "flex";
+        });
+    });
+    const closeBtn = document.getElementById("closeModal");
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function() {
+            document.getElementById("previewModal").style.display = "none";
+            document.getElementById("previewFrame").setAttribute("src", ""); 
+        });
+    }
+    const modal = document.getElementById("previewModal");
+    if (modal) {
+        modal.addEventListener("click", function(e) {
+            if (e.target === this) {
+                this.style.display = "none";
+                document.getElementById("previewFrame").setAttribute("src", "");
+            }
+        });
+    }
+});
   function subscribeNewsletter() {
     let email = document.getElementById("newsletter-email").value.trim();
     let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

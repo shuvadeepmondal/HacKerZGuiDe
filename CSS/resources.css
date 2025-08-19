@@ -595,6 +595,20 @@ header p {
   flex: 1 1 calc(50% - 10px);
   text-align: center;
 }
+/* Wrapper for download + preview side by side */
+.button-group {
+  display: flex;
+  gap: 10px; /* spacing between buttons */
+  justify-content: center; /* keeps them centered */
+  margin-bottom: 10px;
+}
+
+/* For Know More - centered in next line */
+.button-group.single {
+  display: flex;
+  justify-content: center;
+}
+
 .button:hover {
   background: #00a6ff;
   border-color: #00a6ff;
@@ -2155,3 +2169,38 @@ footer::before {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+#previewModal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  max-width: 80%;
+  width: 800px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.close-btn {
+  margin-top: 10px;
+  background: #ff0077;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background: #e6006f;
+}
+
+

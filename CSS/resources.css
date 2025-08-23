@@ -85,7 +85,7 @@ html {
   overflow-x: hidden;
 }
 .navbar {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(to right, #304dad, #5676a9, #24243e);
   padding: 12px 30px;
   display: flex;
   justify-content: space-between;
@@ -93,7 +93,7 @@ html {
   position: relative;
   z-index: 1000;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-  border-radius: 5px;
+  border-radius: 25px;
 }
 .logo {
   flex-grow: 1;
@@ -131,17 +131,19 @@ html {
   transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 .nav-links a:hover {
-  color: #00a6ff;
+  background-color: #220656;
+  border-radius: 25px;
+  color: #fff;
   text-shadow: 0px 0px 5px #00a6ff;
 }
 .contribute-btn {
-  background: #40ff00;
-  border: 2px solid #40ff00;
+  background: linear-gradient(45deg,#80b980,#104513);
   padding: 8px 15px;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   text-transform: uppercase;
-  border-radius: 5px;
+  border: none;
+  border-radius: 8px 95px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -160,21 +162,23 @@ html {
   align-items: center;
   border: 2px solid #40ff00;
   padding: 5px;
-  border-radius: 5px;
-  background: #111;
+  border-radius: 25px;
+  background: #f0eaea;
 }
 .search-bar input {
   background: transparent;
   border: none;
-  color: white;
+  color: rgba(4, 78, 196);
   padding: 6px 10px;
   font-size: 1rem;
+  font-weight: 600;
   outline: none;
   width: 150px;
   transition: border 0.3s ease-in-out;
 }
 .search-bar input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(4, 78, 196);
+  font-weight: bolder;
 }
 .search-bar input:hover,
 .search-bar input:focus {
@@ -591,6 +595,20 @@ header p {
   flex: 1 1 calc(50% - 10px);
   text-align: center;
 }
+/* Wrapper for download + preview side by side */
+.button-group {
+  display: flex;
+  gap: 10px; /* spacing between buttons */
+  justify-content: center; /* keeps them centered */
+  margin-bottom: 10px;
+}
+
+/* For Know More - centered in next line */
+.button-group.single {
+  display: flex;
+  justify-content: center;
+}
+
 .button:hover {
   background: #00a6ff;
   border-color: #00a6ff;
@@ -2151,3 +2169,38 @@ footer::before {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+#previewModal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  max-width: 80%;
+  width: 800px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.close-btn {
+  margin-top: 10px;
+  background: #ff0077;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background: #e6006f;
+}
+
+

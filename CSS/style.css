@@ -917,311 +917,59 @@ padding: 1rem;
 }
 
 .feature-guide {
-  text-align: center;
-  padding: 50px 20px;
-  background: #080017;
-  border-radius: 15px;
-
-  margin-top: 10px;
-  margin-left: 70px;
-  margin-right: 70px;
-  margin-bottom: 150px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    padding: 2rem;
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-family: "Orbitron", sans-serif;
-  color: #0ff;
-  text-shadow: 0 0 10px #00ffff;
-  margin-bottom: 30px;
+    font-size: 2rem;
+    color: #00ff66;
+    margin-bottom: 1.5rem;
 }
 
 .feature-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .feature-card {
-  padding: 20px;
-  width: 300px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
-  background: linear-gradient(to right, #0a0025, rgb(66, 96, 181), #0a0025);
-  background-size: 300% 100%;
-  animation: gradientShift 6s ease-in-out infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
+    background: #111;
+    border-radius: 12px;
+    padding: 1rem;
+    max-width: 300px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
 }
 
 .feature-card img {
-  width: 120px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-.feature-card h3 {
-  color: #0ff;
-  text-shadow: 0 0 5px cyan;
-}
-
-.feature-card p {
-  color: #ccc;
-  font-size: 14px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .feature-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    transform: translateY(-5px);
 }
 
-#contact {
-  padding: 80px 20px;
-  text-align: center;
-  background: rgba(15, 12, 41, 0.85);
-  margin: 50px auto;
-  width: 85%;
-  max-width: 900px;
-  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
-  position: relative;
-  overflow: hidden;
-    animation: borderAnimation 3s infinite;
-    border: 5px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(45deg, #933276, #2e91a8, #1414b8, #933276);
-}
-  @keyframes borderAnimation {
-    0%, 100% {
-        border-width: 5px;
-        border-image-slice:1;
-        border-image-source: linear-gradient(45deg, #933276, #2e91a8, #1414b8, #933276);
+/* 📱 Responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.5rem;
     }
-    50% {
-        border-width: 5px;
-        border-image-slice:1;
-        border-image-source: linear-gradient(45deg, #2e91a8, #1414b8, #933276, #933276);
+}
+
+@media (max-width: 480px) {
+    .feature-guide {
+        padding: 1rem;
     }
-} 
-
-.section-title {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  color: #40ff00;
-  text-shadow: 0 0 15px #40ff00, 0 0 30px #00a6ff;
-  margin-bottom: 20px;
-}
-
-.contact-text {
-  font-size: 1.3rem;
-  color: #d1d1d1;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  line-height: 1.5;
-}
-
-.button-container {
-  margin-top: 20px;
-}
-
-.cta-button {
-  display: inline-block;
-  background: transparent;
-  border: 2px solid #00a6ff;
-  color: #00a6ff;
-  padding: 15px 30px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.3s ease-in-out;
-  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.cta-button:hover {
-  background: #00a6ff;
-  color: black;
-  box-shadow: 0px 0px 25px #40ff00;
-  transform: scale(1.1);
-}
-
-
-#contact::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: -5px;
-  right: -5px;
-  height: 2px;
-  background: #00a6ff;
-  box-shadow: 0 0 10px #00a6ff;
-  animation: glitch 1s infinite alternate-reverse;
-}
-
-#contact::after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  left: -5px;
-  right: -5px;
-  height: 2px;
-  background: #40ff00;
-  box-shadow: 0 0 10px #40ff00;
-  animation: glitch 1s infinite alternate;
-}
-
-@keyframes glitch {
-  0% {
-    transform: translateX(-3px);
-  }
-  100% {
-    transform: translateX(3px);
-  }
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media only screen and (min-width: 200px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero .button a {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-
-  .feature-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .feature-card {
-    width: 100%;
-    max-width: 280px;
-  }
-}
-
-@media only screen and (min-width: 320px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-  }
-
-  .feature-card {
-    width: 90%;
-  }
-
-  .testimonial-card {
-    padding: 15px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .hero p {
-    font-size: 1.4rem;
-  }
-
-  .hero .button a {
-    font-size: 1.3rem;
-    padding: 12px 25px;
-  }
-
-  .feature-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  .feature-card {
-    width: 45%;
-  }
-
-  .testimonial-section {
-    width: 80%;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .hero h1 {
-    font-size: 3.5rem;
-  }
-
-  .hero p {
-    font-size: 1.5rem;
-  }
-
-  .hero .button a {
-    font-size: 1.5rem;
-    padding: 15px 30px;
-  }
-
-  .testimonial-section {
-    max-width: 1000px;
-  }
-
-  .feature-card {
-    width: 30%;
-  }
-}
-
-@media only screen and (min-width: 1600px) {
-  .hero {
-    height: 90vh;
-  }
-
-  .hero h1 {
-    font-size: 4rem;
-  }
-
-  .hero p {
-    font-size: 1.8rem;
-  }
-
-  .feature-card {
-    width: 25%;
-  }
-
-  .testimonial-section {
-    max-width: 1200px;
-  }
+    .feature-card {
+        max-width: 100%;
+    }
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap");

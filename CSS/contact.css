@@ -493,6 +493,28 @@ header p {
   }
 }
 
+.main-heading{
+  color: #40ff00;
+  text-align: center;
+  margin: 6vh;
+  font-size: 2rem;
+   animation: softBounce 2s ease-in-out infinite;
+}
+
+@keyframes softBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.main-para{
+  text-align: center;
+  font-style:italic;
+}
+
 .contact-container {
   background: rgba(15, 12, 41, 0.95);
   padding: 50px;
@@ -502,8 +524,8 @@ header p {
   box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
 }
 
-.contact-container h1 {
-  font-size: 2.5rem;
+.contact-container h2 {
+  font-size: 1.5rem;
   text-transform: uppercase;
   color: #40ff00;
   text-align: center;
@@ -526,6 +548,7 @@ header p {
 
 .contact-form label {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:#00ffff ;
   font-weight: 600;
   display: block;
   font-size: 1.1rem;
@@ -539,7 +562,7 @@ header p {
   margin: 1.5rem;
   border: 3px solid transparent;
   border-radius: 40px;
-  background: linear-gradient(135deg, #000000, #1a1a1a);
+  background: linear-gradient(135deg, #0a0a0a, #2f2f2f);
   color: #40ff00;
   font-size: 1.1rem;
   font-family: 'Orbitron', sans-serif;
@@ -594,21 +617,56 @@ header p {
   text-align: center;
 }
 
-.contact-info {
+
+.container {
   display: flex;
-  margin-top: 20px;
-  line-height: 2;
-  text-align: center;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.card {
+  width: 60vw;      
+  background: linear-gradient(135deg,rgba(75,30,133,0.5), rgba(75,30,133,0.01));
+  border: 2px solid #00ffff55;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px #00ffff33;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.first-info, .sec-info{
-  background: rgba(0, 119, 181,0.3);
-  border-radius: 16px;
-  padding: 0.5rem;
-  margin: 10px;
+/* Hover effect stays the same */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #00ffffaa;
 }
+
+/* Typography */
+.card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #00ffff;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 1000px) {
+  .card {
+    width: 90vw;            /* Fill most of the screen on small devices */
+    max-width: none;        /* Let it stretch naturally */
+  }
+}
+
+  
 
 .contact-info p {
   font-size: 0.95rem;
@@ -625,21 +683,62 @@ header p {
   padding: 50px;
   border-radius: 10px;
   margin: 100px auto;
-  width: 90%;
+  width: 80%;
   border: 2px solid #40ff00;
   box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
-
   text-align: center;
 }
+.map-container {
+  position: relative;
+  background: rgba(15, 12, 41, 0.85);
+  padding: 50px;
+  border-radius: 10px;
+  margin: 100px auto;
+  width: 80%;
+  border: 2px solid #40ff00;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.map-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(23, 148, 179, 0.9) 0%, transparent 80%);
+  animation: ripple 6s linear infinite;
+  z-index: -1;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
 
 .map-container h2 {
   font-size: 2rem;
   color: #40ff00;
   margin-bottom: 20px;
+  animation: softBounce 2s ease-in-out infinite;
 }
 
 .map-container iframe {
-  width: 100%;
+  width: 80%;
   height: 400px;
   border: none;
   border-radius: 10px;

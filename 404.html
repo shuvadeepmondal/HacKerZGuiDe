@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 | HackerZGuide</title>
+  <style>
+    /* Background */
+    body {
+      margin: 0;
+      font-family: "Orbitron", sans-serif;
+      background: #0a0a1a;
+      color: #00ff99;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Glitch Text Effect */
+    .glitch {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #00ff99;
+      position: relative;
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #ff0055, -2px -2px #00fff2; }
+      25% { text-shadow: -2px 2px #ff0055, 2px -2px #00fff2; }
+      50% { text-shadow: 2px -2px #ff0055, -2px 2px #00fff2; }
+      75% { text-shadow: -2px -2px #ff0055, 2px 2px #00fff2; }
+      100% { text-shadow: 2px 2px #ff0055, -2px -2px #00fff2; }
+    }
+
+    /* Sub text */
+    .message {
+      font-size: 1.3rem;
+      margin-top: 15px;
+      color: #ccc;
+    }
+
+    /* Hacker-style button */
+    .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: 2px solid #00ff99;
+      color: #00ff99;
+      background: transparent;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
+
+    .btn:hover {
+      background: #00ff99;
+      color: #0a0a1a;
+      box-shadow: 0 0 15px #00ff99, 0 0 30px #00ff99;
+    }
+
+    /* Matrix falling effect */
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+
+  <div class="glitch">404</div>
+  <div class="message">Oops! The page you're looking for got hacked away...</div>
+  <a href="/" class="btn">Return Home</a>
+
+  <script>
+    // Matrix Rain Effect
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&@";
+    const lettersArr = letters.split("");
+
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const drops = [];
+    for (let i = 0; i < columns; i++) {
+      drops[i] = 1;
+    }
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#00ff99";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = lettersArr[Math.floor(Math.random() * lettersArr.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 33);
+
+    // Adjust canvas on resize
+    window.addEventListener("resize", () => {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    });
+  </script>
+</body>
+</html>

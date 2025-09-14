@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intermediate Roadmap</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 15px 25px;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    header button {
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+
+    header button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 30px 0;
+      background: linear-gradient(90deg, #00ffcc, #ff00cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      padding: 25px;
+      border-radius: 15px;
+      background: #111;
+      border: 2px solid;
+      border-image: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc) 1;
+      box-shadow: 0 0 20px rgba(255,255,255,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 25px rgba(0,255,204,0.4);
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #00ffcc, #ff00cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button onclick="window.location.href='../pages/resources.html'">⬅ Back</button>
+  </header>
+
+  <h1>🚀 Intermediate Roadmap</h1>
+
+  <div class="container">
+    <div class="card">
+      <h2>⏳ Duration: 3-6 months</h2>
+      <p>Spend a focused time period building on your foundations. At this stage, consistency and structured practice matter more than speed.</p>
+    </div>
+
+    <div class="card">
+      <h2>📚 Deepen Knowledge</h2>
+      <p>Strengthen your understanding of core data structures (arrays, linked lists, stacks, queues, trees, graphs) and algorithms (sorting, searching, recursion, DP). Learn efficient debugging techniques to solve problems faster.</p>
+    </div>
+
+    <div class="card">
+      <h2>🛠 Real-World Projects</h2>
+      <p>Work on projects that mirror real-world applications. Contribute to open-source projects, collaborate with others, and understand version control using Git/GitHub.</p>
+    </div>
+
+    <div class="card">
+      <h2>🌐 Frameworks & APIs</h2>
+      <p>Gain hands-on experience with frameworks (React, Django, Express, etc.) and learn to integrate APIs. Explore REST and GraphQL while building dynamic applications.</p>
+    </div>
+
+    <div class="card">
+      <h2>💾 Databases</h2>
+      <p>Learn about relational (MySQL, PostgreSQL) and NoSQL (MongoDB, Firebase) databases. Practice writing optimized queries and structuring schemas for projects.</p>
+    </div>
+
+    <div class="card">
+      <h2>🧩 Problem-Solving</h2>
+      <p>Participate in coding challenges on platforms like LeetCode, HackerRank, and Codeforces. Solve medium-level problems and analyze their time/space complexity.</p>
+    </div>
+  </div>
+</body>
+</html>

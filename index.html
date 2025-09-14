@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HackeRZGuide - Your go-to resource for hacking, coding, and tech guides.">
-    <link rel="icon" href="./public/img/HACKERZGUIDE.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HackeRZGuide - Your go-to resource for hacking, coding, and tech guides." />
+    <link rel="icon" href="./public/img/HACKERZGUIDE.png" />
     <title>HackeRZGuide - Futuristic Tech Hub</title>
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-    <link rel="stylesheet" href="src/assets/CSS/style.css">
-    <link rel="stylesheet" href="src/assets/CSS/chatbot.css">
+    <link rel="stylesheet" href="src/assets/CSS/style.css" />
+    <link rel="stylesheet" href="src/assets/CSS/chatbot.css" />
 
     <script defer src="src/assets/JS/script.js"></script>
 </head>
@@ -40,7 +40,7 @@
             <div class="right-section">
                 <button class="contribute-btn" onclick="window.location.href='src/pages/resources.html'">Contribute</button>
                 <div class="search-bar">
-                    <input type="text" placeholder="Search..." aria-label="Search" id="main-search">
+                    <input type="text" placeholder="Search..." aria-label="Search" id="main-search" />
                 </div>
             </div>
 
@@ -58,7 +58,7 @@
                 <div class="mobile-right-section">
                     <button class="contribute-btn" onclick="window.location.href='src/pages/resources.html'">Contribute</button>
                     <div class="search-bar">
-                        <input type="text" placeholder="Search..." aria-label="Search">
+                        <input type="text" placeholder="Search..." aria-label="Search" />
                     </div>
                 </div>
             </div>
@@ -70,212 +70,239 @@
         <section class="hero">
             <h1>Welcome to HackeRZGuide </h1>
 
+            <!-- BRANCH: feat/index-homepage-enhancements -->
             <p>"Hack it, Crack it, Master it"</p>
             <div class="button">
                 <a href="src/pages/resources.html" class="Explore">Explore Resource</a>
                 <a href="https://github.com/shuvadeepmondal/HacKerZGuiDe" class="Contribute">Contribute now</a>
             </div>
             <div class="scroll-down" aria-hidden="true">⬇ Scroll to Explore ⬇</div>
+            <!-- END BRANCH: feat/index-homepage-enhancements -->
+
+            <!-- BRANCH: dev (alternative block preserved) -->
+            <p>"Hack it, Crack it, Master it"</p>
+            <div class="button">
+                <a href="src/pages/resources.html" class="Explore">Explore Resource</a>
+                <a href="https://github.com/shuvadeepmondal/HacKerZGuiDe" class="Contribute">Contribute now</a>
+            </div>
+            <!-- END BRANCH: dev -->
+
         </section>
 
+        <!-- About (first preserved chunk from one branch) -->
         <section id="about">
             <div class="about-container">
                 <h1>About Us</h1>
                 <div class="about-content">
                     <p>
-                        <strong>HackerZGuide</strong> is a platform designed to guide individuals toward achieving their future goals. 
-                        Our mission is to empower users by providing valuable insights, resources, and strategies that help them 
+                        <strong>HackerZGuide</strong> is a platform designed to guide individuals toward achieving their future goals.
+                        Our mission is to empower users by providing valuable insights, resources, and strategies that help them
                         navigate challenges, develop skills, and unlock their full potential for personal and professional success.
                     </p>
                     <h2>Our Mission</h2>
-                    <div class="about-para"> <p>
-                        To inspire and enable individuals to achieve their goals by equipping them with the tools, knowledge, 
-                        and guidance they need to excel in their journeys.
-                    </p></div>
-                    
+                    <div class="about-para">
+                        <p>
+                            To inspire and enable individuals to achieve their goals by equipping them with the tools, knowledge,
+                            and guidance they need to excel in their journeys.
+                        </p>
+                    </div>
+
                     <h2>Our Vision</h2>
-                    <div class="about-para"><p>
-                        To be the go-to platform for goal-oriented individuals, fostering a community of learners, innovators, 
-                        and achievers who are committed to personal and professional growth.
-                    </p></div>
-                    
+                    <div class="about-para">
+                        <p>
+                            To be the go-to platform for goal-oriented individuals, fostering a community of learners, innovators,
+                            and achievers who are committed to personal and professional growth.
+                        </p>
+                    </div>
+
                     <h2>Our Purpose</h2>
-                    <div class="about-para"><p>
-                        At HackerZGuide, we believe in creating a supportive environment where users can discover their 
-                        strengths, overcome challenges, and achieve success on their terms.
-                    </p></div>
+                    <div class="about-para">
+                        <p>
+                            At HackerZGuide, we believe in creating a supportive environment where users can discover their
+                            strengths, overcome challenges, and achieve success on their terms.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Header Section -->
-<header  class="site-header">
-    <h1>💻 Categories Section 💻</h1>
-    <p>Select your hacking domain and start mastering today!</p>
-</header>
+        <header class="site-header">
+            <h1>💻 Categories Section 💻</h1>
+            <p>Select your hacking domain and start mastering today!</p>
+        </header>
 
-<!-- Categories Grid Section -->
-<section class="categories" id="categoriess">
-    <div class="category-grid">
-        <!-- Category Cards -->
-        <button class="category-card" onclick="showCategoryInfo('Web Development')">
-            <img src="https://img.freepik.com/free-vector/website-development-banner_33099-1687.jpg" alt="Web Development">
-            <h3 class="highlight-green">Web Development</h3>
-            <p class="highlight-black">Hack the web, build advanced sites. Learn about front-end and back-end development, web security, and modern web technologies to create robust and secure web applications.</p>
-            <a href="#" class="cta-button">View</a>
-            <a href="src/courses/wd.html" class="cta-button">Learn more</a>
-        </button>
-        
-        <button class="category-card" onclick="showCategoryInfo('Android Development')">
-            <img src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg" alt="Android Development">
-            <h3 class="highlight-green">Android Development</h3>
-            <p class="highlight-black">Explore mobile exploits & ethical hacking. Dive into Android app development, understand the Android OS architecture, and learn how to secure mobile applications against various threats.</p>
-            <a href="#" class="cta-button">View</a>
-            <a href="src/courses/ad.html" class="cta-button">Learn more</a>
-        </button>
-        
-        <button class="category-card" onclick="showCategoryInfo('Game Development')">
-            <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" alt="Game Development">
-            <h3 class="highlight-green">Game Development</h3>
-            <p class="highlight-black">Reverse-engineer & mod game engines. Gain insights into game design, development, and security. Learn how to create and modify games using popular game engines and protect them from vulnerabilities.</p>
-            <a href="#" class="cta-button">View</a>
-            <a href="src/courses/gd.html" class="cta-button">Learn more</a>
-        </button>
-        
-        <button class="category-card" onclick="showCategoryInfo('Cloud Computing')">
-            <img src="https://t4.ftcdn.net/jpg/13/19/87/35/360_F_1319873528_t6wjJkokAMcJeu9YonANjI1SicCHe13g.jpg" alt="Cloud Computing">
-            <h3 class="highlight-green">Cloud Computing</h3>
-            <p class="highlight-black">Cloud security & ethical penetration testing. Understand cloud infrastructure, services, and security. Learn how to perform penetration testing on cloud environments to ensure data protection and compliance.</p>
-            <a href="#" class="cta-button">View</a>
-            <a href="src/courses/cc.html" class="cta-button">Learn more</a>
-        </button>
-        
-        <button class="category-card" onclick="showCategoryInfo('Cybersecurity')">
-            <img src="https://media.gettyimages.com/id/2161916612/video/padlock-symbol-on-motherboard.jpg?s=640x640&k=20&c=0btVbpN83U7ZKfrjkecDn6xfovGqr7d5N3cGAm-uzlM=" alt="Cybersecurity">
-            <h3 class="highlight-green">Cybersecurity</h3>
-            <p class="highlight-black">Master ethical hacking & pentesting. Delve into the world of cybersecurity, learn about various attack vectors, and develop skills to protect systems and networks from cyber threats.</p>
-            <a href="#" class="cta-button">View</a>
-            <a href="src/courses/cc.html" class="cta-button">Learn more</a>
-        </button>
-        
-        <button class="category-card" onclick="showCategoryInfo('Artificial Intelligence')">
-            <img src="https://media.istockphoto.com/id/1464932994/video/artificial-intelligence-processor-unit-powerful-quantum-ai-component-on-pcb-motherboard-with.jpg?s=640x640&k=20&c=F1yK6Ro8-UZhOdljLktZbRy8xJPCr9KJqleoT8fQXgU=" alt="Artificial Intelligence">
-            <h3 class="highlight-green">Artificial Intelligence</h3>
-            <p class="highlight-black">Hack AI systems & build intelligent exploits. Explore the field of AI, understand machine learning algorithms, and learn how to secure AI systems against adversarial attacks and vulnerabilities.</p>
-            <a href="#" class="cta-button">View</a>
-            <a href="src/courses/ai.html" class="cta-button">Learn more</a>
-        </button>
-    </div>
-</section>
+        <!-- Categories Grid Section -->
+        <section class="categories" id="categoriess">
+            <div class="category-grid">
+                <!-- Category Cards -->
+                <button class="category-card" onclick="showCategoryInfo('Web Development')">
+                    <img src="https://img.freepik.com/free-vector/website-development-banner_33099-1687.jpg" alt="Web Development" />
+                    <h3 class="highlight-green">Web Development</h3>
+                    <p class="highlight-black">Hack the web, build advanced sites. Learn about front-end and back-end development, web security, and modern web technologies to create robust and secure web applications.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="src/courses/wd.html" class="cta-button">Learn more</a>
+                </button>
 
-<!-- Category Modal -->
-<div id="category-modal" class="modal">
-    <div class="modal-content">
-        <button class="close" onclick="closeModal()">&times;</button>
-        <h2 id="category-title" aria-live="polite">Category Title</h2>
-        <p id="category-description"></p>
-    </div>
-</div>
+                <button class="category-card" onclick="showCategoryInfo('Android Development')">
+                    <img src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg" alt="Android Development" />
+                    <h3 class="highlight-green">Android Development</h3>
+                    <p class="highlight-black">Explore mobile exploits & ethical hacking. Dive into Android app development, understand the Android OS architecture, and learn how to secure mobile applications against various threats.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="src/courses/ad.html" class="cta-button">Learn more</a>
+                </button>
 
-<div class="section-separator">
-    <div class="separator-line"></div>
-    <div class="separator-label">◉</div>
-    <div class="separator-line"></div>
-  </div>
+                <button class="category-card" onclick="showCategoryInfo('Game Development')">
+                    <img src="https://cdn.vectorstock.com/i/500p/74/04/gamification-immersive-learning-education-vector-47427404.avif" alt="Game Development" />
+                    <h3 class="highlight-green">Game Development</h3>
+                    <p class="highlight-black">Reverse-engineer & mod game engines. Gain insights into game design, development, and security. Learn how to create and modify games using popular game engines and protect them from vulnerabilities.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="src/courses/gd.html" class="cta-button">Learn more</a>
+                </button>
 
-    <!-- ✅ Testimonial Section -->
-    <section class="testimonial-section">
-        <h2>🚀 What Hackers Say About Us 🚀</h2>
-        <div class="carousel">
-            <button class="prev-btn">⫷</button>
-            <div class="testimonial-container">
-                <div class="testimonial-card active">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Tanveer_Mech.jpg" alt="Tanveer Ahmad" class="avatar">
-                    <p class="testimonial-text">"HackerzGuide is a goldmine of hacking knowledge! The tutorials are top-notch and cyberpunk-styled UI is just sick!"</p>
-                    <h3 class="author">Tanveer Ahmad</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Nitin_jangir.jpg" alt="Ankit Verma" class="avatar">
-                    <p class="testimonial-text">"HackerZGuide made learning ethical hacking so much fun! The content is practical and well-structured."</p>
-                    <h3 class="author">Ankit Verma</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Aadhya_Chaturvedi.jpg" alt="Priyanka Sharma" class="avatar">
-                    <p class="testimonial-text">"Finally found a cybersecurity platform that explains complex topics in an easy way!"</p>
-                    <h3 class="author">Priyanka Sharma</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Naveen_Bansal_.jpg" alt="Rahul Kumar" class="avatar">
-                    <p class="testimonial-text">"The cyberpunk-themed UI makes it a great learning experience. Super engaging tutorials!"</p>
-                    <h3 class="author">Rahul Kumar</h3>
-                    <div class="rating" data-stars="4"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Adeeba_CSE_IN.jpeg" alt="Sonali Mishra" class="avatar">
-                    <p class="testimonial-text">"Best resource for beginners in ethical hacking. Love the hands-on projects!"</p>
-                    <h3 class="author">Sonali Mishra</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Abhishek_Singh_CSE_IN.jpeg" alt="Aman Singh" class="avatar">
-                    <p class="testimonial-text">"The real-world hacking scenarios and CTF challenges are awesome!"</p>
-                    <h3 class="author">Aman Singh</h3>
-                    <div class="rating" data-stars="4"></div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Harshita_CSE_IN.jpeg" alt="Megha Agrawal" class="avatar">
-                    <p class="testimonial-text">"Step-by-step guides make learning easy, even for absolute beginners!"</p>
-                    <h3 class="author">Megha Agrawal</h3>
-                    <div class="rating" data-stars="5"></div>
-                </div>
+                <button class="category-card" onclick="showCategoryInfo('Cloud Computing')">
+                    <img src="https://t4.ftcdn.net/jpg/13/19/87/35/360_F_1319873528_t6wjJkokAMcJeu9YonANjI1SicCHe13g.jpg" alt="Cloud Computing" />
+                    <h3 class="highlight-green">Cloud Computing</h3>
+                    <p class="highlight-black">Cloud security & ethical penetration testing. Understand cloud infrastructure, services, and security. Learn how to perform penetration testing on cloud environments to ensure data protection and compliance.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="src/courses/cc.html" class="cta-button">Learn more</a>
+                </button>
+
+                <button class="category-card" onclick="showCategoryInfo('Cybersecurity')">
+                    <img src="https://media.gettyimages.com/id/2161916612/video/padlock-symbol-on-motherboard.jpg?s=640x640&k=20&c=0btVbpN83U7ZKfrjkecDn6xfovGqr7d5N3cGAm-uzlM=" alt="Cybersecurity" />
+                    <h3 class="highlight-green">Cybersecurity</h3>
+                    <p class="highlight-black">Master ethical hacking & pentesting. Delve into the world of cybersecurity, learn about various attack vectors, and develop skills to protect systems and networks from cyber threats.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="src/courses/cc.html" class="cta-button">Learn more</a>
+                </button>
+
+                <button class="category-card" onclick="showCategoryInfo('Artificial Intelligence')">
+                    <img src="https://media.istockphoto.com/id/1464932994/video/artificial-intelligence-processor-unit-powerful-quantum-ai-component-on-pcb-motherboard-with.jpg?s=640x640&k=20&c=F1yK6Ro8-UZhOdljLktZbRy8xJPCr9KJqleoT8fQXgU=" alt="Artificial Intelligence" />
+                    <h3 class="highlight-green">Artificial Intelligence</h3>
+                    <p class="highlight-black">Hack AI systems & build intelligent exploits. Explore the field of AI, understand machine learning algorithms, and learn how to secure AI systems against adversarial attacks and vulnerabilities.</p>
+                    <a href="#" class="cta-button">View</a>
+                    <a href="src/courses/ai.html" class="cta-button">Learn more</a>
+                </button>
             </div>
-            <p>"Hack it, Crack it, Master it"</p>
-            <div class="button">
-                <a href="src/pages/resources.html" class="Explore">Explore Resource</a>
-                <a href="https://github.com/shuvadeepmondal/HacKerZGuiDe" class="Contribute">Contribute now</a>
-            </div>
-            <div class="scroll-down" aria-hidden="true">⬇ Scroll to Explore ⬇</div>
         </section>
 
+        <!-- Category Modal -->
+        <div id="category-modal" class="modal">
+            <div class="modal-content">
+                <button class="close" onclick="closeModal()">&times;</button>
+                <h2 id="category-title" aria-live="polite">Category Title</h2>
+                <p id="category-description"></p>
+            </div>
+        </div>
+
+        <div class="section-separator">
+            <div class="separator-line"></div>
+            <div class="separator-label">◉</div>
+            <div class="separator-line"></div>
+        </div>
+
+        <!-- ✅ Testimonial Section -->
+        <section class="testimonial-section">
+            <h2>🚀 What Hackers Say About Us 🚀</h2>
+            <div class="carousel">
+                <button class="prev-btn">⫷</button>
+                <div class="testimonial-container">
+                    <div class="testimonial-card active">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Tanveer_Mech.jpg" alt="Tanveer Ahmad" class="avatar" />
+                        <p class="testimonial-text">"HackerzGuide is a goldmine of hacking knowledge! The tutorials are top-notch and cyberpunk-styled UI is just sick!"</p>
+                        <h3 class="author">Tanveer Ahmad</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Nitin_jangir.jpg" alt="Ankit Verma" class="avatar" />
+                        <p class="testimonial-text">"HackerZGuide made learning ethical hacking so much fun! The content is practical and well-structured."</p>
+                        <h3 class="author">Ankit Verma</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Aadhya_Chaturvedi.jpg" alt="Priyanka Sharma" class="avatar" />
+                        <p class="testimonial-text">"Finally found a cybersecurity platform that explains complex topics in an easy way!"</p>
+                        <h3 class="author">Priyanka Sharma</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Naveen_Bansal_.jpg" alt="Rahul Kumar" class="avatar" />
+                        <p class="testimonial-text">"The cyberpunk-themed UI makes it a great learning experience. Super engaging tutorials!"</p>
+                        <h3 class="author">Rahul Kumar</h3>
+                        <div class="rating" data-stars="4"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Adeeba_CSE_IN.jpeg" alt="Sonali Mishra" class="avatar" />
+                        <p class="testimonial-text">"Best resource for beginners in ethical hacking. Love the hands-on projects!"</p>
+                        <h3 class="author">Sonali Mishra</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Abhishek_Singh_CSE_IN.jpeg" alt="Aman Singh" class="avatar" />
+                        <p class="testimonial-text">"The real-world hacking scenarios and CTF challenges are awesome!"</p>
+                        <h3 class="author">Aman Singh</h3>
+                        <div class="rating" data-stars="4"></div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <img src="https://www.sharda.ac.in/attachments/testimonial_images/thumbnail/Harshita_CSE_IN.jpeg" alt="Megha Agrawal" class="avatar" />
+                        <p class="testimonial-text">"Step-by-step guides make learning easy, even for absolute beginners!"</p>
+                        <h3 class="author">Megha Agrawal</h3>
+                        <div class="rating" data-stars="5"></div>
+                    </div>
+                </div>
+
+                <p>"Hack it, Crack it, Master it"</p>
+                <div class="button">
+                    <a href="src/pages/resources.html" class="Explore">Explore Resource</a>
+                    <a href="https://github.com/shuvadeepmondal/HacKerZGuiDe" class="Contribute">Contribute now</a>
+                </div>
+                <div class="scroll-down" aria-hidden="true">⬇ Scroll to Explore ⬇</div>
+            </div>
+        </section>
+
+        <!-- Repeated About (kept as in original file, both blocks preserved) -->
         <section id="about">
             <div class="about-container">
                 <h1>About Us</h1>
                 <div class="about-content">
                     <p>
-                        <strong>HackerZGuide</strong> is a platform designed to guide individuals toward achieving their future goals. 
-                        Our mission is to empower users by providing valuable insights, resources, and strategies that help them 
+                        <strong>HackerZGuide</strong> is a platform designed to guide individuals toward achieving their future goals.
+                        Our mission is to empower users by providing valuable insights, resources, and strategies that help them
                         navigate challenges, develop skills, and unlock their full potential for personal and professional success.
                     </p>
                     <h2>Our Mission</h2>
-                    <div class="about-para"> <p>
-                        To inspire and enable individuals to achieve their goals by equipping them with the tools, knowledge, 
-                        and guidance they need to excel in their journeys.
-                    </p></div>
-                    
+                    <div class="about-para">
+                        <p>
+                            To inspire and enable individuals to achieve their goals by equipping them with the tools, knowledge,
+                            and guidance they need to excel in their journeys.
+                        </p>
+                    </div>
+
                     <h2>Our Vision</h2>
-                    <div class="about-para"><p>
-                        To be the go-to platform for goal-oriented individuals, fostering a community of learners, innovators, 
-                        and achievers who are committed to personal and professional growth.
-                    </p></div>
-                    
+                    <div class="about-para">
+                        <p>
+                            To be the go-to platform for goal-oriented individuals, fostering a community of learners, innovators,
+                            and achievers who are committed to personal and professional growth.
+                        </p>
+                    </div>
+
                     <h2>Our Purpose</h2>
-                    <div class="about-para"><p>
-                        At HackerZGuide, we believe in creating a supportive environment where users can discover their 
-                        strengths, overcome challenges, and achieve success on their terms.
-                    </p></div>
+                    <div class="about-para">
+                        <p>
+                            At HackerZGuide, we believe in creating a supportive environment where users can discover their
+                            strengths, overcome challenges, and achieve success on their terms.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Categories Section -->
+        <!-- Categories Section (alternate preserved as well) -->
         <section class="categories-section" aria-label="Categories">
             <header class="site-header">
                 <h2>💻 Categories Section 💻</h2>
@@ -367,20 +394,17 @@
             <h2>Feature Highlights</h2>
             <div class="feature-container">
                 <div class="feature-card">
-                    <img src="https://cdn.vectorstock.com/i/1000x1000/84/94/sophisticated-digital-information-security-vector-21248494.webp"
-                        alt="Advanced Security" loading="lazy">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/84/94/sophisticated-digital-information-security-vector-21248494.webp" alt="Advanced Security" loading="lazy" />
                     <h3>Advanced Security</h3>
                     <p>Stay ahead with our top-notch cybersecurity solutions.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="https://cdn.vectorstock.com/i/2000v/93/81/futuristic-cyber-security-vector-50379381.avif"
-                        alt="Anonymous Browsing" loading="lazy">
+                    <img src="https://cdn.vectorstock.com/i/2000v/93/81/futuristic-cyber-security-vector-50379381.avif" alt="Anonymous Browsing" loading="lazy" />
                     <h3>Anonymous Browsing</h3>
                     <p>Browse the web without leaving a trace.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="https://cdn.vectorstock.com/i/2000v/82/46/ai-healthcare-security-concept-with-glowing-vector-54938246.avif"
-                        alt="AI Protection" loading="lazy">
+                    <img src="https://cdn.vectorstock.com/i/2000v/82/46/ai-healthcare-security-concept-with-glowing-vector-54938246.avif" alt="AI Protection" loading="lazy" />
                     <h3>AI-Powered Protection</h3>
                     <p>Leverage AI to detect and prevent cyber threats.</p>
                 </div>
@@ -473,12 +497,9 @@
                 <div class="footer-column social-media">
                     <h3 id="follow-us-title">FOLLOW US</h3>
                     <div class="social-icons">
-                        <a href="#" class="social-icon facebook" title="Facebook" target="_blank"
-                            rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="social-icon twitter" title="Twitter" target="_blank"
-                            rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
-                        <a href="https://github.com/shuvadeepmondal/HacKerZGuiDe" class="social-icon github"
-                            title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+                        <a href="#" class="social-icon facebook" title="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-icon twitter" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+                        <a href="https://github.com/shuvadeepmondal/HacKerZGuiDe" class="social-icon github" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
                     </div>
                 </div>
 
@@ -502,8 +523,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="src/others/pp.html">Privacy Policy</a> | <a
-                    href="src/others/t&c.html">Terms & Conditions</a></p>
+            <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="src/others/pp.html">Privacy Policy</a> | <a href="src/others/t&c.html">Terms & Conditions</a></p>
         </div>
     </footer>
 
@@ -596,7 +616,7 @@
             </div>
 
             <div class="chatbot-input-container">
-                <input type="text" id="chatbot-input" placeholder="Ask me something...">
+                <input type="text" id="chatbot-input" placeholder="Ask me something..." />
                 <button onclick="sendMessage()" class="send-btn">Send</button>
             </div>
         </div>
@@ -608,5 +628,3 @@
 </body>
 
 </html>
-
-

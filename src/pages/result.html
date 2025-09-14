@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../public/img/HACKERZGUIDE.png">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/CSS/result.css">
+    <script defer src="../assets/JS/result.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                ☰
+            </div>
+    
+            
+            <div class="logo">
+                <a href="../../index.html">HackeRZGuide</a>
+            </div>
+    
+            
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./resources.html">Resources</a></li>
+                    <li><a href="./faq.html">FAQs</a></li>
+                    <li><a href="./quiz.html">Quiz</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            
+            <div class="right-section">
+                <button class="contribute-btn" onclick="window.location.href='./resources.html'">Contribute</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                </div>
+            </div>
+    
+            
+<div class="mobile-nav" id="mobileNav">
+    
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+    <ul>
+        <li><a href="../../index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./resources.html">Resources</a></li>
+                    <li><a href="./faq.html">FAQs</a></li>
+                    <li><a href="./quiz.html">Quiz</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+    </ul>
+
+    
+    <div class="mobile-right-section">
+        <button class="contribute-btn" onclick="window.location.href='./resources.html'">Contribute</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+    </div>
+</div>
+        </nav>
+    </header>
+
+    <header class="site-header">
+        <h1>Quiz Results</h1>
+    </header>
+
+    <section class="result-container">
+        
+        <h2>Congratulations, <span id="user-name"></span>!</h2>
+        <p class="score-display">Your Score: <span id="score"></span></p>
+
+        
+        <p id="motivation-message"></p>
+
+        
+        <div class="performance-section">
+            <h3>Performance Overview</h3>
+            <canvas id="performanceChart"></canvas>
+        </div>
+
+        
+        <div class="review-section">
+            <h3>Review Your Answers</h3>
+            <ul id="answer-review"></ul>
+        </div>
+
+        
+        <div class="achievements">
+            <h3>Your Achievements</h3>
+            <div id="achievement-badge"></div>
+            <p id="achievement-description"></p>
+        </div>
+
+    
+<section class="leaderboard-section">
+    <h2>🏆 Leaderboard</h2>
+
+    
+    <div class="leaderboard-tabs">
+        <button class="tab-button active" onclick="showTab('all-time')">All Time</button>
+        <button class="tab-button" onclick="showTab('weekly')">Weekly</button>
+        <button class="tab-button" onclick="showTab('daily')">Daily</button>
+    </div>
+
+    
+    <div class="leaderboard-container">
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<script>
+    function showTab(tabName) {
+        let buttons = document.querySelectorAll(".tab-button");
+        buttons.forEach(btn => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Here you can implement filtering logic based on `tabName`
+        console.log("Switched to:", tabName);
+    }
+</script>
+
+
+        
+        <h3>Share Your Results</h3>
+        <div class="share-buttons">
+            <!-- Facebook -->
+            <a href="#" class="social-icon facebook" id="share-facebook" title="Facebook">
+                <svg width="64px" height="64px" viewBox="-9.6 -9.6 67.20 67.20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#3B5998"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z" fill="white"></path> </g></svg>                        
+                </a>
+                <!-- Twitter -->
+                <a href="#" class="social-icon twitter" id="share-twitter" title="Twitter">
+                <svg width="64px" height="64px" viewBox="-10.56 -10.56 69.12 69.12" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#1DA1F2"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M36 16.3086C35.1177 16.7006 34.1681 16.9646 33.1722 17.0838C34.1889 16.4742 34.9697 15.5095 35.3368 14.36C34.3865 14.9247 33.3314 15.3335 32.2107 15.5551C31.3123 14.5984 30.0316 14 28.6165 14C25.8975 14 23.6928 16.2047 23.6928 18.9237C23.6928 19.3092 23.7368 19.6852 23.8208 20.046C19.7283 19.8412 16.1005 17.8805 13.6719 14.9015C13.2479 15.6287 13.0055 16.4742 13.0055 17.3766C13.0055 19.0845 13.8735 20.5916 15.1958 21.4747C14.3878 21.4491 13.6295 21.2275 12.9647 20.8587V20.9203C12.9647 23.3066 14.663 25.296 16.9141 25.7496C16.5013 25.8616 16.0661 25.9224 15.6174 25.9224C15.2998 25.9224 14.991 25.8912 14.6902 25.8336C15.3166 27.7895 17.1357 29.2134 19.2899 29.2534C17.6052 30.5733 15.4822 31.3612 13.1751 31.3612C12.7767 31.3612 12.3848 31.338 12 31.2916C14.1791 32.6884 16.7669 33.5043 19.5475 33.5043C28.6037 33.5043 33.5562 26.0016 33.5562 19.4956C33.5562 19.282 33.5522 19.0693 33.5418 18.8589C34.5049 18.1629 35.34 17.2958 36 16.3086Z" fill="white"></path> </g></svg>                        
+                </a>
+                <!-- WhatsApp (Green) -->
+                <a href="#" class="social-icon whatsapp" id="share-whatsapp" title="WhatsApp">
+                <svg width="64px" height="64px" viewBox="-10.56 -10.56 69.12 69.12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Whatsapp-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Color-" transform="translate(-700.000000, -360.000000)" fill="#67C15E"> <path d="M723.993033,360 C710.762252,360 700,370.765287 700,383.999801 C700,389.248451 701.692661,394.116025 704.570026,398.066947 L701.579605,406.983798 L710.804449,404.035539 C714.598605,406.546975 719.126434,408 724.006967,408 C737.237748,408 748,397.234315 748,384.000199 C748,370.765685 737.237748,360.000398 724.006967,360.000398 L723.993033,360.000398 L723.993033,360 Z M717.29285,372.190836 C716.827488,371.07628 716.474784,371.034071 715.769774,371.005401 C715.529728,370.991464 715.262214,370.977527 714.96564,370.977527 C714.04845,370.977527 713.089462,371.245514 712.511043,371.838033 C711.806033,372.557577 710.056843,374.23638 710.056843,377.679202 C710.056843,381.122023 712.567571,384.451756 712.905944,384.917648 C713.258648,385.382743 717.800808,392.55031 724.853297,395.471492 C730.368379,397.757149 732.00491,397.545307 733.260074,397.27732 C735.093658,396.882308 737.393002,395.527239 737.971421,393.891043 C738.54984,392.25405 738.54984,390.857171 738.380255,390.560912 C738.211068,390.264652 737.745308,390.095816 737.040298,389.742615 C736.335288,389.389811 732.90737,387.696673 732.25849,387.470894 C731.623543,387.231179 731.017259,387.315995 730.537963,387.99333 C729.860819,388.938653 729.198006,389.89831 728.661785,390.476494 C728.238619,390.928051 727.547144,390.984595 726.969123,390.744481 C726.193254,390.420348 724.021298,389.657798 721.340985,387.273388 C719.267356,385.42535 717.856938,383.125756 717.448104,382.434484 C717.038871,381.729275 717.405907,381.319529 717.729948,380.938852 C718.082653,380.501232 718.421026,380.191036 718.77373,379.781688 C719.126434,379.372738 719.323884,379.160897 719.549599,378.681068 C719.789645,378.215575 719.62006,377.735746 719.450874,377.382942 C719.281687,377.030139 717.871269,373.587317 717.29285,372.190836 Z" id="Whatsapp"> </path> </g> </g> </g></svg>                        
+                </a>
+                <!-- Instagram (Gradient Fill) -->
+                <a href="#" class="social-icon instagram" id="share-instagram" title="Instagram">
+                <svg width="64px" height="64px" viewBox="-6.4 -6.4 44.80 44.80" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg>
+                </a>
+                <!-- LinkedIn (Blue) -->
+                <a href="#" class="social-icon linkedin" id="share-linkedin" title="LinkedIn">
+                <svg width="64px" height="64px" viewBox="-9.6 -9.6 67.20 67.20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#0077B5"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z" fill="white"></path> </g></svg>                        </a>
+                </a>
+        </div>            
+                
+
+
+
+
+        
+        <div class="navigation-buttons">
+            <button onclick="restartQuiz()">🔄 Restart</button>
+            <button onclick="goToMainMenu()">🏠 Main Menu</button>
+        </div>
+</section>
+
+   
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-row">
+            
+            <div class="footer-column">
+                <h3 id="about-hackerzguide">ABOUT HACKERZGUIDE</h3>
+                <p>HackerZGuide is your ultimate resource hub for learning, growth, and career success. We provide insights, tutorials, and guidance to help individuals achieve their goals.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3 id="quick-links-title">QUICK LINKS</h3>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./resources.html">Resources</a></li>
+                        <li><a href="./quiz.html">Quiz</a></li>
+                        <li><a href="./faq.html">FAQs</a></li>
+                        <li><a href="../../index.html#categoriess">Categories</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 id="customer-support-title">CUSTOMER SUPPORT</h3>
+                <p><strong> Email : </strong> <a href="mailto:support@hackerzguide.com">support@hackerzguide.com</a></p>
+                <p><strong> Phone : </strong> +91 62XXX XXXXX</p>
+                <p><strong> Address : </strong> University Institute Of Technology,
+                    The University of Burdwan,
+                    Golapbag (North), Burdwan-713104,
+                    West Bengal.</p>
+            </div>
+        </div>
+        
+        <div class="footer-row">
+            
+            <div class="footer-column social-media">
+                <h3 id="follow-us-title">FOLLOW US</h3>
+                <div class="social-icons">
+                    <!-- Facebook -->
+                    <a href="#" class="social-icon facebook" title="Facebook">
+                    <svg width="64px" height="64px" viewBox="-9.6 -9.6 67.20 67.20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#3B5998"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z" fill="white"></path> </g></svg>                        
+                    </a>
+                    <!-- Twitter -->
+                    <a href="#" class="social-icon twitter" title="Twitter">
+                    <svg width="64px" height="64px" viewBox="-10.56 -10.56 69.12 69.12" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#1DA1F2"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M36 16.3086C35.1177 16.7006 34.1681 16.9646 33.1722 17.0838C34.1889 16.4742 34.9697 15.5095 35.3368 14.36C34.3865 14.9247 33.3314 15.3335 32.2107 15.5551C31.3123 14.5984 30.0316 14 28.6165 14C25.8975 14 23.6928 16.2047 23.6928 18.9237C23.6928 19.3092 23.7368 19.6852 23.8208 20.046C19.7283 19.8412 16.1005 17.8805 13.6719 14.9015C13.2479 15.6287 13.0055 16.4742 13.0055 17.3766C13.0055 19.0845 13.8735 20.5916 15.1958 21.4747C14.3878 21.4491 13.6295 21.2275 12.9647 20.8587V20.9203C12.9647 23.3066 14.663 25.296 16.9141 25.7496C16.5013 25.8616 16.0661 25.9224 15.6174 25.9224C15.2998 25.9224 14.991 25.8912 14.6902 25.8336C15.3166 27.7895 17.1357 29.2134 19.2899 29.2534C17.6052 30.5733 15.4822 31.3612 13.1751 31.3612C12.7767 31.3612 12.3848 31.338 12 31.2916C14.1791 32.6884 16.7669 33.5043 19.5475 33.5043C28.6037 33.5043 33.5562 26.0016 33.5562 19.4956C33.5562 19.282 33.5522 19.0693 33.5418 18.8589C34.5049 18.1629 35.34 17.2958 36 16.3086Z" fill="white"></path> </g></svg>                        
+                    </a>
+                    <!-- WhatsApp (Green) -->
+                    <a href="#" class="social-icon whatsapp" title="WhatsApp">
+                    <svg width="64px" height="64px" viewBox="-10.56 -10.56 69.12 69.12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Whatsapp-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Color-" transform="translate(-700.000000, -360.000000)" fill="#67C15E"> <path d="M723.993033,360 C710.762252,360 700,370.765287 700,383.999801 C700,389.248451 701.692661,394.116025 704.570026,398.066947 L701.579605,406.983798 L710.804449,404.035539 C714.598605,406.546975 719.126434,408 724.006967,408 C737.237748,408 748,397.234315 748,384.000199 C748,370.765685 737.237748,360.000398 724.006967,360.000398 L723.993033,360.000398 L723.993033,360 Z M717.29285,372.190836 C716.827488,371.07628 716.474784,371.034071 715.769774,371.005401 C715.529728,370.991464 715.262214,370.977527 714.96564,370.977527 C714.04845,370.977527 713.089462,371.245514 712.511043,371.838033 C711.806033,372.557577 710.056843,374.23638 710.056843,377.679202 C710.056843,381.122023 712.567571,384.451756 712.905944,384.917648 C713.258648,385.382743 717.800808,392.55031 724.853297,395.471492 C730.368379,397.757149 732.00491,397.545307 733.260074,397.27732 C735.093658,396.882308 737.393002,395.527239 737.971421,393.891043 C738.54984,392.25405 738.54984,390.857171 738.380255,390.560912 C738.211068,390.264652 737.745308,390.095816 737.040298,389.742615 C736.335288,389.389811 732.90737,387.696673 732.25849,387.470894 C731.623543,387.231179 731.017259,387.315995 730.537963,387.99333 C729.860819,388.938653 729.198006,389.89831 728.661785,390.476494 C728.238619,390.928051 727.547144,390.984595 726.969123,390.744481 C726.193254,390.420348 724.021298,389.657798 721.340985,387.273388 C719.267356,385.42535 717.856938,383.125756 717.448104,382.434484 C717.038871,381.729275 717.405907,381.319529 717.729948,380.938852 C718.082653,380.501232 718.421026,380.191036 718.77373,379.781688 C719.126434,379.372738 719.323884,379.160897 719.549599,378.681068 C719.789645,378.215575 719.62006,377.735746 719.450874,377.382942 C719.281687,377.030139 717.871269,373.587317 717.29285,372.190836 Z" id="Whatsapp"> </path> </g> </g> </g></svg>                        
+                    </a>
+                    <!-- GitHub (Light Black) -->
+                    <a href="#" class="social-icon github" title="GitHub">
+                    <svg width="64px" height="64px" viewBox="-6.4 -6.4 44.80 44.80" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g fill="none" fill-rule="evenodd"> <path d="m0 0h32v32h-32z"></path> <path d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm-.0080357 7.00602603c-4.9680804-.00200817-8.9919643 4.01986687-8.9919643 8.98392937 0 3.9254464 2.5171875 7.2622767 6.0227679 8.4877232.4720982.1185268.3997767-.2169643.3997767-.4459822v-1.5569196c-2.726116.3194196-2.8366071-1.4845982-3.0194196-1.7859375-.3696429-.6308036-1.24352679-.7915179-.98236607-1.0928572.62075897-.3194196 1.25357147.0803572 1.98683037 1.1631697.5303571.7854911 1.5649553.6529018 2.0892857.5223214.1145089-.4720982.3595982-.8939732.6970982-1.2214286-2.8245536-.50625-4.0017857-2.2299107-4.0017857-4.2790178 0-.9944197.3274554-1.9084822.9703125-2.6457589-.4098214-1.2154018.0381696-2.2560268.0984375-2.4107143 1.1671875-.1044643 2.3805804.8357143 2.475.9100446.6629464-.1787946 1.4203125-.2732143 2.2680804-.2732143.8517857 0 1.6111607.0984375 2.2801339.2792411.2270089-.1727679 1.3520089-.9803571 2.4368303-.8819196.058259.1546875.4962054 1.1712053.1104911 2.3705357.6508929.7392857.9823661 1.6613839.9823661 2.6578125 0 2.053125-1.1852679 3.7787946-4.0178572 4.2770089.4720983.4660714.7654018 1.1129464.7654018 1.828125v2.2600446c.0160715.1808036 0 .3595983.3013393.3595983 3.5578125-1.1993304 6.1191964-4.5602679 6.1191964-8.5198661 0-4.9660714-4.0258928-8.98593827-8.9899553-8.98593827z" fill="#202327"></path> </g> </g></svg>                        </a>
+                    </a>
+                    <!-- Instagram (Gradient Fill) -->
+                    <a href="#" class="social-icon instagram" title="Instagram">
+                    <svg width="64px" height="64px" viewBox="-6.4 -6.4 44.80 44.80" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg>
+                    </a>
+                    <!-- LinkedIn (Blue) -->
+                    <a href="#" class="social-icon linkedin" title="LinkedIn">
+                    <svg width="64px" height="64px" viewBox="-9.6 -9.6 67.20 67.20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#0077B5"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z" fill="white"></path> </g></svg>                        </a>
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div class="footer-column">
+                <h3>Language</h3>
+                <select id="language-selector" title="Select Language" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                </select>
+            </div>
+            
+            <div class="footer-column">
+                <h3 id="newsletter-title">NEWSLETTER</h3>
+                <p id="subscribe-text">Subscribe to get the latest updates and exclusive content.</p>
+                <input type="email" id="newsletter-email" placeholder="Enter your email">
+                <button onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 HackerZGuide. All Rights Reserved. | <a href="../others/pp.html">Privacy Policy</a> | <a href="../others/t&c.html">Terms & Conditions</a></p></p>
+    </div>
+</footer>
+
+<button id="back-to-top" onclick="scrollToTop()" title="Back to Top">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 4L4 12H10V20H14V12H20L12 4Z" fill="white"/>
+</svg>
+
+</button>
+
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Open Chatbot">
+<svg width="30" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 2V16H6V22L12 16H22V2H2ZM20 14H11.171L8 17.171V14H4V4H20V14ZM6 7H18V9H6V7ZM6 10H14V12H6V10Z" fill="white"/>
+</svg>
+</button>
+
+<div id="chatbot-window">
+<div class="chatbot-header">
+<h3>HackerZGuide Chatbot</h3>
+<button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+</div>
+<div class="chatbot-body">
+
+<div id="chatbot-categories"></div>
+
+<div id="chatbot-questions"></div>
+
+<div id="chatbot-messages">
+    <p class="bot-msg">Hi! How can I assist you today?</p>
+</div>
+
+<div class="chatbot-input-container">
+    <input type="text" id="chatbot-input" placeholder="Ask me something...">
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="startVoiceRecognition()" id="voice-btn" title="Start Voice Recognition">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C10.9 2 10 2.9 10 4V12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12V4C14 2.9 13.1 2 12 2ZM18 11V12C18 15.31 15.31 18 12 18C8.69 18 6 15.31 6 12V11H4V12C4 16.08 7.05 19.44 11 19.93V22H13V19.93C16.95 19.44 20 16.08 20 12V11H18Z" fill="white"/>
+        </svg>
+    </button>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expert Level Roadmap</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #f5f5f5;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 18px;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+
+    .back-button:hover {
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 100px auto 50px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card {
+      background: rgba(20, 20, 20, 0.9);
+      border: 2px solid transparent;
+      border-image: linear-gradient(90deg, #ff6ec4, #7873f5) 1;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(255, 110, 196, 0.4);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <button class="back-button" onclick="window.location.href='../pages/resources.html'">← Back</button>
+
+  <div class="container">
+    <h1>🚀 Expert Level Roadmap</h1>
+
+    <div class="card">
+      <h2>⏳ Duration: Ongoing</h2>
+      <p>This stage is about leadership, vision, and global impact. At the expert level, you shape the industry, not just follow it.</p>
+    </div>
+
+    <div class="card">
+      <h2>✅ Innovate</h2>
+      <p>Create new frameworks, tools, or languages that others adopt. Publish research papers and propose improvements to industry standards.</p>
+    </div>
+
+    <div class="card">
+      <h2>✅ Mentor & Inspire</h2>
+      <p>Guide beginners and intermediates through mentoring, workshops, or one-on-one sessions. Share your expertise through books, courses, or speaking at conferences.</p>
+    </div>
+
+    <div class="card">
+      <h2>✅ Contribute to the Community</h2>
+      <p>Take active roles in open-source foundations, working groups, and standardization committees. Push the boundaries of technology adoption.</p>
+    </div>
+
+    <div class="card">
+      <h2>✅ Build Impactful Projects</h2>
+      <p>Focus on large-scale projects solving global problems—healthcare, finance, education, AI, or climate change. Prioritize scalability, ethics, and sustainability.</p>
+    </div>
+
+    <div class="card">
+      <h2>✅ Leave a Legacy</h2>
+      <p>Build a portfolio of groundbreaking contributions. Your work should inspire generations and drive technological evolution forward.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* 🌟 Light Theme */
+#chatbot-window.light-mode {
+    background: #fff;
+    color: #000;
+}
+
+#chatbot-window.light-mode .chatbot-header {
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: #fff;
+}
+
+#chatbot-window.light-mode #chatbot-messages {
+    background: #f9f9f9;
+}
+
+#chatbot-window.light-mode .bot-msg {
+    background: #e6e6e6;
+    color: #000;
+}
+
+#chatbot-window.light-mode .user-msg {
+    background: #007bff;
+    color: #fff;
+}
+
+/* 🌟 Dark Theme */
+#chatbot-window.dark-mode {
+    background: #1e1e1e;
+    color: #f5f5f5;
+}
+
+#chatbot-window.dark-mode .chatbot-header {
+    background: linear-gradient(135deg, #222, #444);
+    color: #fff;
+}
+
+#chatbot-window.dark-mode #chatbot-messages {
+    background: #2a2a2a;
+}
+
+#chatbot-window.dark-mode .bot-msg {
+    background: #333;
+    color: #f5f5f5;
+}
+
+#chatbot-window.dark-mode .user-msg {
+    background: #007bff;
+    color: #fff;
+}
+
+

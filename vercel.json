@@ -1,8 +1,17 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "src/pages/*.html", "use": "@vercel/static" },
+    { "src": "*.css", "use": "@vercel/static" },
+    { "src": "*.js", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/about", "dest": "/src/pages/about.html" },
+    { "src": "/resources", "dest": "/src/pages/resources.html" },
+    { "src": "/faq", "dest": "/src/pages/faq.html" },
+    { "src": "/quiz", "dest": "/src/pages/quiz.html" },
+    { "src": "/contact", "dest": "/src/pages/contact.html" }
+  ]
+}

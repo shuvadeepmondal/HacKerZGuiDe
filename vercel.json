@@ -1,8 +1,23 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "src/pages/*.html", "use": "@vercel/static" },
+    { "src": "src/courses/*.html", "use": "@vercel/static" },
+    { "src": "src/others/*.html", "use": "@vercel/static" },
+    { "src": "src/Roadmap/*.html", "use": "@vercel/static" },
+    { "src": "src/assets/CSS/*.css", "use": "@vercel/static" },
+    { "src": "src/assets/JS/*.js", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/about", "dest": "/src/pages/about.html" },
+    { "src": "/resources", "dest": "/src/pages/resources.html" },
+    { "src": "/faq", "dest": "/src/pages/faq.html" },
+    { "src": "/quiz", "dest": "/src/pages/quiz.html" },
+    { "src": "/contact", "dest": "/src/pages/contact.html" },
+    { "src": "/courses/(.*)", "dest": "/src/courses/$1" },
+    { "src": "/others/(.*)", "dest": "/src/others/$1" },
+    { "src": "/Roadmap/(.*)", "dest": "/src/Roadmap/$1" }
+  ]
+}
